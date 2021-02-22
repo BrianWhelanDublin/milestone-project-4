@@ -44,11 +44,11 @@
     - As a customer, I would like to be able to sign up using my social media account details.
     - As a customer, I would like to see my previous order details.
 
-  - Website owner.
-    - As the business owner, I would like to be able to edit and add products easily.
-    - As the business owner, I would like to be able to delete products.
-    - As the business owner, I would like to have access to an admin section. 
-    - As the business owner, I would like my customers to be able to shop on the site easily.
+- Website owner.
+  - As the business owner, I would like to be able to edit and add products easily.
+  - As the business owner, I would like to be able to delete products.
+  - As the business owner, I would like to have access to an admin section. 
+  - As the business owner, I would like my customers to be able to shop on the site easily.
 
 
 ### WireFrames
