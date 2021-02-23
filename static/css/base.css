@@ -51,10 +51,12 @@ button:focus {
 .text-shadow {
     text-shadow: .5rem .5rem .8rem rgba(26, 26, 23, 0.678);
 }
-a{
+
+a {
     transition: all .5s ease-in-out;
 }
-a:hover{
+
+a:hover {
     color: rgb(136, 136, 135);
 }
 
@@ -135,7 +137,55 @@ a:hover{
     font-size: 2rem;
 }
 
+.side-nav {
+    height: 100vh;
+    width: 37.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #153243;
+    z-index: 100;
+    transform: translateX(-37.5rem);
+    transition: all 1.5s ease-in-out;
+}
 
+.side-nav-show {
+    transform: translateX(0rem);
+}
+
+.nav-close {
+    height: 4rem;
+    width: 4rem;
+    position: fixed;
+    top: 2.5rem;
+    right: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-close:hover span {
+    background-color: rgb(141, 141, 140);
+}
+
+.line-x,
+.line-y {
+    height: 0.2rem;
+    background-color: #EDEDE9;
+    margin: 0.4rem 0;
+    width: 3rem;
+    z-index: 200;
+    transition: all .5s ease-in;
+}
+
+.line-y {
+    transform: rotate(-40deg) translateY(-6.5px);
+}
+
+.line-x {
+    transform: rotate(40deg) translateY(6.5px);
+}
 
 /* Hero section in index.html */
 .hero-container {
@@ -148,17 +198,6 @@ a:hover{
     background: url('/media/chair-hero.jpg') no-repeat center center;
     background-size: cover;
 }
-
-.hero-col-left:before,
-.hero-col-right:before {
-    content: "";
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    background: rgba(121, 121, 121, 0.075);
-}
-
 
 .hero-col-right {
     height: 50%;
