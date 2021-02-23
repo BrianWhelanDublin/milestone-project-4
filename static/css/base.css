@@ -1,3 +1,146 @@
-html{
-    background-color: red;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    font-size: 10px;
 }
+
+html {
+    height: 100%;
+
+}
+
+.row,
+.col {
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* common elements */
+
+.link-button {
+    color: #EDEDE9;
+    font-size: 1.6rem;
+    font-weight: 300;
+    border: .1rem solid #EDEDE9;
+    text-decoration: none;
+    padding: 2rem;
+    width: 16rem;
+    height: 5rem;
+    background: rgba(29, 29, 29, 0.433);
+    backdrop-filter: blur(.3rem);
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero section in index.html */
+.hero-container {
+    min-height: 55rem;
+    height: 85vh;
+}
+
+.hero-col-left {
+    height: 50%;
+    background: url('/media/chair-hero.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.hero-col-left:before,
+.hero-col-right:before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    background: rgba(121, 121, 121, 0.075);
+}
+
+
+.hero-col-right {
+    height: 50%;
+    background: url('/media/green-sofa-hero.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.hero-col-right h1 {
+    transform: translateY(-50%);
+    margin-bottom: 15%;
+    color: #EDEDE9;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    font-size: 5rem;
+    text-align: center;
+    text-shadow: .5rem .5rem .8rem rgba(26, 26, 23, 0.678);
+}
+
+.hero-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Media Querys */
+
+/* medium 768px */
+@media (min-width: 768px) {
+    .link-button {
+        font-size: 2rem;
+        padding: 3rem;
+        width: 20rem;
+        height: 6.5rem;
+    }
+
+    .hero-col-right h1 {
+        margin-bottom: 5%;
+        font-size: 6.5rem;
+    }
+}
+
+/* large 992px*/
+@media (min-width: 992px) {
+
+    .link-button {
+        font-size: 2.5rem;
+        padding: 3.5rem;
+        width: 25rem;
+        height: 8rem;
+    }
+
+    .hero-col-right h1 {
+        font-size: 8rem;
+    }
+}
+
+/* x-large 1200px */
+@media (min-width: 1200px) {
+    .link-button {
+        font-size: 2.5rem;
+        padding: 3.5rem;
+        width: 25rem;
+        height: 7rem;
+    }
+
+    .hero-col-left,
+    .hero-col-right {
+        height: 100%;
+    }
+
+    .hero-col-right h1 {
+        margin-top: 30%;
+        transform: translateX(-50%);
+    }
+
+    .hero-links {
+        transform: translateX(-51%);
+    }
+}
+
+/* xx-large 1400px */
+@media (min-width: 1200px) {}
