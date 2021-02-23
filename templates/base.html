@@ -70,11 +70,38 @@
                                 <span class="line-x" aria-hidden="true"></span>
                                 <span class="line-y" aria-hidden="true"></span>
                             </div>
-                               
-                            </div>
+                            <ul class="side-nav-menu">
+                                <li class="side-nav-item">
+                                    <a href="">Shop Collection</a>
+                                </li>
+                                <li class="side-nav-item">
+                                    <a class="furniture-nav-link" ref="">Furniture
+                                        <i class="las la-angle-right nav-icon" aria-hidden="true"></i>
+                                    </a>
+                                    <ul class="furniture-sublist sublist-hidden ">
+                                        <li><a href="">Sofas</a></li>
+                                        <li><a href="">Chairs</a></li>
+                                        <li><a href="">Tables</a></li>
+                                    </ul>
+                                        </li>
+                             
+                                <li class="side-nav-item"><a href="">Lighting</a></li>
+                                <li class="side-nav-item "><a href="">Accessories</a></li>
+                                <li class="side-nav-item search-navlink">Search<i class="las la-search nav-icon"
+                                        aria-hidden="true"></i>    </li>
+                                        
+                                        <div class="search-sublist sublist-hidden">
+                                        <form>
+                                            <input type="text" placeholder="search">
+                                            <button>Search</button>
+                                            </form>
+                                        </div>
+                            
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
         </nav>
         {% block header %}
         {% endblock %}
