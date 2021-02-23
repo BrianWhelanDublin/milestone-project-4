@@ -33,11 +33,109 @@ body {
     backdrop-filter: blur(.3rem);
 }
 
+button {
+    background: transparent;
+    border-width: 0;
+}
+
+button:focus {
+    outline: none;
+}
+
 .flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+.text-shadow {
+    text-shadow: .5rem .5rem .8rem rgba(26, 26, 23, 0.678);
+}
+a{
+    transition: all .5s ease-in-out;
+}
+a:hover{
+    color: rgb(136, 136, 135);
+}
+
+/* Navigation */
+
+.top-navigation {
+    height: 6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.hamburger {
+    width: 5.5rem;
+    height: 5.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 1rem;
+}
+
+.line {
+    height: 0.2rem;
+    background-color: #EDEDE9;
+    margin: 0.4rem 0;
+    transform-origin: right;
+    transition: all 0.75s;
+}
+
+.hamburger:hover span {
+    width: 5rem;
+}
+
+.line1 {
+    width: 5rem;
+}
+
+.line2 {
+    width: 3.5rem;
+}
+
+.line3 {
+    width: 1.5rem;
+}
+
+.logo {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #EDEDE9;
+    text-decoration: none;
+    margin-left: 2rem;
+}
+
+.top-navigation ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 1rem;
+    margin-bottom: 0;
+}
+
+.top-nav-item {
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-right: 1.5rem;
+    font-weight: 400;
+}
+
+.top-nav-item i {
+    font-size: 2rem;
+}
+
+
 
 /* Hero section in index.html */
 .hero-container {
@@ -76,7 +174,6 @@ body {
     letter-spacing: .2rem;
     font-size: 5rem;
     text-align: center;
-    text-shadow: .5rem .5rem .8rem rgba(26, 26, 23, 0.678);
 }
 
 .hero-links {
@@ -97,10 +194,20 @@ body {
         height: 6.5rem;
     }
 
+    .logo {
+        font-size: 2.5rem;
+        margin-left: 5rem;
+    }
+
+    .top-nav-item {
+        font-size: 1.75rem;
+    }
+
     .hero-col-right h1 {
         margin-bottom: 5%;
         font-size: 6.5rem;
     }
+
 }
 
 /* large 992px*/
@@ -111,6 +218,14 @@ body {
         padding: 3.5rem;
         width: 25rem;
         height: 8rem;
+    }
+
+    .logo {
+        font-size: 3rem;
+    }
+
+    .top-nav-item {
+        font-size: 1.75rem;
     }
 
     .hero-col-right h1 {
@@ -125,6 +240,11 @@ body {
         padding: 3.5rem;
         width: 25rem;
         height: 7rem;
+    }
+
+    .logo {
+
+        margin-left: 10rem;
     }
 
     .hero-col-left,

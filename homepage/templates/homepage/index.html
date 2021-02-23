@@ -1,13 +1,14 @@
 {% extends "base.html" %}
+
 {% load static %}
 
-{% block main_content %}
+{% block header %}
 <div class="container-fluid hero-container">
     <div class="row">
         <div class="col-12 col-xl-6 hero-col-left">
         </div>
         <div class="col-12 col-xl-6  hero-col-right">
-            <h1>Designed For Living</h1>
+            <h1 class="text-shadow">Designed For Living</h1>
             <div class="hero-links">
                 <a href="#" class="link-button flex-center">Shop Collection</a>
                 <a href="#" class="link-button flex-center">Our Story</a>
@@ -15,4 +16,6 @@
         </div>
     </div>
 </div>
+{% endblock %}
+{% block main_content %}
 {% endblock %}

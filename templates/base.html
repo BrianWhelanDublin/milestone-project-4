@@ -32,6 +32,40 @@
 <body>
     <header>
         <nav>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="top-navigation">
+                            <button class="hamburger" aria-haspopup="true" aria-expanded="false"
+                                aria-label="open navigation">
+                                <span class="line line1" aria-hidden="true"></span>
+                                <span class="line line2" aria-hidden="true"></span>
+                                <span class="line line3" aria-hidden="true"></span> 
+                            </button>
+                            <a class="logo text-shadow" href="#">Abode.com</a>
+                            <ul>
+                                <li>
+                                    <a class="top-nav-item d-none d-md-block" href="#">Account</a>
+                                </li>
+                                <li>
+                                    <a class="top-nav-item" href="#">
+                                        <i class="las la-user d-md-none" aria-hidden="true"></i>
+                                        <span class="visually-hidden">link to account</span></a>
+                                </li>
+                                   <li>
+                                    <a class="top-nav-item d-none d-md-block" href="#">Cart</a>
+                                </li>
+                                <li>
+                                    <a class="top-nav-item" href="#">
+                                        <i class="las la-shopping-bag d-md-none" aria-hidden="true"></i>
+                                        <span class="visually-hidden">link to shopping cart</span></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
 
         </nav>
         {% block header %}
@@ -46,7 +80,7 @@
     </footer>
     {% block other_end_js %}
     {% endblock %}
-<script src="{% static 'js/main.js' %}" ></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>
