@@ -81,7 +81,9 @@ a:hover,
 .side-nav-item:hover {
     color: rgb(136, 136, 135);
 }
-
+.container-fluid{
+    padding: 0;
+}
 /* Navigation */
 
 .top-navigation {
@@ -93,6 +95,11 @@ a:hover,
     position: fixed;
     width: 100%;
     z-index: 100;
+     transition: all .5s ease-in;
+}
+.top-nav-colored {
+    background-color: #153344d8;
+    backdrop-filter: blur(1rem);
 }
 
 .hamburger {
