@@ -16,28 +16,41 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #EDEDE9;
 }
 
 /* common elements */
 
 .link-button {
-    color: #EDEDE9;
     font-size: 1.6rem;
     font-weight: 300;
-    border: .1rem solid #EDEDE9;
     text-decoration: none;
     padding: 2rem;
     width: 16rem;
     height: 5rem;
+    transition: all .5s ease-in-out;
+}
+
+.link-button-light {
+    color: #EDEDE9;
+    border: .1rem solid #EDEDE9;
     background: rgba(29, 29, 29, 0.433);
     backdrop-filter: blur(.3rem);
-    transition: all .5s ease-in-out;
-
 }
-.link-button:hover{
+
+.link-button-light:hover {
     background-color: rgba(237, 237, 233, 0.555);
-   backdrop-filter: blur(.5rem);
-   color: #153243;
+    backdrop-filter: blur(.5rem);
+    color: #153243;
+}
+.link-button-dark {
+    color: #153243;
+    border: .1rem solid #153243;
+}
+
+.link-button-dark:hover {
+    background-color: #153243;
+    color: #EDEDE9;
 }
 
 button {
@@ -355,7 +368,8 @@ a:hover,
     border: .1rem solid #EDEDE9;
     transition: all .5s ease-in;
 }
-.search-sublist button:hover{
+
+.search-sublist button:hover {
     background-color: #EDEDE9;
     color: #153243;
 }
@@ -381,10 +395,10 @@ a:hover,
 .hero-overlay {
     height: 85vh;
     width: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
-    background: rgba(53, 52, 52, 0.103);
+    background: rgba(53, 52, 52, 0.15);
 
 }
 
@@ -405,6 +419,18 @@ a:hover,
     justify-content: space-evenly;
 }
 
+/* ---------------about section */
+.about-col {
+    flex-direction: column;
+    margin: 4rem 0;
+}
+
+.about-col p {
+    margin: 3rem 2rem;
+    font-size: 2rem;
+    color: #153243;
+    text-align: center;
+}
 
 /* Media Querys */
 
