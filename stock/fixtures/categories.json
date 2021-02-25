@@ -1,5 +1,4 @@
-[
-    {
+[{
         "pk": 1,
         "model": "stock.categories",
         "fields": {
@@ -10,47 +9,47 @@
     {
         "pk": 2,
         "model": "stock.categories",
-        "fields":{
+        "fields": {
             "name": "chairs",
             "display-name": "Chairs"
         }
     },
-     {
+    {
         "pk": 3,
         "model": "stock.categories",
-        "fields":{
+        "fields": {
             "name": "tables",
             "display-name": "Tables"
         }
     },
-     {
+    {
         "pk": 4,
         "model": "stock.categories",
-        "fields":{
+        "fields": {
             "name": "sideboards",
             "display-name": "Sideboards"
         }
     },
-     {
+    {
         "pk": 5,
         "model": "stock.categories",
-        "fields":{
+        "fields": {
             "name": "lighting",
             "display-name": "Lighting"
         }
     },
-     {
+    {
         "pk": 6,
         "model": "stock.categories",
-        "fields":{
+        "fields": {
             "name": "accseeories",
             "display-name": "Accessories"
         }
     },
-     {
+    {
         "pk": 7,
         "model": "stock.categories",
-        "fields":{
+        "fields": {
             "name": "new_in",
             "display-name": "New In"
         }
