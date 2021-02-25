@@ -1,0 +1,119 @@
+[{
+        "pk": 1,
+        "model": "stock.item",
+        "fields": {
+            "code": 1,
+            "name": "Cocoon Sofa",
+            "description": "Luxury fabric sofa with an interesting Cocoon shape.",
+            "price": "€1299",
+            "category": 1,
+            "image": "cocoon-sofa.jpg"
+        }
+    }, {
+        "pk": 2,
+        "model": "stock.item",
+        "fields": {
+            "code": 2,
+            "name": "Graphite Fabric Sofa",
+            "description": "Luxury fabric sofa in a rich grphite shade.",
+            "price": "€1099",
+            "category": 1,
+            "image": "dark-grey-sofa.jpg"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "stock.item",
+        "fields": {
+            "code": 3,
+            "name": "Emerald Fabric Sofa",
+            "description": "A rich emerald green fabric sofa in a rich velvet material.",
+            "price": "€1499",
+            "category": 1,
+            "image": "green-sofa.jpg"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "stock.item",
+        "fields": {
+            "code": 4,
+            "name": "Grey Fabric sofa",
+            "description": "Grey fabric sofa build with extremly comfotable cushions.",
+            "price": "€1199",
+            "category": 1,
+            "image": "grey-sofa-2.jpg"
+        }
+    }, {
+        "pk": 5,
+        "model": "stock.item",
+        "fields": {
+            "code": 5,
+            "name": "Light Grey Fabric Sofa",
+            "description": "Luxury light grey fabric sofa.",
+            "price": "€1399",
+            "category": 1,
+            "image": "grey-sofa.jpg"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "stock.item",
+        "fields": {
+            "code": 6,
+            "name": "Orange Fabric Sofa",
+            "description": "Playful and colurful Orange sofa to add a pop of colour to your living room.",
+            "price": "€1259",
+            "category": 1,
+            "image": "orange-sofa.jpg"
+        }
+    }, {
+        "pk": 7,
+        "model": "stock.item",
+        "fields": {
+            "code": 7,
+            "name": "Pink 3 Piece Set",
+            "description": "Luxury 3 piece seating set for a classic livingroom.",
+            "price": "€1899",
+            "category": 1,
+            "image": "pink-3piece-set.jpg"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "stock.item",
+        "fields": {
+            "code": 8,
+            "name": "Tan Fabric Sofa",
+            "description": "Luxury tan fabric sofa excelent to add a mid century touch.",
+            "price": "€1199",
+            "category": 1,
+            "image": "tan-fabric-sofa.jpg"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "stock.item",
+        "fields": {
+            "code": 9,
+            "name": "Tan Leather Sofa",
+            "description": "A tan leather sofa for the modern minimalist.",
+            "price": "€1699",
+            "category": 1,
+            "image": "tan-leather-sofa.jpg"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "stock.item",
+        "fields": {
+            "code": 10,
+            "name": "pink-sofa",
+            "description": "A beautiful blush pink fabric in a very classic shape.",
+            "price": "€1399",
+            "category": 1,
+            "image": "pink-sofa.jpg"
+        }
+    }
+
+]
