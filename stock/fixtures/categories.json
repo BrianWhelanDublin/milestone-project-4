@@ -1,0 +1,58 @@
+[
+    {
+        "pk": 1,
+        "model": "stock.categories",
+        "fields": {
+            "name": "sofas",
+            "display-name": "Sofas"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "stock.categories",
+        "fields":{
+            "name": "chairs",
+            "display-name": "Chairs"
+        }
+    },
+     {
+        "pk": 3,
+        "model": "stock.categories",
+        "fields":{
+            "name": "tables",
+            "display-name": "Tables"
+        }
+    },
+     {
+        "pk": 4,
+        "model": "stock.categories",
+        "fields":{
+            "name": "sideboards",
+            "display-name": "Sideboards"
+        }
+    },
+     {
+        "pk": 5,
+        "model": "stock.categories",
+        "fields":{
+            "name": "lighting",
+            "display-name": "Lighting"
+        }
+    },
+     {
+        "pk": 6,
+        "model": "stock.categories",
+        "fields":{
+            "name": "accseeories",
+            "display-name": "Accessories"
+        }
+    },
+     {
+        "pk": 7,
+        "model": "stock.categories",
+        "fields":{
+            "name": "new_in",
+            "display-name": "New In"
+        }
+    }
+]
