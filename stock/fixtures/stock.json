@@ -1,5 +1,4 @@
-[     
-    {
+[{
         "pk": 1,
         "model": "stock.item",
         "fields": {
@@ -42,7 +41,7 @@
             "name": "Grey Fabric sofa",
             "description": "Grey fabric sofa build with extremely comfortable cushions.",
             "price": "€1199",
-            "category": 1,
+            "category": 7,
             "image": "grey-sofa-2.jpg"
         }
     }, {
@@ -100,7 +99,7 @@
             "name": "Tan Leather Sofa",
             "description": "A tan leather sofa for the modern minimalist interior.",
             "price": "€1699",
-            "category": 1,
+            "category": 7,
             "image": "tan-leather-sofa.jpg"
         }
     },
@@ -184,7 +183,7 @@
             "name": "Tan Leather Chair",
             "description": "A beautiful contemporary tan leather chair perfect for a minimal interior.",
             "price": "€499",
-            "category": 2,
+            "category": 7,
             "image": "leather-chair.jpg"
         }
     },
@@ -256,7 +255,7 @@
             "name": "Palm Tree Print Chair",
             "description": "A fun palm tree printed dining chair to add some fun to your interior.",
             "price": "€159",
-            "category": 2,
+            "category": 7,
             "image": "palm-chair.jpg"
         }
     },
@@ -316,7 +315,7 @@
             "name": "Marble Coffee Table",
             "description": "Contemporary Marbled effect coffee table.",
             "price": "€159",
-            "category": 3,
+            "category": 7,
             "image": "coffee-table-1.jpg"
         }
     },
@@ -424,7 +423,7 @@
             "name": "Wooden Desk",
             "description": "A stunning wooden desk and chair for a contemporary home office.",
             "price": "€559",
-            "category": 3,
+            "category": 7,
             "image": "wooden-desk.jpg"
         }
     },
@@ -688,7 +687,7 @@
             "name": "White Pendant Light",
             "description": "A clean modern white pendant light.",
             "price": "€99",
-            "category": 5,
+            "category": 7,
             "image": "white-pendant-light.jpg"
         }
     },
@@ -796,7 +795,7 @@
             "name": "Green Ceramic Set",
             "description": "A contemporary green ceramic dinner set.",
             "price": "€79",
-            "category": 6,
+            "category": 7,
             "image": "ceramic-dinner-set.jpg"
         }
     },
@@ -830,9 +829,9 @@
         "fields": {
             "code": 67,
             "name": "Ceramic Jar Set",
-            "description": "A set of ceramic jugs.",
+            "description": "A set of ceramic jars.",
             "price": "€39",
-            "category": 6,
+            "category": 7,
             "image": "ceramic-jug-and-sugarbowl.jpg"
         }
     },
@@ -976,7 +975,7 @@
             "name": "White Ceramic Plate",
             "description": "A modern set of white ceramic plates.",
             "price": "€89",
-            "category": 6,
+            "category": 7,
             "image": "white-ceramic-plate.jpg"
         }
     },
@@ -1012,7 +1011,7 @@
             "name": "Yellow Glass Vase",
             "description": "A contemporary hand blown yellow glass vase.",
             "price": "€49",
-            "category": 6,
+            "category": 7,
             "image": "yellow-glass-vase.jpg"
         }
     }
