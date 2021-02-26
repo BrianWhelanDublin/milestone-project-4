@@ -115,7 +115,7 @@
             "image": "pink-sofa.jpg"
         }
     },
-     {
+    {
         "pk": 11,
         "model": "stock.item",
         "fields": {
@@ -127,7 +127,7 @@
             "image": "black-leather-chair.jpg"
         }
     },
-     {
+    {
         "pk": 12,
         "model": "stock.item",
         "fields": {
@@ -139,7 +139,7 @@
             "image": "black-wicker-chair.jpg"
         }
     },
-     {
+    {
         "pk": 13,
         "model": "stock.item",
         "fields": {
@@ -151,7 +151,7 @@
             "image": "blue-chair.jpg"
         }
     },
-     {
+    {
         "pk": 14,
         "model": "stock.item",
         "fields": {
@@ -163,7 +163,7 @@
             "image": "green-orange-chair.jpg"
         }
     },
-     {
+    {
         "pk": 15,
         "model": "stock.item",
         "fields": {
@@ -175,7 +175,7 @@
             "image": "grey-armchair.jpg"
         }
     },
-     {
+    {
         "pk": 16,
         "model": "stock.item",
         "fields": {
@@ -187,7 +187,7 @@
             "image": "leather-chair.jpg"
         }
     },
-     {
+    {
         "pk": 17,
         "model": "stock.item",
         "fields": {
@@ -199,7 +199,7 @@
             "image": "mesh-chair-2.jpg"
         }
     },
-     {
+    {
         "pk": 18,
         "model": "stock.item",
         "fields": {
@@ -211,7 +211,7 @@
             "image": "mesh-chair.jpg"
         }
     },
-     {
+    {
         "pk": 19,
         "model": "stock.item",
         "fields": {
@@ -223,7 +223,7 @@
             "image": "mid-century-armchair.jpg"
         }
     },
-     {
+    {
         "pk": 20,
         "model": "stock.item",
         "fields": {
@@ -235,7 +235,7 @@
             "image": "orange-armchair.jpg"
         }
     },
-     {
+    {
         "pk": 21,
         "model": "stock.item",
         "fields": {
@@ -247,7 +247,7 @@
             "image": "pair-of-stools.jpg"
         }
     },
-     {
+    {
         "pk": 22,
         "model": "stock.item",
         "fields": {
@@ -259,7 +259,7 @@
             "image": "palm-chair.jpg"
         }
     },
-     {
+    {
         "pk": 23,
         "model": "stock.item",
         "fields": {
@@ -271,7 +271,7 @@
             "image": "purple-chair.jpg"
         }
     },
-     {
+    {
         "pk": 24,
         "model": "stock.item",
         "fields": {
@@ -283,7 +283,7 @@
             "image": "red-armchair.jpg"
         }
     },
-     {
+    {
         "pk": 25,
         "model": "stock.item",
         "fields": {
@@ -293,6 +293,162 @@
             "price": "€159",
             "category": 2,
             "image": "yellow-chair.jpg"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "stock.item",
+        "fields": {
+            "code": 26,
+            "name": "Black Dining Set",
+            "description": "Contemporary black dining set seating up to 6 people",
+            "price": "€659",
+            "category": 3,
+            "image": "black-dining-set.jpg"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "stock.item",
+        "fields": {
+            "code": 27,
+            "name": "Marble Coffee Table",
+            "description": "Contemporary Marbled effect coffee table.",
+            "price": "€159",
+            "category": 3,
+            "image": "coffee-table-1.jpg"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "stock.item",
+        "fields": {
+            "code": 28,
+            "name": "Colourful Printed Coffee Table",
+            "description": "Contemporary printed coffee table in a fun playful pattern.",
+            "price": "€159",
+            "category": 3,
+            "image": "colourful-table.jpg"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "stock.item",
+        "fields": {
+            "code": 29,
+            "name": "Mid-Century Dining Set",
+            "description": "Contemporary mid-century dining set for up to 4 people.",
+            "price": "€659",
+            "category": 3,
+            "image": "dining-set-2.jpg"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "stock.item",
+        "fields": {
+            "code": 30,
+            "name": "Floating Desk Set",
+            "description": "Contemporary floating wooden desk and chair for a modern minimal office.",
+            "price": "€259",
+            "category": 3,
+            "image": "floating-desk.jpg"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "stock.item",
+        "fields": {
+            "code": 31,
+            "name": "Glass Dining Set",
+            "description": "Stunning glass dining table and chair set for up to 6 people.",
+            "price": "€899",
+            "category": 3,
+            "image": "glass-dining-set.jpg"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "stock.item",
+        "fields": {
+            "code": 32,
+            "name": "Flower Printed Coffee Table",
+            "description": "Contemporary flower printed coffee table to add a pop of colour to your living area.",
+            "price": "€159",
+            "category": 3,
+            "image": "green-coffee-table.jpg"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "stock.item",
+        "fields": {
+            "code": 33,
+            "name": "Pink Side Table",
+            "description": "Colourfull pink side table to add a bit of fun to any interior.",
+            "price": "€89",
+            "category": 3,
+            "image": "pink-sidetable.jpg"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "stock.item",
+        "fields": {
+            "code": 34,
+            "name": "Pink Dining Table",
+            "description": "A fun pink dining table to add a pop of colour to any dining area.",
+            "price": "€359",
+            "category": 3,
+            "image": "pink-table.jpg"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "stock.item",
+        "fields": {
+            "code": 35,
+            "name": "Minimal Side Table",
+            "description": "A simple minimal white side table.",
+            "price": "€99",
+            "category": 3,
+            "image": "white-side-table.jpg"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "stock.item",
+        "fields": {
+            "code": 36,
+            "name": "Wooden Desk",
+            "description": "A stunning wooden desk and chair for a contemporary home office.",
+            "price": "€559",
+            "category": 3,
+            "image": "wooden-desk.jpg"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "stock.item",
+        "fields": {
+            "code": 37,
+            "name": "Wooden Dining Set",
+            "description": "A beautiful walnut dining set for a soft mid-century feel.",
+            "price": "€359",
+            "category": 3,
+            "image": "wooden-dining-set.jpg"
+        }
+    },
+    {
+        "pk": 38,
+        "model": "stock.item",
+        "fields": {
+            "code": 38,
+            "name": "Wooden Side Table",
+            "description": "A beautiful simple wooden side table for a soft minimal feel.",
+            "price": "€99",
+            "category": 3,
+            "image": "wooden-sidetable.jpg"
         }
     }
 ]
