@@ -5,7 +5,7 @@
             "code": 1,
             "name": "Cocoon Sofa",
             "description": "Luxury fabric sofa with an interesting Cocoon shape.",
-            "price": "€1299",
+            "price": "1299.00",
             "category": 1,
             "image": "cocoon-sofa.jpg"
         }
@@ -16,7 +16,7 @@
             "code": 2,
             "name": "Graphite Fabric Sofa",
             "description": "Luxury fabric sofa in a rich graphite shade.",
-            "price": "€1099",
+            "price": "1099.00",
             "category": 1,
             "image": "dark-grey-sofa.jpg"
         }
@@ -28,7 +28,7 @@
             "code": 3,
             "name": "Emerald Fabric Sofa",
             "description": "A rich emerald green fabric sofa in a rich velvet material.",
-            "price": "€1499",
+            "price": "1499.00",
             "category": 1,
             "image": "green-sofa.jpg"
         }
@@ -40,7 +40,7 @@
             "code": 4,
             "name": "Grey Fabric sofa",
             "description": "Grey fabric sofa build with extremely comfortable cushions.",
-            "price": "€1199",
+            "price": "1199.00",
             "category": 7,
             "image": "grey-sofa-2.jpg"
         }
@@ -51,7 +51,7 @@
             "code": 5,
             "name": "Light Grey Fabric Sofa",
             "description": "Luxury light grey fabric sofa.",
-            "price": "€1399",
+            "price": "1399.00",
             "category": 1,
             "image": "grey-sofa.jpg"
         }
@@ -63,7 +63,7 @@
             "code": 6,
             "name": "Orange Fabric Sofa",
             "description": "Playful and colourful Orange sofa to add a pop of colour to your living room.",
-            "price": "€1259",
+            "price": "1259.00",
             "category": 1,
             "image": "orange-sofa.jpg"
         }
@@ -74,7 +74,7 @@
             "code": 7,
             "name": "Pink 3 Piece Set",
             "description": "Luxury 3 piece seating set for a classic living room.",
-            "price": "€1899",
+            "price": "1899.00",
             "category": 1,
             "image": "pink-3piece-set.jpg"
         }
@@ -86,7 +86,7 @@
             "code": 8,
             "name": "Tan Fabric Sofa",
             "description": "Luxury tan fabric sofa excellent to add a mid-century touch.",
-            "price": "€1199",
+            "price": "1199.00",
             "category": 1,
             "image": "tan-fabric-sofa.jpg"
         }
@@ -98,7 +98,7 @@
             "code": 9,
             "name": "Tan Leather Sofa",
             "description": "A tan leather sofa for the modern minimalist interior.",
-            "price": "€1699",
+            "price": "1699.00",
             "category": 7,
             "image": "tan-leather-sofa.jpg"
         }
@@ -110,7 +110,7 @@
             "code": 10,
             "name": "Blush Pink Sofa",
             "description": "A beautiful blush pink fabric sofa in a very classic shape.",
-            "price": "€1399",
+            "price": "1399.00",
             "category": 1,
             "image": "pink-sofa.jpg"
         }
@@ -122,7 +122,7 @@
             "code": 11,
             "name": "Black Leather Chair",
             "description": " A contemporary shape finished in black leather.",
-            "price": "€399",
+            "price": "399.00",
             "category": 2,
             "image": "black-leather-chair.jpg"
         }
@@ -134,7 +134,7 @@
             "code": 12,
             "name": "Black Wicker Chair",
             "description": "A wicker chair in black perfect for a dining table.",
-            "price": "€199",
+            "price": "199.00",
             "category": 2,
             "image": "black-wicker-chair.jpg"
         }
@@ -146,7 +146,7 @@
             "code": 13,
             "name": "Blue Leather Chair",
             "description": "A classic shaped dining chair finished with contemporary blue leather.",
-            "price": "€249",
+            "price": "249.00",
             "category": 2,
             "image": "blue-chair.jpg"
         }
@@ -158,7 +158,7 @@
             "code": 14,
             "name": "Green and Orange Chair",
             "description": "A 70's style colourful dining chair finished with orange fabric and a green frame.",
-            "price": "€199",
+            "price": "199.00",
             "category": 2,
             "image": "green-orange-chair.jpg"
         }
@@ -170,7 +170,7 @@
             "code": 15,
             "name": "Grey Fabric Armchair",
             "description": "An extremely comfortable grey fabric armchair.",
-            "price": "€599",
+            "price": "599.00",
             "category": 2,
             "image": "grey-armchair.jpg"
         }
@@ -182,7 +182,7 @@
             "code": 16,
             "name": "Tan Leather Chair",
             "description": "A beautiful contemporary tan leather chair perfect for a minimal interior.",
-            "price": "€499",
+            "price": "499.00",
             "category": 7,
             "image": "leather-chair.jpg"
         }
@@ -194,7 +194,7 @@
             "code": 17,
             "name": "Weaved Chair",
             "description": "A stunning hand weaved wooden accent chair.",
-            "price": "€399",
+            "price": "399.00",
             "category": 2,
             "image": "mesh-chair-2.jpg"
         }
@@ -206,7 +206,7 @@
             "code": 18,
             "name": "Wicker Dinning Chair",
             "description": "A contemporary mid-century styled wicker dining chair.",
-            "price": "€199",
+            "price": "199.00",
             "category": 2,
             "image": "mesh-chair.jpg"
         }
@@ -218,7 +218,7 @@
             "code": 19,
             "name": "Mid-Century Armchair",
             "description": "A stunning mid-century modern armchair.",
-            "price": "€359",
+            "price": "359.00",
             "category": 2,
             "image": "mid-century-armchair.jpg"
         }
@@ -230,7 +230,7 @@
             "code": 20,
             "name": "Orange Leather Armchair",
             "description": "A contemporary orange leather armchair.",
-            "price": "€599",
+            "price": "599.00",
             "category": 2,
             "image": "orange-armchair.jpg"
         }
@@ -242,7 +242,7 @@
             "code": 21,
             "name": "Pair of Wooden Stools",
             "description": "A pair of dark walnut wooden stools.",
-            "price": "€199",
+            "price": "199.00",
             "category": 2,
             "image": "pair-of-stools.jpg"
         }
@@ -254,7 +254,7 @@
             "code": 22,
             "name": "Palm Tree Print Chair",
             "description": "A fun palm tree printed dining chair to add some fun to your interior.",
-            "price": "€159",
+            "price": "159.00",
             "category": 7,
             "image": "palm-chair.jpg"
         }
@@ -266,7 +266,7 @@
             "code": 23,
             "name": "Purple Chair",
             "description": "A stunning velvet purple accent chair to add a pop of colour to any interior.",
-            "price": "€259",
+            "price": "259.00",
             "category": 2,
             "image": "purple-chair.jpg"
         }
@@ -278,7 +278,7 @@
             "code": 24,
             "name": "Red Fabric Armchair",
             "description": "A stunning red fabric armchair to brighten up your living area.",
-            "price": "€459",
+            "price": "459.00",
             "category": 2,
             "image": "red-armchair.jpg"
         }
@@ -290,7 +290,7 @@
             "code": 25,
             "name": "Mustard Dining Chair",
             "description": "Beautiful mustard coloured dining chair perfect to add a pop of colour to any dining area.",
-            "price": "€159",
+            "price": "159.00",
             "category": 2,
             "image": "yellow-chair.jpg"
         }
@@ -302,7 +302,7 @@
             "code": 26,
             "name": "Black Dining Set",
             "description": "Contemporary black dining set seating up to 6 people",
-            "price": "€659",
+            "price": "659.00",
             "category": 3,
             "image": "black-dining-set.jpg"
         }
@@ -314,7 +314,7 @@
             "code": 27,
             "name": "Marble Coffee Table",
             "description": "Contemporary Marbled effect coffee table.",
-            "price": "€159",
+            "price": "159.00",
             "category": 7,
             "image": "coffee-table-1.jpg"
         }
@@ -326,7 +326,7 @@
             "code": 28,
             "name": "Colourful Printed Coffee Table",
             "description": "Contemporary printed coffee table in a fun playful pattern.",
-            "price": "€159",
+            "price": "159.00",
             "category": 3,
             "image": "colourful-table.jpg"
         }
@@ -338,7 +338,7 @@
             "code": 29,
             "name": "Mid-Century Dining Set",
             "description": "Contemporary mid-century dining set for up to 4 people.",
-            "price": "€659",
+            "price": "659.00",
             "category": 3,
             "image": "dining-set-2.jpg"
         }
@@ -350,7 +350,7 @@
             "code": 30,
             "name": "Floating Desk Set",
             "description": "Contemporary floating wooden desk and chair for a modern minimal office.",
-            "price": "€259",
+            "price": "259.00",
             "category": 3,
             "image": "floating-desk.jpg"
         }
@@ -362,7 +362,7 @@
             "code": 31,
             "name": "Glass Dining Set",
             "description": "Stunning glass dining table and chair set for up to 6 people.",
-            "price": "€899",
+            "price": "899.00",
             "category": 3,
             "image": "glass-dining-set.jpg"
         }
@@ -374,7 +374,7 @@
             "code": 32,
             "name": "Flower Printed Coffee Table",
             "description": "Contemporary flower printed coffee table to add a pop of colour to your living area.",
-            "price": "€159",
+            "price": "159.00",
             "category": 3,
             "image": "green-coffee-table.jpg"
         }
@@ -386,7 +386,7 @@
             "code": 33,
             "name": "Pink Side Table",
             "description": "Colourfull pink side table to add a bit of fun to any interior.",
-            "price": "€89",
+            "price": "89.00",
             "category": 3,
             "image": "pink-sidetable.jpg"
         }
@@ -398,7 +398,7 @@
             "code": 34,
             "name": "Pink Dining Table",
             "description": "A fun pink dining table to add a pop of colour to any dining area.",
-            "price": "€359",
+            "price": "359.00",
             "category": 3,
             "image": "pink-table.jpg"
         }
@@ -410,7 +410,7 @@
             "code": 35,
             "name": "Minimal Side Table",
             "description": "A simple minimal white side table.",
-            "price": "€99",
+            "price": "99.00",
             "category": 3,
             "image": "white-side-table.jpg"
         }
@@ -422,7 +422,7 @@
             "code": 36,
             "name": "Wooden Desk",
             "description": "A stunning wooden desk and chair for a contemporary home office.",
-            "price": "€559",
+            "price": "559.00",
             "category": 7,
             "image": "wooden-desk.jpg"
         }
@@ -434,7 +434,7 @@
             "code": 37,
             "name": "Wooden Dining Set",
             "description": "A beautiful walnut dining set for a soft mid-century feel.",
-            "price": "€359",
+            "price": "359.00",
             "category": 3,
             "image": "wooden-dining-set.jpg"
         }
@@ -446,7 +446,7 @@
             "code": 38,
             "name": "Wooden Side Table",
             "description": "A beautiful simple wooden side table for a soft minimal feel.",
-            "price": "€99",
+            "price": "99.00",
             "category": 3,
             "image": "wooden-sidetable.jpg"
         }
@@ -458,7 +458,7 @@
             "code": 39,
             "name": "Black wooden Sideboard",
             "description": "A beautiful dark wooden sideboard.",
-            "price": "€499",
+            "price": "499.00",
             "category": 4,
             "image": "black-wooden-sideboard.jpg"
         }
@@ -470,7 +470,7 @@
             "code": 40,
             "name": "Sky Blue Sideboard",
             "description": "A stunning sky blue coloured sideboard.",
-            "price": "€399",
+            "price": "399.00",
             "category": 4,
             "image": "blue-sideboard.jpg"
         }
@@ -482,7 +482,7 @@
             "code": 41,
             "name": "Floating Sideboard",
             "description": "A contemporary floating sideboard.",
-            "price": "€349",
+            "price": "349.00",
             "category": 4,
             "image": "floating-sideboard.jpg"
         }
@@ -494,7 +494,7 @@
             "code": 42,
             "name": "Dark Marbled Sideboard",
             "description": "A beautiful dark marbled sideboard.",
-            "price": "€489",
+            "price": "489.00",
             "category": 4,
             "image": "sideboard-1.jpg"
         }
@@ -506,7 +506,7 @@
             "code": 43,
             "name": "Light Marbled Sideboard",
             "description": "A beautiful Light marbled sideboard.",
-            "price": "€489",
+            "price": "489.00",
             "category": 4,
             "image": "sideboard-2.jpg"
         }
@@ -518,7 +518,7 @@
             "code": 44,
             "name": "Industrial Bedside Wall Lamp",
             "description": "An industrial styled bedside wall lamp.",
-            "price": "€89",
+            "price": "89.00",
             "category": 5,
             "image": "bedside-lamp-2.jpg"
         }
@@ -530,7 +530,7 @@
             "code": 45,
             "name": "Wooden Bedside Wall Lamp",
             "description": "A minimal wooden bedside wall lamp.",
-            "price": "€79",
+            "price": "79.00",
             "category": 5,
             "image": "bedside-wall-lamp.jpg"
         }
@@ -542,7 +542,7 @@
             "code": 46,
             "name": "Industrial Floor Lamp",
             "description": "Ann industrial style floor lamp.",
-            "price": "€99",
+            "price": "99.00",
             "category": 5,
             "image": "black-floor-lamp.jpg"
         }
@@ -554,7 +554,7 @@
             "code": 47,
             "name": "Black Pendant Light",
             "description": "A minimal black pendant light, hang alone or add more together.",
-            "price": "€69",
+            "price": "69.00",
             "category": 5,
             "image": "black-pendant-light-2.jpg"
         }
@@ -566,7 +566,7 @@
             "code": 48,
             "name": "Industrial Pendant Light",
             "description": "An industrial style pendant light.",
-            "price": "€69",
+            "price": "69.00",
             "category": 5,
             "image": "black-pendant-light.jpg"
         }
@@ -578,7 +578,7 @@
             "code": 49,
             "name": "Bronze Pendant Light",
             "description": "A minimal bronze pendant light.",
-            "price": "€109",
+            "price": "109.00",
             "category": 5,
             "image": "bronze-pendant-light.jpg"
         }
@@ -590,7 +590,7 @@
             "code": 50,
             "name": "Brown Industrial Pendant",
             "description": "A brown industrial styled pendant light.",
-            "price": "€69",
+            "price": "69.00",
             "category": 5,
             "image": "brown-pendant-light.jpg"
         }
@@ -602,7 +602,7 @@
             "code": 51,
             "name": "Brass Floor Lamp",
             "description": "A minimal black and brass floor lamp.",
-            "price": "€119",
+            "price": "119.00",
             "category": 5,
             "image": "floor-lamp-2.jpg"
         }
@@ -614,7 +614,7 @@
             "code": 52,
             "name": "Green Pendant Light",
             "description": "A minimal green pendant light.",
-            "price": "€99",
+            "price": "99.00",
             "category": 5,
             "image": "green-pendant-light.jpg"
         }
@@ -626,7 +626,7 @@
             "code": 53,
             "name": "Grey Pendant Light",
             "description": "A minimal grey pendant light.",
-            "price": "€119",
+            "price": "119.00",
             "category": 5,
             "image": "grey-pendant.jpg"
         }
@@ -638,7 +638,7 @@
             "code": 54,
             "name": "Lantern Styled Pendants",
             "description": "An interesting latern styled pendant.",
-            "price": "€99",
+            "price": "99.00",
             "category": 5,
             "image": "lantern-pendants.jpg"
         }
@@ -650,7 +650,7 @@
             "code": 55,
             "name": "Tubular Pendant",
             "description": "A contemporary tubular pendant light.",
-            "price": "€129",
+            "price": "129.00",
             "category": 5,
             "image": "pendant-lighting-2.jpg"
         }
@@ -662,7 +662,7 @@
             "code": 56,
             "name": "Modern Table Lamp",
             "description": "A beautiful modern table lamp.",
-            "price": "€59",
+            "price": "59.00",
             "category": 5,
             "image": "table-lamp-1.jpg"
         }
@@ -674,7 +674,7 @@
             "code": 56,
             "name": "U-Shaped Table Lamp",
             "description": "A contemporary u-shaped table lamp.",
-            "price": "€79",
+            "price": "79.00",
             "category": 5,
             "image": "ushaped-lamp.jpg"
         }
@@ -686,7 +686,7 @@
             "code": 57,
             "name": "White Pendant Light",
             "description": "A clean modern white pendant light.",
-            "price": "€99",
+            "price": "99.00",
             "category": 7,
             "image": "white-pendant-light.jpg"
         }
@@ -698,7 +698,7 @@
             "code": 58,
             "name": "Wooden Pendant Light",
             "description": "A clean contemporary wodden pendant light.",
-            "price": "€89",
+            "price": "89.00",
             "category": 5,
             "image": "wooden-pendants-1.jpg"
         }
@@ -710,7 +710,7 @@
             "code": 59,
             "name": "Wooden Wall Light",
             "description": "A contemporary wooden wall light.",
-            "price": "€99",
+            "price": "99.00",
             "category": 5,
             "image": "wooden-wall-lamp.jpg"
         }
@@ -722,7 +722,7 @@
             "code": 60,
             "name": "Typography Poster",
             "description": "A framed typography poster.",
-            "price": "€49",
+            "price": "49.00",
             "category": 6,
             "image": "alphabet-poster.jpg"
         }
@@ -734,7 +734,7 @@
             "code": 61,
             "name": "Black Handled Vase",
             "description": "A contemporary vase with double handles in black.",
-            "price": "€29",
+            "price": "29.00",
             "category": 6,
             "image": "black-vase-2.jpg"
         }
@@ -746,7 +746,7 @@
             "code": 61,
             "name": "Black Handled Vase",
             "description": "A contemporary vase with double handles in black.",
-            "price": "€29",
+            "price": "29.00",
             "category": 6,
             "image": "black-vase-2.jpg"
         }
@@ -758,7 +758,7 @@
             "code": 62,
             "name": "Black Vase",
             "description": "A modern vase in black.",
-            "price": "€29",
+            "price": "29.00",
             "category": 6,
             "image": "black-vase.jpg"
         }
@@ -770,7 +770,7 @@
             "code": 62,
             "name": "Blue Ceramic Set",
             "description": "A royal blue ceramic dinner set.",
-            "price": "€89",
+            "price": "89.00",
             "category": 6,
             "image": "blue-ceramic-set.jpg"
         }
@@ -782,7 +782,7 @@
             "code": 63,
             "name": "Blue Vase",
             "description": "A modern oriental styled blue vase.",
-            "price": "€35",
+            "price": "35.00",
             "category": 6,
             "image": "blue-vase.jpg"
         }
@@ -794,7 +794,7 @@
             "code": 64,
             "name": "Green Ceramic Set",
             "description": "A contemporary green ceramic dinner set.",
-            "price": "€79",
+            "price": "79.00",
             "category": 7,
             "image": "ceramic-dinner-set.jpg"
         }
@@ -806,7 +806,7 @@
             "code": 65,
             "name": "Ceramic Expresso cup",
             "description": "A cmodern ceramic expresso cup.",
-            "price": "€9",
+            "price": "9.00",
             "category": 6,
             "image": "ceramic-expresso-cup.jpg"
         }
@@ -818,7 +818,7 @@
             "code": 66,
             "name": "Ceramic Jug Set",
             "description": "A ceramic set with jug and sugar bowl.",
-            "price": "€29",
+            "price": "29.00",
             "category": 6,
             "image": "ceramic-jug-and-sugarbowl.jpg"
         }
@@ -830,7 +830,7 @@
             "code": 67,
             "name": "Ceramic Jar Set",
             "description": "A set of ceramic jars.",
-            "price": "€39",
+            "price": "39.00",
             "category": 7,
             "image": "ceramic-jug-and-sugarbowl.jpg"
         }
@@ -842,7 +842,7 @@
             "code": 68,
             "name": "Sugar Jar",
             "description": "A ceramic sugar bowl.",
-            "price": "€19",
+            "price": "19.00",
             "category": 6,
             "image": "ceramic-sugarjar.jpg"
         }
@@ -854,7 +854,7 @@
             "code": 69,
             "name": "Ceramic Vase",
             "description": "A contemporary ceramic vase.",
-            "price": "€29",
+            "price": "29.00",
             "category": 6,
             "image": "ceramic-vase.jpg"
         }
@@ -866,7 +866,7 @@
             "code": 70,
             "name": "Geometric Painting",
             "description": "A contemporary geometric painting.",
-            "price": "€299",
+            "price": "299.00",
             "category": 6,
             "image": "colourfull-painting.jpg"
         }
@@ -878,7 +878,7 @@
             "code": 71,
             "name": "Copper Vase",
             "description": "A beautiful vase made from copper.",
-            "price": "€89",
+            "price": "89.00",
             "category": 6,
             "image": "copper-vase.jpg"
         }
@@ -890,7 +890,7 @@
             "code": 72,
             "name": "Ceramic Cups",
             "description": "A set of dark grey ceramic cups.",
-            "price": "€39",
+            "price": "39.00",
             "category": 6,
             "image": "dark-ceramic-cups.jpg"
         }
@@ -902,7 +902,7 @@
             "code": 73,
             "name": "Grey Ceramic Plate",
             "description": "A set of grey ceramic plates.",
-            "price": "€49",
+            "price": "49.00",
             "category": 6,
             "image": "grey-ceramic-plate.jpg"
         }
@@ -914,7 +914,7 @@
             "code": 74,
             "name": "Light Blue Dinner Set",
             "description": "A sky blue ceramic dinner set.",
-            "price": "€69",
+            "price": "69.00",
             "category": 6,
             "image": "light-blue-ceramic-dinnerset.jpg"
         }
@@ -926,7 +926,7 @@
             "code": 75,
             "name": "Photograpy Artpiece",
             "description": "A beautiful framed photograph.",
-            "price": "€259",
+            "price": "259.00",
             "category": 6,
             "image": "photography.jpg"
         }
@@ -938,7 +938,7 @@
             "code": 76,
             "name": "Vase Set",
             "description": "A beautiful set of a red and blue oriental vase.",
-            "price": "€89",
+            "price": "89.00",
             "category": 6,
             "image": "red-and-blue-vase.jpg"
         }
@@ -950,7 +950,7 @@
             "code": 77,
             "name": "Robot Print",
             "description": "A fun framed robot print.",
-            "price": "€99",
+            "price": "99.00",
             "category": 6,
             "image": "robot-painting.jpg"
         }
@@ -962,7 +962,7 @@
             "code": 78,
             "name": "Teal Ceramic Plate",
             "description": "A beautiful teal ceramic plate set.",
-            "price": "€79",
+            "price": "79.00",
             "category": 6,
             "image": "teal-ceramic-plate.jpg"
         }
@@ -974,7 +974,7 @@
             "code": 79,
             "name": "White Ceramic Plate",
             "description": "A modern set of white ceramic plates.",
-            "price": "€89",
+            "price": "89.00",
             "category": 7,
             "image": "white-ceramic-plate.jpg"
         }
@@ -986,7 +986,7 @@
             "code": 80,
             "name": "White Vase",
             "description": "A beautiful clean and minimal white vase.",
-            "price": "€29",
+            "price": "29.00",
             "category": 6,
             "image": "white-vase.jpg"
         }
@@ -998,7 +998,7 @@
             "code": 81,
             "name": "Wooden Vase",
             "description": "A hand crafted set of wooden vases.",
-            "price": "€69",
+            "price": "69.00",
             "category": 6,
             "image": "wooden-vase.jpg"
         }
@@ -1010,7 +1010,7 @@
             "code": 82,
             "name": "Yellow Glass Vase",
             "description": "A contemporary hand blown yellow glass vase.",
-            "price": "€49",
+            "price": "49.00",
             "category": 7,
             "image": "yellow-glass-vase.jpg"
         }
