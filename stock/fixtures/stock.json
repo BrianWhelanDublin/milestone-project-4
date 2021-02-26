@@ -1,4 +1,5 @@
-[{
+[     
+    {
         "pk": 1,
         "model": "stock.item",
         "fields": {
@@ -451,7 +452,7 @@
             "image": "wooden-sidetable.jpg"
         }
     },
-      {
+    {
         "pk": 39,
         "model": "stock.item",
         "fields": {
@@ -463,7 +464,7 @@
             "image": "black-wooden-sideboard.jpg"
         }
     },
-     {
+    {
         "pk": 40,
         "model": "stock.item",
         "fields": {
@@ -475,7 +476,7 @@
             "image": "blue-sideboard.jpg"
         }
     },
-     {
+    {
         "pk": 41,
         "model": "stock.item",
         "fields": {
@@ -487,7 +488,7 @@
             "image": "floating-sideboard.jpg"
         }
     },
-     {
+    {
         "pk": 42,
         "model": "stock.item",
         "fields": {
@@ -523,7 +524,7 @@
             "image": "bedside-lamp-2.jpg"
         }
     },
-     {
+    {
         "pk": 45,
         "model": "stock.item",
         "fields": {
@@ -535,7 +536,7 @@
             "image": "bedside-wall-lamp.jpg"
         }
     },
-       {
+    {
         "pk": 46,
         "model": "stock.item",
         "fields": {
@@ -547,7 +548,7 @@
             "image": "black-floor-lamp.jpg"
         }
     },
-       {
+    {
         "pk": 47,
         "model": "stock.item",
         "fields": {
@@ -559,7 +560,7 @@
             "image": "black-pendant-light-2.jpg"
         }
     },
-       {
+    {
         "pk": 48,
         "model": "stock.item",
         "fields": {
@@ -571,7 +572,7 @@
             "image": "black-pendant-light.jpg"
         }
     },
-       {
+    {
         "pk": 49,
         "model": "stock.item",
         "fields": {
@@ -583,7 +584,7 @@
             "image": "bronze-pendant-light.jpg"
         }
     },
-       {
+    {
         "pk": 50,
         "model": "stock.item",
         "fields": {
@@ -595,7 +596,7 @@
             "image": "brown-pendant-light.jpg"
         }
     },
-       {
+    {
         "pk": 51,
         "model": "stock.item",
         "fields": {
@@ -607,7 +608,7 @@
             "image": "floor-lamp-2.jpg"
         }
     },
-       {
+    {
         "pk": 52,
         "model": "stock.item",
         "fields": {
@@ -619,7 +620,7 @@
             "image": "green-pendant-light.jpg"
         }
     },
-       {
+    {
         "pk": 53,
         "model": "stock.item",
         "fields": {
@@ -631,7 +632,7 @@
             "image": "grey-pendant.jpg"
         }
     },
-       {
+    {
         "pk": 54,
         "model": "stock.item",
         "fields": {
@@ -643,7 +644,7 @@
             "image": "lantern-pendants.jpg"
         }
     },
-       {
+    {
         "pk": 55,
         "model": "stock.item",
         "fields": {
@@ -712,7 +713,307 @@
             "description": "A contemporary wooden wall light.",
             "price": "€99",
             "category": 5,
-            "image": "wooden-wall-lmp.jpg"
+            "image": "wooden-wall-lamp.jpg"
         }
     },
+    {
+        "pk": 60,
+        "model": "stock.item",
+        "fields": {
+            "code": 60,
+            "name": "Typography Poster",
+            "description": "A framed typography poster.",
+            "price": "€49",
+            "category": 6,
+            "image": "alphabet-poster.jpg"
+        }
+    },
+    {
+        "pk": 61,
+        "model": "stock.item",
+        "fields": {
+            "code": 61,
+            "name": "Black Handled Vase",
+            "description": "A contemporary vase with double handles in black.",
+            "price": "€29",
+            "category": 6,
+            "image": "black-vase-2.jpg"
+        }
+    },
+    {
+        "pk": 61,
+        "model": "stock.item",
+        "fields": {
+            "code": 61,
+            "name": "Black Handled Vase",
+            "description": "A contemporary vase with double handles in black.",
+            "price": "€29",
+            "category": 6,
+            "image": "black-vase-2.jpg"
+        }
+    },
+    {
+        "pk": 62,
+        "model": "stock.item",
+        "fields": {
+            "code": 62,
+            "name": "Black Vase",
+            "description": "A modern vase in black.",
+            "price": "€29",
+            "category": 6,
+            "image": "black-vase.jpg"
+        }
+    },
+    {
+        "pk": 62,
+        "model": "stock.item",
+        "fields": {
+            "code": 62,
+            "name": "Blue Ceramic Set",
+            "description": "A royal blue ceramic dinner set.",
+            "price": "€89",
+            "category": 6,
+            "image": "blue-ceramic-set.jpg"
+        }
+    },
+    {
+        "pk": 63,
+        "model": "stock.item",
+        "fields": {
+            "code": 63,
+            "name": "Blue Vase",
+            "description": "A modern oriental styled blue vase.",
+            "price": "€35",
+            "category": 6,
+            "image": "blue-vase.jpg"
+        }
+    },
+    {
+        "pk": 64,
+        "model": "stock.item",
+        "fields": {
+            "code": 64,
+            "name": "Green Ceramic Set",
+            "description": "A contemporary green ceramic dinner set.",
+            "price": "€79",
+            "category": 6,
+            "image": "ceramic-dinner-set.jpg"
+        }
+    },
+    {
+        "pk": 65,
+        "model": "stock.item",
+        "fields": {
+            "code": 65,
+            "name": "Ceramic Expresso cup",
+            "description": "A cmodern ceramic expresso cup.",
+            "price": "€9",
+            "category": 6,
+            "image": "ceramic-expresso-cup.jpg"
+        }
+    },
+    {
+        "pk": 66,
+        "model": "stock.item",
+        "fields": {
+            "code": 66,
+            "name": "Ceramic Jug Set",
+            "description": "A ceramic set with jug and sugar bowl.",
+            "price": "€29",
+            "category": 6,
+            "image": "ceramic-jug-and-sugarbowl.jpg"
+        }
+    },
+    {
+        "pk": 67,
+        "model": "stock.item",
+        "fields": {
+            "code": 67,
+            "name": "Ceramic Jar Set",
+            "description": "A set of ceramic jugs.",
+            "price": "€39",
+            "category": 6,
+            "image": "ceramic-jug-and-sugarbowl.jpg"
+        }
+    },
+    {
+        "pk": 68,
+        "model": "stock.item",
+        "fields": {
+            "code": 68,
+            "name": "Sugar Jar",
+            "description": "A ceramic sugar bowl.",
+            "price": "€19",
+            "category": 6,
+            "image": "ceramic-sugarjar.jpg"
+        }
+    },
+    {
+        "pk": 69,
+        "model": "stock.item",
+        "fields": {
+            "code": 69,
+            "name": "Ceramic Vase",
+            "description": "A contemporary ceramic vase.",
+            "price": "€29",
+            "category": 6,
+            "image": "ceramic-vase.jpg"
+        }
+    },
+    {
+        "pk": 70,
+        "model": "stock.item",
+        "fields": {
+            "code": 70,
+            "name": "Geometric Painting",
+            "description": "A contemporary geometric painting.",
+            "price": "€299",
+            "category": 6,
+            "image": "colourfull-painting.jpg"
+        }
+    },
+    {
+        "pk": 71,
+        "model": "stock.item",
+        "fields": {
+            "code": 71,
+            "name": "Copper Vase",
+            "description": "A beautiful vase made from copper.",
+            "price": "€89",
+            "category": 6,
+            "image": "copper-vase.jpg"
+        }
+    },
+    {
+        "pk": 72,
+        "model": "stock.item",
+        "fields": {
+            "code": 72,
+            "name": "Ceramic Cups",
+            "description": "A set of dark grey ceramic cups.",
+            "price": "€39",
+            "category": 6,
+            "image": "dark-ceramic-cups.jpg"
+        }
+    },
+    {
+        "pk": 73,
+        "model": "stock.item",
+        "fields": {
+            "code": 73,
+            "name": "Grey Ceramic Plate",
+            "description": "A set of grey ceramic plates.",
+            "price": "€49",
+            "category": 6,
+            "image": "grey-ceramic-plate.jpg"
+        }
+    },
+    {
+        "pk": 74,
+        "model": "stock.item",
+        "fields": {
+            "code": 74,
+            "name": "Light Blue Dinner Set",
+            "description": "A sky blue ceramic dinner set.",
+            "price": "€69",
+            "category": 6,
+            "image": "light-blue-ceramic-dinnerset.jpg"
+        }
+    },
+    {
+        "pk": 75,
+        "model": "stock.item",
+        "fields": {
+            "code": 75,
+            "name": "Photograpy Artpiece",
+            "description": "A beautiful framed photograph.",
+            "price": "€259",
+            "category": 6,
+            "image": "photography.jpg"
+        }
+    },
+    {
+        "pk": 76,
+        "model": "stock.item",
+        "fields": {
+            "code": 76,
+            "name": "Vase Set",
+            "description": "A beautiful set of a red and blue oriental vase.",
+            "price": "€89",
+            "category": 6,
+            "image": "red-and-blue-vase.jpg"
+        }
+    },
+    {
+        "pk": 77,
+        "model": "stock.item",
+        "fields": {
+            "code": 77,
+            "name": "Robot Print",
+            "description": "A fun framed robot print.",
+            "price": "€99",
+            "category": 6,
+            "image": "robot-painting.jpg"
+        }
+    },
+    {
+        "pk": 78,
+        "model": "stock.item",
+        "fields": {
+            "code": 78,
+            "name": "Teal Ceramic Plate",
+            "description": "A beautiful teal ceramic plate set.",
+            "price": "€79",
+            "category": 6,
+            "image": "teal-ceramic-plate.jpg"
+        }
+    },
+    {
+        "pk": 79,
+        "model": "stock.item",
+        "fields": {
+            "code": 79,
+            "name": "White Ceramic Plate",
+            "description": "A modern set of white ceramic plates.",
+            "price": "€89",
+            "category": 6,
+            "image": "white-ceramic-plate.jpg"
+        }
+    },
+    {
+        "pk": 80,
+        "model": "stock.item",
+        "fields": {
+            "code": 80,
+            "name": "White Vase",
+            "description": "A beautiful clean and minimal white vase.",
+            "price": "€29",
+            "category": 6,
+            "image": "white-vase.jpg"
+        }
+    },
+    {
+        "pk": 81,
+        "model": "stock.item",
+        "fields": {
+            "code": 81,
+            "name": "Wooden Vase",
+            "description": "A hand crafted set of wooden vases.",
+            "price": "€69",
+            "category": 6,
+            "image": "wooden-vase.jpg"
+        }
+    },
+    {
+        "pk": 82,
+        "model": "stock.item",
+        "fields": {
+            "code": 82,
+            "name": "Yellow Glass Vase",
+            "description": "A contemporary hand blown yellow glass vase.",
+            "price": "€49",
+            "category": 6,
+            "image": "yellow-glass-vase.jpg"
+        }
+    }
 ]
