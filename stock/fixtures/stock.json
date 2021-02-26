@@ -450,5 +450,65 @@
             "category": 3,
             "image": "wooden-sidetable.jpg"
         }
+    },
+      {
+        "pk": 39,
+        "model": "stock.item",
+        "fields": {
+            "code": 39,
+            "name": "Black wooden Sideboard",
+            "description": "A beautiful dark wooden sideboard.",
+            "price": "€499",
+            "category": 4,
+            "image": "black-wooden-sideboard.jpg"
+        }
+    },
+     {
+        "pk": 40,
+        "model": "stock.item",
+        "fields": {
+            "code": 40,
+            "name": "Sky Blue Sideboard",
+            "description": "A stunning sky blue coloured sideboard.",
+            "price": "€399",
+            "category": 4,
+            "image": "blue-sideboard.jpg"
+        }
+    },
+     {
+        "pk": 41,
+        "model": "stock.item",
+        "fields": {
+            "code": 41,
+            "name": "Floating Sideboard",
+            "description": "A contemporary floating sideboard.",
+            "price": "€349",
+            "category": 4,
+            "image": "floating-sideboard.jpg"
+        }
+    },
+     {
+        "pk": 42,
+        "model": "stock.item",
+        "fields": {
+            "code": 42,
+            "name": "Dark Marbled Sideboard",
+            "description": "A beautiful dark marbled sideboard.",
+            "price": "€489",
+            "category": 4,
+            "image": "sideboard-1.jpg"
+        }
+    },
+    {
+        "pk": 43,
+        "model": "stock.item",
+        "fields": {
+            "code": 43,
+            "name": "Light Marbled Sideboard",
+            "description": "A beautiful Light marbled sideboard.",
+            "price": "€489",
+            "category": 4,
+            "image": "sideboard-2.jpg"
+        }
     }
 ]
