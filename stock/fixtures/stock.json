@@ -15,7 +15,7 @@
         "fields": {
             "code": 2,
             "name": "Graphite Fabric Sofa",
-            "description": "Luxury fabric sofa in a rich grphite shade.",
+            "description": "Luxury fabric sofa in a rich graphite shade.",
             "price": "€1099",
             "category": 1,
             "image": "dark-grey-sofa.jpg"
@@ -39,7 +39,7 @@
         "fields": {
             "code": 4,
             "name": "Grey Fabric sofa",
-            "description": "Grey fabric sofa build with extremly comfotable cushions.",
+            "description": "Grey fabric sofa build with extremely comfortable cushions.",
             "price": "€1199",
             "category": 1,
             "image": "grey-sofa-2.jpg"
@@ -62,7 +62,7 @@
         "fields": {
             "code": 6,
             "name": "Orange Fabric Sofa",
-            "description": "Playful and colurful Orange sofa to add a pop of colour to your living room.",
+            "description": "Playful and colourful Orange sofa to add a pop of colour to your living room.",
             "price": "€1259",
             "category": 1,
             "image": "orange-sofa.jpg"
@@ -73,7 +73,7 @@
         "fields": {
             "code": 7,
             "name": "Pink 3 Piece Set",
-            "description": "Luxury 3 piece seating set for a classic livingroom.",
+            "description": "Luxury 3 piece seating set for a classic living room.",
             "price": "€1899",
             "category": 1,
             "image": "pink-3piece-set.jpg"
@@ -85,7 +85,7 @@
         "fields": {
             "code": 8,
             "name": "Tan Fabric Sofa",
-            "description": "Luxury tan fabric sofa excelent to add a mid century touch.",
+            "description": "Luxury tan fabric sofa excellent to add a mid-century touch.",
             "price": "€1199",
             "category": 1,
             "image": "tan-fabric-sofa.jpg"
@@ -97,7 +97,7 @@
         "fields": {
             "code": 9,
             "name": "Tan Leather Sofa",
-            "description": "A tan leather sofa for the modern minimalist.",
+            "description": "A tan leather sofa for the modern minimalist interior.",
             "price": "€1699",
             "category": 1,
             "image": "tan-leather-sofa.jpg"
@@ -108,11 +108,191 @@
         "model": "stock.item",
         "fields": {
             "code": 10,
-            "name": "pink-sofa",
-            "description": "A beautiful blush pink fabric in a very classic shape.",
+            "name": "Blush Pink Sofa",
+            "description": "A beautiful blush pink fabric sofa in a very classic shape.",
             "price": "€1399",
             "category": 1,
             "image": "pink-sofa.jpg"
+        }
+    },
+     {
+        "pk": 11,
+        "model": "stock.item",
+        "fields": {
+            "code": 11,
+            "name": "Black Leather Chair",
+            "description": " A contemporary shape finished in black leather.",
+            "price": "€399",
+            "category": 2,
+            "image": "black-leather-chair.jpg"
+        }
+    },
+     {
+        "pk": 12,
+        "model": "stock.item",
+        "fields": {
+            "code": 12,
+            "name": "Black Wicker Chair",
+            "description": "A wicker chair in black perfect for a dining table.",
+            "price": "€199",
+            "category": 2,
+            "image": "black-wicker-chair.jpg"
+        }
+    },
+     {
+        "pk": 13,
+        "model": "stock.item",
+        "fields": {
+            "code": 13,
+            "name": "Blue Leather Chair",
+            "description": "A classic shaped dining chair finished with contemporary blue leather.",
+            "price": "€249",
+            "category": 2,
+            "image": "blue-chair.jpg"
+        }
+    },
+     {
+        "pk": 14,
+        "model": "stock.item",
+        "fields": {
+            "code": 14,
+            "name": "Green and Orange Chair",
+            "description": "A 70's style colourful dining chair finished with orange fabric and a green frame.",
+            "price": "€199",
+            "category": 2,
+            "image": "green-orange-chair.jpg"
+        }
+    },
+     {
+        "pk": 15,
+        "model": "stock.item",
+        "fields": {
+            "code": 15,
+            "name": "Grey Fabric Armchair",
+            "description": "An extremely comfortable grey fabric armchair.",
+            "price": "€599",
+            "category": 2,
+            "image": "grey-armchair.jpg"
+        }
+    },
+     {
+        "pk": 16,
+        "model": "stock.item",
+        "fields": {
+            "code": 16,
+            "name": "Tan Leather Chair",
+            "description": "A beautiful contemporary tan leather chair perfect for a minimal interior.",
+            "price": "€499",
+            "category": 2,
+            "image": "leather-chair.jpg"
+        }
+    },
+     {
+        "pk": 17,
+        "model": "stock.item",
+        "fields": {
+            "code": 17,
+            "name": "Weaved Chair",
+            "description": "A stunning hand weaved wooden accent chair.",
+            "price": "€399",
+            "category": 2,
+            "image": "mesh-chair-2.jpg"
+        }
+    },
+     {
+        "pk": 18,
+        "model": "stock.item",
+        "fields": {
+            "code": 18,
+            "name": "Wicker Dinning Chair",
+            "description": "A contemporary mid-century styled wicker dining chair.",
+            "price": "€199",
+            "category": 2,
+            "image": "mesh-chair.jpg"
+        }
+    },
+     {
+        "pk": 19,
+        "model": "stock.item",
+        "fields": {
+            "code": 19,
+            "name": "Mid-Century Armchair",
+            "description": "A stunning mid-century modern armchair.",
+            "price": "€359",
+            "category": 2,
+            "image": "mid-century-armchair.jpg"
+        }
+    },
+     {
+        "pk": 20,
+        "model": "stock.item",
+        "fields": {
+            "code": 20,
+            "name": "Orange Leather Armchair",
+            "description": "A contemporary orange leather armchair.",
+            "price": "€599",
+            "category": 2,
+            "image": "orange-armchair.jpg"
+        }
+    },
+     {
+        "pk": 21,
+        "model": "stock.item",
+        "fields": {
+            "code": 21,
+            "name": "Pair of Wooden Stools",
+            "description": "A pair of dark walnut wooden stools.",
+            "price": "€199",
+            "category": 2,
+            "image": "pair-of-stools.jpg"
+        }
+    },
+     {
+        "pk": 22,
+        "model": "stock.item",
+        "fields": {
+            "code": 22,
+            "name": "Palm Tree Print Chair",
+            "description": "A fun palm tree printed dining chair to add some fun to your interior.",
+            "price": "€159",
+            "category": 2,
+            "image": "palm-chair.jpg"
+        }
+    },
+     {
+        "pk": 23,
+        "model": "stock.item",
+        "fields": {
+            "code": 23,
+            "name": "Purple Chair",
+            "description": "A stunning velvet purple accent chair to add a pop of colour to any interior.",
+            "price": "€259",
+            "category": 2,
+            "image": "purple-chair.jpg"
+        }
+    },
+     {
+        "pk": 24,
+        "model": "stock.item",
+        "fields": {
+            "code": 24,
+            "name": "Red Fabric Armchair",
+            "description": "A stunning red fabric armchair to brighten up your living area.",
+            "price": "€459",
+            "category": 2,
+            "image": "red-armchair.jpg"
+        }
+    },
+     {
+        "pk": 25,
+        "model": "stock.item",
+        "fields": {
+            "code": 25,
+            "name": "Mustard Dining Chair",
+            "description": "Beautiful mustard coloured dining chair perfect to add a pop of colour to any dining area.",
+            "price": "€159",
+            "category": 2,
+            "image": "yellow-chair.jpg"
         }
     }
 ]
