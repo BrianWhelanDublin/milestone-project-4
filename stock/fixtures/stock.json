@@ -510,5 +510,209 @@
             "category": 4,
             "image": "sideboard-2.jpg"
         }
-    }
+    },
+    {
+        "pk": 44,
+        "model": "stock.item",
+        "fields": {
+            "code": 44,
+            "name": "Industrial Bedside Wall Lamp",
+            "description": "An industrial styled bedside wall lamp.",
+            "price": "€89",
+            "category": 5,
+            "image": "bedside-lamp-2.jpg"
+        }
+    },
+     {
+        "pk": 45,
+        "model": "stock.item",
+        "fields": {
+            "code": 45,
+            "name": "Wooden Bedside Wall Lamp",
+            "description": "A minimal wooden bedside wall lamp.",
+            "price": "€79",
+            "category": 5,
+            "image": "bedside-wall-lamp.jpg"
+        }
+    },
+       {
+        "pk": 46,
+        "model": "stock.item",
+        "fields": {
+            "code": 46,
+            "name": "Industrial Floor Lamp",
+            "description": "Ann industrial style floor lamp.",
+            "price": "€99",
+            "category": 5,
+            "image": "black-floor-lamp.jpg"
+        }
+    },
+       {
+        "pk": 47,
+        "model": "stock.item",
+        "fields": {
+            "code": 47,
+            "name": "Black Pendant Light",
+            "description": "A minimal black pendant light, hang alone or add more together.",
+            "price": "€69",
+            "category": 5,
+            "image": "black-pendant-light-2.jpg"
+        }
+    },
+       {
+        "pk": 48,
+        "model": "stock.item",
+        "fields": {
+            "code": 48,
+            "name": "Industrial Pendant Light",
+            "description": "An industrial style pendant light.",
+            "price": "€69",
+            "category": 5,
+            "image": "black-pendant-light.jpg"
+        }
+    },
+       {
+        "pk": 49,
+        "model": "stock.item",
+        "fields": {
+            "code": 49,
+            "name": "Bronze Pendant Light",
+            "description": "A minimal bronze pendant light.",
+            "price": "€109",
+            "category": 5,
+            "image": "bronze-pendant-light.jpg"
+        }
+    },
+       {
+        "pk": 50,
+        "model": "stock.item",
+        "fields": {
+            "code": 50,
+            "name": "Brown Industrial Pendant",
+            "description": "A brown industrial styled pendant light.",
+            "price": "€69",
+            "category": 5,
+            "image": "brown-pendant-light.jpg"
+        }
+    },
+       {
+        "pk": 51,
+        "model": "stock.item",
+        "fields": {
+            "code": 51,
+            "name": "Brass Floor Lamp",
+            "description": "A minimal black and brass floor lamp.",
+            "price": "€119",
+            "category": 5,
+            "image": "floor-lamp-2.jpg"
+        }
+    },
+       {
+        "pk": 52,
+        "model": "stock.item",
+        "fields": {
+            "code": 52,
+            "name": "Green Pendant Light",
+            "description": "A minimal green pendant light.",
+            "price": "€99",
+            "category": 5,
+            "image": "green-pendant-light.jpg"
+        }
+    },
+       {
+        "pk": 53,
+        "model": "stock.item",
+        "fields": {
+            "code": 53,
+            "name": "Grey Pendant Light",
+            "description": "A minimal grey pendant light.",
+            "price": "€119",
+            "category": 5,
+            "image": "grey-pendant.jpg"
+        }
+    },
+       {
+        "pk": 54,
+        "model": "stock.item",
+        "fields": {
+            "code": 54,
+            "name": "Lantern Styled Pendants",
+            "description": "An interesting latern styled pendant.",
+            "price": "€99",
+            "category": 5,
+            "image": "lantern-pendants.jpg"
+        }
+    },
+       {
+        "pk": 55,
+        "model": "stock.item",
+        "fields": {
+            "code": 55,
+            "name": "Tubular Pendant",
+            "description": "A contemporary tubular pendant light.",
+            "price": "€129",
+            "category": 5,
+            "image": "pendant-lighting-2.jpg"
+        }
+    },
+    {
+        "pk": 56,
+        "model": "stock.item",
+        "fields": {
+            "code": 56,
+            "name": "Modern Table Lamp",
+            "description": "A beautiful modern table lamp.",
+            "price": "€59",
+            "category": 5,
+            "image": "table-lamp-1.jpg"
+        }
+    },
+    {
+        "pk": 56,
+        "model": "stock.item",
+        "fields": {
+            "code": 56,
+            "name": "U-Shaped Table Lamp",
+            "description": "A contemporary u-shaped table lamp.",
+            "price": "€79",
+            "category": 5,
+            "image": "ushaped-lamp.jpg"
+        }
+    },
+    {
+        "pk": 57,
+        "model": "stock.item",
+        "fields": {
+            "code": 57,
+            "name": "White Pendant Light",
+            "description": "A clean modern white pendant light.",
+            "price": "€99",
+            "category": 5,
+            "image": "white-pendant-light.jpg"
+        }
+    },
+    {
+        "pk": 58,
+        "model": "stock.item",
+        "fields": {
+            "code": 58,
+            "name": "Wooden Pendant Light",
+            "description": "A clean contemporary wodden pendant light.",
+            "price": "€89",
+            "category": 5,
+            "image": "wooden-pendants-1.jpg"
+        }
+    },
+    {
+        "pk": 59,
+        "model": "stock.item",
+        "fields": {
+            "code": 59,
+            "name": "Wooden Wall Light",
+            "description": "A contemporary wooden wall light.",
+            "price": "€99",
+            "category": 5,
+            "image": "wooden-wall-lmp.jpg"
+        }
+    },
 ]
