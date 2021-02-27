@@ -43,6 +43,7 @@ body {
     backdrop-filter: blur(.5rem);
     color: #153243;
 }
+
 .link-button-dark {
     color: #153243;
     border: .1rem solid #153243;
@@ -67,12 +68,14 @@ button:focus {
     align-items: center;
     justify-content: center;
 }
-.flex-row-between{
+
+.flex-row-between {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
+
 .text-shadow {
     text-shadow: .5rem .5rem .8rem rgba(26, 26, 23, 0.678);
 }
@@ -86,12 +89,14 @@ a:hover,
 .side-nav-item:hover {
     color: rgb(136, 136, 135);
 }
+
 /* override bootstrap classes  */
-.container-fluid{
+.container-fluid {
     padding: 0;
 }
-.row{
-   --bs-gutter-x: 0;
+
+.row {
+    --bs-gutter-x: 0;
 }
 
 /* Navigation */
@@ -103,6 +108,7 @@ a:hover,
     z-index: 100;
     transition: all .5s ease-in;
 }
+
 .top-nav-colored {
     background-color: #153344d8;
     backdrop-filter: blur(1rem);
@@ -441,23 +447,45 @@ a:hover,
     color: #153243;
     text-align: center;
 }
+
 /* --------------- New-in Section */
-.new-item-title-col{
+.new-item-title-col {
     height: 10rem;
     margin: 0 10%;
- 
+
 }
+
 .new-item-title-col,
-.arrows{
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-between;
+.arrows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
-.new-item-title-col h3{
+
+.arrows {
+    width: 9rem;
+}
+
+.arrow {
+    background-color: #D1D1C7;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+}
+
+.arrow i {
+    font-size: 2rem;
+}
+.arrow-active{
+    color: #EDEDE9;
+    background-color: #153243;
+}
+.new-item-title-col h3 {
     font-size: 3rem;
 }
-.new-item-slider{
+
+.new-item-slider {
     width: 90%;
     display: flex;
     flex-wrap: nowrap;
@@ -465,14 +493,17 @@ justify-content: space-between;
     scroll-behavior: smooth;
     margin: 0 5%;
 }
-.item-container{
-    margin:1rem .5rem;
+
+.item-container {
+    margin: 1rem .5rem;
 }
-.item-container a img{
+
+.item-container a img {
     width: 28rem;
     height: 40rem;
     object-fit: cover;
 }
+
 /* Media Querys */
 
 /* medium 768px */
@@ -550,14 +581,16 @@ justify-content: space-between;
     .hero-links {
         transform: translateX(-51%);
     }
-    .item-container{
-        margin:2rem 3rem;
+
+    .item-container {
+        margin: 2rem 3rem;
     }
-    .item-container a img{
-    width: 38rem;
-    height: 49rem;
-    object-fit: cover;
-}
+
+    .item-container a img {
+        width: 38rem;
+        height: 49rem;
+        object-fit: cover;
+    }
 }
 
 /* xx-large 1400px */
