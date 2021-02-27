@@ -67,7 +67,12 @@ button:focus {
     align-items: center;
     justify-content: center;
 }
-
+.flex-row-between{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
 .text-shadow {
     text-shadow: .5rem .5rem .8rem rgba(26, 26, 23, 0.678);
 }
@@ -81,21 +86,22 @@ a:hover,
 .side-nav-item:hover {
     color: rgb(136, 136, 135);
 }
+/* override bootstrap classes  */
 .container-fluid{
     padding: 0;
 }
+.row{
+   --bs-gutter-x: 0;
+}
+
 /* Navigation */
 
 .top-navigation {
     height: 6rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
     position: fixed;
     width: 100%;
     z-index: 100;
-     transition: all .5s ease-in;
+    transition: all .5s ease-in;
 }
 .top-nav-colored {
     background-color: #153344d8;
@@ -188,10 +194,7 @@ a:hover,
     position: fixed;
     top: 2.5rem;
     right: 2.5rem;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .nav-close:hover span {
@@ -426,7 +429,7 @@ a:hover,
     justify-content: space-evenly;
 }
 
-/* ---------------about section */
+/* ---------------About Section */
 .about-col {
     flex-direction: column;
     margin: 4rem 0;
@@ -438,7 +441,38 @@ a:hover,
     color: #153243;
     text-align: center;
 }
-
+/* --------------- New-in Section */
+.new-item-title-col{
+    height: 10rem;
+    margin: 0 10%;
+ 
+}
+.new-item-title-col,
+.arrows{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+}
+.new-item-title-col h3{
+    font-size: 3rem;
+}
+.new-item-slider{
+    width: 90%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    margin: 0 5%;
+}
+.item-container{
+    margin:1rem .5rem;
+}
+.item-container a img{
+    width: 28rem;
+    height: 40rem;
+    object-fit: cover;
+}
 /* Media Querys */
 
 /* medium 768px */
@@ -516,6 +550,14 @@ a:hover,
     .hero-links {
         transform: translateX(-51%);
     }
+    .item-container{
+        margin:2rem 3rem;
+    }
+    .item-container a img{
+    width: 38rem;
+    height: 49rem;
+    object-fit: cover;
+}
 }
 
 /* xx-large 1400px */

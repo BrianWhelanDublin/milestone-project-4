@@ -10,7 +10,7 @@
             <div class="hero-overlay"></div>
         </div>
         <div class="col-12 col-xl-6  hero-col-right">
- <div class="hero-overlay"></div>
+            <div class="hero-overlay"></div>
             <h1 class="text-shadow">Designed For Living</h1>
             <div class="hero-links">
                 <a href="#" class="link-button link-button-light flex-center">Shop Collection</a>
@@ -24,9 +24,42 @@
 <div class="container">
     <div class="row">
         <div class="about-col col flex-center">
-            <p>Abode.com is your destination for carefully curated designer furniture and accessories. We sell contemporary furniture, accessories and lighting for the style-conscious home. 
-                At, Abode.com we work closely with our furniture creators to bring you the very best in design, sustainability and value.</p>
-                <a href="#" class="flex-center link-button link-button-dark">Shop Collection</a>
+            <p>Abode.com is your destination for carefully curated designer furniture and accessories. We sell
+                contemporary furniture, accessories and lighting for the style-conscious home.
+                At, Abode.com we work closely with our furniture creators to bring you the very best in design,
+                sustainability and value.</p>
+            <a href="#" class="flex-center link-button link-button-dark">Shop Collection</a>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col new-item-title-col flex-row-between">
+            <h3>New In</h3>
+            <div class="arrows flex-row-between">
+                <div class="arrow arrow-left">
+                    <i class="las la-angle-left" aria-hidden="true"></i>
+                    <span class="visually-hidden">left arrow for slider</span>
+                </div>
+                <div class="arrow arrow-right">
+                    <i class="las la-angle-right" aria-hidden="true"></i>
+                    <span class="visually-hidden">Right arrow for slider</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+        <div class="new-item-slider">
+                    {% for item in new_items %}
+                <div class="item-container">
+                    <a href="">
+                        <img  src="/media/{{ item.image }}" alt="image for {{ item.name }}">
+                    </a>
+                    <h3>{{ item.name }}</h3>
+                </div>
+                {% endfor %}
+        </div>
+            </div>
         </div>
     </div>
 </div>
