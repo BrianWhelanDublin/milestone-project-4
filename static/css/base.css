@@ -452,7 +452,10 @@ a:hover,
 .new-item-title-col {
     height: 10rem;
     margin: 0 10%;
+}
 
+.new-item-title-col h3 {
+    font-size: 3rem;
 }
 
 .new-item-title-col,
@@ -483,9 +486,6 @@ a:hover,
     background-color: #153243;
 }
 
-.new-item-title-col h3 {
-    font-size: 3rem;
-}
 
 .new-item-slider {
     width: 90%;
@@ -494,6 +494,7 @@ a:hover,
     overflow: hidden;
     scroll-behavior: smooth;
     margin: 0 5%;
+    margin-bottom: 5%;
 }
 
 .item-container {
@@ -501,7 +502,7 @@ a:hover,
 }
 
 .item-details {
-    margin: .5rem 0;
+    margin-top: 1rem;
 }
 
 .item-details h3 {
@@ -510,12 +511,66 @@ a:hover,
 
 .item-details p {
     font-size: 1.5rem;
+    margin-bottom: .5rem;
 }
 
 .item-container a img {
     width: 28rem;
     height: 40rem;
     object-fit: cover;
+}
+
+/* shop by categories */
+.category-container {
+    background-color: #D1D1C7;
+}
+
+.category-title-col h3 {
+    font-size: 3rem;
+    margin: 20% 10%;
+}
+.category-col {
+    margin: 4rem 0;
+}
+
+
+.category-image {
+    height: 35rem;
+    width: 35rem;
+    display: block;
+    margin: 2rem auto;
+    position: relative;
+}
+
+.category-image img {
+    height: 100%;
+    width: 100%;
+}
+
+.category-image:after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(31, 31, 27, 0.329);
+    transition: all .5s ease-in-out;
+}
+
+.category-image:hover:after {
+    background-color: rgba(112, 112, 112, 0.103);
+}
+
+.category-image a {
+    font-size: 4rem;
+    font-weight: 600;
+    position: absolute;
+    bottom: 7.5%;
+    left: 7.5%;
+    text-decoration: none;
+    color: #EDEDE9;
+    z-index: 10;
 }
 
 /* Media Querys */
@@ -566,6 +621,11 @@ a:hover,
     .hero-col-right h1 {
         font-size: 8rem;
     }
+
+    .category-image {
+        height: 37.5rem;
+        width: 37.5rem;
+    }
 }
 
 /* x-large 1200px */
@@ -605,7 +665,18 @@ a:hover,
         height: 49rem;
         object-fit: cover;
     }
+
+    .category-image {
+        height: 40rem;
+        width: 40rem;
+    }
+
 }
 
 /* xx-large 1400px */
-@media (min-width: 1400px) {}
+@media (min-width: 1400px) {
+    .category-image {
+        height: 42.5rem;
+        width: 42.5rem;
+    }
+}

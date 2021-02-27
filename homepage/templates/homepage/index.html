@@ -4,6 +4,7 @@
 {% block title %}
 {% endblock %}
 {% block header %}
+<!-- Hero section -->
 <div class="container-fluid hero-container">
     <div class="row">
         <div class="col-12 col-xl-6 hero-col-left">
@@ -21,6 +22,7 @@
 </div>
 {% endblock %}
 {% block main_content %}
+<!-- about section -->
 <div class="container">
     <div class="row">
         <div class="about-col col flex-center">
@@ -32,6 +34,7 @@
         </div>
     </div>
 </div>
+<!-- New in section -->
 <div class="container-fluid">
     <div class="row">
         <div class="col new-item-title-col flex-row-between">
@@ -49,21 +52,48 @@
         </div>
         <div class="row">
             <div class="col">
-        <div class="new-item-slider">
+                <div class="new-item-slider">
                     {% for item in new_items %}
-                <div class="item-container">
-                    <a href="">
-                        <img  src="/media/{{ item.image }}" alt="image for {{ item.name }}">
-                    </a>
-                    <div class="item-details flex-row-between">
-                        <h3>{{ item.name }}</h3>
-                        <p>€ {{ item.price }}</p>
+                    <div class="item-container">
+                        <a href="">
+                            <img src="/media/{{ item.image }}" alt="image for {{ item.name }}">
+                        </a>
+                        <div class="item-details flex-row-between">
+                            <h3>{{ item.name }}</h3>
+                            <p>€ {{ item.price }}</p>
+                        </div>
                     </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
-        </div>
             </div>
         </div>
     </div>
 </div>
-{% endblock %}
+<!-- shop by category section -->
+<div class="container-fluid category-container">
+    <div class="row">
+        <div class="category-col col-12 col-md-6 col-xl-3 category-title-col">
+            <h3>Shop Our Collections</h3>
+        </div>
+
+        <div class="category-col col-12 col-md-6 col-xl-3">
+            <div class="category-image">
+                <img src="/media/furniture-category-img.jpg" alt="Image for furniture category">
+                <a class="text-shadow" href="">Furniture</a>
+            </div>
+        </div>
+        <div class="category-col col-12 col-md-6 col-xl-3 ">
+            <div class="category-image">
+                <img src="/media/lighting-category-img.jpg" alt="Image for lighting category">
+                <a class="text-shadow" href="">Lighting</a>
+            </div>
+        </div>
+        <div class="category-col col-12 col-md-6 col-xl-3">
+            <div class="category-image">
+                <img src="/media/accessories-category-img.jpg" alt="Image for accessories category">
+                <a class="text-shadow" href="">Accessories</a>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
