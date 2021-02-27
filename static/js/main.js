@@ -59,7 +59,7 @@ rightArrow.addEventListener("click", () => {
     if (mediaQuery.matches) {
         newItemSlider.scrollLeft += 290;
     } else {
-        newItemSlider.scrollLeft += 420;
+        newItemSlider.scrollLeft += 440;
     }
     leftArrow.classList.add("arrow-active");
     if (newItemSlider.scrollLeft >= 2500) {
@@ -73,8 +73,8 @@ leftArrow.addEventListener("click", () => {
             leftArrow.classList.remove("arrow-active")
         }
     } else {
-        newItemSlider.scrollLeft -= 420;
-        if (newItemSlider.scrollLeft <= 420) {
+        newItemSlider.scrollLeft -= 440;
+        if (newItemSlider.scrollLeft <= 440) {
             leftArrow.classList.remove("arrow-active")
         }
     }

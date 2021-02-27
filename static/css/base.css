@@ -477,10 +477,12 @@ a:hover,
 .arrow i {
     font-size: 2rem;
 }
-.arrow-active{
+
+.arrow-active {
     color: #EDEDE9;
     background-color: #153243;
 }
+
 .new-item-title-col h3 {
     font-size: 3rem;
 }
@@ -496,6 +498,18 @@ a:hover,
 
 .item-container {
     margin: 1rem .5rem;
+}
+
+.item-details {
+    margin: .5rem 0;
+}
+
+.item-details h3 {
+    font-weight: 400;
+}
+
+.item-details p {
+    font-size: 1.5rem;
 }
 
 .item-container a img {
