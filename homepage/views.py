@@ -1,8 +1,18 @@
 from django.shortcuts import render
+from stock.models import Item
 
 
 def home_page(request):
+    ''' retrieve the new items from the databse,
+        then render the homepage'''
 
-    ''' The view to show the main homepage  '''
+    new_items = Item.objects.filter(category=7)
 
-    return render(request, "homepage/index.html")
+    template = "homepage/index.html"
+    context = {
+        "new_items": new_items
+    }
+
+    return render(request,
+                  template,
+                  context)
