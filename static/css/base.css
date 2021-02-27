@@ -489,7 +489,7 @@ a:hover,
     width: 90%;
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: auto;
+    overflow: hidden;
     scroll-behavior: smooth;
     margin: 0 5%;
 }
@@ -594,4 +594,4 @@ a:hover,
 }
 
 /* xx-large 1400px */
-@media (min-width: 1200px) {}
+@media (min-width: 1400px) {}
