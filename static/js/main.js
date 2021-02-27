@@ -80,3 +80,18 @@ leftArrow.addEventListener("click", () => {
     }
     rightArrow.classList.add("arrow-active");
 })
+
+// animation on scroll same code used in my milestone 2 project
+const animationOnScroll = () => {
+  let animationElement = document.querySelectorAll(".animation-element");
+  animationElement.forEach((element) => {
+    // Code taken from the tutorial
+    let position = element.getBoundingClientRect().top;
+    let screenPosition = window.innerHeight / 1.2;
+    if (position < screenPosition) {
+      element.classList.add("animation-active");
+    }
+  });
+};
+// call function when window is scrolled
+window.addEventListener("scroll", animationOnScroll);

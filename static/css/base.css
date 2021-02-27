@@ -18,7 +18,16 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #EDEDE9;
 }
-
+/* css for animation on scroll */
+.animation-element {
+  opacity: 0;
+  transform: translateY(7.5rem);
+  transition: all 1.5s cubic-bezier(.41, .04, .46, 1);
+}
+.animation-active {
+  opacity: 1;
+  transform: translateY(0px);
+}
 /* common elements */
 
 .link-button {
