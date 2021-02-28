@@ -538,13 +538,17 @@ a:hover,
     background-color: #D1D1C7;
 }
 
+.category-title-col {
+    margin-top: 2rem;
+}
+
 .category-title-col h3 {
     font-size: 3rem;
-    margin: 20% 10%;
+    margin-left: 10%;
 }
 
 .category-col {
-    margin: 4rem 0;
+    margin: 2rem 0 5rem 0;
 }
 
 
@@ -621,7 +625,7 @@ a:hover,
 /* -------------------------------Newsletter Section */
 .newsletter-container {
     background-color: #D1D1C7;
-    margin: 5% 0;
+    margin-top: 5%;
 }
 
 .newsletter-col h3 {
@@ -658,29 +662,69 @@ a:hover,
     background-color: #EDEDE9;
     color: #153243;
 }
+
 /* ----------------------------------------footer section  */
-.footer-container{
+.footer-container {
     background-color: #153243;
-    color: #EDEDE9; 
+    color: #EDEDE9;
 }
-.contact-col{
+
+.contact-col {
     flex-direction: column;
+    margin: 5rem 0;
 }
-.contact-col h3{
+
+.contact-col h3 {
     font-size: 1.75rem;
 }
-.contact-col p{
+
+.contact-col p {
     font-size: 1.25rem;
 }
-.contact-col a{
+
+.contact-col a {
     color: #EDEDE9;
     font-size: 1.25rem;
     text-decoration: none;
 }
-.contact-col a:hover{
+
+.contact-col a:hover {
     text-decoration: underline;
     color: #D1D1C7;
 }
+
+.social-col {
+    margin: 5rem 0;
+}
+
+.social-col h3 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.social-media {
+    flex-direction: row;
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.social-media a {
+    color: #EDEDE9;
+}
+
+.social-media a i {
+    font-size: 3rem;
+    margin: 0 2rem;
+    padding: .5rem;
+    transition: all .5s ease-in-out;
+}
+
+.social-media a i:hover {
+    color: #153243;
+    background-color: #EDEDE9;
+    border-radius: .5rem;
+}
+
 /* Media Querys */
 
 /* medium 768px */
@@ -806,8 +850,8 @@ a:hover,
     }
 
     .category-image {
-        height: 35rem;
-        width: 35rem;
+        height: 37.5rem;
+        width: 37.5rem;
     }
 
     .category-title-col h3,
@@ -824,12 +868,26 @@ a:hover,
         font-size: 1.85rem;
     }
 
+    .contact-col h3,
+    .social-col h3 {
+        font-size: 2rem;
+    }
+
+    .contact-col p,
+    .contact-col a {
+        font-size: 1.5rem;
+    }
+
+    .social-media a i {
+        font-size: 4rem;
+    }
+
 }
 
 /* xx-large 1400px */
 @media (min-width: 1400px) {
     .category-image {
-        height: 37.5rem;
-        width: 37.5em;
+        height: 42.5rem;
+        width: 42.5em;
     }
 }
