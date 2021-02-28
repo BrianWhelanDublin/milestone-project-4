@@ -71,7 +71,8 @@ button {
     border-width: 0;
 }
 
-button:focus {
+button:focus,
+input[type="text"]:focus {
     outline: none;
 }
 
@@ -617,6 +618,47 @@ a:hover,
     text-align: center;
 }
 
+/* Newsletter Section */
+.newsletter-container {
+    background-color: #D1D1C7;
+    margin: 10% 0;
+}
+
+.newsletter-col h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 7.5% 0;
+}
+
+.newsletter-form {
+    margin: 7.5% 5%;
+
+}
+
+.newsletter-form input[type="text"] {
+    width: 60%;
+    height: 4rem;
+    background-color: #D1D1C7;
+    border: .1rem solid #153243;
+    text-align: center;
+    font-size: 1.25rem;
+    margin-right: 1rem;
+}
+
+.newsletter-form button[type="submit"] {
+    color: #EDEDE9;
+    background-color: #153243;
+    height: 4rem;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    transition: all .5s ease;
+}
+
+.newsletter-form button[type="submit"]:hover {
+    background-color: #EDEDE9;
+    color: #153243;
+}
+
 /* Media Querys */
 
 /* medium 768px */
@@ -666,7 +708,9 @@ a:hover,
         font-size: 8rem;
     }
 
-    .category-title-col h3 {
+    .category-title-col h3,
+    .review-title h3,
+    .newsletter-col h3 {
         font-size: 4rem;
     }
 
@@ -675,10 +719,6 @@ a:hover,
         width: 36rem;
     }
 
-    .review-title h3 {
-        margin: 5% 0;
-        font-size: 4rem;
-    }
 
     .stars i {
         font-size: 2rem;
@@ -687,6 +727,21 @@ a:hover,
     .review p,
     .review p strong {
         font-size: 1.75rem;
+    }
+
+
+    .newsletter-form input[type="text"] {
+        width: 65%;
+        height: 5rem;
+        font-size: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    .newsletter-form button[type="submit"] {
+        height: 5rem;
+        padding: 0 1.5rem;
+        font-size: 1..75rem;
+
     }
 
 }
@@ -733,8 +788,9 @@ a:hover,
         height: 40rem;
         width: 40rem;
     }
+
     .category-title-col h3,
-      .review-title h3 {
+    .review-title h3 {
         font-size: 4.75rem;
     }
 
