@@ -725,6 +725,30 @@ a:hover,
     border-radius: .5rem;
 }
 
+/* -------------------------------- our story page */
+.nav-background {
+    height: 6rem;
+    background-color: #153243;
+    position: fixed;
+}
+
+.our-story-hero-col {
+    margin-top: 6rem;
+    height: 100%;
+    width: 100%;
+    background: url('/media/our-story-hero.jpg') no-repeat center center;
+    background-size: cover;
+
+}
+
+.our-story-hero-col h1 {
+    font-size: 5rem;
+    transform: translateY(25rem);
+    background-color: #153243;
+    color: #EDEDE9;
+    padding: 1rem 3rem;
+}
+
 /* Media Querys */
 
 /* medium 768px */
@@ -809,6 +833,10 @@ a:hover,
         font-size: 1..75rem;
     }
 
+    .our-story-hero-col h1 {
+        font-size: 7rem;
+    }
+
 }
 
 /* x-large 1200px */
@@ -881,7 +909,10 @@ a:hover,
     .social-media a i {
         font-size: 4rem;
     }
+    .our-story-hero-col h1 {
+    font-size: 9rem;
 
+}
 }
 
 /* xx-large 1400px */
