@@ -733,7 +733,6 @@ a:hover,
 }
 
 .our-story-hero-col {
-    margin-top: 6rem;
     height: 100%;
     width: 100%;
     background: url('/media/our-story-hero.jpg') no-repeat center center;
@@ -747,6 +746,15 @@ a:hover,
     background-color: #153243;
     color: #EDEDE9;
     padding: 1rem 3rem;
+}
+
+.story-about-col {
+    margin: 5rem 1rem;
+}
+
+.story-about-col p {
+    font-size: 1.75rem;
+    text-align: center;
 }
 
 /* Media Querys */
@@ -836,6 +844,13 @@ a:hover,
     .our-story-hero-col h1 {
         font-size: 7rem;
     }
+    .story-about-col{
+        margin: 5rem ;
+    }
+    .story-about-col p{
+        font-size: 2.25rem;
+    }
+
 
 }
 
@@ -909,10 +924,16 @@ a:hover,
     .social-media a i {
         font-size: 4rem;
     }
-    .our-story-hero-col h1 {
-    font-size: 9rem;
 
-}
+    .our-story-hero-col h1 {
+        font-size: 9rem;
+    }
+      .story-about-col{
+        margin: 8rem ;
+    }
+    .story-about-col p{
+        font-size: 2.5rem;
+    }
 }
 
 /* xx-large 1400px */
