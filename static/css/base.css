@@ -18,16 +18,19 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #EDEDE9;
 }
+
 /* css for animation on scroll */
 .animation-element {
-  opacity: 0;
-  transform: translateY(7.5rem);
-  transition: all 1.5s cubic-bezier(.41, .04, .46, 1);
+    opacity: 0;
+    transform: translateY(7.5rem);
+    transition: all 1.5s cubic-bezier(.41, .04, .46, 1);
 }
+
 .animation-active {
-  opacity: 1;
-  transform: translateY(0px);
+    opacity: 1;
+    transform: translateY(0px);
 }
+
 /* common elements */
 
 .link-button {
@@ -538,14 +541,15 @@ a:hover,
     font-size: 3rem;
     margin: 20% 10%;
 }
+
 .category-col {
     margin: 4rem 0;
 }
 
 
 .category-image {
-    height: 35rem;
-    width: 35rem;
+    height: 33rem;
+    width: 33rem;
     display: block;
     margin: 2rem auto;
     position: relative;
@@ -580,6 +584,37 @@ a:hover,
     text-decoration: none;
     color: #EDEDE9;
     z-index: 10;
+}
+
+/* reviews section */
+.review-title h3 {
+    margin: 10% 0;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.stars {
+    flex-direction: row;
+    margin: 2.5% 0;
+}
+
+.stars i {
+    font-size: 1.5rem;
+}
+
+.review {
+    flex-direction: column;
+    margin: 5% 0;
+}
+
+.review p,
+.review p strong {
+    font-size: 1.25rem;
+}
+
+.review p {
+    margin: 1rem 4rem;
+    text-align: center;
 }
 
 /* Media Querys */
@@ -631,10 +666,29 @@ a:hover,
         font-size: 8rem;
     }
 
-    .category-image {
-        height: 37.5rem;
-        width: 37.5rem;
+    .category-title-col h3 {
+        font-size: 4rem;
     }
+
+    .category-image {
+        height: 36rem;
+        width: 36rem;
+    }
+
+    .review-title h3 {
+        margin: 5% 0;
+        font-size: 4rem;
+    }
+
+    .stars i {
+        font-size: 2rem;
+    }
+
+    .review p,
+    .review p strong {
+        font-size: 1.75rem;
+    }
+
 }
 
 /* x-large 1200px */
@@ -678,6 +732,19 @@ a:hover,
     .category-image {
         height: 40rem;
         width: 40rem;
+    }
+    .category-title-col h3,
+      .review-title h3 {
+        font-size: 4.75rem;
+    }
+
+    .stars i {
+        font-size: 2.5rem;
+    }
+
+    .review p,
+    .review p strong {
+        font-size: 1.85rem;
     }
 
 }
