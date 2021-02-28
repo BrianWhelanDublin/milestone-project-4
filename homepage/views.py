@@ -16,3 +16,12 @@ def home_page(request):
     return render(request,
                   template,
                   context)
+
+
+def our_story(request):
+    ''' render our story page '''
+
+    template = "homepage/our_story.html"
+
+    return render(request,
+                  template)
