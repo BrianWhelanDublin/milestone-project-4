@@ -587,7 +587,7 @@ a:hover,
     z-index: 10;
 }
 
-/* reviews section */
+/*---------------------------------- reviews section */
 .review-title h3 {
     margin: 10% 0;
     font-size: 3rem;
@@ -618,10 +618,10 @@ a:hover,
     text-align: center;
 }
 
-/* Newsletter Section */
+/* -------------------------------Newsletter Section */
 .newsletter-container {
     background-color: #D1D1C7;
-    margin: 10% 0;
+    margin: 5% 0;
 }
 
 .newsletter-col h3 {
@@ -658,7 +658,29 @@ a:hover,
     background-color: #EDEDE9;
     color: #153243;
 }
-
+/* ----------------------------------------footer section  */
+.footer-container{
+    background-color: #153243;
+    color: #EDEDE9; 
+}
+.contact-col{
+    flex-direction: column;
+}
+.contact-col h3{
+    font-size: 1.75rem;
+}
+.contact-col p{
+    font-size: 1.25rem;
+}
+.contact-col a{
+    color: #EDEDE9;
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+.contact-col a:hover{
+    text-decoration: underline;
+    color: #D1D1C7;
+}
 /* Media Querys */
 
 /* medium 768px */
@@ -715,8 +737,8 @@ a:hover,
     }
 
     .category-image {
-        height: 36rem;
-        width: 36rem;
+        height: 32rem;
+        width: 32rem;
     }
 
 
@@ -741,7 +763,6 @@ a:hover,
         height: 5rem;
         padding: 0 1.5rem;
         font-size: 1..75rem;
-
     }
 
 }
@@ -785,8 +806,8 @@ a:hover,
     }
 
     .category-image {
-        height: 40rem;
-        width: 40rem;
+        height: 35rem;
+        width: 35rem;
     }
 
     .category-title-col h3,
@@ -808,7 +829,7 @@ a:hover,
 /* xx-large 1400px */
 @media (min-width: 1400px) {
     .category-image {
-        height: 42.5rem;
-        width: 42.5rem;
+        height: 37.5rem;
+        width: 37.5em;
     }
 }

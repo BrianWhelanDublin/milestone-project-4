@@ -70,16 +70,15 @@
                                 <span class="line-y" aria-hidden="true"></span>
                             </button>
                             <ul class="side-nav-menu">
-                                 <li class="side-nav-item search-navlink">Search
-                                    <i class="las la-search nav-icon"
-                                        aria-hidden="true"></i>
+                                <li class="side-nav-item search-navlink">Search
+                                    <i class="las la-search nav-icon" aria-hidden="true"></i>
                                 </li>
                                 <li class="search-sublist sublist-hidden">
-                                        <form>
-                                            <input type="text" placeholder="search">
-                                            <button type="submit">Search</button>
-                                            </form>
-                                        </li>
+                                    <form>
+                                        <input type="text" placeholder="search">
+                                        <button type="submit">Search</button>
+                                    </form>
+                                </li>
                                 <li class="side-nav-item">
                                     <a href="">Shop Collection</a>
                                 </li>
@@ -113,6 +112,49 @@
         {% endblock %}
     </main>
     <footer>
+        <!-- Footer section -->
+        <div class="container-fluid footer-container">
+            <div class="row">
+                <div class="col-12 col-md-6 contact-col">
+                    <h3>We're here to help.</h3>
+                    <p>Email us on
+                        <a href="mailto:abode@email.com">
+                            abode@email.com
+                        </a></p>
+                    <p>Call us at +353 (0)15555555</p>
+                    <a href="">Or you can contact us here <i class="las la-angle-right" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h3>Follow us on social</h3>
+                    <ul class="social-media">
+                        <li>
+                            <a class="social-media-links" href="https://www.instagram.com/" target="_blank"
+                                rel="noreferrer">
+                                <i class="lab la-instagram" aria-hidden="true"></i>
+                                <span class="sr-only">Instagram Link.</span></a>
+                        </li>
+                        <li>
+                            <a class="social-media-links" href="https://www.facebook.com/" target="_blank"
+                                rel="noreferrer">
+                                <i class="lab la-facebook-square" aria-hidden="true"></i>
+                                <span class="sr-only">Facebook Link.</span></a>
+                        </li>
+                        <li>
+                            <a class="social-media-links" href="https://www.twitter.com/" target="_blank"
+                                rel="noreferrer">
+                                <i class="lab la-twitter-square" aria-hidden="true"></i>
+                                <span class="sr-only">Twitter Link.</span></a>
+                        </li>
+                        <li>
+                            <a class="social-media-links" href="https://www.pinterest.ie/" target="_blank"
+                                rel="noreferrer">
+                                <i class="lab la-pinterest"></i>
+                                <span class="sr-only">Pinterest link</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
     {% block other_end_js %}
     {% endblock %}
