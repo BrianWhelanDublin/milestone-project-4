@@ -21,7 +21,7 @@ All Items
         {% for item in items %}
         <div class="col-12 col-md-6 col-lg-4 item-col">
             <div class="item-container flex-center">
-                <a href=""><img src="/media/{{ item.image }}" alt="image for {{ item.name }}"></a>
+                <a href="{% url 'single_item' item.id %}"><img src="/media/{{ item.image }}" alt="image for {{ item.name }}"></a>
             </div>
             <div class="item-details all-item-details flex-row-between">
                 <h3>{{ item.name }}</h3>

@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% block other_css %}
+ <link rel="stylesheet" href="{% static 'homepage/css/homepage.css' %}">
+{% endblock %}
 {% block title %}
 {{ item.name }}
 {% endblock %}
@@ -8,5 +11,19 @@
 {% include 'includes/nav-background.html' %}
 {% endblock %}
 {% block main_content %}
-
+<div class="container item-container">
+ <div class="row">
+     <div class="col-12 col-md-6 item-img-col flex-center">
+         <img src="/media/{{ item.image }}" alt="image for {{ item.name }}">
+     </div>
+     <div class="col-12 col-md-6 item-details-col flex-center">
+     <div class="item-details">
+             <h3>{{ item.name }}</h3>
+         <p>€ {{ item.price}}</p>
+         <p>{{ item.category.display_name }}</p>
+         <p>{{ item.description }}</p>
+     </div>
+     </div>
+ </div>
+</div>
 {% endblock %}

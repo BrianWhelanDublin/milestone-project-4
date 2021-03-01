@@ -55,7 +55,7 @@
                 <div class="new-item-slider">
                     {% for item in new_items %}
                     <div class="item-container">
-                        <a href="">
+                        <a href="{% url 'single_item' item.id%}">
                             <img src="/media/{{ item.image }}" alt="image for {{ item.name }}">
                         </a>
                         <div class="item-details flex-row-between">
