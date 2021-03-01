@@ -13,15 +13,29 @@ All Items
 </div>
 {% endblock %}
 {% block main_content %}
-{% for item in items %}
+
 <div class="container">
+    <!-- Title Section -->
     <div class="row">
-        <div class="col">
-            <p>{{ item.name }}</p>
+        <div class="col flex-center items-heading">
+         <h1>Our Collection</h1>
         </div>
     </div>
+    <!-- items section -->
+    <div class="row items-row">
+        {% for item in items %}
+        <div class="col-12 col-md-6 col-lg-4 item-col">
+            <div class="item-container flex-center">
+                <a href=""><img src="/media/{{ item.image }}" alt="image for {{ item.name }}"></a>
+            </div>
+              <div class="item-details all-item-details flex-row-between">
+                            <h3>{{ item.name }}</h3>
+                            <p>€ {{ item.price }}</p>
+                        </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
-{% endfor %}
 {% endblock %}
 
 

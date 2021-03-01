@@ -517,6 +517,9 @@ a:hover,
 .item-details {
     margin-top: 1rem;
 }
+.all-item-details{
+    margin:0 4rem;
+}
 
 .item-details h3 {
     font-weight: 400;
@@ -531,6 +534,10 @@ a:hover,
     width: 28rem;
     height: 40rem;
     object-fit: cover;
+    transition: all .25s ease-in;
+}
+.item-container a img:hover{
+    filter: brightness(50%);
 }
 
 /* shop by categories */
@@ -778,11 +785,22 @@ a:hover,
     width: 35rem;
     margin: 2rem 0;
 }
-.our-story-shop-now{
+
+.our-story-shop-now {
     margin: 5rem 0;
 }
+/* --------- ---------- all items page */
+.items-heading {
+    margin-top: 12rem;
+    margin-bottom: 5rem;
+}
 
-
+.items-heading h1 {
+    font-size: 4rem;
+}
+.item-col{
+    margin: 4rem 0;
+}
 /* Media Querys */
 
 /* medium 768px */
@@ -895,6 +913,10 @@ a:hover,
         margin: 2rem 0;
     }
 
+    .items-heading h1 {
+        font-size: 5rem;
+    }
+
 }
 
 /* x-large 1200px */
@@ -992,6 +1014,10 @@ a:hover,
     .our-story-col img {
         height: 44rem;
         width: 44rem;
+    }
+
+    .items-heading h1 {
+        font-size: 6rem;
     }
 }
 
