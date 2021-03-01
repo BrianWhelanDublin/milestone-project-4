@@ -18,7 +18,7 @@ All Items
     <!-- Title Section -->
     <div class="row">
         <div class="col flex-center items-heading">
-         <h1>Our Collection</h1>
+            <h1>Our Collection</h1>
         </div>
     </div>
     <!-- items section -->
@@ -28,14 +28,12 @@ All Items
             <div class="item-container flex-center">
                 <a href=""><img src="/media/{{ item.image }}" alt="image for {{ item.name }}"></a>
             </div>
-              <div class="item-details all-item-details flex-row-between">
-                            <h3>{{ item.name }}</h3>
-                            <p>€ {{ item.price }}</p>
-                        </div>
+            <div class="item-details all-item-details flex-row-between">
+                <h3>{{ item.name }}</h3>
+                <p>€ {{ item.price }}</p>
+            </div>
         </div>
         {% endfor %}
     </div>
 </div>
 {% endblock %}
-
-
