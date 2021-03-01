@@ -162,5 +162,8 @@
         </div>
     </div>
 </div>
-
+{% endblock %}
+{% block other_end_js %}
+{{ block.super }}
+<script src="{% static 'homepage/js/homepage.js' %}"></script>
 {% endblock %}
