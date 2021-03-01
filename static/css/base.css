@@ -405,8 +405,8 @@ a:hover,
 
 /* Hero section in index.html */
 .hero-container {
-    min-height: 55rem;
-    height: 85vh;
+    min-height: 50rem;
+    height: 90vh;
 }
 
 .hero-col-left {
@@ -422,7 +422,8 @@ a:hover,
 }
 
 .hero-overlay {
-    height: 85vh;
+    min-height: 50rem;
+    height: 90vh;
     width: 100%;
     position: absolute;
     top: 0;
