@@ -74,8 +74,9 @@
                                     <i class="las la-search nav-icon" aria-hidden="true"></i>
                                 </li>
                                 <li class="search-sublist sublist-hidden">
-                                    <form>
-                                        <input type="text" placeholder="search">
+                                    <form  method="GET" action="{% url 'all_items' %}">
+                                        <label class="visually-hidden" for="query">Search</label>
+                                        <input type="text" name="query" placeholder="search">
                                         <button type="submit">Search</button>
                                     </form>
                                 </li>
