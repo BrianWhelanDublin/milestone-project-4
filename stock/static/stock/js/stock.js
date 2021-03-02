@@ -13,11 +13,11 @@ sortSelector.addEventListener("change", ()=>{
         currentUrl.searchParams.set("sort", sort);
         currentUrl.searchParams.set("direction", direction);
 
-        window.location.replace(currentUrl)
+        window.location.replace(currentUrl);
     }else{
-        currentUrl.searchParams.delete("sort")
-        currentUrl.searchParams.delete("direction")
+        currentUrl.searchParams.delete("sort");
+        currentUrl.searchParams.delete("direction");
 
-         window.location.replace(currentUrl)
+         window.location.replace(currentUrl);
     }
 })
