@@ -62,7 +62,6 @@ def all_items(request):
         "page_obj": page_obj,
         "search": search,
         "current_category": current_category,
-
         "current_sorting": current_sorting,
         "sort": sort,
         "direction": direction,

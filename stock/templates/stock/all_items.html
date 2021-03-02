@@ -124,3 +124,8 @@ All Items
     </div>
 </div>
 {% endblock %}
+
+{% block other_end_js %}
+{{ block.super }}
+<script src="{% static 'stock/js/stock.js' %}"></script>
+{% endblock %}

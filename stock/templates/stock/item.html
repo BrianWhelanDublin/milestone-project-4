@@ -20,7 +20,7 @@
      <div class="item-details">
              <h3>{{ item.name }}</h3>
          <p>€ {{ item.price}}</p>
-         <p><a href="{% url 'all_items' %}?category={{ item.category.name }}">{{ item.category.display_name }}</a></p>
+         <a href="{% url 'all_items' %}?category={{ item.category.name }}">{{ item.category.display_name }}</a>
          <p>{{ item.description }}</p>
      </div>
      </div>
