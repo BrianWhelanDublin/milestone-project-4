@@ -518,8 +518,9 @@ a:hover,
 .item-details {
     margin-top: 1rem;
 }
-.all-item-details{
-    margin:0 4rem;
+
+.all-item-details {
+    margin: 0 4rem;
 }
 
 .item-details h3 {
@@ -537,7 +538,8 @@ a:hover,
     object-fit: cover;
     transition: all .25s ease-in;
 }
-.item-container a img:hover{
+
+.item-container a img:hover {
     filter: brightness(50%);
 }
 
@@ -790,6 +792,7 @@ a:hover,
 .our-story-shop-now {
     margin: 5rem 0;
 }
+
 /* --------- ---------- all items page */
 .items-heading {
     margin-top: 12rem;
@@ -799,9 +802,35 @@ a:hover,
 .items-heading h1 {
     font-size: 4rem;
 }
-.item-col{
+
+.item-col {
     margin: 4rem 0;
 }
+
+/* Pagination */
+.paginate-items {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.current p {
+    font-size: 1.25rem;
+    margin-left: .5rem;
+}
+
+.step-links a {
+    font-size: 1.25rem;
+    color: #2a6486;
+    margin: 0 .5rem;
+    text-decoration: none;
+    transition: all .25s ease-in;
+}
+
+.step-links a:hover {
+    color: #153243;
+    text-decoration: underline;
+}
+
 /* Media Querys */
 
 /* medium 768px */
@@ -917,6 +946,12 @@ a:hover,
     .items-heading h1 {
         font-size: 5rem;
     }
+
+    .current p,
+    .step-links a {
+        font-size: 1.5rem;
+    }
+
 
 }
 

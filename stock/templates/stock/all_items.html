@@ -18,7 +18,7 @@ All Items
     </div>
     <!-- items section -->
     <div class="row items-row">
-        {% for item in items %}
+        {% for item in page_obj %}
         <div class="col-12 col-md-6 col-lg-4 item-col">
             <div class="item-container flex-center">
                 <a href="{% url 'single_item' item.id %}"><img src="/media/{{ item.image }}" alt="image for {{ item.name }}"></a>
@@ -30,5 +30,21 @@ All Items
         </div>
         {% endfor %}
     </div>
+<!-- pagination taking from djano documintation that I changed slightly and styled with css -->
+    <div class="paginate-items">
+        <div class="current">
+           <p>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</p>
+        </div>
+    <div class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; First</a>
+            <a href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a>
+        {% endif %}
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+        {% endif %}
+    </div>
+</div>
 </div>
 {% endblock %}
