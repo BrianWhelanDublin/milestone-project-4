@@ -13,7 +13,11 @@ All Items
     <!-- Title Section -->
     <div class="row">
         <div class="col flex-center items-heading">
+            {% if current_category %}
+            <h1>{{ current_category.display_name }}</h1>
+            {% else %}
             <h1>Our Collection</h1>
+            {% endif %}
         </div>
     </div>
     <!-- items section -->
@@ -21,7 +25,8 @@ All Items
         {% for item in page_obj %}
         <div class="col-12 col-md-6 col-lg-4 item-col">
             <div class="item-container flex-center">
-                <a href="{% url 'single_item' item.id %}"><img src="/media/{{ item.image }}" alt="image for {{ item.name }}"></a>
+                <a href="{% url 'single_item' item.id %}"><img src="/media/{{ item.image }}"
+                        alt="image for {{ item.name }}"></a>
             </div>
             <div class="item-details all-item-details flex-row-between">
                 <h3>{{ item.name }}</h3>
@@ -30,21 +35,52 @@ All Items
         </div>
         {% endfor %}
     </div>
-<!-- pagination taking from djano documintation that I changed slightly and styled with css -->
+    <!-- pagination taking from djano documintation that I changed slightly and styled with css -->
     <div class="paginate-items">
         <div class="current">
-           <p>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</p>
+            <p>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</p>
         </div>
-    <div class="step-links">
-        {% if page_obj.has_previous %}
+        
+        <!-- pagination for search -->
+        {% if search %}
+        <div class="step-links">
+            {% if page_obj.has_previous %}
+            <a href="?page=1&category={{ current_category.name }}">&laquo; First</a>
+            <a href="?page={{ page_obj.previous_page_number }}&query={{ search }}">&laquo; Previous</a>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}&query={{ search }}">Next &raquo;</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}&query={{ search }}">Last &raquo;</a>
+        </div>
+        {% endif %}
+
+        <!-- pagination for categories -->
+        {% elif current_category %}
+        <div class="step-links">
+            {% if page_obj.has_previous %}
+            <a href="?page=1&category={{ current_category.name }}">&laquo; First</a>
+            <a href="?page={{ page_obj.previous_page_number }}&category={{ current_category.name }}">&laquo;
+                Previous</a>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}&category={{ current_category.name }}">Next &raquo;</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}&category={{ current_category.name }}">Last &raquo;</a>
+        </div>
+        {% endif %}
+
+        <!-- pagination without extra url queries -->
+        {% else %}
+        <div class="step-links">
+            {% if page_obj.has_previous %}
             <a href="?page=1">&laquo; First</a>
             <a href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a>
-        {% endif %}
-        {% if page_obj.has_next %}
+            {% endif %}
+            {% if page_obj.has_next %}
             <a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a>
             <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+            {% endif %}
+        </div>
         {% endif %}
     </div>
-</div>
 </div>
 {% endblock %}

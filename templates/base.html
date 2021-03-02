@@ -86,21 +86,21 @@
                                 <li class="side-nav-item">
                                     <a href="{% url 'all_items' %}">Shop Collection</a>
                                 </li>
-                                <li class="side-nav-item">
-                                    <a class="furniture-nav-link" ref="">Furniture
+                                <li class="side-nav-item furniture-nav-link">
+                                    Furniture
                                         <i class="las la-angle-right nav-icon" aria-hidden="true"></i>
-                                    </a>
                                     <ul class="furniture-sublist sublist-hidden ">
-                                        <li><a href="">Sofas</a></li>
-                                        <li><a href="">Chairs</a></li>
-                                        <li><a href="">Tables</a></li>
+                                        <li><a href="{% url 'all_items' %}?category=sofas">Sofas</a></li>
+                                        <li><a href="{% url 'all_items' %}?category=chairs">Chairs</a></li>
+                                        <li><a href="{% url 'all_items' %}?category=tables">Tables</a></li>
+                                         <li><a href="{% url 'all_items' %}?category=sideboards">Sideboards</a></li>
                                     </ul>
                                 </li>
                                 <li class="side-nav-item">
-                                    <a href="">Lighting</a>
+                                    <a href="{% url 'all_items' %}?category=lighting">Lighting</a>
                                 </li>
                                 <li class="side-nav-item ">
-                                    <a href="">Accessories</a>
+                                    <a href="{% url 'all_items' %}?category=accessories">Accessories</a>
                                 </li>
                             </ul>
                         </div>

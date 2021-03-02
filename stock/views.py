@@ -1,9 +1,9 @@
 from django.shortcuts import (render, get_object_or_404,
-                              reverse)
+                              reverse, redirect)
 from django.contrib import messages
 from django.db.models import Q
 from django.core.paginator import Paginator
-from .models import Item
+from .models import Item, Category
 
 
 def all_items(request):
@@ -15,15 +15,23 @@ def all_items(request):
 
     items = Item.objects.all()
     search = None
+    category = None
+    current_category = None
 
     if request.GET and "query" in request.GET:
         search = request.GET["query"]
         if not search:
             messages.error(request, "No search query entered.")
+            return redirect(reverse("all_items"))
 
         search_items = Q(name__icontains=search) \
             | Q(description__icontains=search)
         items = items.filter(search_items)
+
+    if request.GET and "category" in request.GET:
+        category = request.GET["category"]
+        items = items.filter(category__name=category)
+        current_category = get_object_or_404(Category, name=category)
 
     template = "stock/all_items.html"
 
@@ -34,7 +42,9 @@ def all_items(request):
     context = {
         "page_obj": page_obj,
         "search": search,
-    }
+        "current_category": current_category,
+        "search": search,
+        }
 
     return render(request,
                   template,
