@@ -200,7 +200,7 @@ a:hover,
     background-color: #153243;
     z-index: 100;
     transform: translateX(-37.5rem);
-    transition: all 1.5s ease-in-out;
+    transition: all .85s ease-in-out;
 }
 
 .side-nav-show {
@@ -309,31 +309,36 @@ a:hover,
 }
 
 .side-menu-open li:nth-child(1) {
-    animation-delay: 150ms;
+    animation-delay: 100ms;
 }
 
 .side-menu-open li:nth-child(2) {
-    animation-delay: 300ms;
+    animation-delay: 200ms;
 }
 
 .side-menu-open li:nth-child(3) {
-    animation-delay: 450ms;
+    animation-delay: 300ms;
 }
 
 .side-menu-open li:nth-child(4) {
-    animation-delay: 600ms;
+    animation-delay: 400ms;
 }
 
 .side-menu-open li:nth-child(5) {
-    animation-delay: 750ms;
+    animation-delay: 500ms;
 }
 
 .side-menu-open li:nth-child(6) {
-    animation-delay: 900ms;
+    animation-delay: 600ms;
 }
-
+.side-menu-open li:nth-child(7) {
+    animation-delay: 700ms;
+}
+.side-menu-close li:nth-child(7) {
+    animation-delay: 100ms;
+}
 .side-menu-close li:nth-child(6) {
-    animation-delay: 150ms;
+    animation-delay: 200ms;
 }
 
 .side-menu-close li:nth-child(5) {
