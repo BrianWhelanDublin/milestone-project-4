@@ -72,7 +72,8 @@ button {
 }
 
 button:focus,
-input[type="text"]:focus {
+input[type="text"]:focus,
+#sort-selector:focus {
     outline: none;
 }
 
@@ -331,12 +332,15 @@ a:hover,
 .side-menu-open li:nth-child(6) {
     animation-delay: 600ms;
 }
+
 .side-menu-open li:nth-child(7) {
     animation-delay: 700ms;
 }
+
 .side-menu-close li:nth-child(7) {
     animation-delay: 100ms;
 }
+
 .side-menu-close li:nth-child(6) {
     animation-delay: 200ms;
 }
@@ -808,9 +812,29 @@ a:hover,
     font-size: 4rem;
 }
 
+.items-subheading p {
+    font-size: 1.4rem;
+    margin:0;
+}
+
+.items-subheading a {
+    color: #2a6486;
+    font-size: 1.4rem;
+}
+
 .item-col {
     margin: 4rem 0;
 }
+
+#sort-selector {
+    background-color: #EDEDE9;
+    border: .1rem solid #153243;
+    color: #153243;
+    font-size: 1.4rem;
+  
+    margin-top: 2rem;
+}
+
 
 /* Pagination */
 .paginate-items {

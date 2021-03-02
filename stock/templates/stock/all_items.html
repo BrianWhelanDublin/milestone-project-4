@@ -19,6 +19,32 @@ All Items
             <h1>Our Collection</h1>
             {% endif %}
         </div>
+        <div class="row">
+            <div class="col-10 offset-1">
+                <div class="flex-row-between items-subheading">
+                    <p>No of items: {{ page_obj.paginator.count }}</p>
+                    <a href="{% url 'all_items' %}">All Items</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10 offset-1">
+                <div class="sort-select">
+                    <label class="visually-hidden" for="sort-selector">Sort By</label>
+                    <select name="sort-selector" id="sort-selector">
+                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort</option>
+                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price
+                            accending</option>
+                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price
+                            descending</option>
+                        <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name
+                            accending</option>
+                        <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name
+                            descendings</option>
+                    </select>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- items section -->
     <div class="row items-row">
@@ -46,11 +72,17 @@ All Items
         <div class="step-links">
             {% if page_obj.has_previous %}
             <a href="?page=1&query={{ search }}&sort={{ sort }}&direction={{ direction }}">&laquo; First</a>
-            <a href="?page={{ page_obj.previous_page_number }}&query={{ search }}&sort={{ sort }}&direction={{ direction }}">&laquo; Previous</a>
+            <a
+                href="?page={{ page_obj.previous_page_number }}&query={{ search }}&sort={{ sort }}&direction={{ direction }}">&laquo;
+                Previous</a>
             {% endif %}
             {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}&query={{ search }}&sort={{ sort }}&direction={{ direction }}">Next &raquo;</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}&query={{ search }}&sort={{ sort }}&direction={{ direction }}">Last &raquo;</a>
+            <a
+                href="?page={{ page_obj.next_page_number }}&query={{ search }}&sort={{ sort }}&direction={{ direction }}">Next
+                &raquo;</a>
+            <a
+                href="?page={{ page_obj.paginator.num_pages }}&query={{ search }}&sort={{ sort }}&direction={{ direction }}">Last
+                &raquo;</a>
         </div>
         {% endif %}
 
@@ -58,13 +90,19 @@ All Items
         {% elif current_category %}
         <div class="step-links">
             {% if page_obj.has_previous %}
-            <a href="?page=1&category={{ current_category.name }}&sort={{ sort }}&direction={{ direction }}">&laquo; First</a>
-            <a href="?page={{ page_obj.previous_page_number }}&category={{ current_category.name }}&sort={{ sort }}&direction={{ direction }}">&laquo;
+            <a href="?page=1&category={{ current_category.name }}&sort={{ sort }}&direction={{ direction }}">&laquo;
+                First</a>
+            <a
+                href="?page={{ page_obj.previous_page_number }}&category={{ current_category.name }}&sort={{ sort }}&direction={{ direction }}">&laquo;
                 Previous</a>
             {% endif %}
             {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}&category={{ current_category.name }}&sort={{ sort }}&direction={{ direction }}">Next &raquo;</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}&category={{ current_category.name }}&sort={{ sort }}&direction={{ direction }}">Last &raquo;</a>
+            <a
+                href="?page={{ page_obj.next_page_number }}&category={{ current_category.name }}&sort={{ sort }}&direction={{ direction }}">Next
+                &raquo;</a>
+            <a
+                href="?page={{ page_obj.paginator.num_pages }}&category={{ current_category.name }}&sort={{ sort }}&direction={{ direction }}">Last
+                &raquo;</a>
         </div>
         {% endif %}
 
@@ -73,11 +111,13 @@ All Items
         <div class="step-links">
             {% if page_obj.has_previous %}
             <a href="?page=1&sort={{ sort }}&direction={{ direction }}">&laquo; First</a>
-            <a href="?page={{ page_obj.previous_page_number }}&sort={{ sort }}&direction={{ direction }}">&laquo; Previous</a>
+            <a href="?page={{ page_obj.previous_page_number }}&sort={{ sort }}&direction={{ direction }}">&laquo;
+                Previous</a>
             {% endif %}
             {% if page_obj.has_next %}
             <a href="?page={{ page_obj.next_page_number }}&sort={{ sort }}&direction={{ direction }}">Next &raquo;</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}&sort={{ sort }}&direction={{ direction }}">Last &raquo;</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}&sort={{ sort }}&direction={{ direction }}">Last
+                &raquo;</a>
             {% endif %}
         </div>
         {% endif %}

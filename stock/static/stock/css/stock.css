@@ -21,8 +21,18 @@
        margin-bottom: 2rem;
    }
 
-   .item-details p {
+   .item-details p{
        font-size: 1.5rem;
+   }
+   .item-details a{
+       color: #285f80;
+       font-size: 1.75rem;
+       text-decoration: none;
+       transition: all .25s ease-in;
+   }
+   .item-details a:hover{
+      color:#153243;
+      text-decoration: underline;
    }
 
    @media (min-width: 768px) {
