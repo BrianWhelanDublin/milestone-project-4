@@ -2,6 +2,7 @@ from django.shortcuts import (render, get_object_or_404,
                               reverse, redirect)
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models.functions import Lower
 from django.core.paginator import Paginator
 from .models import Item, Category
 
@@ -17,6 +18,22 @@ def all_items(request):
     search = None
     category = None
     current_category = None
+    sort = None
+    direction = None
+
+    if request.GET and "sort" in request.GET:
+        sortkey = request.GET['sort']
+        sort = sortkey
+        if sortkey == "name":
+            items = items.annotate(sortkey=Lower("name"))
+        if "direction" in request.GET:
+            direction = request.GET["direction"]
+            if direction == 'desc':
+                sortkey = f"-{sortkey}"
+        if sortkey == "None":
+            items = items
+        else:
+            items = items.order_by(sortkey)
 
     if request.GET and "query" in request.GET:
         search = request.GET["query"]
@@ -39,11 +56,16 @@ def all_items(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
+    current_sorting = f"{sort}_{direction}"
+
     context = {
         "page_obj": page_obj,
         "search": search,
         "current_category": current_category,
-        "search": search,
+
+        "current_sorting": current_sorting,
+        "sort": sort,
+        "direction": direction,
         }
 
     return render(request,
