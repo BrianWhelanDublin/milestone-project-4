@@ -11,5 +11,67 @@ Your Cart
 {% endblock %}
 
 {% block main_content %}
-
+<div class="container cart-container">
+    <div class="row">
+        <div class="col cart-heading">
+              <h1>Shopping Cart</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {% if cart_items %}
+               <div class="cart-table">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col"></th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    {% for item in cart_items %}
+                    <tr>
+                        <td>
+                            <img src="/media/{{ item.item.image }}" alt="image of {{ item.item.name" class="table-image">
+                        </td>
+                        <td >
+                            <p class="mt-4">{{ item.item.name }}</p>
+                        </td>
+                        <td>
+                            <p class="mt-4">€ {{ item.item.price }}</p>
+                        </td>
+                        <td>
+                            <form class="mt-4"><input type="number" value="{{item.quantity}}" min="1" max="20"></form>
+                        </td>
+                        <td>
+                            <p class="mt-4">{{ item.item.price }}</p>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                 <tr>
+                        <td colspan="5" class="pt-4  text-end">
+                        <p>Total: € {{ total|floatformat:2 }}</p>
+                        <p>Delivery: € {{ home_delivery|floatformat:2 }}</p>
+                        <h4>Total Price : € {{ subtotal|floatformat:2 }}</h4>
+                    </td>
+                 </tr>
+                </table>
+                <div class="cart-links d-flex justify-content-end">
+                          <a type="submit" href="{% url 'all_items' %}" class="item-link-light item-link-button  flex-center">Keep
+                    Shopping</a>
+                      <a type="submit" href="{% url 'all_items' %}" class="item-link-dark item-link-button  flex-center">Checkout</a>
+                </div>
+            </div>
+            {% else %}
+             <div class="cart-no-items ">
+                <p>No items in shopping bag</p>
+                <a type="submit" href="{% url 'all_items' %}" class="item-link-light item-link-button  flex-center">Keep
+                    Shopping</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -2,7 +2,7 @@
 
 {% load static %}
 {% block other_css %}
- <link rel="stylesheet" href="{% static 'stock/css/stock.css' %}">
+<link rel="stylesheet" href="{% static 'stock/css/stock.css' %}">
 {% endblock %}
 {% block title %}
 {{ item.name }}
@@ -12,26 +12,29 @@
 {% endblock %}
 {% block main_content %}
 <div class="container item-container">
- <div class="row">
-     <div class="col-12 col-md-6 item-img-col flex-center">
-         <img src="/media/{{ item.image }}" alt="image for {{ item.name }}">
-     </div>
-     <div class="col-12 col-md-6 item-details-col flex-center">
-     <div class="item-details">
-             <h3>{{ item.name }}</h3>
-         <p>€ {{ item.price}}</p>
-         <a class="item-cat-link" href="{% url 'all_items' %}?category={{ item.category.name }}">{{ item.category.display_name }}</a>
-         <p>{{ item.description }}</p>
-         <form class="form item-form" action="{% url 'add_to_cart' item.id %}" method="POST">
-             {% csrf_token %}
-             <label for="quantity" class="form-label">Quantity</label>
-             <input class="form-control" type="number" name="quantity" value="1" min="1" max="10" data-item_id="{{ item.id }}" id="id_quantity_{{ item.id }}">
-             <button type="submit" class=" item-link-button flex-center item-link-dark">Add To Cart</button>
-             <input type="hidden" name="redirect_url" value="{{ request.path }}">
-         </form>
-         <a type="submit" href="{% url 'all_items' %}" class="item-link-light item-link-button  flex-center">Keep Shopping</a>
-     </div>
-     </div>
- </div>
+    <div class="row">
+        <div class="col-12 col-md-6 item-img-col flex-center">
+            <img src="/media/{{ item.image }}" alt="image for {{ item.name }}">
+        </div>
+        <div class="col-12 col-md-6 item-details-col flex-center">
+            <div class="item-details">
+                <h3>{{ item.name }}</h3>
+                <p>€ {{ item.price}}</p>
+                <a class="item-cat-link"
+                    href="{% url 'all_items' %}?category={{ item.category.name }}">{{ item.category.display_name }}</a>
+                <p>{{ item.description }}</p>
+                <form class="form item-form" action="{% url 'add_to_cart' item.id %}" method="POST">
+                    {% csrf_token %}
+                    <label for="quantity" class="form-label">Quantity</label>
+                    <input class="form-control" type="number" name="quantity" value="1" min="1" max="10"
+                        data-item_id="{{ item.id }}" id="id_quantity_{{ item.id }}">
+                    <button type="submit" class=" item-link-button flex-center item-link-dark">Add To Cart</button>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </form>
+                <a type="submit" href="{% url 'all_items' %}" class="item-link-light item-link-button  flex-center">Keep
+                    Shopping</a>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
