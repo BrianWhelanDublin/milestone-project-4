@@ -32,15 +32,31 @@ body {
 }
 
 /* common elements */
+.item-link-button {
+    margin: 1.25rem 0;
+    width: 25rem;
+    height: 4rem;
+}
 
-.link-button {
+.item-link-dark {
+    color: #EDEDE9;
+    background: #153243;
+        border: .1rem solid #153243;
+}
+
+
+.link-button,
+.item-link-button {
     font-size: 1.6rem;
     font-weight: 300;
     text-decoration: none;
     padding: 2rem;
+    transition: all .5s ease-in-out;
+}
+
+.link-button {
     width: 16rem;
     height: 5rem;
-    transition: all .5s ease-in-out;
 }
 
 .link-button-light {
@@ -55,13 +71,18 @@ body {
     backdrop-filter: blur(.5rem);
     color: #153243;
 }
-
-.link-button-dark {
+.item-link-dark:hover {
+    background: #EDEDE9;
+    color: #153243;
+}
+.link-button-dark,
+.item-link-light {
     color: #153243;
     border: .1rem solid #153243;
 }
 
-.link-button-dark:hover {
+.link-button-dark:hover,
+.item-link-light:hover {
     background-color: #153243;
     color: #EDEDE9;
 }
@@ -111,6 +132,21 @@ a:hover,
 
 .row {
     --bs-gutter-x: 0;
+}
+/* Form elements */
+
+input[type="number"]{
+    background-color: #EDEDE9;
+    border: .1rem solid #153243;
+    width: 10rem;
+    border-radius: 0;
+    font-size: 1.25rem;
+}
+input[type="number"]:focus{
+    background-color: #EDEDE9;
+}
+label[for="quantity"]{
+    font-size: 1.25rem;
 }
 
 /* Navigation */
@@ -814,7 +850,7 @@ a:hover,
 
 .items-subheading p {
     font-size: 1.4rem;
-    margin:0;
+    margin: 0;
 }
 
 .items-subheading a {
@@ -831,7 +867,6 @@ a:hover,
     border: .1rem solid #153243;
     color: #153243;
     font-size: 1.4rem;
-  
     margin-top: 2rem;
 }
 

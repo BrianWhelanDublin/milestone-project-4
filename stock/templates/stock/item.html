@@ -20,8 +20,17 @@
      <div class="item-details">
              <h3>{{ item.name }}</h3>
          <p>€ {{ item.price}}</p>
-         <a href="{% url 'all_items' %}?category={{ item.category.name }}">{{ item.category.display_name }}</a>
+         <a class="item-cat-link" href="{% url 'all_items' %}?category={{ item.category.name }}">{{ item.category.display_name }}</a>
          <p>{{ item.description }}</p>
+         <form class="form" action="" method="POST">
+             {% csrf_token %}
+             <label for="quantity" class="form-label">Quantity</label>
+             <input class="form-control" type="number" name="quantity" value="1" min="1" max="10" data-item_id="{{ item.id }}" id="id_quantity_{{ item.id }}">
+
+             <button type="submit" class=" item-link-button flex-center item-link-dark">Add To Cart</button>
+
+         </form>
+         <a type="submit" href="{% url 'all_items' %}" class="item-link-light item-link-button  flex-center">Keep Shopping</a>
      </div>
      </div>
  </div>
