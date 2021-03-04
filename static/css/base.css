@@ -88,9 +88,11 @@ body {
     background-color: #153243;
     color: #EDEDE9;
 }
-.cart-links a{
-    margin-left:1rem;
+
+.cart-links a {
+    margin-left: 1rem;
 }
+
 button {
     background: transparent;
     border-width: 0;
@@ -139,9 +141,10 @@ a:hover,
 }
 
 /* Form elements */
-table input[type="number"]{
+table input[type="number"] {
     width: 3rem;
 }
+
 input[type="number"],
 table input[type="number"] {
     background-color: #EDEDE9;
@@ -149,15 +152,16 @@ table input[type="number"] {
     border-radius: 0;
     font-size: 1.25rem;
 }
-input[type="number"]{
-        width: 10rem;
+
+input[type="number"] {
+    width: 10rem;
 }
 
 input[type="number"]:focus,
 table input[type="number"]:focus {
     background-color: #EDEDE9;
-       outline: none;
-    
+    outline: none;
+
 }
 
 label[for="quantity"] {
@@ -855,7 +859,7 @@ label[for="quantity"] {
 
 /* --------- ---------- all items page */
 .items-heading,
-.cart-heading{
+.cart-heading {
     margin-top: 12rem;
     margin-bottom: 5rem;
 }
@@ -913,30 +917,37 @@ label[for="quantity"] {
 }
 
 /* --------------- cart */
-.cart-container{
+.cart-container {
     min-height: 80vh;
 }
-.cart-heading{
+
+.cart-heading {
     margin-left: 2rem;
 }
-.cart-no-items{
-   margin-top:4rem;
-   margin-left:2rem;
+
+.cart-no-items {
+    margin-top: 4rem;
+    margin-left: 2rem;
 }
-.cart-no-items p{
+
+.cart-no-items p {
     font-size: 1.75rem;
     margin-bottom: 3rem;
 }
-.table-image{
-    height:10rem;
-    width:7rem;
+
+.table-image {
+    height: 10rem;
+    width: 7rem;
 }
-th{
+
+th {
     font-size: 1.25rem;
 }
-td p{
+
+td p {
     font-size: 1rem;
 }
+
 /* Media Querys */
 
 /* medium 768px */
@@ -1057,16 +1068,19 @@ td p{
     .step-links a {
         font-size: 1.5rem;
     }
-    .table-image{
-    height:13rem;
-    width:9rem;
-}
-th{
-    font-size: 1.5rem;
-}
-td p{
-    font-size: 1.25rem;
-}
+
+    .table-image {
+        height: 13rem;
+        width: 9rem;
+    }
+
+    th {
+        font-size: 1.5rem;
+    }
+
+    td p {
+        font-size: 1.25rem;
+    }
 
 }
 
@@ -1170,16 +1184,19 @@ td p{
     .items-heading h1 {
         font-size: 6rem;
     }
-      .table-image{
-    height:15rem;
-    width:12rem;
-}
-th{
-    font-size: 1.75rem;
-}
-td p{
-    font-size: 1.5rem;
-}
+
+    .table-image {
+        height: 15rem;
+        width: 12rem;
+    }
+
+    th {
+        font-size: 1.75rem;
+    }
+
+    td p {
+        font-size: 1.5rem;
+    }
 }
 
 /* xx-large 1400px */
