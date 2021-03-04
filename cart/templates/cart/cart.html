@@ -43,7 +43,7 @@ Your Cart
                             <p class=" mt-4">€ {{ item.item.price }}</p>
                         </td>
                         <td>
-                            <form class="mt-4 cart-quantity-form" method="POST" action="">
+                            <form class="mt-4 cart-quantity-form" method="POST" action="{% url 'update_cart' item.item_id %}">
                                 {% csrf_token %}
                                 <label for="quantity" class="visually-hidden">
                                     Item Quantity
@@ -51,12 +51,12 @@ Your Cart
                                 <input type="number" value="{{ item.quantity }}" name="item_quantity" min="1" max="20"
                                     data-item_id="cart_{{ item.item_id }}" id="itemcart_quantity_{{ item.item_id }}">
                             </form>
-                            <div class="d-flex flex-column mb-3">
+                      
                                 <a class="update-quantity-link">Update
                                 </a>
                                 <a class="remove-cart-item text-danger "
                                     id="remove_{{ item.item_id }}">Remove</a>
-                            </div>
+                         
                         </td>
                         <td>
                             <p class="mt-4">{{ item.item.price }}</p>
