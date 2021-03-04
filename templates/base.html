@@ -53,11 +53,21 @@
                                         <span class="visually-hidden">link to account</span></a>
                                 </li>
                                 <li>
-                                    <a class="top-nav-item d-none d-md-block" href="{% url 'view_cart' %}">Cart</a>
+                                    <a class="top-nav-item d-none d-md-block" href="{% url 'view_cart' %}">Cart <span class="cart-number">
+                                            {% if item_count %}
+                                            {{ item_count }}
+                                            {% endif %}
+                                        </span>
+                                    </a>
                                 </li>
                                 <li>
                                     <a class="top-nav-item" href="{% url 'view_cart' %}">
                                         <i class="las la-shopping-bag d-md-none" aria-hidden="true"></i>
+                                        <span class="cart-number d-md-none">
+                                            {% if item_count %}
+                                            {{ item_count }}
+                                            {% endif %}
+                                        </span>
                                         <span class="visually-hidden">link to shopping cart</span></a>
                                 </li>
                             </ul>
@@ -74,7 +84,7 @@
                                     <i class="las la-search nav-icon" aria-hidden="true"></i>
                                 </li>
                                 <li class="search-sublist sublist-hidden">
-                                    <form  method="GET" action="{% url 'all_items' %}">
+                                    <form method="GET" action="{% url 'all_items' %}">
                                         <label class="visually-hidden" for="query">Search</label>
                                         <input type="text" name="query" placeholder="search">
                                         <button type="submit">Search</button>
@@ -88,12 +98,12 @@
                                 </li>
                                 <li class="side-nav-item furniture-nav-link">
                                     Furniture
-                                        <i class="las la-angle-right nav-icon" aria-hidden="true"></i>
+                                    <i class="las la-angle-right nav-icon" aria-hidden="true"></i>
                                     <ul class="furniture-sublist sublist-hidden ">
                                         <li><a href="{% url 'all_items' %}?category=sofas">Sofas</a></li>
                                         <li><a href="{% url 'all_items' %}?category=chairs">Chairs</a></li>
                                         <li><a href="{% url 'all_items' %}?category=tables">Tables</a></li>
-                                         <li><a href="{% url 'all_items' %}?category=sideboards">Sideboards</a></li>
+                                        <li><a href="{% url 'all_items' %}?category=sideboards">Sideboards</a></li>
                                     </ul>
                                 </li>
                                 <li class="side-nav-item">
