@@ -931,7 +931,12 @@ label[for="quantity"] {
     height:10rem;
     width:7rem;
 }
-
+th{
+    font-size: 1.25rem;
+}
+td p{
+    font-size: 1rem;
+}
 /* Media Querys */
 
 /* medium 768px */
@@ -1052,7 +1057,16 @@ label[for="quantity"] {
     .step-links a {
         font-size: 1.5rem;
     }
-
+    .table-image{
+    height:13rem;
+    width:9rem;
+}
+th{
+    font-size: 1.5rem;
+}
+td p{
+    font-size: 1.25rem;
+}
 
 }
 
@@ -1156,6 +1170,16 @@ label[for="quantity"] {
     .items-heading h1 {
         font-size: 6rem;
     }
+      .table-image{
+    height:15rem;
+    width:12rem;
+}
+th{
+    font-size: 1.75rem;
+}
+td p{
+    font-size: 1.5rem;
+}
 }
 
 /* xx-large 1400px */
