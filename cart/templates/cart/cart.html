@@ -93,5 +93,21 @@ Your Cart
 
 {% block other_end_js %}
 {{ block.super }}
-<script src="{% static 'cart/js/cart.js' %}"></script>
+
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script >
+      // Remove item and reload on click
+    $('.remove-cart-item').click(function(e) {
+        let csrfToken = "{{ csrf_token }}";
+        let itemId = $(this).attr('id').split('remove_')[1];
+    
+        let url = `/cart/remove/${itemId}/`;
+        let data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 {% endblock %}

@@ -16,15 +16,16 @@ let removeLink = document.querySelectorAll(".remove-cart-item");
 removeLink.forEach((link)=>{
     link.addEventListener("click", ()=>{
     let csrfToken = "{{ csrf_token }}";
-    let item_id = link.getAttribute("id").split("remove_")[1];
-    let url = `/cart/remove/${item_id}`
+    let itemId = link.getAttribute("id").split("remove_")[1];
+    let url = `/cart/remove/${itemId}`
     let data = {"csrfmiddlewaretoken": csrfToken}
 
     fetch(url, {
         body: data,
-        method: "post"
+        method: "POST"
     }).then(()=>{
-        location.reload();
+     
+      location.reload();
     })
 })
 })

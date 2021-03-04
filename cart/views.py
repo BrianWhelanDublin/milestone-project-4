@@ -1,5 +1,6 @@
 from django.shortcuts import (render, redirect,
-                              get_object_or_404, reverse)
+                              get_object_or_404, reverse,
+                              HttpResponse)
 from stock.models import Item
 
 
@@ -48,3 +49,19 @@ def update_cart(request, item_id):
 
     return redirect(reverse("view_cart"))
 
+
+def remove_from_cart(request, item_id):
+    ''' View to remove items from the cart '''
+    try:
+        item = get_object_or_404(Item, pk=item_id)
+
+        cart = request.session.get("cart", {})
+
+        cart.pop(item_id)
+
+        request.session["cart"] = cart
+        return HttpResponse(status=200)
+
+    except Exception as e:
+
+        return HttpResponse(status=500)
