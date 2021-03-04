@@ -53,21 +53,22 @@
                                         <span class="visually-hidden">link to account</span></a>
                                 </li>
                                 <li>
-                                    <a class="top-nav-item d-none d-md-block" href="{% url 'view_cart' %}">Cart <span class="cart-number">
-                                            {% if item_count %}
-                                            {{ item_count }}
-                                            {% endif %}
+                                    <a class="top-nav-item d-none d-md-block" href="{% url 'view_cart' %}">Cart
+                                          {% if item_count %} 
+                                        <span class="cart-number">
+                                          {{ item_count }}
                                         </span>
+                                        {% endif %}
                                     </a>
                                 </li>
                                 <li>
                                     <a class="top-nav-item" href="{% url 'view_cart' %}">
                                         <i class="las la-shopping-bag d-md-none" aria-hidden="true"></i>
+                                          {% if item_count %}
                                         <span class="cart-number d-md-none">
-                                            {% if item_count %}
                                             {{ item_count }}
-                                            {% endif %}
                                         </span>
+                                          {% endif %}
                                         <span class="visually-hidden">link to shopping cart</span></a>
                                 </li>
                             </ul>

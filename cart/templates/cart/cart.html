@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load cart_tools %}
 
 {% block title %}
 Your Cart
@@ -43,7 +44,8 @@ Your Cart
                             <p class=" mt-4">€ {{ item.item.price }}</p>
                         </td>
                         <td>
-                            <form class="mt-4 cart-quantity-form" method="POST" action="{% url 'update_cart' item.item_id %}">
+                            <form class="mt-4 cart-quantity-form" method="POST"
+                                action="{% url 'update_cart' item.item_id %}">
                                 {% csrf_token %}
                                 <label for="quantity" class="visually-hidden">
                                     Item Quantity
@@ -51,15 +53,14 @@ Your Cart
                                 <input type="number" value="{{ item.quantity }}" name="item_quantity" min="1" max="20"
                                     data-item_id="cart_{{ item.item_id }}" id="itemcart_quantity_{{ item.item_id }}">
                             </form>
-                      
-                                <a class="update-quantity-link">Update
-                                </a>
-                                <a class="remove-cart-item text-danger "
-                                    id="remove_{{ item.item_id }}">Remove</a>
-                         
+
+                            <a class="update-quantity-link">Update
+                            </a>
+                            <a class="remove-cart-item text-danger " id="remove_{{ item.item_id }}">Remove</a>
+
                         </td>
                         <td>
-                            <p class="mt-4">{{ item.item.price }}</p>
+                            <p class="mt-4">{{ item.item.price | calculate_total:item.quantity }}</p>
                         </td>
                     </tr>
                     {% endfor %}
@@ -94,20 +95,32 @@ Your Cart
 {% block other_end_js %}
 {{ block.super }}
 
- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script >
-      // Remove item and reload on click
-    $('.remove-cart-item').click(function(e) {
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>
+    // code to update quantity of item in cart
+    let updateLink = document.querySelectorAll(".update-quantity-link");
+
+    updateLink.forEach((link) => {
+        link.addEventListener("click", () => {
+            let form = link.previousElementSibling
+            form.submit()
+        })
+    })
+    // Remove item and reload on click
+    $('.remove-cart-item').click(function (e) {
         let csrfToken = "{{ csrf_token }}";
         let itemId = $(this).attr('id').split('remove_')[1];
-    
+
         let url = `/cart/remove/${itemId}/`;
-        let data = {'csrfmiddlewaretoken': csrfToken};
+        let data = {
+            'csrfmiddlewaretoken': csrfToken
+        };
 
         $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
+            .done(function () {
+                location.reload();
+            });
     })
 </script>
 {% endblock %}
