@@ -95,8 +95,6 @@ Your Cart
 {% block other_end_js %}
 {{ block.super }}
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script>
     // code to update quantity of item in cart
     let updateLink = document.querySelectorAll(".update-quantity-link");
@@ -107,20 +105,24 @@ Your Cart
             form.submit()
         })
     })
-    // Remove item and reload on click
-    $('.remove-cart-item').click(function (e) {
-        let csrfToken = "{{ csrf_token }}";
-        let itemId = $(this).attr('id').split('remove_')[1];
+ // code to remove items from the cart
+let removeLink = document.querySelectorAll(".remove-cart-item");
 
-        let url = `/cart/remove/${itemId}/`;
-        let data = {
-            'csrfmiddlewaretoken': csrfToken
-        };
-
-        $.post(url, data)
-            .done(function () {
-                location.reload();
-            });
-    })
+removeLink.forEach((link)=>{
+    link.addEventListener("click", ()=>{
+    let csrfToken = "{{ csrf_token }}";
+    let itemId = link.getAttribute("id").split("remove_")[1];
+    let url = `/cart/remove/${itemId}/`
+ 
+    fetch(url, {
+        method: "POST",
+        headers: { "X-CSRFToken": csrfToken },
+    }).then(()=>{
+      location.reload();
+    }).catch((error)=>{
+        alert("Opps something has gone wrong.");
+    });
+});
+});
 </script>
 {% endblock %}
