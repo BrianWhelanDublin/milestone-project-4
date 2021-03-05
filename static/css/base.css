@@ -167,6 +167,18 @@ table input[type="number"]:focus {
 label[for="quantity"] {
     font-size: 1.25rem;
 }
+/*  toasts*/
+.message-container{
+    position: fixed;
+    top:6rem;
+    right: 0;
+    z-index: 500;
+}
+.toast{
+    border-radius: 0;
+}
+
+
 
 /* Navigation */
 

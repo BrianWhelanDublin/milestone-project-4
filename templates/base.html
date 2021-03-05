@@ -54,9 +54,9 @@
                                 </li>
                                 <li>
                                     <a class="top-nav-item d-none d-md-block" href="{% url 'view_cart' %}">Cart
-                                          {% if item_count %} 
+                                        {% if item_count %}
                                         <span class="cart-number">
-                                          {{ item_count }}
+                                            {{ item_count }}
                                         </span>
                                         {% endif %}
                                     </a>
@@ -64,11 +64,11 @@
                                 <li>
                                     <a class="top-nav-item" href="{% url 'view_cart' %}">
                                         <i class="las la-shopping-bag d-md-none" aria-hidden="true"></i>
-                                          {% if item_count %}
+                                        {% if item_count %}
                                         <span class="cart-number d-md-none">
                                             {{ item_count }}
                                         </span>
-                                          {% endif %}
+                                        {% endif %}
                                         <span class="visually-hidden">link to shopping cart</span></a>
                                 </li>
                             </ul>
@@ -119,6 +119,14 @@
                 </div>
             </div>
         </nav>
+        {% if messages %}
+        <div class="message-container">
+            {% for message in messages %}
+
+            {% include "includes/toasts/successful_toast.html" %}
+            {% endfor %}
+        </div>
+        {% endif %}
         {% block header %}
         {% endblock %}
     </header>
@@ -172,6 +180,19 @@
         </div>
     </footer>
     {% block other_end_js %}
+    <script>
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        var toastList = toastElList.map(function (toastEl) {
+            return new bootstrap.Toast(toastEl)
+        })
+        toastList.forEach((toast)=>{
+            toast.show()
+        })
+
+    
+   
+  
+    </script>
     {% endblock %}
     <script src="{% static 'js/main.js' %}"></script>
 </body>
