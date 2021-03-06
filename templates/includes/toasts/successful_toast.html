@@ -1,10 +1,44 @@
+<div class="toast successful-toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false"
+    data-bs-animation="true">
+    <div>
 
-<div class="toast" role="alert" aria-live="assertive" aria-atomic="true"data-bs-autohide="false" data-bs-animation="true">
-  <div class="toast-header">
-    <strong class="me-auto">Success</strong>
-    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-  </div>
-  <div class="toast-body">
-     {{ message }}
-  </div>
+        <button type="button" class="btn-close float-end " data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+        <div class="row">
+            <div class="col">
+                <p class="fs-4">{{ message }}</p>
+                <hr>
+            </div>
+        </div>
+        {% if subtotal and not on_cart_page %}
+        <p class="fs-5">Your Cart has {{ item_count }}
+            {% if item_count == 1 %}
+            item
+            {% else %}
+            items
+            {% endif %}
+        </p>
+        <div class="cart-toast-wrapper">
+            {% for item in cart_items %}
+            <div class="row mt-2">
+                <div class="offset-1 col-3">
+                    <img src="/media/{{ item.item.image }}" alt="image of {{ item.item.name" class="table-image">
+        </div>
+        <div class=" offset-2 col-6 ">
+            <p class="fs-4">{{ item.item.name }}</p>
+            <p class=" fs-5 text-muted">Quantity: {{ item.quantity }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="cart-links d-flex justify-content-end">
+            <a type="submit" href="{% url 'view_cart' %}" class="item-link-light item-link-button  flex-center">View
+                Cart</a>
+            <a type="submit" href="{% url 'all_items' %}"
+                class="item-link-dark item-link-button  flex-center">Checkout</a>
+        </div>
+        {% endif %}
+    </div>
+
 </div>

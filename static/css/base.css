@@ -9,7 +9,6 @@ html {
 
 }
 
-.row,
 .col {
     height: 100%;
 }
@@ -138,6 +137,9 @@ a:hover,
 
 .row {
     --bs-gutter-x: 0;
+}
+.toast{
+    background-color: #EDEDE9;
 }
 
 /* Form elements */
@@ -977,6 +979,13 @@ td p {
 .update-quantity-link{
     color: #2a6486;
 }
+/* Toats */
+.cart-toast-wrapper{
+    height:50rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+ 
 
 /* Media Querys */
 
@@ -1124,7 +1133,10 @@ td p {
         font-size: 1.5rem;
         height: 3rem;
     }
-
+   
+    .successful-toast{
+       width:50rem;
+    }
 }
 
 /* x-large 1200px */
