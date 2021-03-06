@@ -18,6 +18,7 @@ class Order(models.Model):
     contact_number = models.CharField(max_length=20, null=False, blank=False)
     street_address_1 = models.CharField(max_length=80, null=False, blank=False)
     street_address_2 = models.CharField(max_length=80, null=False, blank=False)
+    town_or_city = models.CharField(max_length=50, null=False, blank=False)
     county = models.CharField(max_length=50, null=False, blank=False)
     eircode = models.CharField(max_length=10, null=False, blank=False)
     country = models.CharField(max_length=50, null=False, blank=False)
