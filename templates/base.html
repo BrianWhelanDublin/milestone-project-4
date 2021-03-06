@@ -121,6 +121,7 @@
         </nav>
         {% if messages %}
         <div class="message-container">
+        <!-- adds the django messages to page using bootstrap toasts -->
             {% for message in messages %}
                 {% with message.level as level %}
                 {% if level == 25 %}
