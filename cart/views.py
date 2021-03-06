@@ -25,12 +25,17 @@ def add_to_cart(request, item_id):
 
     if item_id in list(cart.keys()):
         cart[item_id] += quantity
+        messages.success(request,
+                         f"{item.name}'s \
+                              quantity has been updated \
+                                  to {cart[item_id]}")
     else:
         cart[item_id] = quantity
+        messages.success(request,
+                         f"{item.name} \
+                             has been added to your cart.")
 
     request.session["cart"] = cart
-    messages.success(request,
-                     f"{item.name} has been added to your cart.")
 
     return redirect(redirect_url)
 
@@ -45,8 +50,13 @@ def update_cart(request, item_id):
 
     if quantity > 0:
         cart[item_id] = quantity
+        messages.success(request,
+                         f"{item.name}'s \
+                             quantity has been updated to {cart[item_id]}")
     else:
         cart.pop(item_id)
+        messages.success(request,
+                         f"{item.name} has been removed from your cart.")
 
     request.session["cart"] = cart
 
