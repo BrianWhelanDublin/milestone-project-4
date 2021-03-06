@@ -71,10 +71,12 @@ def remove_from_cart(request, item_id):
         cart = request.session.get("cart", {})
 
         cart.pop(item_id)
+        messages.success(request,
+                         f"{item.name} has been removed from your cart.")
 
         request.session["cart"] = cart
         return HttpResponse(status=200)
 
-    except Exception as e:
-
+    except Exception as error:
+        messages.error(request, f"Error removing item {error}")
         return HttpResponse(status=500)
