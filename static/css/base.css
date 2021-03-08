@@ -9,7 +9,8 @@ html {
 
 }
 
-.col {
+.col,
+.hero-row {
     height: 100%;
 }
 
@@ -941,7 +942,8 @@ label[for="quantity"] {
 }
 
 /* --------------- cart */
-.cart-container {
+.cart-container ,
+.checkout-container{
     min-height: 80vh;
 }
 
@@ -983,7 +985,7 @@ td p {
 }
 /* Toats */
 .cart-toast-wrapper{
-    height:50rem;
+    height: 45rem;
     overflow-x: hidden;
     overflow-y: auto;
 }

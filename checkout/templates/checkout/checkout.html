@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+{% block other_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
 {% block title %}
 Checkout
 {% endblock %}
@@ -7,10 +10,100 @@ Checkout
 {% include 'includes/nav-background.html' %}
 {% endblock %}
 {% block main_content %}
-<div class="container">
+<div class="container checkout-container ">
     <div class="row">
-        <div class="col flex-center items-heading">
+        <div class="col flex-center checkout-heading">
             <h1>Checkout</h1>
         </div>
-</div>
-{% endblock %}
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-last">
+                <div class="cart-toast-wrapper">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="flex-center" >Your Cart</h3>
+                            <hr class="mx-4">
+                        </div>
+                        <div class="col-9 offset-1">
+                            <p>Your Cart has {{ item_count }}
+                                {% if item_count == 1 %}
+                                item
+                                {% else %}
+                                items
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                    {% for item in cart_items %}
+                    <div class="row mt-2">
+                        <div class="offset-1 col-3">
+                            <img src="/media/{{ item.item.image }}" alt="image of {{ item.item.name" class="table-image">
+        </div>
+        <div class=" offset-2 col-6 ">
+            <p class="fs-4">{{ item.item.name }}</p>
+            <p class=" fs-5 text-muted">Quantity: {{ item.quantity }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-6 offset-6">
+                            <hr class="mx-2">
+                              <p>Total: € {{ total|floatformat:2 }}</p>
+                            <p>Delivery: € {{ home_delivery|floatformat:2 }}</p>
+                            <h4>Total Price : € {{ subtotal|floatformat:2 }}</h4>
+                        </div>
+                    </div>
+               
+            </div>
+            <div class="col-12 col-md-6 mt-5 mb-5">
+                <form id="checkout-form" action="{% url 'checkout' %}" method="POST">
+                    {% csrf_token %}
+                    <fieldset class="px-2 mb-4">
+                        <legend>Contact Details</legend>
+                        {{ form.full_name | as_crispy_field }}
+                        {{ form.email | as_crispy_field }}
+                        {{ form.contact_number | as_crispy_field }}
+                    </fieldset>
+                    <fieldset class="px-2 mb-4">
+                        <legend>Delivery Details</legend>
+                        {{ form.street_address_1 | as_crispy_field }}
+                        {{ form.street_address_2 | as_crispy_field }}
+                        {{ form.town_or_city | as_crispy_field }}
+                        {{ form.county | as_crispy_field }}
+                        {{ form.eircode | as_crispy_field }}
+                        {{ form.country | as_crispy_field }}
+                    </fieldset>
+                    <div class="form-check ms-5">
+                        {% if user.is_authenticated %}
+                        <input class="form-check-input form-check-inline " type="checkbox" id="save-info"
+                            name="save-info" checked>
+                        <label class="form-check-label" for="save-info">
+                            Save info to profile.
+                        </label>
+                        {% else %}
+                        <label class="form-check-label" for="save-info">
+                            <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or
+                            <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
+                        </label>
+                        {% endif %}
+                    </div>
+                    <fieldset class="px-2 mt-5">
+                        <legend>Payment</legend>
+                        <!-- For stripe card element -->
+                        <div id="card-element"></div>
+                        <!-- For card errors -->
+                        <div class="text-danger" id="card-errors" role="alert"></div>
+                    </fieldset>
+                    <div class="checkout-submit-links flex-row-between">
+                        <a type="submit" href="{% url 'view_cart' %}"
+                            class="item-link-light item-link-button  flex-center">Adjust Cart</a>
+                        <button type="submit" class=" item-link-button flex-center item-link-dark"
+                            id="checkout_submit">Complete Order</button>
+                    </div>
+                    <p class="float-end mx-4">Your card will be charged <strong>€{{ subtotal|floatformat:2 }}</strong>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

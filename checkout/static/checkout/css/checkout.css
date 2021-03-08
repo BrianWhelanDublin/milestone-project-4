@@ -1,0 +1,51 @@
+#checkout-form label {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+#checkout-form label[for="save-info"]{
+    clip: auto;
+    height: .2rem;
+    margin:0;
+    overflow: visible;
+    padding: 0;
+    position: absolute;
+    width: 80%;
+}
+
+#checkout-form input {
+    border-radius: 0;
+    border: .1rem solid #153243;
+    background-color: #EDEDE9;
+}
+
+#checkout-form input::placeholder {
+    font-size: 1.1rem;
+}
+
+#checkout-form input:focus,
+#checkout-form input:active {
+    box-shadow: 0 0 0 0.25rem #D1D1C7;
+
+}
+
+/* code from stack overflow to stop my inputs 
+turning a light blue when filled in */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
+    box-shadow: 0 0 0px 1000px #fff inset !important;
+}
+.checkout-submit-links{
+    flex-direction: row;
+}
