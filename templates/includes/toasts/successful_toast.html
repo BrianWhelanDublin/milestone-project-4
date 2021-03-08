@@ -23,11 +23,16 @@
             {% for item in cart_items %}
             <div class="row mt-2">
                 <div class="offset-1 col-3">
-                    <img src="/media/{{ item.item.image }}" alt="image of {{ item.item.name" class="table-image">
-        </div>
-        <div class=" offset-2 col-6 ">
-            <p class="fs-4">{{ item.item.name }}</p>
-            <p class=" fs-5 text-muted">Quantity: {{ item.quantity }}</p>
+                    {% if item.item.image %}
+                        <img src="/media/{{ item.item.image }}" alt="image of {{ item.item.name }}" class="table-image">
+                    {% else %}
+                        <img src="/media/no_image.png"
+                        alt="No image found for {{ item.item.name }}" class="table-image">
+                    {% endif %}
+                </div>
+                <div class=" offset-2 col-6 ">
+                    <p class="fs-4">{{ item.item.name }}</p>
+                    <p class=" fs-5 text-muted">Quantity: {{ item.quantity }}</p>
                 </div>
             </div>
             {% endfor %}

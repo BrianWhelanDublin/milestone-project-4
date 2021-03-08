@@ -30,7 +30,8 @@
                 contemporary furniture, accessories and lighting for the style-conscious home.
                 At, Abode.com we work closely with our furniture creators to bring you the very best in design,
                 sustainability and value.</p>
-            <a href="{% url 'all_items' %}" class="flex-center link-button link-button-dark animation-element">Shop Collection</a>
+            <a href="{% url 'all_items' %}" class="flex-center link-button link-button-dark animation-element">Shop
+                Collection</a>
         </div>
     </div>
 </div>
@@ -55,9 +56,15 @@
                 <div class="new-item-slider">
                     {% for item in new_items %}
                     <div class="item-container">
+                        {% if item.image %}
                         <a href="{% url 'single_item' item.id%}">
                             <img src="/media/{{ item.image }}" alt="image for {{ item.name }}">
                         </a>
+                        {% else %}
+                        <a href="{% url 'single_item' item.id%}">
+                            <img src="/media/no_image.png" alt="No image found for {{ item.name }}">
+                        </a>
+                        {% endif %}
                         <div class="item-details flex-row-between">
                             <h3>{{ item.name }}</h3>
                             <p>€ {{ item.price }}</p>
@@ -100,11 +107,11 @@
 <!-- Customer review section -->
 <div class="container animation-element">
     <div class="row">
-       <div class="col flex-center">
+        <div class="col flex-center">
             <div class="col review-title">
-            <h3>Rated Excellent by you</h3>
+                <h3>Rated Excellent by you</h3>
+            </div>
         </div>
-       </div>
     </div>
     <div class="row">
         <div class="col-12 col-md-4">
@@ -116,7 +123,8 @@
                     <i class="las la-star" aria-hidden="true"></i>
                     <i class="las la-star" aria-hidden="true"></i>
                 </div>
-                <p>I love Abode.com my armchair arrived on time and looks amazing in my living area. Would highly recomend them.</p>
+                <p>I love Abode.com my armchair arrived on time and looks amazing in my living area. Would highly
+                    recomend them.</p>
                 <p><strong>Louise Carter</strong> Wicklow</p>
             </div>
         </div>
@@ -129,7 +137,8 @@
                     <i class="las la-star" aria-hidden="true"></i>
                     <i class="las la-star" aria-hidden="true"></i>
                 </div>
-                <p>I purchased a sofa from Abode and it is excellent The quality and design are amazing and it is very comfortable. I would 100% buy from here again.</p>
+                <p>I purchased a sofa from Abode and it is excellent The quality and design are amazing and it is very
+                    comfortable. I would 100% buy from here again.</p>
                 <p><strong>Stephen Moran</strong> Dublin</p>
             </div>
         </div>
@@ -142,7 +151,8 @@
                     <i class="las la-star" aria-hidden="true"></i>
                     <i class="las la-star" aria-hidden="true"></i>
                 </div>
-                <p>I recently renovated my home and have bought several items from Abode. I really cannot fault them, everting from delivery, quality and design is excelent</p>
+                <p>I recently renovated my home and have bought several items from Abode. I really cannot fault them,
+                    everting from delivery, quality and design is excelent</p>
                 <p><strong>Lyndsay Forde</strong> Waterford</p>
             </div>
         </div>
@@ -155,10 +165,10 @@
             <h3>Sign Up for Our Newsletter</h3>
         </div>
         <div class="col-12 col-md-6">
-                <form class="newsletter-form flex-center" >
-                    <input type="text" placeholder="Email">
-                    <button type="submit">Sign Up</button>
-                </form>
+            <form class="newsletter-form flex-center">
+                <input type="text" placeholder="Email">
+                <button type="submit">Sign Up</button>
+            </form>
         </div>
     </div>
 </div>

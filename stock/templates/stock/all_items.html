@@ -51,8 +51,13 @@ All Items
         {% for item in page_obj %}
         <div class="col-12 col-md-6 col-lg-4 item-col">
             <div class="item-container flex-center">
+                {% if item.image %}
                 <a href="{% url 'single_item' item.id %}"><img src="/media/{{ item.image }}"
                         alt="image for {{ item.name }}"></a>
+                {% else %}
+                <a href="{% url 'single_item' item.id %}"><img src="/media/no_image.png"
+                        alt="No image found for {{ item.name }}"></a>
+                {% endif %}
             </div>
             <div class="item-details all-item-details flex-row-between">
                 <h3>{{ item.name }}</h3>
