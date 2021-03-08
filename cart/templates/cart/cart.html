@@ -53,11 +53,11 @@ Your Cart
                             <form class="mt-4 cart-quantity-form" method="POST"
                                 action="{% url 'update_cart' item.item_id %}">
                                 {% csrf_token %}
-                                <label for="item_quantity" class="visually-hidden">
+                                <label for="item_quantity_{{item.item_id}}" class="visually-hidden">
                                     Item Quantity
                                 </label>
                                 <input type="number" value="{{ item.quantity }}" name="item_quantity" min="0" max="20"
-                                    id="item_quantity">
+                                    id="item_quantity_{{item.item_id}}">
                             </form>
 
                             <a class="update-quantity-link">Update
@@ -79,17 +79,17 @@ Your Cart
                     </tr>
                 </table>
                 <div class="cart-links d-flex justify-content-end">
-                    <a type="submit" href="{% url 'all_items' %}"
+                    <a  href="{% url 'all_items' %}"
                         class="item-link-light item-link-button  flex-center">Keep
                         Shopping</a>
-                    <a type="submit" href="{% url 'all_items' %}"
+                    <a href="{% url 'checkout' %}"
                         class="item-link-dark item-link-button  flex-center">Checkout</a>
                 </div>
             </div>
             {% else %}
             <div class="cart-no-items ">
                 <p>No items in shopping bag</p>
-                <a type="submit" href="{% url 'all_items' %}" class="item-link-light item-link-button  flex-center">Keep
+                <a href="{% url 'all_items' %}" class="item-link-light item-link-button  flex-center">Keep
                     Shopping</a>
             </div>
             {% endif %}
