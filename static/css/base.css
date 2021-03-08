@@ -881,13 +881,15 @@ label[for="quantity"] {
 
 /* --------- ---------- all items page */
 .items-heading,
-.cart-heading {
+.cart-heading,
+.checkout-heading{
     margin-top: 12rem;
     margin-bottom: 5rem;
 }
 
 .items-heading h1,
-.cart-heading h1 {
+.cart-heading h1,
+.checkout-heading h1 {
     font-size: 4rem;
 }
 
@@ -1099,7 +1101,9 @@ td p {
         margin: 2rem 0;
     }
 
-    .items-heading h1 {
+    .items-heading h1,
+    .cart-heading h1,
+    .checkout-heading h1 {
         font-size: 5rem;
     }
 
@@ -1236,7 +1240,9 @@ td p {
         width: 44rem;
     }
 
-    .items-heading h1 {
+    .items-heading h1,
+    .cart-heading h1,
+    .checkout-heading h1 {
         font-size: 6rem;
     }
 
