@@ -81,10 +81,10 @@ Checkout
                             Save info to profile.
                         </label>
                         {% else %}
-                        <label class="form-check-label" for="save-info">
+                        <p class="form-check-label">
                             <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or
                             <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
-                        </label>
+                        </p>
                         {% endif %}
                     </div>
                     <fieldset class="px-2 mt-5">
@@ -95,7 +95,7 @@ Checkout
                         <div class="text-danger" id="card-errors" role="alert"></div>
                     </fieldset>
                     <div class="checkout-submit-links flex-row-between">
-                        <a type="submit" href="{% url 'view_cart' %}"
+                        <a href="{% url 'view_cart' %}"
                             class="item-link-light item-link-button  flex-center">Adjust Cart</a>
                         <button type="submit" class=" item-link-button flex-center item-link-dark"
                             id="checkout_submit">Complete Order</button>
@@ -105,5 +105,6 @@ Checkout
                 </form>
             </div>
         </div>
+    </div>
     </div>
     {% endblock %}

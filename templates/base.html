@@ -4,7 +4,6 @@
 
 <head>
     <!-- Required meta tags -->
-    <meta http-equiv="X-UA-Compatiable" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
@@ -87,7 +86,7 @@
                                 <li class="search-sublist sublist-hidden">
                                     <form method="GET" action="{% url 'all_items' %}">
                                         <label class="visually-hidden" for="query">Search</label>
-                                        <input type="text" name="query" placeholder="search">
+                                        <input id="query" type="text" name="query" placeholder="search">
                                         <button type="submit">Search</button>
                                     </form>
                                 </li>
