@@ -27,13 +27,14 @@ class OrderForm(forms.ModelForm):
             "email": "Email",
             "contact_number": "Contact Number",
             "street_address_1": "Address",
-            "street_address_2" "Address",
+            "street_address_2": "Address",
             "town_or_city": "Town or City",
             "county": "County",
             "eircode": "Eircode",
             "country": "Country",
         }
 
+        self.field["full_name"].widget.attrs["autofocus"] = True
         for field in self.fields:
             if self.fields[field].required:
                 placeholder = f"{placeholders[field]} *"
@@ -41,4 +42,3 @@ class OrderForm(forms.ModelForm):
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'checkout-input'
-            self.fields[field].label = False
