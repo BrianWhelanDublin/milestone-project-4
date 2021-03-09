@@ -16,7 +16,7 @@ Checkout
             <h1>Checkout</h1>
         </div>
         <div class="row">
-            <div class="col-12 col-md-6 order-md-last">
+            <div class="col-12 col-md-6 order-md-last px-2">
                 <div class="cart-toast-wrapper">
                     <div class="row">
                         <div class="col-12">
@@ -61,7 +61,7 @@ Checkout
                     </div>
                
             </div>
-            <div class="col-12 col-md-6 mt-5 mb-5">
+            <div class="col-12 col-md-6 px-2 mb-5">
                 <form id="checkout-form" action="{% url 'checkout' %}" method="POST">
                     {% csrf_token %}
                     <fieldset class="px-2 mb-4">
@@ -74,10 +74,22 @@ Checkout
                         <legend>Delivery Details</legend>
                         {{ form.street_address_1 | as_crispy_field }}
                         {{ form.street_address_2 | as_crispy_field }}
-                        {{ form.town_or_city | as_crispy_field }}
-                        {{ form.county | as_crispy_field }}
-                        {{ form.eircode | as_crispy_field }}
-                        {{ form.country | as_crispy_field }}
+                       <div class="row">
+                           <div class="col-6 pe-2"> 
+                               {{ form.town_or_city | as_crispy_field }}
+                            </div>
+                       <div class="col-6 ps-2">
+                            {{ form.county | as_crispy_field }}
+                       </div>
+                       </div>
+                        <div class="row">
+                           <div class="col-6 pe-2"> 
+                         {{ form.eircode | as_crispy_field }}
+                            </div>
+                       <div class="col-6 ps-2">
+                               {{ form.country | as_crispy_field }}
+                       </div>
+                       </div>
                     </fieldset>
                     <div class="form-check ms-5">
                         {% if user.is_authenticated %}
@@ -113,4 +125,10 @@ Checkout
         </div>
     </div>
     </div>
+    {% endblock %}
+    {% block other_end_js %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+     <script src="{% static 'checkout/js/stripe.js' %}"></script>
     {% endblock %}
