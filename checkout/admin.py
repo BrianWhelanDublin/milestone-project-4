@@ -27,7 +27,7 @@ class OrderAdmin(admin.ModelAdmin):
         "contact_number",
         "street_address_1",
         "street_address_2",
-        "town_or_city"
+        "town_or_city",
         "county",
         "eircode",
         "country",
