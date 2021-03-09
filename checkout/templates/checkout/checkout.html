@@ -24,7 +24,7 @@ Checkout
                             <hr class="mx-4">
                         </div>
                         <div class="col-9 offset-1">
-                            <p>Your Cart has {{ item_count }}
+                            <p class="fs-5">Your Cart has {{ item_count }}
                                 {% if item_count == 1 %}
                                 item
                                 {% else %}
@@ -47,6 +47,7 @@ Checkout
         <div class=" offset-2 col-6 ">
             <p class="fs-4">{{ item.item.name }}</p>
             <p class=" fs-5 text-muted">Quantity: {{ item.quantity }}</p>
+            <p class=" fs-5 text-muted">Price: €{{ item.item.price }}</p>
                         </div>
                     </div>
                     {% endfor %}
@@ -54,8 +55,8 @@ Checkout
                     <div class="row mt-4">
                         <div class="col-6 offset-6">
                             <hr class="mx-2">
-                              <p>Total: € {{ total|floatformat:2 }}</p>
-                            <p>Delivery: € {{ home_delivery|floatformat:2 }}</p>
+                              <p class="fs-5">Total: € {{ total|floatformat:2 }}</p>
+                            <p class="fs-5">Delivery: € {{ home_delivery|floatformat:2 }}</p>
                             <h4>Total Price : € {{ subtotal|floatformat:2 }}</h4>
                         </div>
                     </div>

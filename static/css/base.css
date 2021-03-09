@@ -2,6 +2,7 @@
 
 * {
     font-size: 10px;
+    color: #153243;
 }
 
 html {
@@ -260,6 +261,7 @@ label[for="quantity"] {
 
 .top-nav-item i {
     font-size: 2rem;
+    color: #EDEDE9;
 }
 
 .side-nav {
@@ -331,6 +333,7 @@ label[for="quantity"] {
 .nav-icon {
     font-size: 3rem;
     margin-left: 1rem;
+    color: #EDEDE9;
 }
 
 .sub-list {
@@ -488,6 +491,8 @@ label[for="quantity"] {
     border: .1rem solid #EDEDE9;
     border-radius: 50%;
     padding: .25rem .4rem;
+    color:  #EDEDE9;
+
 }
 
 /* Hero section in index.html */
@@ -763,20 +768,23 @@ label[for="quantity"] {
 /* ----------------------------------------footer section  */
 .footer-container {
     background-color: #153243;
-    color: #EDEDE9;
+    /* color: #EDEDE9; */
 }
 
 .contact-col {
     flex-direction: column;
     margin: 5rem 0;
+
 }
 
 .contact-col h3 {
     font-size: 1.75rem;
+       color: #EDEDE9;
 }
 
 .contact-col p {
     font-size: 1.25rem;
+       color: #EDEDE9;
 }
 
 .contact-col a {
@@ -797,6 +805,7 @@ label[for="quantity"] {
 .social-col h3 {
     text-align: center;
     font-size: 1.5rem;
+       color: #EDEDE9;
 }
 
 .social-media {
@@ -805,15 +814,16 @@ label[for="quantity"] {
     margin-top: 2rem;
 }
 
-.social-media a {
+/* .social-media a {
     color: #EDEDE9;
-}
+} */
 
 .social-media a i {
     font-size: 3rem;
     margin: 0 2rem;
     padding: .5rem;
     transition: all .5s ease-in-out;
+       color: #EDEDE9;
 }
 
 .social-media a i:hover {
@@ -985,7 +995,7 @@ td p {
 }
 /* Toats */
 .cart-toast-wrapper{
-    height: 45rem;
+    max-height: 45rem;
     overflow-x: hidden;
     overflow-y: auto;
 }

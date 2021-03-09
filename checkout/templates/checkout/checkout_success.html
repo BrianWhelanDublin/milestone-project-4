@@ -8,17 +8,69 @@ Checkout
 {% endblock %}
 {% block main_content %}
 <div class="container checkout-container">
-      <div class="row">
+    <div class="row">
         <div class="col flex-center checkout-heading">
             <h1>Thank You</h1>
         </div>
-        <div class="row">
-            <div class="col-12 co-md-6">
+        <div class="row p-4">
+            <div class="col-12 col-md-6 px-2 mb-5 ">
+                <h3 class="fs-2 mb-4">You Order is confirmed !</h3>
+                <p class="mt-3 fs-3">A confirmation email has been sent to <strong class="fs-3">{{ order.email }}</strong></p>
+                <h4>Details</h4>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <p class="mt-4 fs-4"><strong>Order Details:</strong></p>
+                        <p class="fs-5">Order date <br> <span class="text-muted fs-5">{{ order.date }}</span></p>
+                        <p class="fs-5">Order Number <br> <span class="text-muted fs-5">{{ order.order_number }}</span></p>
+                    </div>
+                    <div class="col-6">
+                         <p class="fs-4 mt-4">Delivery Address <br> 
+            <span class="text-muted fs-5">{{ order.street_address_1 }}</span><br>
+            <span class="text-muted fs-5">{{ order.street_address_2 }}</span><br>
+            <span class="text-muted fs-5">{{ order.town_or_city }}</span><br>
+            <span class="text-muted fs-5">{{ order.county }}</span><br>
+            <span class="text-muted fs-5">{{ order.eircode }}</span><br>
+            <span class="text-muted fs-5">{{ order.country }}</span><br>
+        </p>
+    </div>
+                    </div>
+                </div>
+    
+            <div class="col-12 col-md-6  px-2">
+                <div class="cart-toast-wrapper">
+                    <h3 class="fs-2">Your Items</h3>
+                    <hr>
+                    {% for item in order.lineitems.all %}
+                    <div class="row mt-2">
+                        <div class="offset-1 col-3">
+                            {% if item.item.image %}
+                            <img src="/media/{{ item.item.image }}" alt="image of {{ item.item.name" class="table-image">
+                            {% else %}
+                                <img src="/media/no_image.png"
+                                alt="No image found for {{ item.item.name }}" class="table-image">
+                            {% endif %}
+                        </div>
+                        <div class=" offset-2 col-6 ">
+                            <p class="fs-4">{{ item.item.name }}</p>
+                            <p class=" fs-5 text-muted">Quantity: {{ item.quantity }}</p>
+                            <p class=" fs-5 text-muted">Price: €{{ item.item.price }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="row mt-4">
+                    <div class="col-6 offset-6">
+                        <hr class="mx-2">
+                        <p>Total: € {{ order.order_total }}</p>
+                        <p>Delivery: € {{ order.home_delivery_cost }}</p>
+                        <h4>Total Price : € {{ order.subtotal }}</h4>
+                    </div>
+                </div>
 
             </div>
-             <div class="col-12 co-md-6">
-                
-            </div>
         </div>
-</div>
+    </div>
+    </div>
+
+
 {% endblock %}

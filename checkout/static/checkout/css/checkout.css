@@ -12,14 +12,22 @@
 /* css to override the previous for the chck box label */
 #checkout-form label[for="save-info"]{
     clip: auto;
-    height: .2rem;
+    height: 3rem;
     margin:0;
     overflow: visible;
     padding: 0;
-    position: absolute;
+    position: relative;
     width: 80%;
+    font-size: 1.25rem;
 }
-
+#checkout-form input[type="checkbox"]{
+    background-color:#EDEDE9;
+    height:1rem;
+    width:1rem;
+}
+#checkout-form input[type="checkbox"]:checked{
+    background-color: #153243;
+}
 
 #checkout-form input::placeholder {
     font-size: 1.15rem;
