@@ -34,15 +34,50 @@ card.mount("#card-element");
 // Javascript to handle realtime errors
 
 card.addEventListener("change", (event) => {
-let errorDisplay = document.querySelector("#card-errors");
-if (event.error){
-    markup = `
+    let errorDisplay = document.querySelector("#card-errors");
+    if (event.error) {
+        markup = `
    <p class="fs-5 mt-1">
    <i class="las la-exclamation-circle fs-5" aria-hidden="true"></i>
    ${event.error.message}</p>
     `
-    errorDisplay.innerHTML = markup;
-}else{
-    errorDisplay.textContent = "";
-}
+        errorDisplay.innerHTML = markup;
+    } else {
+        errorDisplay.textContent = "";
+    }
+});
+
+
+var form = document.querySelector('#checkout-form');
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    card.update({
+        "disabled": true
+    })
+    document.querySelector("#checkout_submit").setAttribute("disabled", true)
+    stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+            card: card,
+        }
+    }).then(function (result) {
+        let errorDisplay = document.querySelector("#card-errors");
+        if (result.error) {
+            let markup = `
+                    <p class="fs-5 mt-1">
+                    <i class="las la-exclamation-circle fs-5" aria-hidden="true"></i>
+                    ${event.error.message}</p>
+                    `
+            errorDisplay.innerHTML = markup;
+            card.update({
+                "disabled": false
+            })
+            document.querySelector("#checkout_submit").setAttribute("disabled", false)
+        } else {
+            if (result.paymentIntent.status === 'succeeded') {
+                form.submit();
+                console.log("yeah it worked")
+            }
+        }
+    });
 });
