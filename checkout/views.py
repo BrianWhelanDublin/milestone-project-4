@@ -1,9 +1,13 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import (render, redirect,
+                              reverse, get_object_or_404)
 from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
 from cart.contexts import cart_contents
+
+from stock.models import Item
+from .models import Order, OrderLineItem
 
 import stripe
 
@@ -15,26 +19,73 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
+    if request.method == "POST":
+        cart = request.session.get("cart", {})
+        form_data = {
+            "full_name": request.POST["full_name"],
+            "email": request.POST["email"],
+            "contact_number": request.POST["contact_number"],
+            "street_address_1": request.POST["street_address_1"],
+            "street_address_2": request.POST["street_address_2"],
+            "town_or_city": request.POST["town_or_city"],
+            "county": request.POST["county"],
+            "eircode": request.POST["eircode"],
+            "country": request.POST["country"],
+        }
+        order_form = OrderForm(form_data)
 
-    cart = request.session.get("cart", {})
-    if not cart:
-        messages.error(request, "Your cart is currently empty.")
-        return redirect(reverse("all_items"))
+        # create the order when a valid form is sent
+        if order_form.is_valid():
+            order = order_form.save()
+            for item_id, quantity in cart.items():
+                try:
+                    item = get_object_or_404(Item, pk=item_id)
+                    # cretes the line items
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        item=item,
+                        quantity=quantity,
+                        )
+                    order_line_item.save()
+                
+                # in the case an item isnt found
+                except Item.DoesNotExist:
+                    messages.error(request, (
+                        "The item wasn't found.\
+                            Please contact us for assisstance"
+                    ))
+                    order.delete()
+                    return redirect(reverse("view_cart"))
 
-    # get total for stripe
-    current_cart = cart_contents(request)
-    cart_total = current_cart["subtotal"]
-    stripe_total = round(cart_total * 100)
+            # save the users info
+            request.session["save_info"] = "save-info" in request.POST
+            return redirect(reverse("checkout_success",
+                                    args=[order.order_number]))
+        # otherwise give an error message
+        else:
+            messages.error(request, "Theres was an error checking out.\
+                Please check your details.")
 
-    # create stripe payment intent
-    stripe.api_key = stripe_secret_key
-    intent = stripe.PaymentIntent.create(
-        amount=stripe_total,
-        currency=settings.STRIPE_CURRENCY
-    )
+    else:
+        cart = request.session.get("cart", {})
+        if not cart:
+            messages.error(request, "Your cart is currently empty.")
+            return redirect(reverse("all_items"))
 
+        # get total for stripe
+        current_cart = cart_contents(request)
+        cart_total = current_cart["subtotal"]
+        stripe_total = round(cart_total * 100)
 
-    order_form = OrderForm()
+        # create stripe payment intent
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY
+        )
+
+        order_form = OrderForm()
+
     template = "checkout/checkout.html"
 
     context = {
