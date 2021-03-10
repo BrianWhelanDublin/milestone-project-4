@@ -136,7 +136,7 @@ def cache_checkout_data(request):
         stripe.PaymentIntent.modify(payment_intent_id, metadata={
             "username": request.user,
             "save_info": request.POST.get("save_info"),
-            "cart": json.dumps(request.session.get("cart"))
+            "cart": json.dumps(request.session.get("cart", {}))
         })
 
         return HttpResponse(status=200)
