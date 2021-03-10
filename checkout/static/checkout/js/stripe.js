@@ -55,12 +55,37 @@ form.addEventListener('submit', (event) => {
     card.update({
         "disabled": true
     })
+    console.log(form.contact_number.value.trim())
     document.querySelector("#checkout_submit").setAttribute("disabled", true);
     document.querySelector(".loading").classList.add("loading-show");
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
-        }
+            billing_details:{
+                name: form.full_name.value.trim(),
+                phone: form.contact_number.value.trim(),
+                email: form.email.value.trim(),
+                address:{
+                    line1: form.street_address_1.value.trim(),
+                    line2: form.street_address_2.value.trim(),
+                    city: form.town_or_city.value.trim(),
+                    country: form.country.value.trim(),
+                    state: form.county.value.trim(),
+                }
+            }
+        },
+        shipping:{
+                name: form.full_name.value.trim(),
+                phone: form.contact_number.value.trim(),
+                address:{
+                    line1: form.street_address_1.value.trim(),
+                    line2: form.street_address_2.value.trim(),
+                    city: form.town_or_city.value.trim(),
+                    country: form.country.value.trim(),
+                    postal_code: form.eircode.value.trim(),
+                    state: form.county.value.trim(),
+                }
+            },
     }).then((result) => {
         let errorDisplay = document.querySelector("#card-errors");
         if (result.error) {
@@ -77,7 +102,7 @@ form.addEventListener('submit', (event) => {
             document.querySelector("#checkout_submit").setAttribute("disabled", false)
         } else {
             if (result.paymentIntent.status === 'succeeded') {
-                form.submit();
+                // form.submit();
             }
         }
     });
