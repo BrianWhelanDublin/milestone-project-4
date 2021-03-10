@@ -48,7 +48,7 @@ card.addEventListener("change", (event) => {
 });
 
 
-var form = document.querySelector('#checkout-form');
+let form = document.querySelector('#checkout-form');
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
