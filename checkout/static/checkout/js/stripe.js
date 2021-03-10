@@ -55,20 +55,22 @@ form.addEventListener('submit', (event) => {
     card.update({
         "disabled": true
     })
-    document.querySelector("#checkout_submit").setAttribute("disabled", true)
+    document.querySelector("#checkout_submit").setAttribute("disabled", true);
+    document.querySelector(".loading").classList.add("loading-show");
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
         }
-    }).then(function (result) {
+    }).then((result) => {
         let errorDisplay = document.querySelector("#card-errors");
         if (result.error) {
             let markup = `
-                    <p class="fs-5 mt-1">
+                    <p class="fs-5 mt-1 text-danger">
                     <i class="las la-exclamation-circle fs-5" aria-hidden="true"></i>
-                    ${event.error.message}</p>
+                    ${result.error.message}</p>
                     `
             errorDisplay.innerHTML = markup;
+            document.querySelector(".loading").classList.remove("loading-show");
             card.update({
                 "disabled": false
             })
@@ -76,7 +78,6 @@ form.addEventListener('submit', (event) => {
         } else {
             if (result.paymentIntent.status === 'succeeded') {
                 form.submit();
-                console.log("yeah it worked")
             }
         }
     });

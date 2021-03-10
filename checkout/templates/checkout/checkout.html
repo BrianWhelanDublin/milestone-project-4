@@ -20,7 +20,7 @@ Checkout
                 <div class="cart-toast-wrapper">
                     <div class="row">
                         <div class="col-12">
-                            <h3 class="flex-center" >Your Cart</h3>
+                            <h3 class="flex-center">Your Cart</h3>
                             <hr class="mx-4">
                         </div>
                         <div class="col-9 offset-1">
@@ -37,30 +37,29 @@ Checkout
                     <div class="row mt-2">
                         <div class="offset-1 col-3">
                             {% if item.item.image %}
-                                <img src="/media/{{ item.item.image }}" alt="image of {{ item.item.name" class="table-image">
+                            <img src="/media/{{ item.item.image }}" alt="image of {{ item.item.name" class="table-image">
                             {% else %}
                                 <img src="/media/no_image.png"
-                                alt="No image found for {{ item.item.name }}"
-                                class="table-image">
+                                alt="No image found for {{ item.item.name }}" class="table-image">
                             {% endif %}
-        </div>
-        <div class=" offset-2 col-6 ">
-            <p class="fs-4">{{ item.item.name }}</p>
-            <p class=" fs-5 text-muted">Quantity: {{ item.quantity }}</p>
-            <p class=" fs-5 text-muted">Price: €{{ item.item.price }}</p>
+                        </div>
+                        <div class=" offset-2 col-6 ">
+                            <p class="fs-4">{{ item.item.name }}</p>
+                            <p class=" fs-5 text-muted">Quantity: {{ item.quantity }}</p>
+                            <p class=" fs-5 text-muted">Price: €{{ item.item.price }}</p>
                         </div>
                     </div>
                     {% endfor %}
+                </div>
+                <div class="row mt-4">
+                    <div class="col-6 offset-6">
+                        <hr class="mx-2">
+                        <p class="fs-5">Total: € {{ total|floatformat:2 }}</p>
+                        <p class="fs-5">Delivery: € {{ home_delivery|floatformat:2 }}</p>
+                        <h4>Total Price : € {{ subtotal|floatformat:2 }}</h4>
                     </div>
-                    <div class="row mt-4">
-                        <div class="col-6 offset-6">
-                            <hr class="mx-2">
-                              <p class="fs-5">Total: € {{ total|floatformat:2 }}</p>
-                            <p class="fs-5">Delivery: € {{ home_delivery|floatformat:2 }}</p>
-                            <h4>Total Price : € {{ subtotal|floatformat:2 }}</h4>
-                        </div>
-                    </div>
-               
+                </div>
+
             </div>
             <div class="col-12 col-md-6 px-2 mb-5">
                 <form id="checkout-form" action="{% url 'checkout' %}" method="POST">
@@ -75,22 +74,22 @@ Checkout
                         <legend>Delivery Details</legend>
                         {{ form.street_address_1 | as_crispy_field }}
                         {{ form.street_address_2 | as_crispy_field }}
-                       <div class="row">
-                           <div class="col-6 pe-2"> 
-                               {{ form.town_or_city | as_crispy_field }}
-                            </div>
-                       <div class="col-6 ps-2">
-                            {{ form.county | as_crispy_field }}
-                       </div>
-                       </div>
                         <div class="row">
-                           <div class="col-6 pe-2"> 
-                         {{ form.eircode | as_crispy_field }}
+                            <div class="col-6 pe-2">
+                                {{ form.town_or_city | as_crispy_field }}
                             </div>
-                       <div class="col-6 ps-2">
-                               {{ form.country | as_crispy_field }}
-                       </div>
-                       </div>
+                            <div class="col-6 ps-2">
+                                {{ form.county | as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 pe-2">
+                                {{ form.eircode | as_crispy_field }}
+                            </div>
+                            <div class="col-6 ps-2">
+                                {{ form.country | as_crispy_field }}
+                            </div>
+                        </div>
                     </fieldset>
                     <div class="form-check ms-5">
                         {% if user.is_authenticated %}
@@ -114,8 +113,8 @@ Checkout
                         <div class="text-danger" id="card-errors" role="alert"></div>
                     </fieldset>
                     <div class="checkout-submit-links flex-row-between">
-                        <a href="{% url 'view_cart' %}"
-                            class="item-link-light item-link-button  flex-center">Adjust Cart</a>
+                        <a href="{% url 'view_cart' %}" class="item-link-light item-link-button  flex-center">Adjust
+                            Cart</a>
                         <button type="submit" class=" item-link-button flex-center item-link-dark"
                             id="checkout_submit">Complete Order</button>
                     </div>
@@ -125,11 +124,18 @@ Checkout
             </div>
         </div>
     </div>
+</div>
+<div class="loading">
+    <div class="flex-center spinner-container">
+        <div class="spinner-border spinner" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
     </div>
-    {% endblock %}
-    {% block other_end_js %}
-    {{ block.super }}
-    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}
-     <script src="{% static 'checkout/js/stripe.js' %}"></script>
-    {% endblock %}
+</div>
+{% endblock %}
+{% block other_end_js %}
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe.js' %}"></script>
+{% endblock %}
