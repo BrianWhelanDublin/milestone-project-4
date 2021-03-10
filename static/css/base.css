@@ -140,7 +140,8 @@ a:hover,
 .row {
     --bs-gutter-x: 0;
 }
-.toast{
+
+.toast {
     background-color: #EDEDE9;
 }
 
@@ -171,14 +172,16 @@ table input[type="number"]:focus {
 label[for="quantity"] {
     font-size: 1.25rem;
 }
+
 /*  toasts*/
-.message-container{
+.message-container {
     position: fixed;
-    top:6rem;
+    top: 6rem;
     right: 0;
     z-index: 500;
 }
-.toast{
+
+.toast {
     border-radius: 0;
 }
 
@@ -491,7 +494,7 @@ label[for="quantity"] {
     border: .1rem solid #EDEDE9;
     border-radius: 50%;
     padding: .25rem .4rem;
-    color:  #EDEDE9;
+    color: #EDEDE9;
 
 }
 
@@ -588,11 +591,11 @@ label[for="quantity"] {
 }
 
 .arrow-active {
-  
     background-color: #153243;
 }
-.arrow-active i{
-color: #EDEDE9;
+
+.arrow-active i {
+    color: #EDEDE9;
 }
 
 
@@ -782,12 +785,12 @@ color: #EDEDE9;
 
 .contact-col h3 {
     font-size: 1.75rem;
-       color: #EDEDE9;
+    color: #EDEDE9;
 }
 
 .contact-col p {
     font-size: 1.25rem;
-       color: #EDEDE9;
+    color: #EDEDE9;
 }
 
 .contact-col a {
@@ -808,7 +811,7 @@ color: #EDEDE9;
 .social-col h3 {
     text-align: center;
     font-size: 1.5rem;
-       color: #EDEDE9;
+    color: #EDEDE9;
 }
 
 .social-media {
@@ -826,7 +829,7 @@ color: #EDEDE9;
     margin: 0 2rem;
     padding: .5rem;
     transition: all .5s ease-in-out;
-       color: #EDEDE9;
+    color: #EDEDE9;
 }
 
 .social-media a i:hover {
@@ -896,7 +899,7 @@ color: #EDEDE9;
 /* --------- ---------- all items page */
 .items-heading,
 .cart-heading,
-.checkout-heading{
+.checkout-heading {
     margin-top: 12rem;
     margin-bottom: 5rem;
 }
@@ -955,8 +958,8 @@ color: #EDEDE9;
 }
 
 /* --------------- cart */
-.cart-container ,
-.checkout-container{
+.cart-container,
+.checkout-container {
     min-height: 80vh;
 }
 
@@ -993,16 +996,18 @@ td p {
     font-size: 1.1rem;
     margin-top: .25rem;
 }
-.update-quantity-link{
+
+.update-quantity-link {
     color: #2a6486;
 }
+
 /* Toats */
-.cart-toast-wrapper{
+.cart-toast-wrapper {
     max-height: 45rem;
     overflow-x: hidden;
     overflow-y: auto;
 }
- 
+
 
 /* Media Querys */
 
@@ -1152,9 +1157,9 @@ td p {
         font-size: 1.5rem;
         height: 3rem;
     }
-   
-    .successful-toast{
-       width:50rem;
+
+    .successful-toast {
+        width: 50rem;
     }
 }
 
