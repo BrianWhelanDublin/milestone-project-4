@@ -17,10 +17,10 @@ class Order(models.Model):
     email = models.EmailField(max_length=254, null=False, blank=False)
     contact_number = models.CharField(max_length=20, null=False, blank=False)
     street_address_1 = models.CharField(max_length=80, null=False, blank=False)
-    street_address_2 = models.CharField(max_length=80, null=False, blank=False)
+    street_address_2 = models.CharField(max_length=80, null=True, blank=True)
     town_or_city = models.CharField(max_length=50, null=False, blank=False)
     county = models.CharField(max_length=50, null=False, blank=False)
-    eircode = models.CharField(max_length=10, null=False, blank=False)
+    eircode = models.CharField(max_length=10, null=True, blank=True)
     country = models.CharField(max_length=50, null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
     home_delivery_cost = models.DecimalField(max_digits=6,

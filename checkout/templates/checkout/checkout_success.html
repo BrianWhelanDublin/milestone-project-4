@@ -26,10 +26,14 @@ Checkout
                     <div class="col-6">
                          <p class="fs-4 mt-4">Delivery Address <br> 
             <span class="text-muted fs-5">{{ order.street_address_1 }}</span><br>
+            {% if order.street_address_2 %}
             <span class="text-muted fs-5">{{ order.street_address_2 }}</span><br>
+            {% endif %}
             <span class="text-muted fs-5">{{ order.town_or_city }}</span><br>
             <span class="text-muted fs-5">{{ order.county }}</span><br>
+            {% if order.eircode %}
             <span class="text-muted fs-5">{{ order.eircode }}</span><br>
+            {% endif %}
             <span class="text-muted fs-5">{{ order.country }}</span><br>
         </p>
     </div>
