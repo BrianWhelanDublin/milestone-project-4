@@ -588,8 +588,11 @@ label[for="quantity"] {
 }
 
 .arrow-active {
-    color: #EDEDE9;
+  
     background-color: #153243;
+}
+.arrow-active i{
+color: #EDEDE9;
 }
 
 
