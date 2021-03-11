@@ -32,6 +32,9 @@ class Order(models.Model):
     subtotal = models.DecimalField(max_digits=6,
                                    decimal_places=2,
                                    null=False, default=0)
+    original_cart = models.TextField(null=False, blank=False, default="")
+    stripe_payment_intent_id = models.CharField(max_length=254, null=False,
+                                                blank=False, default="")
 
     # model methods
     def _create_order_number(self):
