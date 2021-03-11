@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import get_object_or_404
+
 from .models import Order, OrderLineItem
 from stock.models import Item
 
@@ -61,6 +61,8 @@ class StripeWebhookHandler:
                     eircode__iexact=delivery_details.address.postal_code,
                     country__iexact=delivery_details.address.country,
                     subtotal=subtotal,
+                    original_cart=cart,
+                    stripe_payment_intent_id=payment_intent_id,
                 )
                 order_exists = True
                 break
@@ -72,7 +74,7 @@ class StripeWebhookHandler:
         if order_exists:
             return HttpResponse(
                     content=f"Webhook recieved : {event['type']} | SUCCESS: \
-                        Verified order is in database.", status=200)
+Verified order is in database.", status=200)
 
         else:
             order = None
@@ -88,9 +90,11 @@ class StripeWebhookHandler:
                         eircode=delivery_details.address.postal_code,
                         country=delivery_details.address.country,
                         subtotal=subtotal,
+                        original_cart=cart,
+                        stripe_payment_intent_id=payment_intent_id,
                     )
                 for item_id, quantity in json.loads(cart).items():
-                    item = get_object_or_404(Item, pk=item_id)
+                    item = Item.objects.get(id=item_id)
                 # cretes the line items
                     order_line_item = OrderLineItem(
                         order=order,
@@ -102,8 +106,8 @@ class StripeWebhookHandler:
                 if order:
                     order.delete()
                 return HttpResponse(content="Webhook recieved \
-                        : {event['type']} | ERROR : {e}", status=500)
+: {event['type']} | ERROR : {e}", status=500)
 
         return HttpResponse(
             content=f"Webhook recieved : {event['type']} | \
-                 SUCCESS: Created order in webhook", status=200)
+ SUCCESS: Created order in webhook", status=200)
