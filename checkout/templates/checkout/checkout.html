@@ -111,6 +111,8 @@ Checkout
                         <div id="card-element"></div>
                         <!-- For card errors -->
                         <div class="text-danger" id="card-errors" role="alert"></div>
+                        <!-- hiden value to pass client secret to view -->
+                        <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     </fieldset>
                     <div class="checkout-submit-links flex-row-between">
                         <a href="{% url 'view_cart' %}" class="item-link-light item-link-button  flex-center">Adjust
