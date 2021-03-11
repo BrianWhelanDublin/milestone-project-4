@@ -88,7 +88,7 @@ form.addEventListener('submit', (event) => {
                         line1: form.street_address_1.value.trim(),
                         line2: form.street_address_2.value.trim(),
                         city: form.town_or_city.value.trim(),
-                        country: "IE",
+                        country: form.country.value.trim(),
                         state: form.county.value.trim(),
                     }
                 }
@@ -128,5 +128,4 @@ form.addEventListener('submit', (event) => {
     }).catch((error)=>{
         location.reload()
     })
-
 });
