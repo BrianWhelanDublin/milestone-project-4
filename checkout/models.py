@@ -9,12 +9,16 @@ from decimal import Decimal
 import uuid
 
 from stock.models import Item
+from profiles.models import UserProfile
 
 
 class Order(models.Model):
     ''' Create the order model '''
 
     order_number = models.CharField(max_length=32, null=False, editable=False)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                                     null=True, blank=True,
+                                     related_name="orders")
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     contact_number = models.CharField(max_length=20, null=False, blank=False)
