@@ -120,6 +120,8 @@
                 </div>
             </div>
         </nav>
+        {% block header %}
+        {% endblock %}
         {% if messages %}
         <div class="message-container">
         <!-- adds the django messages to page using bootstrap toasts -->
@@ -138,8 +140,6 @@
             {% endfor %}
         </div>
         {% endif %}
-        {% block header %}
-        {% endblock %}
     </header>
     <main>
         {% block main_content %}

@@ -41,25 +41,11 @@ Checkout
                 </div>
     
             <div class="col-12 col-md-6  px-2">
-                <div class="cart-toast-wrapper">
+                <div class="cart-items-wrapper">
                     <h3 class="fs-2">Your Items</h3>
                     <hr>
                     {% for item in order.lineitems.all %}
-                    <div class="row mt-2">
-                        <div class="offset-1 col-3">
-                            {% if item.item.image %}
-                            <img src="/media/{{ item.item.image }}" alt="image of {{ item.item.name" class="table-image">
-                            {% else %}
-                                <img src="/media/no_image.png"
-                                alt="No image found for {{ item.item.name }}" class="table-image">
-                            {% endif %}
-                        </div>
-                        <div class=" offset-2 col-6 ">
-                            <p class="fs-4">{{ item.item.name }}</p>
-                            <p class=" fs-5 text-muted">Quantity: {{ item.quantity }}</p>
-                            <p class=" fs-5 text-muted">Price: €{{ item.item.price }}</p>
-                        </div>
-                    </div>
+                 {% include 'includes/cart-items.html' %}
                     {% endfor %}
                 </div>
                 <div class="row mt-4">
