@@ -9,7 +9,7 @@ from decimal import Decimal
 import uuid
 
 from stock.models import Item
-from profiles.models import UserProfile
+from users.models import UserProfile
 
 
 class Order(models.Model):
