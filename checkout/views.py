@@ -45,9 +45,10 @@ def checkout(request):
             order.stripe_payment_intent_id = payment_intent_id
             order.original_cart = json.dumps(cart)
             order.save()
+
             for item_id, quantity in cart.items():
                 try:
-                    item = get_object_or_404(Item, pk=item_id)
+                    item = Item.objects.get(id=item_id)
                     # cretes the line items
                     order_line_item = OrderLineItem(
                         order=order,

@@ -24,19 +24,19 @@ class Order(models.Model):
     county = models.CharField(max_length=50, null=False, blank=False)
     eircode = models.CharField(max_length=10, null=True, blank=True)
     country = CountryField(blank_label="Country *",
-                                  null=False, blank=False)
+                           null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
     home_delivery_cost = models.DecimalField(max_digits=6,
                                              decimal_places=2,
                                              null=False, default=0)
-    order_total = models.DecimalField(max_digits=10,
+    order_total = models.DecimalField(max_digits=8,
                                       decimal_places=2,
                                       null=False, default=0)
-    subtotal = models.DecimalField(max_digits=6,
+    subtotal = models.DecimalField(max_digits=8,
                                    decimal_places=2,
                                    null=False, default=0)
     original_cart = models.TextField(null=False, blank=False, default="")
-    stripe_payment_intent_id = models.CharField(max_length=254, null=False,
+    stripe_payment_intent_id = models.CharField(max_length=254,
                                                 blank=False, default="")
 
     # model methods
@@ -79,7 +79,7 @@ class OrderLineItem(models.Model):
     item = models.ForeignKey(Item, null=False, blank=False,
                              on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
-    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2,
+    lineitem_total = models.DecimalField(max_digits=8, decimal_places=2,
                                          null=False, blank=False)
 
     def save(self, *args, **kwargs):
