@@ -1010,7 +1010,77 @@ td p {
     overflow-x: hidden;
     overflow-y: auto;
 }
+/* ----------------------Allauth  */
+.allauth-container{
+    max-width: 120rem;
+}
+.allauthform-col{
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+.allauth-col{
+    margin: 2rem 0 5rem 0;
+}
 
+.allauth-form input[type="checkbox"]:checked {
+    background-color: #153243;
+}
+
+.allauth-form input::placeholder {
+    font-size: 1.1rem;
+    color: rgba(21, 50, 67, .7);
+}
+.allauth-form{
+    width:90%;
+    max-width: 50rem;
+}
+
+.allauth-form input {
+    box-sizing: border-box;
+    height: 3.5rem;
+    width:100%;
+    padding: 1rem 1.2rem;
+    border: 1px solid #153243;
+    border-radius: 0px;
+    background-color: #EDEDE9;
+}
+
+.allauth-form input {
+    font-size: 1.25rem;
+}
+.allauth-form input[type="checkbox"] {
+    background-color: #EDEDE9;
+    height: .5rem;
+    width: .5rem;
+    border-radius: 0;
+    margin-right: 1rem;
+      margin-top:.5rem;
+      margin-left: .5rem;
+}
+.form-check-label{
+    margin-top:1rem;
+}
+
+
+.allauth-form input[type="checkbox"]:checked {
+    background-color: #153243;
+}
+.primaryAction{
+    margin: 2rem auto;
+}
+
+/* code from stack overflow to stop my inputs 
+turning a light blue when filled in */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #EDEDE9 inset !important;
+    box-shadow: 0 0 0px 1000px #EDEDE9 inset !important;
+}
 
 /* Media Querys */
 
