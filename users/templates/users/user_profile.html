@@ -15,4 +15,15 @@ User Profile
             <h1>My Profile</h1>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div class="userform">
+               <form id="userprofile-form">
+                  {{ form|crispy }}
+                  <button class="item-link-button flex-center item-link-dark" type="submit">Update Profile</button>
+               </form>
+            </div>
+        </div>
+    </div>
+  
 {% endblock %}

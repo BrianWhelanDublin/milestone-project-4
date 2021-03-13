@@ -11,6 +11,7 @@
                 <hr>
             </div>
         </div>
+            {% if item_count > 0 %}
         {% if subtotal and not on_cart_page and not on_cart_success %}
         <p class="fs-5">Your Cart has {{ item_count }}
             {% if item_count == 1 %}
@@ -26,11 +27,12 @@
             {% endfor %}
         </div>
         <div class="cart-links d-flex justify-content-end">
+    
             <a href="{% url 'view_cart' %}" class="item-link-light item-link-button  flex-center">View
                 Cart</a>
             <a href="{% url 'checkout' %}"
                 class="item-link-dark item-link-button  flex-center">Checkout</a>
-    
+                {% endif %}
         </div>
         {% endif %}
     </div>
