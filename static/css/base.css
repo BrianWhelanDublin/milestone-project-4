@@ -130,7 +130,7 @@ a:hover,
 .side-nav-item a:hover,
 .side-nav-item:hover,
 .dropdown-link:hover,
-.account-item  a:hover {
+.account-item a:hover {
     color: rgb(136, 136, 135);
 }
 
@@ -176,32 +176,36 @@ label[for="quantity"] {
 }
 
 #checkout-form input[type="checkbox"],
- .allauth-form input[type="checkbox"]{
+.allauth-form input[type="checkbox"] {
     background-color: #EDEDE9;
     height: 1.5rem;
     width: 1.5rem;
     padding: 0;
 }
+
 #checkout-form input[type="checkbox"]:checked,
 .allauth-form input[type="checkbox"]:checked {
     background-color: #153243;
 }
+
 #checkout-form input::placeholder,
 .allauth-form input::placeholder,
 #userprofile-form input::placeholder {
     font-size: 1.1rem;
     color: rgba(21, 50, 67, .7);
 }
+
 #checkout-form input:focus,
 #checkout-form input:active,
 .StripeElement--focus,
 .allauth-form input:focus,
 .allauth-form input:active,
 #userprofile-form input:focus,
-#userprofile-form input:active{
+#userprofile-form input:active {
     box-shadow: 0 0 0 0.25rem #D1D1C7;
     outline: none;
 }
+
 .StripeElement,
 #checkout-form input,
 #checkout-form select,
@@ -215,29 +219,35 @@ label[for="quantity"] {
     border: 1px solid #153243;
     border-radius: 0px;
     background-color: #EDEDE9;
+    color: #153243;
 }
+
 #checkout-form input,
 .allauth-form input,
 #userprofile-form input {
     font-size: 1.25rem;
+  
 }
-.allauth-form input{
-    width:100%;
+
+.allauth-form input {
+    width: 100%;
 }
-.allauth-form input[type="radio"]{
+
+.allauth-form input[type="radio"] {
     height: 1rem;
     width: 1rem;
-    margin-right:.5rem ;
+    margin-right: .5rem;
 }
+
 select:invalid,
 select option[value=""] {
     color: rgba(21, 50, 67, .7);
 }
-#id_remember{
-    margin:1rem;
+
+#id_remember {
+    margin: 1rem;
     border-radius: 0;
 }
-
 
 /* code from stack overflow to stop my inputs 
 turning a light blue when filled in */
@@ -251,8 +261,10 @@ select:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0px 1000px #EDEDE9 inset !important;
     box-shadow: 0 0 0px 1000px #EDEDE9 inset !important;
 }
-
-
+input:-webkit-autofill
+{
+ -webkit-text-fill-color: #153243 !important;
+}
 
 /*  toasts*/
 .message-container {
@@ -347,20 +359,22 @@ select:-webkit-autofill:focus {
     font-size: 2rem;
     color: #EDEDE9;
 }
-.account-dropdown{
+
+.account-dropdown {
     width: 37.5rem;
     height: 50vh;
     position: fixed;
-    top:0;
-    right:0;
+    top: 0;
+    right: 0;
     /* background-color: #153243; */
-       background-color: #153344d8;
+    background-color: #153344d8;
     backdrop-filter: blur(1rem);
     transform: translateY(-50vh);
     transition: all .85s ease-in-out;
-    z-index:100;
+    z-index: 100;
 }
-.dropdown-link{
+
+.dropdown-link {
     transition: all .5s ease-in-out;
 }
 
@@ -371,7 +385,7 @@ select:-webkit-autofill:focus {
     top: 0;
     left: 0;
     /* background-color: #153243; */
-       background-color: #153344d8;
+    background-color: #153344d8;
     backdrop-filter: blur(1rem);
     z-index: 100;
     transform: translateX(-37.5rem);
@@ -381,7 +395,8 @@ select:-webkit-autofill:focus {
 .side-nav-show {
     transform: translateX(0rem);
 }
-.dropdown-show{
+
+.dropdown-show {
     transform: translateY(0)
 }
 
@@ -417,12 +432,15 @@ select:-webkit-autofill:focus {
 .line-x {
     transform: rotate(40deg) translateY(6.5px);
 }
-.side-nav-menu{
-    height:100vh;
+
+.side-nav-menu {
+    height: 100vh;
 }
-.account-menu{
-    height:50vh;
+
+.account-menu {
+    height: 50vh;
 }
+
 .side-nav-menu,
 .account-menu {
     display: flex;
@@ -435,7 +453,7 @@ select:-webkit-autofill:focus {
 
 .side-nav-menu li a,
 .side-nav-menu li,
-.account-item  a{
+.account-item a {
     font-size: 3rem;
     margin: 1rem 0;
     font-weight: 400;
@@ -607,7 +625,8 @@ select:-webkit-autofill:focus {
     font-size: 1.15rem;
     transition: all .5s ease-in;
 }
-.cart-number:hover{
+
+.cart-number:hover {
     background-color: rgb(136, 136, 135);
 }
 
@@ -886,7 +905,7 @@ select:-webkit-autofill:focus {
 
 /* ----------------------------------------footer section  */
 .footer-container {
-       background-color: #153344d8;
+    background-color: #153344d8;
     backdrop-filter: blur(1rem);
     /* background-color: #153243; */
     /* color: #EDEDE9; */
@@ -957,7 +976,7 @@ select:-webkit-autofill:focus {
 .nav-background {
     height: 6rem;
     /* background-color: #153243; */
-       background-color: #153344d8;
+    background-color: #153344d8;
     backdrop-filter: blur(1rem);
     position: fixed;
 }
@@ -1124,29 +1143,32 @@ td p {
     overflow-x: hidden;
     overflow-y: auto;
 }
+
 /* ----------------------Allauth  */
-.allauth-container{
+.allauth-container {
     max-width: 120rem;
 }
-.allauthform-col{
+
+.allauthform-col {
     flex-direction: column;
     margin-top: 1.5rem;
 }
-.allauth-col{
+
+.allauth-col {
     margin: 2rem 0 5rem 0;
 }
 
-.allauth-form{
-    width:90%;
+.allauth-form {
+    width: 90%;
     max-width: 50rem;
 }
 
-.form-check-label{
-    margin-top:1rem;
+.form-check-label {
+    margin-top: 1rem;
 }
 
 .primaryAction,
-.secondaryAction{
+.secondaryAction {
     margin: 2rem auto;
 }
 
