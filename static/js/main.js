@@ -7,6 +7,21 @@ window.addEventListener("scroll", () => {
         topNavigation.classList.remove("top-nav-colored")
     }
 })
+// show dropdown when accont is clicked
+let dropdownLinks = document.querySelectorAll(".dropdown-link")
+ let dropdown = document.querySelector(".account-dropdown")
+
+dropdownLinks.forEach((link)=>{
+    link.addEventListener("click", ()=>{
+        dropdown.classList.add("dropdown-show")
+    })
+})
+
+let closeDropdown = document.querySelector(".dropdown-close")
+closeDropdown.addEventListener("click", ()=>{
+dropdown.classList.remove("dropdown-show")
+})
+
 
 // show side nav when hamburger clicked
 let hamburger = document.querySelector(".hamburger")

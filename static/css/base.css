@@ -128,7 +128,9 @@ a {
 
 a:hover,
 .side-nav-item a:hover,
-.side-nav-item:hover {
+.side-nav-item:hover,
+.dropdown-link:hover,
+.account-item  a:hover {
     color: rgb(136, 136, 135);
 }
 
@@ -266,6 +268,22 @@ label[for="quantity"] {
     font-size: 2rem;
     color: #EDEDE9;
 }
+.account-dropdown{
+    width: 37.5rem;
+    height: 50vh;
+    position: fixed;
+    top:0;
+    right:0;
+    /* background-color: #153243; */
+       background-color: #153344d8;
+    backdrop-filter: blur(1rem);
+    transform: translateY(-50vh);
+    transition: all .85s ease-in-out;
+    z-index:100;
+}
+.dropdown-link{
+    transition: all .5s ease-in-out;
+}
 
 .side-nav {
     height: 100vh;
@@ -273,7 +291,9 @@ label[for="quantity"] {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #153243;
+    /* background-color: #153243; */
+       background-color: #153344d8;
+    backdrop-filter: blur(1rem);
     z-index: 100;
     transform: translateX(-37.5rem);
     transition: all .85s ease-in-out;
@@ -282,8 +302,12 @@ label[for="quantity"] {
 .side-nav-show {
     transform: translateX(0rem);
 }
+.dropdown-show{
+    transform: translateY(0)
+}
 
-.nav-close {
+.nav-close,
+.dropdown-close {
     height: 4rem;
     width: 4rem;
     position: fixed;
@@ -292,7 +316,8 @@ label[for="quantity"] {
     flex-direction: column;
 }
 
-.nav-close:hover span {
+.nav-close:hover span,
+.dropdown-close:hover span {
     background-color: rgb(141, 141, 140);
 }
 
@@ -313,9 +338,14 @@ label[for="quantity"] {
 .line-x {
     transform: rotate(40deg) translateY(6.5px);
 }
-
-.side-nav-menu {
-    height: 100vh;
+.side-nav-menu{
+    height:100vh;
+}
+.account-menu{
+    height:50vh;
+}
+.side-nav-menu,
+.account-menu {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -325,7 +355,8 @@ label[for="quantity"] {
 }
 
 .side-nav-menu li a,
-.side-nav-menu li {
+.side-nav-menu li,
+.account-item  a{
     font-size: 3rem;
     margin: 1rem 0;
     font-weight: 400;
@@ -776,7 +807,9 @@ label[for="quantity"] {
 
 /* ----------------------------------------footer section  */
 .footer-container {
-    background-color: #153243;
+       background-color: #153344d8;
+    backdrop-filter: blur(1rem);
+    /* background-color: #153243; */
     /* color: #EDEDE9; */
 }
 
@@ -844,7 +877,9 @@ label[for="quantity"] {
 /* -------------------------------- our story page */
 .nav-background {
     height: 6rem;
-    background-color: #153243;
+    /* background-color: #153243; */
+       background-color: #153344d8;
+    backdrop-filter: blur(1rem);
     position: fixed;
 }
 

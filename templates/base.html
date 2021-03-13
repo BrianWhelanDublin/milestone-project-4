@@ -21,7 +21,7 @@
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
     <!-- Stripe javascript -->
-     <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://js.stripe.com/v3/"></script>
     {% block other_head_js %}
     {% endblock %}
     <title>Abode.com
@@ -45,13 +45,12 @@
                             </button>
                             <a class="logo text-shadow" href="{% url 'home_page' %}">Abode.com</a>
                             <ul>
-                                <li>
-                                    <a class="top-nav-item d-none d-md-block" href="{% url 'account_login' %}">Account</a>
+                                <li class="top-nav-item d-none d-md-block dropdown-link">Account
                                 </li>
-                                <li>
-                                    <a class="top-nav-item" href="#">
-                                        <i class="las la-user d-md-none" aria-hidden="true"></i>
-                                        <span class="visually-hidden">link to account</span></a>
+
+                                <li class="top-nav-item dropdown-link">
+                                    <i class="las la-user d-md-none" aria-hidden="true"></i>
+                                    <span class="visually-hidden">link to account</span>
                                 </li>
                                 <li>
                                     <a class="top-nav-item d-none d-md-block" href="{% url 'view_cart' %}">Cart
@@ -72,6 +71,21 @@
                                         {% endif %}
                                         <span class="visually-hidden">link to shopping cart</span></a>
                                 </li>
+                            </ul>
+                        </div>
+                        <div class="account-dropdown" aria-labelledby="user-options">
+                            <button class="dropdown-close flex-center" aria-label="Close Navigation">
+                                <span class="line-x" aria-hidden="true"></span>
+                                <span class="line-y" aria-hidden="true"></span>
+                            </button>
+                            <ul class="account-menu">
+                                {% if request.user.is_authenticated %}
+                                <li class="account-item"><a href="{% url 'user_profile' %}">My Account</a></li>
+                                <li class="account-item"><a href="{% url 'account_logout' %}">Logout</a></li>
+                                {% else %}
+                                <li class="account-item"><a href="{% url 'account_login' %}">Login</a></li>
+                                <li class="account-item"><a href="{% url 'account_signup' %}">Signup</a></li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>
@@ -124,19 +138,19 @@
         {% endblock %}
         {% if messages %}
         <div class="message-container">
-        <!-- adds the django messages to page using bootstrap toasts -->
+            <!-- adds the django messages to page using bootstrap toasts -->
             {% for message in messages %}
-                {% with message.level as level %}
-                {% if level == 25 %}
-                    {% include "includes/toasts/successful_toast.html" %}
-                {% elif level == 30 %}
-                   {% include "includes/toasts/warning_toast.html" %}
-                {% elif level == 40 %}
-                   {% include "includes/toasts/error_toast.html" %}
-                {% else %}
-                   {% include "includes/toasts/info_toast.html" %}
-                {% endif %}
-                {% endwith %}
+            {% with message.level as level %}
+            {% if level == 25 %}
+            {% include "includes/toasts/successful_toast.html" %}
+            {% elif level == 30 %}
+            {% include "includes/toasts/warning_toast.html" %}
+            {% elif level == 40 %}
+            {% include "includes/toasts/error_toast.html" %}
+            {% else %}
+            {% include "includes/toasts/info_toast.html" %}
+            {% endif %}
+            {% endwith %}
             {% endfor %}
         </div>
         {% endif %}
