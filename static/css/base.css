@@ -176,10 +176,11 @@ label[for="quantity"] {
 }
 
 #checkout-form input[type="checkbox"],
- .allauth-fom input[type="checkbox"]{
+ .allauth-form input[type="checkbox"]{
     background-color: #EDEDE9;
-    height: 1rem;
-    width: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    padding: 0;
 }
 #checkout-form input[type="checkbox"]:checked,
 .allauth-form input[type="checkbox"]:checked {
@@ -232,7 +233,10 @@ select:invalid,
 select option[value=""] {
     color: rgba(21, 50, 67, .7);
 }
-
+#id_remember{
+    margin:1rem;
+    border-radius: 0;
+}
 
 
 /* code from stack overflow to stop my inputs 
