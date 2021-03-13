@@ -30,6 +30,6 @@ class UserProfile(models.Model):
 def create_or_update_the_userprofile(sender, instance, created, **kwargs):
     ''' creates the user profile or updates it if there is one already '''
 
-    # if created:
-    UserProfile.objects.create(user=instance)
-    # instance.userprofile.save()
+    if created:
+        UserProfile.objects.create(user=instance)
+    instance.userprofile.save()
