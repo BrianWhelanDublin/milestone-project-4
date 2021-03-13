@@ -4,8 +4,19 @@
 {% include 'includes/nav-background.html' %}
 {% endblock %}
 <div class="contaner checkout-container allauth-container m-auto">
-    {% block alluth_block %}
+    <div class="row">
+        <div class="col-12 checkout-heading text-center">
+            <h1>Welcome to Abode.com</h1>
+            <hr>
+        </div>
+    </div>
+    {% block allauth_block %}
     {% endblock%}
 </div>
 
+{% endblock %}
+
+{% block other_end_js %}
+{% block extra_body %}
+{% endblock %}
 {% endblock %}

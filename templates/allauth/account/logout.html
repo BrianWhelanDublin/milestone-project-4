@@ -2,20 +2,22 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
-{% block content %}
-<h1>{% trans "Sign Out" %}</h1>
+{% block allauth_block %}
 
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
-
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
-</form>
-
+<div class="row allauth-row">
+    <div class="col allauth-col">
+        <h2 class="text-center mb-5">{% trans "Sign Out" %}</h2>
+        <p class="text-center fs-4 mb-5">{% trans 'Are you sure you want to sign out?' %}</p>
+        <form method="post" action="{% url 'account_logout' %}" class="password_reset allauth-form m-auto">
+            {% csrf_token %}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <button class="primaryAction  item-link-button flex-center item-link-dark"
+                type="submit">{% trans 'Sign Out' %}</button>
+        </form>
+    </div>
+</div>
 
 {% endblock %}

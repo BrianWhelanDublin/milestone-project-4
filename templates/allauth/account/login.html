@@ -4,19 +4,13 @@
 {% load socialaccount %}
 
 
-{% block alluth_block %}
-<div class="row">
-    <div class="col-12 checkout-heading text-center">
-        <h1>Welcome to Abode.com</h1>
-        <hr>
-    </div>
-</div>
+{% block allauth_block %}
 <div class="row allauth-row">
     <div class="col-12 col-md-6 allauthform-col flex-center">
         <h3 class="fs-1">Sign In</h3> 
 <form class="login allauth-form " method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
-  {{ form|crispy }}
+  {{ form.as_p }}
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
