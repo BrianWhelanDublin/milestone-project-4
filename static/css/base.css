@@ -248,6 +248,10 @@ select option[value=""] {
     margin: 1rem;
     border-radius: 0;
 }
+#userprofile-form{
+    max-width:80%;
+    margin:0 auto;
+}
 
 /* code from stack overflow to stop my inputs 
 turning a light blue when filled in */
