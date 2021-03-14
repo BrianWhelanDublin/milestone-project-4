@@ -12,7 +12,7 @@
             </div>
         </div>
             {% if item_count > 0 %}
-        {% if subtotal and not on_cart_page and not on_cart_success and not on_profile_page %}
+        {% if grand_total and not on_cart_page and not on_cart_success and not on_profile_page %}
         <p class="fs-5">Your Cart has {{ item_count }}
             {% if item_count == 1 %}
             item

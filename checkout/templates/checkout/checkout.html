@@ -44,7 +44,7 @@ Checkout
                         <hr class="mx-2">
                         <p class="fs-5">Total: € {{ total|floatformat:2 }}</p>
                         <p class="fs-5">Delivery: € {{ home_delivery|floatformat:2 }}</p>
-                        <h4>Total Price : € {{ subtotal|floatformat:2 }}</h4>
+                        <h4>Total Price : € {{ grand_total|floatformat:2 }}</h4>
                     </div>
                 </div>
 
@@ -108,7 +108,7 @@ Checkout
                         <button type="submit" class=" item-link-button flex-center item-link-dark"
                             id="checkout_submit">Complete Order</button>
                     </div>
-                    <p class="float-end mx-4">Your card will be charged <strong>€{{ subtotal|floatformat:2 }}</strong>
+                    <p class="float-end mx-4">Your card will be charged <strong>€{{ grand_total|floatformat:2 }}</strong>
                     </p>
                 </form>
             </div>

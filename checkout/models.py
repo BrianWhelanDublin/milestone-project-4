@@ -36,9 +36,9 @@ class Order(models.Model):
     order_total = models.DecimalField(max_digits=8,
                                       decimal_places=2,
                                       null=False, default=0)
-    subtotal = models.DecimalField(max_digits=8,
-                                   decimal_places=2,
-                                   null=False, default=0)
+    grand_total = models.DecimalField(max_digits=8,
+                                      decimal_places=2,
+                                      null=False, default=0)
     original_cart = models.TextField(null=False, blank=False, default="")
     stripe_payment_intent_id = models.CharField(max_length=254,
                                                 blank=False, default="")
@@ -55,8 +55,8 @@ class Order(models.Model):
             self.order_number = self._create_order_number()
         super().save(*args, **kwargs)
 
-    def update_subtotal(self):
-        ''' Update the subtotal each time a new line item is added '''
+    def update_grand_total(self):
+        ''' Update the grand_total each time a new line item is added '''
 
         self.order_total = self.lineitems.aggregate(
             Sum("lineitem_total"))["lineitem_total__sum"] or 0
@@ -69,7 +69,7 @@ class Order(models.Model):
             self.home_delivery_cost = settings.STANDARD_HOME_DELIVERY_COST_MAX
         else:
             self.home_delivery_cost = delivery_cost
-        self.subtotal = self.order_total + self.home_delivery_cost
+        self.grand_total = self.order_total + self.home_delivery_cost
         self.save()
 
     def __str__(self):

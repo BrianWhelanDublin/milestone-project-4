@@ -85,7 +85,7 @@ def checkout(request):
 
         # get total for stripe
         current_cart = cart_contents(request)
-        cart_total = current_cart["subtotal"]
+        cart_total = current_cart["grand_total"]
         stripe_total = round(cart_total * 100)
 
         # create stripe payment intent

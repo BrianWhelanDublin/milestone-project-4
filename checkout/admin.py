@@ -17,7 +17,7 @@ class OrderAdmin(admin.ModelAdmin):
         "date",
         "home_delivery_cost",
         "order_total",
-        "subtotal",
+        "grand_total",
         "original_cart",
         "stripe_payment_intent_id",
     )
@@ -37,7 +37,7 @@ class OrderAdmin(admin.ModelAdmin):
         "date",
         "home_delivery_cost",
         "order_total",
-        "subtotal",
+        "grand_total",
         "original_cart",
         "stripe_payment_intent_id",
     )
@@ -48,7 +48,7 @@ class OrderAdmin(admin.ModelAdmin):
         "full_name",
         "order_total",
         "home_delivery_cost",
-        "subtotal",
+        "grand_total",
     )
 
     ordering = (

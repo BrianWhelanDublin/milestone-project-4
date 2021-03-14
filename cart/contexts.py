@@ -34,14 +34,14 @@ def cart_contents(request):
     else:
         home_delivery = delivery_cost
 
-    subtotal = home_delivery + total
+    grand_total = home_delivery + total
 
     context = {
         "cart_items": cart_items,
         "total": total,
         "item_count": item_count,
         "home_delivery": home_delivery,
-        "subtotal": subtotal,
+        "grand_total": grand_total,
     }
 
     return context

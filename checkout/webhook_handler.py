@@ -40,7 +40,7 @@ class StripeWebhookHandler:
 
         billing_details = intent.charges.data[0].billing_details
         delivery_details = intent.shipping
-        subtotal = round(intent.charges.data[0].amount/100, 2)
+        grand_total = round(intent.charges.data[0].amount/100, 2)
 
         for field, value in delivery_details.address.items():
             if value == "":
@@ -80,7 +80,7 @@ class StripeWebhookHandler:
                     county__iexact=delivery_details.address.state,
                     eircode__iexact=delivery_details.address.postal_code,
                     country__iexact=delivery_details.address.country,
-                    subtotal=subtotal,
+                    grand_total=grand_total,
                     original_cart=cart,
                     stripe_payment_intent_id=payment_intent_id,
                 )
@@ -110,7 +110,7 @@ Verified order is in database.", status=200)
                         county=delivery_details.address.state,
                         eircode=delivery_details.address.postal_code,
                         country=delivery_details.address.country,
-                        subtotal=subtotal,
+                        grand_total=grand_total,
                         original_cart=cart,
                         stripe_payment_intent_id=payment_intent_id,
                     )
