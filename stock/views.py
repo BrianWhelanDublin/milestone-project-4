@@ -14,7 +14,7 @@ def all_items(request):
     using the django Q object to filter the results.
     '''
 
-    items = Item.objects.all()
+    items = Item.objects.all().order_by("id")
     search = None
     category = None
     current_category = None
