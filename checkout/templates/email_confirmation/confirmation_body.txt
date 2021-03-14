@@ -1,0 +1,26 @@
+Thank You {{ order.full_name }} for your order.
+
+Your order has now been confirmed.
+
+Your order details are as follows.
+
+Order number: {{ order.order_number }}
+Date: {{ order.date }}
+
+Order Total: € {{ order.order_total }}
+Home Delivery Cost: € {{ order.home_delivery_cost }}
+Total Price: € {{ order.grand_total }} 
+
+Your order will be shipped to the following delivery address.
+
+{{ order.street_address_1 }}
+{{ order.street_address_2 }}
+{{ order.town_or_city }}
+{{ order.county }}
+{% if order.eircode %}
+{{ order.eircode }}
+{% endif %}
+
+Thanks for your order.
+
+Abode.com
