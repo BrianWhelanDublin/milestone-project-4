@@ -269,6 +269,18 @@ input:-webkit-autofill
 {
  -webkit-text-fill-color: #153243 !important;
 }
+/* css from bootstrap to hide the label and show only for screenreaders for accsesibility */
+#checkout-form label,
+.newsletter-form label {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
 
 /*  toasts*/
 .message-container {
@@ -883,7 +895,7 @@ input:-webkit-autofill
 
 }
 
-.newsletter-form input[type="text"] {
+.newsletter-form-input {
     width: 60%;
     height: 4rem;
     background-color: #D1D1C7;
@@ -891,6 +903,9 @@ input:-webkit-autofill
     text-align: center;
     font-size: 1.25rem;
     margin-right: 1rem;
+}
+.newsletter-form-input:focus{
+    outline: none;
 }
 
 .newsletter-form button[type="submit"] {

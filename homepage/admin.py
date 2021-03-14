@@ -1,3 +1,12 @@
 from django.contrib import admin
+from .models import NewsletterSubscriber
 
-# Register your models here.
+
+class NewsletterSubscriberAdmin(admin.ModelAdmin):
+    list_display = (
+        "email",
+    )
+
+
+admin.site.register(NewsletterSubscriber,
+                    NewsletterSubscriberAdmin)
