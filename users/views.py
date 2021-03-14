@@ -33,7 +33,7 @@ def user_profile(request):
                   context)
 
 
-def previous_order(request):
+def previous_order(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, "This is a previous order")

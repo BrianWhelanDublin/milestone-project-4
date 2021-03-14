@@ -10,6 +10,8 @@ from cart.contexts import cart_contents
 
 from stock.models import Item
 from .models import Order, OrderLineItem
+from users.models import UserProfile
+from users.forms import UserProfileForm
 
 import stripe
 import json
@@ -93,7 +95,24 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY
         )
 
-        order_form = OrderForm()
+        if request.user.is_authenticated:
+            try:
+                user_profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderForm(initial={
+                    "full_name": user_profile.user.get_full_name(),
+                    "email": user_profile.user.email,
+                    "contact_number": user_profile.user_contact_number,
+                    "street_address_1": user_profile.user_street_address_1,
+                    "street_address_2": user_profile.user_street_address_2,
+                    "town_or_city": user_profile.user_town_or_city,
+                    "county": user_profile.user_county,
+                    "eircode": user_profile.user_eircode,
+                    "country": user_profile.user_country,
+                })
+            except UserProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            order_form = OrderForm()
 
     template = "checkout/checkout.html"
 
@@ -113,6 +132,27 @@ def checkout_success(request, order_number):
 
     save_info = request.session.get("save_info")
     order = get_object_or_404(Order, order_number=order_number)
+
+    if request.user.is_authenticated:
+        user = UserProfile.objects.get(user=request.user)
+        order.user_profile = user
+        order.save()
+
+        if save_info:
+            user_data = {
+                "user_contact_number": order.contact_number,
+                "user_street_address_1": order.street_address_1,
+                "user_street_address_2": order.street_address_2,
+                "user_town_or_city": order.town_or_city,
+                "user_county": order.county,
+                "user_eircode": order.eircode,
+                "user_country": order.country,
+            }
+
+            user_profile_form = UserProfileForm(user_data, instance=user)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
+
     messages.success(request,
                      "Your order has been processed!")
 
