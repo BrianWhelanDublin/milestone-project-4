@@ -2,6 +2,7 @@ from django.http import HttpResponse
 
 from .models import Order, OrderLineItem
 from stock.models import Item
+from users.models import UserProfile
 
 import json
 import time
@@ -45,6 +46,25 @@ class StripeWebhookHandler:
             if value == "":
                 delivery_details.address[field] = None
 
+        user_profile = None
+        username = intent.metadata.username
+        if username != "AnonymousUser":
+            user_profile = UserProfile.objects.get(
+                user__username=username)
+            if save_info:
+                user_profile.user_contact_number = delivery_details.phone
+                user_profile.user_street_address_1 = \
+                    delivery_details.address.line1
+                user_profile.user_street_address_2 = \
+                    delivery_details.address.line2
+                user_profile.user_town_or_city = \
+                    delivery_details.address.city,
+                user_profile.user_county = delivery_details.address.state
+                user_profile.user_eircode = \
+                    delivery_details.address.postal_code
+                user_profile.user_country = delivery_details.address.country
+                user_profile.save()
+
         order_exists = False
         attempt = 1
 
@@ -81,6 +101,7 @@ Verified order is in database.", status=200)
             try:
                 order = Order.objects.create(
                         full_name=delivery_details.name,
+                        user_profile=user_profile,
                         email=billing_details.email,
                         contact_number=delivery_details.phone,
                         street_address_1=delivery_details.address.line1,
