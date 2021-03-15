@@ -6,9 +6,7 @@ class NewsletterForm(forms.ModelForm):
     class Meta:
         model = NewsletterSubscriber
 
-        fields = (
-            "email",
-        )
+        fields = "__all__"
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -21,11 +19,7 @@ class MessageForm(forms.ModelForm):
     class Meta:
         model = Message
 
-        fields = (
-            "subject",
-            "user_email",
-            "message",
-        )
+        fields = "__all__"
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
