@@ -94,7 +94,19 @@ def single_item(request, item_id):
 def add_item(request):
     ''' view to add an item '''
 
-    form = ItemForm
+    if request.method == "POST":
+        form = ItemForm(request.POST, request.FILES)
+        if form.is_valid():
+            item = form.save()
+            messages.success(request, "Item has been added successfully.")
+            return redirect(reverse("single_item", args=[item.id]))
+        else:
+            messages.error(request,
+                           "Failed to add the item. \
+ Please check the form details are correct.")
+    else:
+        form = ItemForm
+
     template = "stock/add_item.html"
     context = {
         "form": form,

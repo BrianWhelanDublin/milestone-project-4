@@ -16,7 +16,7 @@ Add Item
     <div class="row">
         <div class="col-12">
             <h3 class="fs-2 text-center mb-3">Add New Item</h3>
-            <form id="item-form" class="m-auto" action="{% url 'contact' %}" method="POST">
+            <form id="item-form" class="m-auto" action="{% url 'add_item' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <button type="submit" class="m-auto mt-5 mb-5 item-link-button flex-center item-link-dark" id="item-submit">Add Item</button>
