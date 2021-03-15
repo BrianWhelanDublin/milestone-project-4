@@ -5,19 +5,32 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12">
-            <h3 class="fs-2 text-center mb-3">{{ title }}</h3>
-            <form id="item-form" class="m-auto"
-            {% if add_item %}
-            action="{% url 'add_item' %}"
+        {% if item %}
+        <div class="col-12 col-md-6">
             {% else %}
-            action="{% url 'edit_item' item.id %}"
+            <div class="col-12">
+                {% endif %}
+                <h3 class="fs-2 text-center mb-3">{{ title }}</h3>
+                <form id="item-form" class="m-auto" {% if add_item %} action="{% url 'add_item' %}" {% else %}
+                    action="{% url 'edit_item' item.id %}" {% endif %} method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="m-auto mt-5 mb-5 item-link-button flex-center item-link-dark"
+                        id="item-submit">{{ submit_text }}</button>
+                </form>
+            </div>
+            {% if item %}
+                    {% if item.image %}
+                    <div class="col-12 col-md-6 mt-0 item-img-col flex-center">
+                        <img src="/media/{{ item.image }}" alt="image for {{ item.name }}">
+                    </div>
+                    {% else %}
+                    <div class="col-12 col-md-6 mt-0 item-img-col flex-center">
+                        <img src="/media/no_image.png" alt="No image found for {{ item.name }}">
+                    </div>
+                    {% endif %}
+         
+            
             {% endif %}
-            method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <button type="submit" class="m-auto mt-5 mb-5 item-link-button flex-center item-link-dark" id="item-submit">{{ submit_text }}</button>
-            </form>
         </div>
     </div>
-</div>
