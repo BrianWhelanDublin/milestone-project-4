@@ -4,7 +4,10 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.core.paginator import Paginator
+
 from .models import Item, Category
+
+from .forms import ItemForm
 
 
 def all_items(request):
@@ -81,6 +84,20 @@ def single_item(request, item_id):
 
     context = {
         "item": item
+    }
+
+    return render(request,
+                  template,
+                  context)
+
+
+def add_item(request):
+    ''' view to add an item '''
+
+    form = ItemForm
+    template = "stock/add_item.html"
+    context = {
+        "form": form,
     }
 
     return render(request,
