@@ -18,7 +18,7 @@
             <img src="/media/{{ item.image }}" alt="image for {{ item.name }}">
         </div>
         {% else %}
-         <div class="col-12 col-md-6 item-img-col flex-center">
+        <div class="col-12 col-md-6 item-img-col flex-center">
             <img src="/media/no_image.png" alt="No image found for {{ item.name }}">
         </div>
         {% endif %}
@@ -29,11 +29,41 @@
                 <a class="item-cat-link"
                     href="{% url 'all_items' %}?category={{ item.category.name }}">{{ item.category.display_name }}</a>
                 <p>{{ item.description }}</p>
-                <form class="form item-form" action="{% url 'add_to_cart' item.id %}" method="POST">
+                {% if request.user.is_superuser %}
+              <div class="flex-row-between">
+                    <a class="fs-3 modal-button
+                                cancel-btn flex-center" href="{% url 'edit_item' item.id %}">Edit</a>
+                <!-- Button trigger modal to double check before deleting the item -->
+                <button type="button" class="modal-button fs-3 flex-center delete-btn" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                    Delete
+                </button>
+              </div>
+                <!-- Modal -->
+                <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fs-1 m-auto" id="deleteModalLabel">Delete Item!</h5>
+                            </div>
+                            <div class="modal-body">
+                               <p class="text-center text-danger fs-3">
+                                   Are you sure you want to delete this item?
+                               </p>
+                            </div>
+                            <div class="modal-footer m-auto">
+                                <button type="button" class="fs-3 modal-button
+                                cancel-btn flex-center" data-bs-dismiss="modal">Cancel</button>
+                                <a class=" modal-button fs-3 flex-center delete-btn" href="{% url 'delete_item' item.id %}">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                <form class="form item-form mt-3" action="{% url 'add_to_cart' item.id %}" method="POST">
                     {% csrf_token %}
                     <label for="quantity" class="form-label">Quantity</label>
-                    <input class="form-control" type="number" name="quantity" value="1" min="1" max="20"
-                       id="quantity">
+                    <input class="form-control" type="number" name="quantity" value="1" min="1" max="20" id="quantity">
                     <button type="submit" class=" item-link-button flex-center item-link-dark">Add To Cart</button>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>

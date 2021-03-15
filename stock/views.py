@@ -150,3 +150,11 @@ def edit_item(request, item_id):
     return render(request,
                   template,
                   context)
+
+
+def delete_item(request, item_id):
+    ''' A view to delete items '''
+    item = get_object_or_404(Item, pk=item_id)
+    item.delete()
+    messages.success(request, "Product has been deleted")
+    return redirect(reverse("all_items"))
