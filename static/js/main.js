@@ -1,12 +1,3 @@
-// change top navigation colour on scroll
-window.addEventListener("scroll", () => {
-    let topNavigation = document.querySelector(".top-navigation");
-    if (window.scrollY >= 100) {
-        topNavigation.classList.add("top-nav-colored")
-    } else {
-        topNavigation.classList.remove("top-nav-colored")
-    }
-})
 // show dropdown when accont is clicked
 let dropdownLinks = document.querySelectorAll(".dropdown-link")
  let dropdown = document.querySelector(".account-dropdown")

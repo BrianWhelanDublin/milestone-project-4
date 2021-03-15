@@ -30,3 +30,13 @@ leftArrow.addEventListener("click", () => {
     }
     rightArrow.classList.add("arrow-active");
 })
+
+// change top navigation colour on scroll
+window.addEventListener("scroll", () => {
+    let topNavigation = document.querySelector(".top-navigation");
+    if (window.scrollY >= 100) {
+        topNavigation.classList.add("top-nav-colored")
+    } else {
+        topNavigation.classList.remove("top-nav-colored")
+    }
+})
