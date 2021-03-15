@@ -994,10 +994,10 @@ input:-webkit-autofill
 /* -------------------------------- our story page */
 .nav-background {
     height: 6rem;
-    /* background-color: #153243; */
     background-color: #153344d8;
     backdrop-filter: blur(1rem);
     position: fixed;
+      z-index: 50;
 }
 
 .our-story-hero-col {
