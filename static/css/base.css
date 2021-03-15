@@ -188,30 +188,26 @@ label[for="quantity"] {
     background-color: #153243;
 }
 
-#checkout-form input::placeholder,
+/* #checkout-form input::placeholder,
 .allauth-form input::placeholder,
 #userprofile-form input::placeholder,
-#contact-form input::placeholder {
+#contact-form input::placeholder,
+#item-form input::placeholder  */
+.form-control{
     font-size: 1.1rem;
     color: rgba(21, 50, 67, .7);
 }
 
-#checkout-form input:focus,
-#checkout-form input:active,
-.StripeElement--focus,
-.allauth-form input:focus,
-.allauth-form input:active,
-#userprofile-form input:focus,
-#userprofile-form input:active,
-#contact-form input:focus,
-#contact-form input:active,
-#contact-form textarea:focus,
-#contact-form textarea:active {
+.form-control:focus,
+.form-control:active,
+.form-select:focus,
+.form-select:active{
     box-shadow: 0 0 0 0.25rem #D1D1C7;
     outline: none;
+    border-color: #153243;
 }
 
-.StripeElement,
+/* .StripeElement,
 #checkout-form input,
 #checkout-form select,
 .allauth-form input,
@@ -219,7 +215,9 @@ label[for="quantity"] {
 #userprofile-form input,
 #userprofile-form select,
 #contact-form input,
-#contact-form textarea{
+#contact-form textarea */
+.form-control,
+.form-select{
     box-sizing: border-box;
     height: 3.5rem;
     padding: 1rem 1.2rem;
@@ -229,18 +227,21 @@ label[for="quantity"] {
     color: #153243;
 }
 
-#checkout-form input,
+/* #checkout-form input,
 .allauth-form input,
 #userprofile-form input,
 #contact-form input,
-#contact-form textarea {
+#contact-form textarea */
+ .form-control{
     font-size: 1.25rem;
   
 }
-#contact-form textarea{
-    height: 20rem;
+#contact-form textarea,
+#item-form textarea{
+    height: 15rem;
 }
-#contact-form{
+#contact-form,
+#item-form{
     width:90%;
     max-width:80rem;
 }
@@ -1280,7 +1281,7 @@ td p {
     }
 
 
-    .newsletter-form input[type="text"] {
+    .newsletter-form input {
         width: 65%;
         height: 5rem;
         font-size: 1.5rem;
