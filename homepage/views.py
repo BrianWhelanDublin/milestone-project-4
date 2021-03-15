@@ -6,7 +6,7 @@ from django.contrib import messages
 
 from stock.models import Item
 
-from .forms import NewsletterForm
+from .forms import NewsletterForm, MessageForm
 
 
 def home_page(request):
@@ -59,3 +59,19 @@ def our_story(request):
 
     return render(request,
                   template)
+
+
+def contact(request):
+    ''' renders the contact us page '''
+
+    template = "homepage/contact.html"
+
+    form = MessageForm()
+
+    context = {
+        "form": form,
+    }
+
+    return render(request,
+                  template,
+                  context)
