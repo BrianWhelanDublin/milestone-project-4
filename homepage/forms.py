@@ -21,11 +21,11 @@ class MessageForm(forms.ModelForm):
     class Meta:
         model = Message
 
-    fields = (
-        "subject",
-        "user_email",
-        "message",
-    )
+        fields = (
+            "subject",
+            "user_email",
+            "message",
+        )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
