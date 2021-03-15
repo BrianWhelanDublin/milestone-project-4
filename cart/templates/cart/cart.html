@@ -14,7 +14,7 @@ Your Cart
 {% block main_content %}
 <div class="container cart-container">
     <div class="row">
-        <div class="col cart-heading">
+        <div class="col cart-heading text-center">
             <h1>Shopping Cart</h1>
         </div>
     </div>
@@ -87,9 +87,9 @@ Your Cart
                 </div>
             </div>
             {% else %}
-            <div class="cart-no-items ">
+            <div class="cart-no-items text-center">
                 <p>No items in shopping bag</p>
-                <a href="{% url 'all_items' %}" class="item-link-light item-link-button  flex-center">Keep
+                <a href="{% url 'all_items' %}" class="item-link-light item-link-button m-auto flex-center">Keep
                     Shopping</a>
             </div>
             {% endif %}
