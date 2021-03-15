@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+{% block other_css %}
+<link rel="stylesheet" href="{% static 'stock/css/stock.css' %}">
+{% endblock %}
 {% block title %}
 Add Item
 {% endblock %}
