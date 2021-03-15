@@ -43,7 +43,6 @@ def home_page(request):
             return redirect("home_page")
 
     form = NewsletterForm()
-
     template = "homepage/index.html"
     context = {
         "new_items": new_items,
