@@ -190,7 +190,8 @@ label[for="quantity"] {
 
 #checkout-form input::placeholder,
 .allauth-form input::placeholder,
-#userprofile-form input::placeholder {
+#userprofile-form input::placeholder,
+#contact-form input::placeholder {
     font-size: 1.1rem;
     color: rgba(21, 50, 67, .7);
 }
@@ -201,7 +202,11 @@ label[for="quantity"] {
 .allauth-form input:focus,
 .allauth-form input:active,
 #userprofile-form input:focus,
-#userprofile-form input:active {
+#userprofile-form input:active,
+#contact-form input:focus,
+#contact-form input:active,
+#contact-form textarea:focus,
+#contact-form textarea:active {
     box-shadow: 0 0 0 0.25rem #D1D1C7;
     outline: none;
 }
@@ -212,7 +217,9 @@ label[for="quantity"] {
 .allauth-form input,
 .allauth-form select,
 #userprofile-form input,
-#userprofile-form select {
+#userprofile-form select,
+#contact-form input,
+#contact-form textarea{
     box-sizing: border-box;
     height: 3.5rem;
     padding: 1rem 1.2rem;
@@ -224,9 +231,21 @@ label[for="quantity"] {
 
 #checkout-form input,
 .allauth-form input,
-#userprofile-form input {
+#userprofile-form input,
+#contact-form input,
+#contact-form textarea {
     font-size: 1.25rem;
   
+}
+#contact-form textarea{
+    height: 20rem;
+}
+#contact-form{
+    width:90%;
+    max-width:80rem;
+}
+.contact-form-field{
+    margin-top: 2rem;
 }
 
 .allauth-form input {
@@ -271,7 +290,8 @@ input:-webkit-autofill
 }
 /* css from bootstrap to hide the label and show only for screenreaders for accsesibility */
 #checkout-form label,
-.newsletter-form label {
+.newsletter-form label,
+#contact-form label {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -946,7 +966,8 @@ input:-webkit-autofill
     color: #EDEDE9;
 }
 
-.contact-col a {
+.contact-col a,
+.contact-col a i {
     color: #EDEDE9;
     font-size: 1.25rem;
     text-decoration: none;
@@ -973,9 +994,6 @@ input:-webkit-autofill
     margin-top: 2rem;
 }
 
-/* .social-media a {
-    color: #EDEDE9;
-} */
 
 .social-media a i {
     font-size: 3rem;

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Contact
+{% endblock %}
+{% block header %}
+{% include 'includes/nav-background.html' %}
+{% endblock %}
+{% block main_content %}
+<div class="container checkout-container">
+    <div class="row">
+        <div class="col flex-center checkout-heading">
+            <h1>Contact Us</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <form id="contact-form" class="m-auto" action="{% url 'contact' %}" method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="m-auto mt-5 item-link-button flex-center item-link-dark" id="contact-submit">Contact Us</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
