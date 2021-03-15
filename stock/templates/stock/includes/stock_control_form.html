@@ -20,17 +20,20 @@
                 </form>
             </div>
             {% if item %}
-                    {% if item.image %}
-                    <div class="col-12 col-md-6 mt-0 item-img-col flex-center">
-                        <img src="/media/{{ item.image }}" alt="image for {{ item.name }}">
-                    </div>
-                    {% else %}
-                    <div class="col-12 col-md-6 mt-0 item-img-col flex-center">
-                        <img src="/media/no_image.png" alt="No image found for {{ item.name }}">
-                    </div>
-                    {% endif %}
-         
-            
+            {% if item.image %}
+           
+            <div class="col-12 col-md-6 mt-0 item-img-col  flex-center">
+                 <h3 class="fs-3 text-center">Items current image</h3>
+                <img src="/media/{{ item.image }}" alt="image for {{ item.name }}">
+            </div>
+            {% else %}
+            <div class="col-12 col-md-6 mt-0 item-img-col flex-center">
+                   <h3 class="fs-2 text-center">Item current has no image</h3>
+                <img src="/media/no_image.png" alt="No image found for {{ item.name }}">
+            </div>
+            {% endif %}
+
+
             {% endif %}
         </div>
     </div>

@@ -103,7 +103,7 @@ def add_item(request):
         else:
             messages.error(request,
                            "Failed to add the item. \
- Please check the form details are correct.")
+ Please check the form details are correct and try again.")
     else:
         form = ItemForm
 
@@ -122,9 +122,21 @@ def add_item(request):
 
 def edit_item(request, item_id):
     ''' A view to edit an item '''
-
     item = get_object_or_404(Item, pk=item_id)
-    form = ItemForm(instance=item)
+
+    if request.method == "POST":
+        form = ItemForm(request.POST, request.FILES, instance=item)
+        if form.is_valid():
+            form.save()
+            messages.success(request,
+                             "Item update successfully")
+            return redirect(reverse("single_item", args=[item.id]))
+        else:
+            messages.error(request,
+                           "Failed to update item. \
+ Please check the form details are correct and try again.")
+    else:
+        form = ItemForm(instance=item)
 
     template = "stock/edit_item.html"
     context = {

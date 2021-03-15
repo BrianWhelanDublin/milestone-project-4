@@ -4,11 +4,13 @@
 
    .item-img-col {
        margin-top: 10rem;
+       flex-direction: column;
    }
 
    .item-img-col img {
        height: 36rem;
        width: 25rem;
+
    }
 
    .item-details-col {
@@ -21,25 +23,27 @@
        margin-bottom: 2rem;
    }
 
-   .item-details p{
+   .item-details p {
        font-size: 1.5rem;
    }
-   .item-cat-link{
+
+   .item-cat-link {
        color: #285f80;
        font-size: 1.75rem;
        text-decoration: none;
        transition: all .25s ease-in;
    }
-    .item-cat-link{
-      color:#153243;
-      text-decoration: underline;
+
+   .item-cat-link {
+       color: #153243;
+       text-decoration: underline;
    }
-  
+
 
    @media (min-width: 768px) {
        .item-container {
            min-height: 55rem;
-        height: calc(100vh - 20rem);
+           height: calc(100vh - 20rem);
        }
 
        .item-img-col img {
