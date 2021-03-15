@@ -73,12 +73,12 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="account-dropdown" aria-labelledby="user-options">
+                        <div class="account-dropdown" aria-labelledby="account-options">
                             <button class="dropdown-close flex-center" aria-label="Close Navigation">
                                 <span class="line-x" aria-hidden="true"></span>
                                 <span class="line-y" aria-hidden="true"></span>
                             </button>
-                            <ul class="account-menu">
+                            <ul id="account-options" class="account-menu">
                                 {% if request.user.is_authenticated %}
                                 <li class="account-item"><a href="{% url 'user_profile' %}">My Account</a></li>
                                 <li class="account-item"><a href="{% url 'account_logout' %}">Logout</a></li>
