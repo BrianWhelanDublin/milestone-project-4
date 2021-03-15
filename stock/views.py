@@ -110,6 +110,29 @@ def add_item(request):
     template = "stock/add_item.html"
     context = {
         "form": form,
+        "title": "Add Item",
+        "add_item": True,
+        "submit_text": "Add Item",
+    }
+
+    return render(request,
+                  template,
+                  context)
+
+
+def edit_item(request, item_id):
+    ''' A view to edit an item '''
+
+    item = get_object_or_404(Item, pk=item_id)
+    form = ItemForm(instance=item)
+
+    template = "stock/edit_item.html"
+    context = {
+        "form": form,
+        "title": "Edit Item",
+        "edit_item": True,
+        "item": item,
+        "submit_text": "Edit Item",
     }
 
     return render(request,
