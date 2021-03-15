@@ -41,8 +41,9 @@ def home_page(request):
                            "Something has gone wrong.\
  Please check your email address and try again.")
             return redirect("home_page")
+    else:
+        form = NewsletterForm()
 
-    form = NewsletterForm()
     template = "homepage/index.html"
     context = {
         "new_items": new_items,
@@ -78,17 +79,17 @@ def contact(request):
                            "Something has gone wrong.\
  Please try again soon")
             return redirect("contact")
-
-    if request.user.is_authenticated:
-        try:
-            user_profile = UserProfile.objects.get(user=request.user)
-            form = MessageForm(initial={
-                "user_email": user_profile.user.email
-            })
-        except UserProfile.DoesNotExist:
-            form = MessageForm()
     else:
-        form = MessageForm()
+        if request.user.is_authenticated:
+            try:
+                user_profile = UserProfile.objects.get(user=request.user)
+                form = MessageForm(initial={
+                    "user_email": user_profile.user.email
+                })
+            except UserProfile.DoesNotExist:
+                form = MessageForm()
+        else:
+            form = MessageForm()
 
     template = "homepage/contact.html"
     context = {

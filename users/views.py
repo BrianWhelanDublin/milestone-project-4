@@ -18,8 +18,13 @@ def user_profile(request):
             form.save()
             messages.success(request,
                              "Your profile has been updated successfully.")
+        else:
+            messages.error(request,
+                           "Your detials can't be save. \
+ Please check your form is filled out correctly.")
 
-    form = UserProfileForm(instance=profile)
+    else:
+        form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
 
     context = {
