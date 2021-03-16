@@ -11,8 +11,9 @@
                 <hr>
             </div>
         </div>
+        {% if "show_items" in message.tags %}
             {% if item_count > 0 %}
-        {% if grand_total and not on_cart_page and not on_cart_success and not on_profile_page %}
+        {% if grand_total %}
         <p class="fs-5">Your Cart has {{ item_count }}
             {% if item_count == 1 %}
             item
@@ -34,6 +35,7 @@
                 class="item-link-dark item-link-button  flex-center">Checkout</a>
                 {% endif %}
         </div>
+        {% endif %}
         {% endif %}
     </div>
 

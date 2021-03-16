@@ -20,7 +20,10 @@ def view_cart(request):
 
 
 def add_to_cart(request, item_id):
-    ''' A view to add items to the cart '''
+    ''' A view to add items to the cart. It also
+    throws an error message and redirects to the
+    homepage if a user tries to type the url into the browser'''
+
     if request.method == "POST":
         item = get_object_or_404(Item, pk=item_id)
         quantity = int(request.POST.get("quantity"))
@@ -31,25 +34,26 @@ def add_to_cart(request, item_id):
         if item_id in list(cart.keys()):
             cart[item_id] += quantity
             messages.success(request,
-                            f"{item.name}'s \
-                                quantity has been updated \
-                                    to {cart[item_id]}")
+                             f"{item.name}'s \
+quantity has been updated to {cart[item_id]}", extra_tags="show_items")
         else:
             cart[item_id] = quantity
             messages.success(request,
-                            f"{item.name} \
-                                has been added to your cart.")
+                             f"{item.name} \
+has been added to your cart.", extra_tags="show_items")
 
         request.session["cart"] = cart
-
         return redirect(redirect_url)
     else:
-        messages.error(request, "Error you cannot do this")
+        messages.error(request, "Error you do not have permission to do this.")
         return redirect(reverse("home_page"))
 
 
 def update_cart(request, item_id):
-    ''' View to update the cart when the quantity has changed '''
+    ''' View to update the cart when the quantity has changed.
+    It also throws an error message if a user tries
+    to type the url into the browser '''
+
     if request.method == "POST":
         item = get_object_or_404(Item, pk=item_id)
         quantity = int(request.POST.get("item_quantity"))
@@ -59,23 +63,27 @@ def update_cart(request, item_id):
         if quantity > 0:
             cart[item_id] = quantity
             messages.success(request,
-                            f"{item.name}'s \
-                                quantity has been updated to {cart[item_id]}")
+                             f"{item.name}'s \
+ quantity has been updated to {cart[item_id]}", extra_tags="show_items")
         else:
             cart.pop(item_id)
             messages.success(request,
-                            f"{item.name} has been removed from your cart.")
+                             f"{item.name} has been removed from your cart.",
+                             extra_tags="show_items")
 
         request.session["cart"] = cart
 
         return redirect(reverse("view_cart"))
     else:
-        messages.error(request, "Error you cannot do this")
+        messages.error(request, "Error you do not have permission to do this.")
         return redirect(reverse("home_page"))
 
 
 def remove_from_cart(request, item_id):
-    ''' View to remove items from the cart '''
+    ''' View to remove items from the cart.
+     It also throws an error message if a user tries
+    to type the url into the browser'''
+
     if request.method == "POST":
         try:
             item = get_object_or_404(Item, pk=item_id)
@@ -84,7 +92,8 @@ def remove_from_cart(request, item_id):
 
             cart.pop(item_id)
             messages.success(request,
-                            f"{item.name} has been removed from your cart.")
+                             f"{item.name} has been removed from your cart.",
+                             extra_tags="show_items")
 
             request.session["cart"] = cart
             return HttpResponse(status=200)
@@ -93,5 +102,5 @@ def remove_from_cart(request, item_id):
             messages.error(request, f"Error removing item {error}")
             return HttpResponse(status=500)
     else:
-        messages.error(request, "Error you cannot do this")
+        messages.error(request, "Error you do not have permission to do this.")
         return redirect(reverse("home_page"))
