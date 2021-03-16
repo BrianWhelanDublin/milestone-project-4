@@ -9,3 +9,7 @@ Add Item
 {% block main_content %}
 {% include "stock/includes/stock_control_form.html" %}
 {% endblock %}
+{% block other_end_js %}
+{{ block.super }}
+<script src="{% static 'stock/js/widget.js' %}"></script>
+{% endblock %}

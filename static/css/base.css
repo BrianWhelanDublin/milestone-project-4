@@ -33,6 +33,10 @@ body {
 }
 
 /* common elements */
+.blue{
+    color: #0d6efd;
+}
+
 .item-link-button {
     margin: 1.25rem 0;
     width: 25rem;
@@ -44,7 +48,6 @@ body {
     background: #153243;
     border: .1rem solid #153243;
 }
-
 
 .link-button,
 .item-link-button {
@@ -175,17 +178,29 @@ label[for="quantity"] {
     font-size: 1.25rem;
 }
 
+.form-label {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
 #checkout-form input[type="checkbox"],
-.allauth-form input[type="checkbox"] {
+.allauth-form input[type="checkbox"],
+.widget-checkbox {
     background-color: #EDEDE9;
     height: 1.5rem;
     width: 1.5rem;
     padding: 0;
 }
 
+.widget-checkbox {
+    margin: 1rem;
+}
+
 #checkout-form input[type="checkbox"]:checked,
-.allauth-form input[type="checkbox"]:checked {
+.allauth-form input[type="checkbox"]:checked,
+.widget-checkbox:checked {
     background-color: #153243;
+    border-color: #153243;
 }
 
 /* #checkout-form input::placeholder,
@@ -193,7 +208,7 @@ label[for="quantity"] {
 #userprofile-form input::placeholder,
 #contact-form input::placeholder,
 #item-form input::placeholder  */
-.form-control{
+.form-control {
     font-size: 1.1rem;
     color: rgba(21, 50, 67, .7);
 }
@@ -201,7 +216,9 @@ label[for="quantity"] {
 .form-control:focus,
 .form-control:active,
 .form-select:focus,
-.form-select:active{
+.form-select:active,
+.widget-checkbox:focus,
+.widget-checkbox:active {
     box-shadow: 0 0 0 0.25rem #D1D1C7;
     outline: none;
     border-color: #153243;
@@ -218,7 +235,7 @@ label[for="quantity"] {
 #contact-form textarea */
 .StripeElement,
 .form-control,
-.form-select{
+.form-select {
     box-sizing: border-box;
     height: 3.5rem;
     padding: 1rem 1.2rem;
@@ -233,25 +250,32 @@ label[for="quantity"] {
 #userprofile-form input,
 #contact-form input,
 #contact-form textarea */
- .form-control{
+.form-control {
     font-size: 1.25rem;
-  
+
 }
+
 #contact-form textarea,
-#item-form textarea{
+#item-form textarea {
     height: 15rem;
 }
+
 #contact-form,
-#item-form{
-    width:90%;
-    max-width:80rem;
+#item-form {
+    width: 90%;
+    max-width: 80rem;
 }
-.contact-form-field{
+
+.contact-form-field {
     margin-top: 2rem;
 }
 
 .allauth-form input {
     width: 100%;
+}
+
+.widget-container {
+    width: 60%;
 }
 
 .allauth-form input[type="radio"] {
@@ -269,9 +293,24 @@ select option[value=""] {
     margin: 1rem;
     border-radius: 0;
 }
-#userprofile-form{
-    max-width:80%;
-    margin:0 auto;
+
+#userprofile-form {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.file-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.file-button input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
 }
 
 /* code from stack overflow to stop my inputs 
@@ -286,10 +325,11 @@ select:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0px 1000px #EDEDE9 inset !important;
     box-shadow: 0 0 0px 1000px #EDEDE9 inset !important;
 }
-input:-webkit-autofill
-{
- -webkit-text-fill-color: #153243 !important;
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: #153243 !important;
 }
+
 /* css from bootstrap to hide the label and show only for screenreaders for accsesibility */
 #checkout-form label,
 .newsletter-form label,
@@ -626,8 +666,8 @@ input:-webkit-autofill
 }
 
 .search-sublist input {
-   background-color: transparent;
-   
+    background-color: transparent;
+
     width: 20rem;
     border-bottom: 1px solid #EDEDE9;
     color: #EDEDE9;
@@ -927,7 +967,8 @@ input:-webkit-autofill
     font-size: 1.25rem;
     margin-right: 1rem;
 }
-.newsletter-form-input:focus{
+
+.newsletter-form-input:focus {
     outline: none;
 }
 
@@ -1018,7 +1059,7 @@ input:-webkit-autofill
     background-color: #153344d8;
     backdrop-filter: blur(1rem);
     position: fixed;
-      z-index: 50;
+    z-index: 50;
 }
 
 .our-story-hero-col {

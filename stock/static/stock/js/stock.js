@@ -21,3 +21,12 @@ sortSelector.addEventListener("change", ()=>{
          window.location.replace(currentUrl);
     }
 })
+
+let newImageInput = document.querySelector("#new-image-input")
+
+newImageInput.addEventListener("change", ()=>{
+    let file = newImageInput[0].files[0]
+    document.querySelector(".image-name").innerHTML = `
+    New image: ${file.name}
+    `
+})

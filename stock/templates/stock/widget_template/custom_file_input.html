@@ -1,0 +1,25 @@
+<div class="widget-container">
+    {% if widget.is_initial %}
+    <div class="flex-row-between">
+        <p class="mt-4 mb-0 fs-5">{{ widget.initial_text }}:</p>
+        <a class="mt-4 fs-5" href="{{ widget.value.url }}">
+            {{ widget.value }}
+        </a>
+    </div>
+    {% if not widget.required %}
+    <div class=" mt-2">
+        <input class="form-check-input form-check-inline widget-checkbox" type="checkbox"
+            name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}" {% if widget.attrs.disabled %}
+            disabled{% endif %}>
+        <label class="form-check-label fs-5" for="{{ widget.checkbox_id }}">{{ widget.clear_checkbox_label }} Current
+            Image?</label>
+    </div>
+    {% endif %}
+    <br>
+    {% endif %}
+    <p class="fs-5">Add new Image</p>
+    <span class="item-link-light item-link-button file-button  flex-center">Select New Image
+        <input id="new-image-input" type="{{ widget.type }}" name="{{ widget.name }}" {% include "django/forms/widgets/attrs.html" %}>
+    </span>
+    <strong><p id="image-name"></p></strong>
+</div>

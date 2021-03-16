@@ -18,7 +18,7 @@ Contact
             <form id="contact-form" class="m-auto" action="{% url 'contact' %}" method="POST">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <button type="submit" class="m-auto mt-5 item-link-button flex-center item-link-dark" id="contact-submit">Contact Us</button>
+                <button type="submit" class="m-auto mx-auto my-5 item-link-button flex-center item-link-dark" id="contact-submit">Contact Us</button>
             </form>
         </div>
     </div>
