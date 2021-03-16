@@ -24,3 +24,5 @@ class ItemForm(forms.ModelForm):
         self.fields["category"].choices = display_names
         for field_name, field in self.fields.items():
             field.widget.attrs["class"] = "product-form-item"
+        self.fields["price"].widget.attrs["min"] = 0
+        self.fields["price"].widget.attrs["step"] = 1
