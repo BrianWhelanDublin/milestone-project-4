@@ -1,6 +1,7 @@
 from django.shortcuts import (render, get_object_or_404,
                               reverse, redirect)
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.core.paginator import Paginator
@@ -91,21 +92,25 @@ def single_item(request, item_id):
                   context)
 
 
+@login_required
 def add_item(request):
     ''' view to add an item '''
-
-    if request.method == "POST":
-        form = ItemForm(request.POST, request.FILES)
-        if form.is_valid():
-            item = form.save()
-            messages.success(request, "Item has been added successfully.")
-            return redirect(reverse("single_item", args=[item.id]))
+    if request.user.is_superuser:
+        if request.method == "POST":
+            form = ItemForm(request.POST, request.FILES)
+            if form.is_valid():
+                item = form.save()
+                messages.success(request, "Item has been added successfully.")
+                return redirect(reverse("single_item", args=[item.id]))
+            else:
+                messages.error(request,
+                            "Failed to add the item. \
+    Please check the form details are correct and try again.")
         else:
-            messages.error(request,
-                           "Failed to add the item. \
- Please check the form details are correct and try again.")
+            form = ItemForm
     else:
-        form = ItemForm
+        messages.error(request, "You do not have permission to do this.")
+        return redirect(reverse("home_page"))
 
     template = "stock/add_item.html"
     context = {
@@ -120,23 +125,28 @@ def add_item(request):
                   context)
 
 
+@login_required
 def edit_item(request, item_id):
     ''' A view to edit an item '''
-    item = get_object_or_404(Item, pk=item_id)
+    if request.user.is_superuser:
+        item = get_object_or_404(Item, pk=item_id)
 
-    if request.method == "POST":
-        form = ItemForm(request.POST, request.FILES, instance=item)
-        if form.is_valid():
-            form.save()
-            messages.success(request,
-                             "Item update successfully")
-            return redirect(reverse("single_item", args=[item.id]))
+        if request.method == "POST":
+            form = ItemForm(request.POST, request.FILES, instance=item)
+            if form.is_valid():
+                form.save()
+                messages.success(request,
+                                "Item update successfully")
+                return redirect(reverse("single_item", args=[item.id]))
+            else:
+                messages.error(request,
+                            "Failed to update item. \
+    Please check the form details are correct and try again.")
         else:
-            messages.error(request,
-                           "Failed to update item. \
- Please check the form details are correct and try again.")
+            form = ItemForm(instance=item)
     else:
-        form = ItemForm(instance=item)
+        messages.error(request, "You do not have permission to do this.")
+        return redirect(reverse("home_page"))
 
     template = "stock/edit_item.html"
     context = {
@@ -152,9 +162,14 @@ def edit_item(request, item_id):
                   context)
 
 
+@login_required
 def delete_item(request, item_id):
     ''' A view to delete items '''
-    item = get_object_or_404(Item, pk=item_id)
-    item.delete()
-    messages.success(request, "Product has been deleted")
-    return redirect(reverse("all_items"))
+    if request.user.is_superuser:
+        item = get_object_or_404(Item, pk=item_id)
+        item.delete()
+        messages.success(request, "Product has been deleted")
+        return redirect(reverse("all_items"))
+    else:
+        messages.error(request, "You do not have permission to do this.")
+        return redirect(reverse("home_page"))
