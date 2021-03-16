@@ -216,6 +216,7 @@ label[for="quantity"] {
 #userprofile-form select,
 #contact-form input,
 #contact-form textarea */
+.StripeElement,
 .form-control,
 .form-select{
     box-sizing: border-box;
@@ -625,7 +626,8 @@ input:-webkit-autofill
 }
 
 .search-sublist input {
-    background-color: #153243;
+   background-color: transparent;
+   
     width: 20rem;
     border-bottom: 1px solid #EDEDE9;
     color: #EDEDE9;
