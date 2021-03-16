@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Review(models.Model):
-    reviewer = models.OneToOneField(User, on_delete=models.SET_NULL, null=True)
+    reviewer = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     review = models.TextField(null=False, blank=False)
     stars = models.IntegerField(null=False, blank=False)
 

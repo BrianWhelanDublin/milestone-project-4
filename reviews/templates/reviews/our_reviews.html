@@ -15,12 +15,53 @@ Reviews
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-12 col-md-6 col-lg-4">
+            <h2>Add A Review</h2>
          <form method="POST" action="{% url 'our_reviews' %}">
           {% csrf_token %}
                 {{form|crispy}}
                 <button type="submit">Add Review</button>
          </form>
+        </div>
+        <div class="col-12 col-md-6 col-lg-8">
+            <h3 class="text-center">What People are saying.</h3>
+            <div class="row">
+            {% for review in reviews %}
+        <div class="col-12 col-md-6 col-lg-4">
+                 <div class="review flex-center">
+                <div class="stars">
+                    {% if review.stars == 1 %}
+                    <i class="las la-star" aria-hidden="true"></i>
+                    {% elif review.stars == 2 %}
+                     <i class="las la-star" aria-hidden="true"></i>
+                    <i class="las la-star" aria-hidden="true"></i>
+                    {% elif review.stars == 3 %}
+                     <i class="las la-star" aria-hidden="true"></i>
+                    <i class="las la-star" aria-hidden="true"></i>
+                    <i class="las la-star" aria-hidden="true"></i>
+                    {% elif review.stars == 4 %}
+                    <i class="las la-star" aria-hidden="true"></i>
+                    <i class="las la-star" aria-hidden="true"></i>
+                    <i class="las la-star" aria-hidden="true"></i>
+                    <i class="las la-star" aria-hidden="true"></i>
+                    {% else %}
+                    <i class="las la-star" aria-hidden="true"></i>
+                     <i class="las la-star" aria-hidden="true"></i>
+                    <i class="las la-star" aria-hidden="true"></i>
+                    <i class="las la-star" aria-hidden="true"></i>
+                    <i class="las la-star" aria-hidden="true"></i>
+                    {% endif %}
+                </div>
+                <p>{{ review.review }}</p>
+                <p><strong>{{review.reviewer}}</strong></p>
+                {% if review.reviwer == current_user %}
+                <a href="">Edit</a>
+                <a href="">Delete</a>
+                {% endif %}
+            </div>
+        </div>
+            {% endfor %}
+            </div>
         </div>
 </div>
 {% endblock %}
