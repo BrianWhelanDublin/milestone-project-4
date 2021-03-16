@@ -7,5 +7,7 @@ class ReviewAdmin(admin.ModelAdmin):
     readonly_fields = (
         "reviewer",
         "review",
-        "message",
-    )
+        "stars",
+        )
+
+admin.site.register(Review, ReviewAdmin)

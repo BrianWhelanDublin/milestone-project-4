@@ -16,7 +16,11 @@ Reviews
     </div>
     <div class="row">
         <div class="col">
-            {{form|crispy}}
+         <form method="POST" action="{% url 'our_reviews' %}">
+          {% csrf_token %}
+                {{form|crispy}}
+                <button type="submit">Add Review</button>
+         </form>
         </div>
 </div>
 {% endblock %}
