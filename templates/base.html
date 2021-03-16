@@ -80,6 +80,9 @@
                             </button>
                             <ul id="account-options" class="account-menu">
                                 {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                <li class="account-item"><a href="{% url 'add_item' %}">Stock Control</a></li>
+                                {% endif %}
                                 <li class="account-item"><a href="{% url 'user_profile' %}">My Account</a></li>
                                 <li class="account-item"><a href="{% url 'account_logout' %}">Logout</a></li>
                                 {% else %}
