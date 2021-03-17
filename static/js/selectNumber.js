@@ -7,11 +7,13 @@ increaseBtn.forEach((button) => {
         let inputContainer = clickedButton.parentElement.parentElement.children[1]
         let input = inputContainer.children[1].children[0]
         let max = input.getAttribute("max")
+        console.log(max)
         let inputValue = input.value
         let newValue = parseInt(inputValue) + 1
         if (inputValue < max) {
             input.value = newValue
         }
+         console.log(input.value)
     })
 })
 decreaseBtn.forEach((button) => {

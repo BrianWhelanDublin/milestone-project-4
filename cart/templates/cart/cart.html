@@ -36,37 +36,52 @@ Your Cart
                     <tr>
                         <td>
                             {% if item.item.image %}
-                                <img src="/media/{{ item.item.image }}" alt="image of {{ item.item.name }}" class="table-image">
+                            <img src="/media/{{ item.item.image }}" alt="image of {{ item.item.name }}"
+                                class="table-image">
                             {% else %}
-                                <img src="/media/no_image.png"
-                                alt="No image found for {{ item.item.name }}"
+                            <img src="/media/no_image.png" alt="No image found for {{ item.item.name }}"
                                 class="table-image">
                             {% endif %}
+                            <p class="mt-2 d-md-none">{{ item.item.name }}</p>
                         </td>
                         <td>
-                            <p class="mt-4">{{ item.item.name }}</p>
+                            <p class="d-none d-md-block">{{ item.item.name }}</p>
                         </td>
                         <td>
-                            <p class=" mt-4">€ {{ item.item.price }}</p>
+                            <p>€ {{ item.item.price }}</p>
                         </td>
                         <td>
-                            <form class="mt-4 cart-quantity-form" method="POST"
+                            <form class="cart-quantity-form" method="POST"
                                 action="{% url 'update_cart' item.item_id %}">
                                 {% csrf_token %}
-                                <label for="item_quantity_{{item.item_id}}" class="visually-hidden">
-                                    Item Quantity
-                                </label>
-                                <input type="number" value="{{ item.quantity }}" name="item_quantity" min="0" max="20"
-                                    id="item_quantity_{{item.item_id}}">
-                            </form>
 
+                                <div class="checkout-no-input flex-row-between">
+                                    <div class="plus-btn  flex-center">
+                                        <i class="las la-plus flex-center" aria-hidden="true"></i>
+                                        <span class="sr-only">increment button</span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="item_quantity_{{item.item_id}}">
+                                            <span class="visually-hidden">Item Quantity</span>
+                                        </label>
+                                        <div>
+                                            <input class="mt-2" type="number" value="{{ item.quantity }}"
+                                                name="item_quantity" min="0" max="9"
+                                                id="item_quantity_{{item.item_id}}">
+                                        </div>
+                                    </div>
+                                    <div class="minus-btn flex-center">
+                                        <i class="las la-minus"></i>
+                                        <span class="sr-only">decrement button</span>
+                                    </div>
+                                </div>
+                            </form>
                             <a class="update-quantity-link">Update
                             </a>
                             <a class="remove-cart-item text-danger " id="remove_{{ item.item_id }}">Remove</a>
-
                         </td>
                         <td>
-                            <p class="mt-4">{{ item.item.price | calculate_total:item.quantity }}</p>
+                            <p>€ {{ item.item.price | calculate_total:item.quantity }}</p>
                         </td>
                     </tr>
                     {% endfor %}
@@ -79,11 +94,9 @@ Your Cart
                     </tr>
                 </table>
                 <div class="cart-links d-flex justify-content-end">
-                    <a  href="{% url 'all_items' %}"
-                        class="item-link-light item-link-button  flex-center">Keep
+                    <a href="{% url 'all_items' %}" class="item-link-light item-link-button  flex-center">Keep
                         Shopping</a>
-                    <a href="{% url 'checkout' %}"
-                        class="item-link-dark item-link-button  flex-center">Checkout</a>
+                    <a href="{% url 'checkout' %}" class="item-link-dark item-link-button  flex-center">Checkout</a>
                 </div>
             </div>
             {% else %}
@@ -97,7 +110,6 @@ Your Cart
     </div>
 </div>
 {% endblock %}
-
 {% block other_end_js %}
 {{ block.super }}
 
@@ -133,4 +145,5 @@ Your Cart
         });
     });
 </script>
+<script src="{% static 'js/selectNumber.js' %}"></script>
 {% endblock %}

@@ -153,6 +153,8 @@ a:hover,
 /* --------------------------------Form elements */
 table input[type="number"] {
     width: 3rem;
+    height: 3.5rem;
+    text-align: center;
 }
 
 input[type="number"],
@@ -162,7 +164,11 @@ table input[type="number"] {
     border-radius: 0;
     font-size: 1.25rem;
 }
-
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 /* input[type="number"] {
     width: 10rem;
 } */
@@ -1205,7 +1211,8 @@ th {
 }
 
 td p {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-top: 3rem;
 }
 
 .update-quantity-link,
@@ -1270,6 +1277,12 @@ td p {
     width: 15rem;
  margin:1rem auto 2.5rem auto;
 }
+.checkout-no-input{
+    width:10rem;
+}
+.checkout-number{
+    width:8rem;
+}
 
 .plus-btn i,
 .minus-btn i {
@@ -1293,7 +1306,9 @@ td p {
 .minus-btn i:hover {
     color: #EDEDE9;
 }
-
+.checkout-no-input{
+    margin-bottom: 1.5rem;
+}
 
 /* Media Querys */
 
@@ -1430,12 +1445,12 @@ td p {
     td p {
         font-size: 1.25rem;
     }
-
+/* 
     table input[type="number"] {
         width: 5.5rem;
         font-size: 1.5rem;
         height: 3rem;
-    }
+    } */
 
     .successful-toast {
         width: 50rem;
