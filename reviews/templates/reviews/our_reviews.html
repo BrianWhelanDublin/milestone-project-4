@@ -9,59 +9,104 @@ Reviews
 {% endblock %}
 {% block main_content %}
 <div class="container checkout-container">
-     <div class="row">
+    <div class="row">
         <div class="col flex-center checkout-heading">
             <h1>Our Reviews</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4">
-            <h2>Add A Review</h2>
-         <form method="POST" action="{% url 'our_reviews' %}">
-          {% csrf_token %}
-                {{form|crispy}}
-                <button type="submit">Add Review</button>
-         </form>
-        </div>
-        <div class="col-12 col-md-6 col-lg-8">
-            <h3 class="text-center">What People are saying.</h3>
-            <div class="row">
-            {% for review in reviews %}
-        <div class="col-12 col-md-6 col-lg-4">
-                 <div class="review flex-center">
-                <div class="stars">
-                    {% if review.stars == 1 %}
-                    <i class="las la-star" aria-hidden="true"></i>
-                    {% elif review.stars == 2 %}
-                     <i class="las la-star" aria-hidden="true"></i>
-                    <i class="las la-star" aria-hidden="true"></i>
-                    {% elif review.stars == 3 %}
-                     <i class="las la-star" aria-hidden="true"></i>
-                    <i class="las la-star" aria-hidden="true"></i>
-                    <i class="las la-star" aria-hidden="true"></i>
-                    {% elif review.stars == 4 %}
-                    <i class="las la-star" aria-hidden="true"></i>
-                    <i class="las la-star" aria-hidden="true"></i>
-                    <i class="las la-star" aria-hidden="true"></i>
-                    <i class="las la-star" aria-hidden="true"></i>
-                    {% else %}
-                    <i class="las la-star" aria-hidden="true"></i>
-                     <i class="las la-star" aria-hidden="true"></i>
-                    <i class="las la-star" aria-hidden="true"></i>
-                    <i class="las la-star" aria-hidden="true"></i>
-                    <i class="las la-star" aria-hidden="true"></i>
-                    {% endif %}
+            <h2 class="text-center">Add A Review</h2>
+            {% if request.user.is_authenticated %}
+            <form id="review-form" class="mb-5" method="POST" action="{% url 'our_reviews' %}">
+                {% csrf_token %}
+                {{ form.review | as_crispy_field }}
+                <div class="div stars-input flex-row-between">
+                    <div class="plus-btn  flex-center">
+                        <i class="las la-plus flex-center" aria-hidden="true"></i>
+                         <span class="sr-only">increment button</span>
+                    </div>
+                    {{ form.stars | as_crispy_field}}
+                    <div class="minus-btn flex-center">
+                        <i class="las la-minus"></i>
+                        <span class="sr-only">decrement button</span>
+                    </div>
                 </div>
-                <p>{{ review.review }}</p>
-                <p><strong>{{review.reviewer}}</strong></p>
-                {% if review.reviwer == current_user %}
-                <a href="">Edit</a>
-                <a href="">Delete</a>
-                {% endif %}
+                <button class="item-link-dark item-link-button  flex-center m-auto " type="submit">Add Review</button>
+            </form>
+            {% else %}
+            <p>Please Login or signup to leave a review</p>
+            {% endif %}
+        </div>
+        <div class="col-12 col-md-6 col-lg-8 ">
+            <h3 class="text-center">What People are saying.</h3>
+            <div class="row review-row">
+                {% for review in page_obj %}
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="review flex-center">
+                        <div class="stars">
+                            {% if review.stars == 1 %}
+                            <i class="las la-star" aria-hidden="true"></i>
+                            {% elif review.stars == 2 %}
+                            <i class="las la-star" aria-hidden="true"></i>
+                            <i class="las la-star" aria-hidden="true"></i>
+                            {% elif review.stars == 3 %}
+                            <i class="las la-star" aria-hidden="true"></i>
+                            <i class="las la-star" aria-hidden="true"></i>
+                            <i class="las la-star" aria-hidden="true"></i>
+                            {% elif review.stars == 4 %}
+                            <i class="las la-star" aria-hidden="true"></i>
+                            <i class="las la-star" aria-hidden="true"></i>
+                            <i class="las la-star" aria-hidden="true"></i>
+                            <i class="las la-star" aria-hidden="true"></i>
+                            {% else %}
+                            <i class="las la-star" aria-hidden="true"></i>
+                            <i class="las la-star" aria-hidden="true"></i>
+                            <i class="las la-star" aria-hidden="true"></i>
+                            <i class="las la-star" aria-hidden="true"></i>
+                            <i class="las la-star" aria-hidden="true"></i>
+                            {% endif %}
+                        </div>
+                        <p>{{ review.review }}</p>
+                        <p><strong>{{review.reviewer}}</strong></p>
+                        {% if review.reviwer == current_user %}
+                        <a href="">Edit</a>
+                        <a href="">Delete</a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- pagination taking from djano documintation that I changed slightly and styled with css -->
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="paginate-items mt-5">
+                        <div class="current">
+                            <p>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</p>
+                        </div>
+                        <div class="step-links">
+                            {% if page_obj.has_previous %}
+                            <a href="?page=1&sort={{ sort }}&direction={{ direction }}">&laquo; First</a>
+                            <a
+                                href="?page={{ page_obj.previous_page_number }}&sort={{ sort }}&direction={{ direction }}">&laquo;
+                                Previous</a>
+                            {% endif %}
+                            {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}&sort={{ sort }}&direction={{ direction }}">Next
+                                &raquo;</a>
+                            <a
+                                href="?page={{ page_obj.paginator.num_pages }}&sort={{ sort }}&direction={{ direction }}">Last
+                                &raquo;</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-            {% endfor %}
-            </div>
-        </div>
+    </div>
 </div>
+{% endblock %}
+{% block other_end_js %}
+{{ block.super }}
+  <script src="{% static 'js/selectNumber.js' %}"></script>
 {% endblock %}

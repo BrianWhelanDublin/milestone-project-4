@@ -1,12 +1,9 @@
 from django.shortcuts import render
 from .forms import ReviewForm
 from .models import Review
+from django.core.paginator import Paginator
 
 
-from django.contrib.auth.decorators import login_required
-
-
-@login_required
 def our_reviews(request):
     ''' renders all the reviews '''
 
@@ -17,13 +14,16 @@ def our_reviews(request):
             review.reviewer = request.user
             form.save()
 
-    reviews = Review.objects.all()
+    reviews = Review.objects.all().order_by("-id")
+    paginator = Paginator(reviews, 6)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
 
     form = ReviewForm()
     template = "reviews/our_reviews.html"
     context = {
         "form": form,
-        "reviews": reviews,
+        "page_obj": page_obj,
     }
 
     return render(request,

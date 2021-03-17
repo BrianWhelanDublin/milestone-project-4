@@ -16,3 +16,4 @@ class ReviewForm(forms.ModelForm):
 
         self.fields["stars"].widget.attrs["min"] = 1
         self.fields["stars"].widget.attrs["max"] = 5
+        self.fields["stars"].widget.attrs["value"] = 1

@@ -1,16 +1,16 @@
 // show dropdown when accont is clicked
 let dropdownLinks = document.querySelectorAll(".dropdown-link")
- let dropdown = document.querySelector(".account-dropdown")
+let dropdown = document.querySelector(".account-dropdown")
 
-dropdownLinks.forEach((link)=>{
-    link.addEventListener("click", ()=>{
+dropdownLinks.forEach((link) => {
+    link.addEventListener("click", () => {
         dropdown.classList.add("dropdown-show")
     })
 })
 
 let closeDropdown = document.querySelector(".dropdown-close")
-closeDropdown.addEventListener("click", ()=>{
-dropdown.classList.remove("dropdown-show")
+closeDropdown.addEventListener("click", () => {
+    dropdown.classList.remove("dropdown-show")
 })
 
 

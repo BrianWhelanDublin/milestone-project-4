@@ -163,9 +163,9 @@ table input[type="number"] {
     font-size: 1.25rem;
 }
 
-input[type="number"] {
+/* input[type="number"] {
     width: 10rem;
-}
+} */
 
 input[type="number"]:focus,
 table input[type="number"]:focus {
@@ -256,7 +256,8 @@ label[for="quantity"] {
 }
 
 #contact-form textarea,
-#item-form textarea {
+#item-form textarea,
+#review-form textarea {
     height: 15rem;
 }
 
@@ -1252,6 +1253,47 @@ td p {
 .secondaryAction {
     margin: 2rem auto;
 }
+
+.review-row {
+    min-height: 45rem;
+}
+
+#review-form {
+    margin: 5rem auto;
+    width: 70%;
+}
+
+/* #review-form label{
+    margin-top: 2rem;
+} */
+.stars-input {
+    width: 15rem;
+ margin:1rem auto 2.5rem auto;
+}
+
+.plus-btn i,
+.minus-btn i {
+    font-size: 2rem;
+}
+.plus-btn,
+.minus-btn {
+    border: .1rem solid #153243;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-top: 1.3rem;
+    transition: all .5s ease-in-out;
+}
+
+.plus-btn:hover,
+.minus-btn:hover {
+    background-color: #153243;
+}
+
+.plus-btn i:hover,
+.minus-btn i:hover {
+    color: #EDEDE9;
+}
+
 
 /* Media Querys */
 
