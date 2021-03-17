@@ -74,6 +74,7 @@ def delete_review(request, review_id):
         messages.error(request,
                        "You do not have permission to do this.")
         return redirect(reverse("our_reviews"))
+        
     if request.method == "POST":
         review.delete()
         messages.success(request,
