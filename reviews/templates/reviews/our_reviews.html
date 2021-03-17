@@ -39,7 +39,8 @@ Reviews
             {% endif %}
         </div>
         <div class="col-12 col-md-6 col-lg-8 ">
-            <h3 class="text-center">What People are saying.</h3>
+            <h3 class="text-center fs-1">What People are saying.</h3>
+            <hr>
             <div class="row review-row">
                 {% for review in page_obj %}
                 <div class="col-12 col-md-6 col-lg-4">
@@ -98,10 +99,6 @@ Reviews
                                 </div>
                             </div>
                         </div>
-
-
-
-
                         {% endif %}
                     </div>
                 </div>
@@ -110,7 +107,7 @@ Reviews
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="paginate-items mt-5">
+                    <div class="paginate-items ms-5 mt-5">
                         <div class="current">
                             <p>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</p>
                         </div>
