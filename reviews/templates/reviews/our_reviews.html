@@ -71,7 +71,10 @@ Reviews
                         <p><strong>{{review.reviewer}}</strong></p>
                         {% if user == review.reviewer %}
                         <a href="{% url 'edit_review' review.id %}">Edit</a>
-                        <a href="">Delete</a>
+                        <form method="POST" action="{% url 'delete_review' review.id %}">
+                            {% csrf_token %}
+                       <button class="text-danger" type="submit">Delete</button>
+                        </form>
                         {% endif %}
                     </div>
                 </div>
