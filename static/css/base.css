@@ -1312,7 +1312,34 @@ td p {
 .item-quantity{
     width:18rem;
 }
+.modal-button {
+    height: 3.25rem;
+    width: 15rem;
+    border: .1rem solid #153243;
+    transition: all .5s ease-in;
+}
 
+.cancel-btn:hover {
+    background-color: #153243;
+    color: #EDEDE9;
+}
+
+.delete-btn {
+    color: #dc3545;
+    margin-left: 1rem;
+}
+
+.delete-btn:hover {
+    background-color: #dc3545;
+    color: #EDEDE9;
+}
+.modal-content{
+    border-radius: 0;
+    margin-top: 10rem;
+}
+.review-delete{
+    text-decoration: underline;
+}
 /* Media Querys */
 
 /* medium 768px */

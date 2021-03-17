@@ -24,7 +24,7 @@ Reviews
                 <div class="div stars-input flex-row-between">
                     <div class="plus-btn  flex-center">
                         <i class="las la-plus flex-center" aria-hidden="true"></i>
-                         <span class="sr-only">increment button</span>
+                        <span class="sr-only">increment button</span>
                     </div>
                     {{ form.stars | as_crispy_field}}
                     <div class="minus-btn flex-center">
@@ -71,10 +71,37 @@ Reviews
                         <p><strong>{{review.reviewer}}</strong></p>
                         {% if user == review.reviewer %}
                         <a href="{% url 'edit_review' review.id %}">Edit</a>
-                        <form method="POST" action="{% url 'delete_review' review.id %}">
-                            {% csrf_token %}
-                       <button class="text-danger" type="submit">Delete</button>
-                        </form>
+                        <button type="button" class="text-danger fs-5 review-delete" data-bs-toggle="modal"
+                            data-bs-target="#review-deleteModal">
+                            Delete
+                        </button>
+                        <div class="modal fade" id="review-deleteModal" tabindex="-1" aria-labelledby="review-deleteModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title fs-1 m-auto" id="review-deleteModalLabel">Delete Item!</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="text-center text-danger fs-3">
+                                            Are you sure you want to delete this item?
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer m-auto">
+                                        <button type="button" class="fs-3 modal-button
+                                cancel-btn flex-center" data-bs-dismiss="modal">Cancel</button>
+                                        <form method="POST" action="{% url 'delete_review' review.id %}">
+                                            {% csrf_token %}
+                                            <button class=" modal-button fs-3 flex-center delete-btn" type="submit">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
                         {% endif %}
                     </div>
                 </div>
@@ -111,5 +138,5 @@ Reviews
 {% endblock %}
 {% block other_end_js %}
 {{ block.super }}
-  <script src="{% static 'js/selectNumber.js' %}"></script>
+<script src="{% static 'js/selectNumber.js' %}"></script>
 {% endblock %}
