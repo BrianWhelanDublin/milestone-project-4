@@ -1309,6 +1309,9 @@ td p {
 .checkout-no-input{
     margin-bottom: 1.5rem;
 }
+.item-quantity{
+    width:18rem;
+}
 
 /* Media Querys */
 
