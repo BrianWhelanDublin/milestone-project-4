@@ -69,8 +69,8 @@ Reviews
                         </div>
                         <p>{{ review.review }}</p>
                         <p><strong>{{review.reviewer}}</strong></p>
-                        {% if review.reviwer == current_user %}
-                        <a href="">Edit</a>
+                        {% if user == review.reviewer %}
+                        <a href="{% url 'edit_review' review.id %}">Edit</a>
                         <a href="">Delete</a>
                         {% endif %}
                     </div>
