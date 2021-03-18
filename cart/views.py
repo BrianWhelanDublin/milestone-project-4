@@ -10,13 +10,12 @@ def view_cart(request):
 
     template = "cart/cart.html"
 
-    context = {
-        "on_cart_page": True
-    }
+    # context = {
+    #     "on_cart_page": True
+    # }
 
     return render(request,
-                  template,
-                  context)
+                  template)
 
 
 def add_to_cart(request, item_id):
