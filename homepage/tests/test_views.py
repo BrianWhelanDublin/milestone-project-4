@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.messages import get_messages
 
 
-class TestViews(TestCase):
+class TestHomepageViews(TestCase):
 
     def setUp(self):
 

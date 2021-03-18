@@ -41,8 +41,8 @@
 
   - Account.
     - As a customer, I would like to save my details to an account.
-    - As a customer, I would like to be able to sign up using my social media account details.
     - As a customer, I would like to see my previous order details.
+    - As a customer, I would like leave a review of the company.
 
 - Website owner.
   - As the business owner, I would like to be able to edit and add products easily.
