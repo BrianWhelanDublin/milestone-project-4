@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load cart_tools %}
+
+{% block title %}
+Your Cart
+{% endblock %}
+
+{% block header %}
+{% include 'includes/nav-background.html' %}
+{% endblock %}
+
+{% block main_content %}
+<div class="container cart-container">
+      <div class="row">
+        <div class="col cart-heading text-center">
+            <h1>Wishlist</h1>
+        </div>
+    </div>
+    {% for item in wishlist_items %}
+    {{item.item.name}}
+    {% endfor %}
+</div>
+{% endblock %}
