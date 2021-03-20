@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load wishlist_tools %}
 {% block title %}
 {% endblock %}
 {% block header %}
@@ -30,7 +31,7 @@
                 contemporary furniture, accessories and lighting for the style-conscious home.
                 At, Abode.com we work closely with our furniture creators to bring you the very best in design,
                 sustainability and value.</p>
-            <a href="{% url 'all_items' %}" class="flex-center link-button link-button-dark animation-element">Shop
+            <a href="{% url 'all_items' %}" class="flex-center link-button link-button-dark ">Shop
                 Collection</a>
         </div>
     </div>
@@ -38,7 +39,7 @@
 <!-- New in section -->
 <div class="container-fluid">
     <div class="row">
-        <div class="col new-item-title-col flex-row-between animation-element">
+        <div class="col new-item-title-col flex-row-between ">
             <h3>New In</h3>
             <div class="arrows flex-row-between">
                 <div id="arrow-left" class="arrow flex-center">
@@ -52,10 +53,15 @@
             </div>
         </div>
         <div class="row">
-            <div class="col animation-element">
+            <div class="col ">
                 <div class="new-item-slider">
                     {% for item in new_items %}
                     <div class="item-container">
+                        {% if item.id|ifinlist:wishlist_items == True %}
+                        {% include 'includes/wishlist_remove.html' %}
+                        {% else %}
+                        {% include 'includes/wishlist_add.html' %}
+                        {% endif %}
                         {% if item.image %}
                         <a href="{% url 'single_item' item.id%}">
                             <img src="/media/{{ item.image }}" alt="image for {{ item.name }}">
@@ -159,7 +165,8 @@
     </div>
     <div class="row">
         <div class="col">
-            <a href="{% url 'our_reviews' %}" class="flex-center link-button link-button-dark animation-element mt-5 mb-4 mx-auto">See all Reviews</a>
+            <a href="{% url 'our_reviews' %}"
+                class="flex-center link-button link-button-dark animation-element mt-5 mb-4 mx-auto">See all Reviews</a>
         </div>
     </div>
 </div>
@@ -170,10 +177,9 @@
             <h3>Sign Up for Our Newsletter</h3>
         </div>
         <div class="col-12 col-md-6">
-             <form class="newsletter-form flex-center" method="POST" 
-            action="{% url 'home_page'%}" >
-            {% csrf_token %}
-               {{ form }}
+            <form class="newsletter-form flex-center" method="POST" action="{% url 'home_page'%}">
+                {% csrf_token %}
+                {{ form }}
                 <button type="submit">Sign Up</button>
             </form>
         </div>
@@ -183,4 +189,8 @@
 {% block other_end_js %}
 {{ block.super }}
 <script src="{% static 'homepage/js/homepage.js' %}"></script>
+<script>
+    let csrfToken = "{{ csrf_token }}"
+</script>
+  <script src="{% static 'js/wishlist.js' %}"></script>
 {% endblock %}
