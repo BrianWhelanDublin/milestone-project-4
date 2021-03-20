@@ -59,7 +59,6 @@ def all_items(request):
     paginator = Paginator(items, 6)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-
     current_sorting = f"{sort}_{direction}"
     context = {
         "page_obj": page_obj,

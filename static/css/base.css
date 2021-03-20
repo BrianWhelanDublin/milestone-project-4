@@ -108,6 +108,22 @@ input[type="text"]:focus,
     outline: none;
 }
 
+.wishlist-button {
+    position: absolute;
+    top: 2rem;
+    right: 5rem;
+    height: 3rem;
+    width: 3rem;
+    background-color: #D1D1C7;
+    border-radius: 50%;
+    z-index: 200;
+}
+
+
+.wishlist-button i {
+    font-size: 2rem;
+}
+
 .flex-center {
     display: flex;
     align-items: center;
@@ -164,11 +180,13 @@ table input[type="number"] {
     border-radius: 0;
     font-size: 1.25rem;
 }
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
+
 /* input[type="number"] {
     width: 10rem;
 } */
@@ -829,6 +847,7 @@ input:-webkit-autofill {
 
 .item-container {
     margin: 1rem .5rem;
+    position: relative;
 }
 
 .item-details {
@@ -1275,19 +1294,22 @@ td p {
 } */
 .stars-input {
     width: 15rem;
- margin:1rem auto 2.5rem auto;
+    margin: 1rem auto 2.5rem auto;
 }
-.checkout-no-input{
-    width:10rem;
+
+.checkout-no-input {
+    width: 10rem;
 }
-.checkout-number{
-    width:8rem;
+
+.checkout-number {
+    width: 8rem;
 }
 
 .plus-btn i,
 .minus-btn i {
     font-size: 2rem;
 }
+
 .plus-btn,
 .minus-btn {
     border: .1rem solid #153243;
@@ -1306,12 +1328,15 @@ td p {
 .minus-btn i:hover {
     color: #EDEDE9;
 }
-.checkout-no-input{
+
+.checkout-no-input {
     margin-bottom: 1.5rem;
 }
-.item-quantity{
-    width:18rem;
+
+.item-quantity {
+    width: 18rem;
 }
+
 .modal-button {
     height: 3.25rem;
     width: 15rem;
@@ -1333,13 +1358,16 @@ td p {
     background-color: #dc3545;
     color: #EDEDE9;
 }
-.modal-content{
+
+.modal-content {
     border-radius: 0;
     margin-top: 10rem;
 }
-.review-delete{
+
+.review-delete {
     text-decoration: underline;
 }
+
 /* Media Querys */
 
 /* medium 768px */
@@ -1475,7 +1503,8 @@ td p {
     td p {
         font-size: 1.25rem;
     }
-/* 
+
+    /* 
     table input[type="number"] {
         width: 5.5rem;
         font-size: 1.5rem;
@@ -1522,7 +1551,10 @@ td p {
     .item-container a img {
         width: 36rem;
         height: 46rem;
-        object-fit: cover;
+    }
+
+    .wishlist-button {
+        right: 1rem;
     }
 
     .category-image {
