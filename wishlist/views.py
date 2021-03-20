@@ -1,6 +1,6 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, get_object_or_404, redirect, reverse, HttpResponse
 from stock.models import Item
-from django.core.paginator import Paginator
+from django.contrib import messages
 
 
 def view_wishlist(request):
@@ -33,5 +33,8 @@ def add_to_wishlist(request, item_id):
 
     wishlist[item_id] = item_id
     request.session["wishlist"] = wishlist
-
-    return redirect(redirect_url)
+    item = get_object_or_404(Item, pk=item_id)
+    # return redirect(redirect_url)
+    messages.success(request,
+                     f"{item.name} has been added to your wishlist.")
+    return HttpResponse(status=200)
