@@ -21,3 +21,23 @@ sortSelector.addEventListener("change", ()=>{
          window.location.replace(currentUrl);
     }
 })
+
+let wishlistButton = document.querySelectorAll(".wishlist-button")
+    wishlistButton.forEach((button) => {
+        button.addEventListener("click", (event) => {
+            event.preventDefault()
+            let itemId = button.getAttribute("id").split("wish_")[1];
+            let url = `/wishlist/add/${itemId}/`
+            console.log(itemId)
+            fetch(url, {
+                method: "POST",
+                headers: {
+                    "X-CSRFToken": csrfToken
+                },
+            }).then(() => {
+                location.reload();
+            }).catch((error) => {
+                alert("Opps something has gone wrong.");
+            });
+        })
+    })

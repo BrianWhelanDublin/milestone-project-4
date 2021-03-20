@@ -48,7 +48,7 @@ All Items
     </div>
     <!-- items section -->
     <div class="row items-row">
-        
+
         {% for item in page_obj %}
         <div class="col-12 col-md-6 col-lg-4 item-col">
             <div class="item-container flex-center">
@@ -64,12 +64,12 @@ All Items
                 <h3>{{ item.name }}</h3>
                 <p>€ {{ item.price }}</p>
             </div>
-            <form action="{% url 'add_to_wishlist' item.id %}" method="POST">
+            <!-- <form action="{% url 'add_to_wishlist' item.id %}" method="POST">
                 {% csrf_token %}
-                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                <button type="submit" class="">Add To wishlist</button>
-            </form>
-      
+                <input type="hidden" name="redirect_url" value="{{ request.path }}"> -->
+                <button id="wish_{{item.id}}" type="submit" class="wishlist-button">Add To wishlist</button>
+            <!-- </form> -->
+
         </div>
         {% endfor %}
     </div>
@@ -140,4 +140,7 @@ All Items
 {% block other_end_js %}
 {{ block.super }}
 <script src="{% static 'stock/js/stock.js' %}"></script>
+<script>
+ let csrfToken = "{{ csrf_token }}"
+</script>
 {% endblock %}
