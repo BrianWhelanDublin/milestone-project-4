@@ -114,9 +114,13 @@ input[type="text"]:focus,
     right: 5rem;
     height: 3rem;
     width: 3rem;
-    background-color: #D1D1C7;
     border-radius: 50%;
     z-index: 200;
+       background-color: #D1D1C7;
+}
+
+.wishlist-button-liked i{
+    color:#153243
 }
 
 

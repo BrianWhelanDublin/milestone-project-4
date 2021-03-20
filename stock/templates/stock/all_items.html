@@ -47,21 +47,25 @@ All Items
             </div>
         </div>
     </div>
-   {{wishlist_items}}
     <!-- items section -->
     <div class="row items-row">
         {% for item in page_obj %}
-        {% if item.id|ifinlist:wishlist_items == True %}
-        <p>Yeah</p>
-        {% else%}
-        <p>Not Working</p>
-        {% endif %}
+
+
         <div class="col-12 col-md-6 col-lg-4 item-col">
             <div class="item-container flex-center">
+                <!-- displays the like unlike buttons for the wishlist -->
+                {% if item.id|ifinlist:wishlist_items == True %}
+                  <button id="wish_liked_{{item.id}}" type="submit" class="wishlist-button-liked wishlist-button">
+                    <i class="las la-heart flex-center" aria-hidden="true"></i>
+                    <span class="sr-only">Add to Wishlist button</span>
+                </button>
+                {% else %}
                 <button id="wish_{{item.id}}" type="submit" class="wishlist-button">
                     <i class="lar la-heart flex-center" aria-hidden="true"></i>
                     <span class="sr-only">Add to Wishlist button</span>
                 </button>
+                {% endif %}
                 {% if item.image %}
                 <a href="{% url 'single_item' item.id %}"><img src="/media/{{ item.image }}"
                         alt="image for {{ item.name }}"></a>
