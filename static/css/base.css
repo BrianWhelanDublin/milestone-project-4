@@ -108,7 +108,8 @@ input[type="text"]:focus,
     outline: none;
 }
 
-.wishlist-button {
+.wishlist-button,
+.wishlist-button-liked {
     position: absolute;
     top: 2rem;
     right: 5rem;
@@ -124,7 +125,8 @@ input[type="text"]:focus,
 }
 
 
-.wishlist-button i {
+.wishlist-button i,
+.wishlist-button-liked i {
     font-size: 2rem;
 }
 
@@ -1557,8 +1559,9 @@ td p {
         height: 46rem;
     }
 
-    .wishlist-button {
-        right: 1rem;
+    .wishlist-button,
+    .wishlist-button-liked {
+        right: 2.5rem;
     }
 
     .category-image {

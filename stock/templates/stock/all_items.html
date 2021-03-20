@@ -56,10 +56,10 @@ All Items
             <div class="item-container flex-center">
                 <!-- displays the like unlike buttons for the wishlist -->
                 {% if item.id|ifinlist:wishlist_items == True %}
-                  <button id="wish_liked_{{item.id}}" type="submit" class="wishlist-button-liked wishlist-button">
-                    <i class="las la-heart flex-center" aria-hidden="true"></i>
-                    <span class="sr-only">Add to Wishlist button</span>
-                </button>
+                    <button id="liked_{{item.id}}" type="submit" class="wishlist-button-liked">
+                        <i class="las la-heart flex-center" aria-hidden="true"></i>
+                        <span class="sr-only">Add to Wishlist button</span>
+                    </button>
                 {% else %}
                 <button id="wish_{{item.id}}" type="submit" class="wishlist-button">
                     <i class="lar la-heart flex-center" aria-hidden="true"></i>
