@@ -36,7 +36,7 @@ let wishlistButton = document.querySelectorAll(".wishlist-button")
                     "X-CSRFToken": csrfToken
                 },
             }).then(() => {
-                location.reload();
+                document.location.reload();
             }).catch((error) => {
                 alert("Opps something has gone wrong.");
             });
@@ -56,7 +56,7 @@ let wishlistLikedButton = document.querySelectorAll(".wishlist-button-liked")
                     "X-CSRFToken": csrfToken
                 },
             }).then(() => {
-                location.reload();
+                document.location.reload();
             }).catch((error) => {
                 alert("Opps something has gone wrong.");
             });
