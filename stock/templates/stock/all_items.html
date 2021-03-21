@@ -55,11 +55,13 @@ All Items
 
               <div class="img-container">
                     <!-- displays the like unlike buttons for the wishlist -->
+{% if request.user.is_authenticated %}
                 {% if item.id|ifinlist:wishlist_items == True %}
                  {% include 'includes/wishlist_remove.html' %}
                 {% else %}
            {% include 'includes/wishlist_add.html' %}
                 {% endif %}
+            {% endif %}
                 {% if item.image %}
                 <a href="{% url 'single_item' item.id %}"><img src="/media/{{ item.image }}"
                         alt="image for {{ item.name }}"></a>
