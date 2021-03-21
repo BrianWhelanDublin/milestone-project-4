@@ -1,3 +1,12 @@
 from django.contrib import admin
+from .models import UsersWishlist
 
-# Register your models here.
+
+class UsersWishlistAdmin(admin.ModelAdmin):
+    model = UsersWishlist
+    list_display = (
+        "user",
+    )
+
+
+admin.site.register(UsersWishlist, UsersWishlistAdmin)

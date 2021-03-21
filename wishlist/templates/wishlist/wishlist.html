@@ -23,24 +23,24 @@ Your Cart
             <div class="item-container flex-center">
                 <div class="img-container">
                     <!-- displays the like unlike buttons for the wishlist -->
-                    <button id="liked_{{item.item.id}}" type="submit" class="wishlist-button-liked">
+                    <button id="liked_{{item.id}}" type="submit" class="wishlist-button-liked">
                         <i class="las la-heart flex-center" aria-hidden="true"></i>
                         <span class="sr-only">Add to Wishlist button</span>
                     </button>
-                    {% if item.item.image %}
-                    <a href="{% url 'single_item' item.item.id %}"><img src="/media/{{ item.item.image }}"
-                            alt="image for {{ item.item.name }}"></a>
+                    {% if item.image %}
+                    <a href="{% url 'single_item' item.id %}"><img src="/media/{{ item.image }}"
+                            alt="image for {{ item.name }}"></a>
                     {% else %}
-                    <a href="{% url 'single_item' item.item.id %}"><img src="/media/no_image.png"
-                            alt="No image found for {{ item.item.name }}"></a>
+                    <a href="{% url 'single_item' item.id %}"><img src="/media/no_image.png"
+                            alt="No image found for {{ item.name }}"></a>
                     {% endif %}
                 </div>
             </div>
             <div class="item-details all-item-details flex-row-between">
-                <h3>{{ item.item.name }}</h3>
-                <p>€ {{ item.item.price }}</p>
+                <h3>{{ item.name }}</h3>
+                <p>€ {{ item.price }}</p>
             </div>
-            <form class="mt-5" action="{% url 'add_to_cart' item.item.id %}" method="POST">
+            <form class="mt-5" action="{% url 'add_to_cart' item.id %}" method="POST">
                 {% csrf_token %}
                 <input class="form-control" type="hidden" name="quantity" value="1" min="1" max="9">
                 <button type="submit" class=" item-link-button flex-center item-link-dark m-auto">Add To Cart</button>
@@ -51,8 +51,6 @@ Your Cart
 
     </div>
 </div>
-<p>userwishlist</p>
-{{wish.Wishlist}}
 
 {% endblock %}
 {% block other_end_js %}
