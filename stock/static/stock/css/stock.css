@@ -1,10 +1,16 @@
 .item-container {
     margin: 0 auto;
 }
+.item-row{
+    padding-top: 8rem;
+}
 
 .item-img-col {
     margin-top: 10rem;
     flex-direction: column;
+}
+.item-img-container{
+    position: relative;
 }
 
 .item-img-col img {

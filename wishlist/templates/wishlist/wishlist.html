@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load wishlist_tools %}
 {% block title %}
 Your Cart
 {% endblock %}
@@ -11,15 +12,54 @@ Your Cart
 
 {% block main_content %}
 <div class="container cart-container">
-      <div class="row">
+    <div class="row">
         <div class="col cart-heading text-center">
             <h1>Wishlist</h1>
         </div>
     </div>
-    {% for item in wishlist_items %}
-    {{item.item.name}}
-    {% endfor %}
+    <div class="row">
+        {% for item in wishlist_items %}
+        <div class="col-12 col-md-6 col-lg-4 item-col">
+            <div class="item-container flex-center">
+                <div class="img-container">
+                    <!-- displays the like unlike buttons for the wishlist -->
+                    <button id="liked_{{item.item.id}}" type="submit" class="wishlist-button-liked">
+                        <i class="las la-heart flex-center" aria-hidden="true"></i>
+                        <span class="sr-only">Add to Wishlist button</span>
+                    </button>
+                    {% if item.item.image %}
+                    <a href="{% url 'single_item' item.item.id %}"><img src="/media/{{ item.item.image }}"
+                            alt="image for {{ item.item.name }}"></a>
+                    {% else %}
+                    <a href="{% url 'single_item' item.item.id %}"><img src="/media/no_image.png"
+                            alt="No image found for {{ item.item.name }}"></a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="item-details all-item-details flex-row-between">
+                <h3>{{ item.item.name }}</h3>
+                <p>€ {{ item.item.price }}</p>
+            </div>
+            <form class="mt-5" action="{% url 'add_to_cart' item.item.id %}" method="POST">
+                {% csrf_token %}
+                <input class="form-control" type="hidden" name="quantity" value="1" min="1" max="9">
+                <button type="submit" class=" item-link-button flex-center item-link-dark m-auto">Add To Cart</button>
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            </form>
+        </div>
+        {% endfor %}
+
+    </div>
 </div>
 <p>userwishlist</p>
 {{wish.Wishlist}}
+
+{% endblock %}
+{% block other_end_js %}
+{{ block.super }}
+<script>
+    let csrfToken = "{{ csrf_token }}"
+</script>
+<script src="{% static 'js/wishlist.js' %}"></script>
+
 {% endblock %}

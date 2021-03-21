@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load wishlist_tools %}
 {% block other_css %}
 <link rel="stylesheet" href="{% static 'stock/css/stock.css' %}">
 {% endblock %}
@@ -12,16 +13,22 @@
 {% endblock %}
 {% block main_content %}
 <div class="container item-container">
-    <div class="row">
-        {% if item.image %}
+    <div class="row item-row">
         <div class="col-12 col-md-6 item-img-col flex-center">
-            <img src="/media/{{ item.image }}" alt="image for {{ item.name }}">
+            <!-- displays the like unlike buttons for the wishlist -->
+            <div class="item-img-container">
+                {% if item.id|ifinlist:wishlist_items == True %}
+                {% include 'includes/wishlist_remove.html' %}
+                {% else %}
+                {% include 'includes/wishlist_add.html' %}
+                {% endif %}
+                {% if item.image %}
+                <img src="/media/{{ item.image }}" alt="image for {{ item.name }}">
+                {% else %}
+                <img src="/media/no_image.png" alt="No image found for {{ item.name }}">
+                {% endif %}
+            </div>
         </div>
-        {% else %}
-        <div class="col-12 col-md-6 item-img-col flex-center">
-            <img src="/media/no_image.png" alt="No image found for {{ item.name }}">
-        </div>
-        {% endif %}
         <div class="col-12 col-md-6 item-details-col flex-center">
             <div class="item-details">
                 <h3>{{ item.name }}</h3>
@@ -93,5 +100,9 @@
 {% endblock %}
 {% block other_end_js %}
 {{ block.super }}
-  <script src="{% static 'js/selectNumber.js' %}"></script>
+<script src="{% static 'js/selectNumber.js' %}"></script>
+<script>
+    let csrfToken = "{{ csrf_token }}"
+</script>
+ <script src="{% static 'js/wishlist.js' %}"></script>
 {% endblock %}

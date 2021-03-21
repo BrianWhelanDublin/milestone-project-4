@@ -112,7 +112,7 @@ input[type="text"]:focus,
 .wishlist-button-liked {
     position: absolute;
     top: 2rem;
-    right: 5rem;
+    right: 2rem;
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
@@ -1172,7 +1172,9 @@ input:-webkit-autofill {
 .item-col {
     margin: 4rem 0;
 }
-
+.img-container{
+    position: relative;
+}
 #sort-selector {
     background-color: #EDEDE9;
     border: .1rem solid #153243;
