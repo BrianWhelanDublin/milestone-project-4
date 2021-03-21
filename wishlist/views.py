@@ -3,13 +3,20 @@ from django.shortcuts import (render, get_object_or_404,
 from stock.models import Item
 from django.contrib import messages
 
+from .models import UsersWishlist
 
 def view_wishlist(request):
     ''' a view to show the users wishlist '''
-
+    wish = []
+    if request.user.is_authenticated:
+        wish = get_object_or_404(UsersWishlist, user=request.user)
     template = "wishlist/wishlist.html"
+    context = {
+        "wish": wish
+    }
     return render(request,
-                  template)
+                  template,
+                  context)
 
 
 def add_to_wishlist(request, item_id):

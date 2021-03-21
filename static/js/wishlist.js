@@ -33,8 +33,7 @@ let wishlistLikedButton = document.querySelectorAll(".wishlist-button-liked")
                     "X-CSRFToken": csrfToken
                 },
             }).then(() => {
-                document.location.reload();
-                
+               document.location.reload();
             }).catch((error) => {
                 alert("Opps something has gone wrong.");
             });

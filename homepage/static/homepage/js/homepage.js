@@ -31,6 +31,7 @@ leftArrow.addEventListener("click", () => {
     rightArrow.classList.add("arrow-active");
 })
 
+
 // change top navigation colour on scroll
 window.addEventListener("scroll", () => {
     let topNavigation = document.querySelector(".top-navigation");
@@ -40,3 +41,19 @@ window.addEventListener("scroll", () => {
         topNavigation.classList.remove("top-nav-colored")
     }
 })
+
+window.onbeforeunload = (event) => {
+    localStorage.setItem("sliderPosition", newItemSlider.scrollLeft)
+}
+// document.addEventListener("DOMContentLoaded", (event) => {
+//     let sliderPosition = localStorage.getItem("sliderPosition")
+//     if (sliderPosition) {
+//         newItemSlider.scrollLeft = sliderPosition
+//     }
+// })
+
+window.onload=()=>{
+    let sliderPosition = localStorage.getItem("sliderPosition")
+    if (sliderPosition) {
+        newItemSlider.scrollLeft = sliderPosition
+}}
