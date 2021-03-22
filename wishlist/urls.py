@@ -10,7 +10,7 @@ urlpatterns = [
     path("remove/<item_id>/",
          views.remove_from_wishlist,
          name="remove_from_wishlist"),
-    # path("save/",
-    #      views.save_wishlist,
-    #      name="save_wishlist"),
+    path("delete/",
+         views.delete_wishlist,
+         name="delete_wishlist"),
 ]

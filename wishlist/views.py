@@ -1,12 +1,9 @@
 from django.shortcuts import (render, get_object_or_404,
                               redirect, reverse, HttpResponse)
 from django.contrib import messages
-from django.contrib.auth.models import User
 
 from .models import UsersWishlist
 from stock.models import Item
-
-import json
 
 
 def view_wishlist(request):
@@ -53,5 +50,16 @@ def remove_from_wishlist(request, item_id):
     else:
         messages.error(request, "Error you do not have \
 permission to do this.")
-    return redirect(reverse("home_page"))
+        return redirect(reverse("home_page"))
 
+
+def delete_wishlist(request):
+    if request.method == "POST":
+        wishlist = get_object_or_404(UsersWishlist, user=request.user)
+        wishlist.items.clear()
+        messages.success(request, "Your wishlist has been deleted.")
+        return redirect(reverse("wishlist"))
+    else:
+        messages.error(request, "Error you do not have \
+permission to do this.")
+        return redirect(reverse("home_page"))
