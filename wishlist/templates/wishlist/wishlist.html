@@ -18,6 +18,7 @@ Your Cart
         </div>
     </div>
     <div class="row">
+        {% if request.user.is_authenticated %}
         {% for item in wishlist_items %}
         <div class="col-12 col-md-6 col-lg-4 item-col">
             <div class="item-container flex-center">
@@ -48,6 +49,15 @@ Your Cart
             </form>
         </div>
         {% endfor %}
+        {% else %}
+        <div class="col">
+           <p class="flex-center fs-2">Please 
+               <a class="fs-2 mx-2" href="{% url 'account_login' %}"> Login </a> or
+                <a class="fs-2 mx-2" href="{% url 'account_signup' %}">Signup</a>
+            To create a wishlist.</p>
+        </div>
+        {% endif %}
+
 
     </div>
 </div>
