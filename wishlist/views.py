@@ -58,7 +58,7 @@ def delete_wishlist(request):
         wishlist = get_object_or_404(UsersWishlist, user=request.user)
         wishlist.items.clear()
         messages.success(request, "Your wishlist has been deleted.")
-        return redirect(reverse("wishlist"))
+        return redirect(reverse("view_wishlist"))
     else:
         messages.error(request, "Error you do not have \
 permission to do this.")
