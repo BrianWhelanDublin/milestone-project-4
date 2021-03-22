@@ -45,7 +45,8 @@
                             </button>
                             <a class="logo text-shadow" href="{% url 'home_page' %}">Abode.com</a>
                             <ul>
-                                <li class="top-nav-item">
+                                <a class="top-nav-item d-none d-md-block" href="{% url 'view_wishlist' %}">Wishlist</a>
+                                <li class="top-nav-item  d-md-none">
                                     <a href="{% url 'view_wishlist' %}">
                                         <i class="lar la-heart " aria-hidden="true"></i>
                                     <span class="visually-hidden">link to wishlist</span>
@@ -53,8 +54,8 @@
                                 </li>
                                 <li class="top-nav-item d-none d-md-block dropdown-link">Account
                                 </li>
-                                <li class="top-nav-item dropdown-link">
-                                    <i class="las la-user d-md-none" aria-hidden="true"></i>
+                                <li class="top-nav-item dropdown-link  d-md-none">
+                                    <i class="las la-user" aria-hidden="true"></i>
                                     <span class="visually-hidden">link to account</span>
                                 </li>
                                 <li>
@@ -66,9 +67,9 @@
                                         {% endif %}
                                     </a>
                                 </li>
-                                <li>
+                                <li class="d-md-none">
                                     <a class="top-nav-item" href="{% url 'view_cart' %}">
-                                        <i class="las la-shopping-bag d-md-none" aria-hidden="true"></i>
+                                        <i class="las la-shopping-bag " aria-hidden="true"></i>
                                         {% if item_count %}
                                         <span class="cart-number d-md-none">
                                             {{ item_count }}
