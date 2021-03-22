@@ -38,10 +38,11 @@ def remove_from_wishlist(request, item_id):
     if request.method == "POST":
         try:
             item = get_object_or_404(Item, pk=item_id)
-
-            wishlist = request.session.get("wishlist", {})
-
-            wishlist.pop(item_id)
+            wishlist = get_object_or_404(UsersWishlist, user=request.user)
+            print(item)
+            print(wishlist)
+            if item in wishlist.items.all():
+                wishlist.items.remove(item)
             messages.success(request,
                             f"{item.name} has been removed \
  from your wishlist.")
@@ -49,8 +50,8 @@ def remove_from_wishlist(request, item_id):
         except Exception as error:
             messages.error(request, f"Error removing item {error}")
             return HttpResponse(status=500)
-        else:
-            messages.error(request, "Error you do not have \
- permission to do this.")
-        return redirect(reverse("home_page"))
+    else:
+        messages.error(request, "Error you do not have \
+permission to do this.")
+    return redirect(reverse("home_page"))
 
