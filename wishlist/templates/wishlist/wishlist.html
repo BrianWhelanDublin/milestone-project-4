@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
 {% load static %}
-{% load wishlist_tools %}
 {% block title %}
-Your Cart
+Wishlist
 {% endblock %}
-
+{% block other_css %}
+<link rel="stylesheet" href="{% static 'wishlist/css/wishlist.css' %}">
+{% endblock %}
 {% block header %}
 {% include 'includes/nav-background.html' %}
 {% endblock %}
-
 {% block main_content %}
 <div class="container cart-container">
     <div class="row">
@@ -19,14 +19,22 @@ Your Cart
     </div>
     <div class="row">
         {% if request.user.is_authenticated %}
+        {% if wishlist_items %}
+        <div class="col-12">
+            <div class="wishlist-edit">
+                <p class="edit fs-4 flex-center">Edit</p>
+                <a href="{% url 'all_items' %}" class="hidden-button fs-3 delete-wishlist flex-center">Delete
+                    Wishlist</a>
+            </div>
+        </div>
         {% for item in wishlist_items %}
         <div class="col-12 col-md-6 col-lg-4 item-col">
             <div class="item-container flex-center">
                 <div class="img-container">
                     <!-- displays the like unlike buttons for the wishlist -->
-                    <button id="liked_{{item.id}}" type="submit" class="wishlist-button-liked">
-                        <i class="las la-heart flex-center" aria-hidden="true"></i>
-                        <span class="sr-only">Add to Wishlist button</span>
+                    <button id="liked_{{item.id}}" type="submit" class="wishlist-button-liked hidden-button ">
+                        <i class="las la-times flex-center" aria-hidden="true"></i>
+                        <span class="sr-only">Remove from wishlist button</span>
                     </button>
                     {% if item.image %}
                     <a href="{% url 'single_item' item.id %}"><img src="/media/{{ item.image }}"
@@ -50,11 +58,20 @@ Your Cart
         </div>
         {% endfor %}
         {% else %}
+        <div class="col-12">
+            <h3 class="fs-1 text-center my-5">Your Wishlist is empty</h3>
+            <p class="fs-4 text-center mb-4">We have some great products in our full collection.</p>
+            <a href="{% url 'all_items' %}" class="item-link-light item-link-button  flex-center m-auto">Shop
+                Collection</a>
+        </div>
+        {% endif %}
+
+        {% else %}
         <div class="col">
-           <p class="flex-center fs-2">Please 
-               <a class="fs-2 mx-2" href="{% url 'account_login' %}"> Login </a> or
+            <p class="flex-center fs-2">Please
+                <a class="fs-2 mx-2" href="{% url 'account_login' %}"> Login </a> or
                 <a class="fs-2 mx-2" href="{% url 'account_signup' %}">Signup</a>
-            To create a wishlist.</p>
+                To create a wishlist.</p>
         </div>
         {% endif %}
 
@@ -68,6 +85,6 @@ Your Cart
 <script>
     let csrfToken = "{{ csrf_token }}"
 </script>
-<script src="{% static 'js/wishlist.js' %}"></script>
+<script src="{% static 'wishlist/js/wishlist.js' %}"></script>
 
 {% endblock %}

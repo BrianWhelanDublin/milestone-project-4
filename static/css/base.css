@@ -120,13 +120,12 @@ input[type="text"]:focus,
        background-color: #D1D1C7;
 }
 
-.wishlist-button-liked i{
+.wishlist-button-liked i {
     color:#153243
 }
 
-
 .wishlist-button i,
-.wishlist-button-liked i {
+.wishlist-button-liked i{
     font-size: 2rem;
 }
 

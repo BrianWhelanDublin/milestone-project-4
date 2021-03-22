@@ -1,0 +1,34 @@
+.hidden-button {
+    visibility: hidden;
+}
+
+.wishlist-edit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 5rem;
+}
+
+.edit {
+    transition: all .5s ease-in;
+    padding: .1rem 2rem;
+    border: .1rem solid #153243;
+    width: 18rem;
+}
+
+.edit:hover {
+    color: rgb(136, 136, 135);
+}
+
+.delete-wishlist {
+    color: #153243;
+    transition: none;
+    padding: .1rem 2rem;
+    border: .1rem solid #153243;
+    width: 18rem;
+    background-color: #153243;
+    color: #EDEDE9;
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-decoration: none;
+}

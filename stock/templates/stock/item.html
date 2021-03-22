@@ -95,10 +95,12 @@
                 </form>
                 <a href="{% url 'all_items' %}" class="item-link-light item-link-button  flex-center">Keep
                     Shopping</a>
+                {% if request.user.is_anonymous %}
                   <p class="mt-5 fs-4">Please 
                <a class="fs-4 mx-1" href="{% url 'account_login' %}"> Login </a> or
                 <a class="fs-4 mx-1" href="{% url 'account_signup' %}">Signup</a>
             To create a wishlist.</p>
+            {% endif %}
             </div>
            
         </div>

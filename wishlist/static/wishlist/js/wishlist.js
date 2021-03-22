@@ -1,3 +1,4 @@
+// javascript to add items and remove items from the wishlist. I placed it in the general js folder as it is being used across a number of apps
 
 let wishlistButton = document.querySelectorAll(".wishlist-button")
     wishlistButton.forEach((button) => {
@@ -39,4 +40,13 @@ let wishlistLikedButton = document.querySelectorAll(".wishlist-button-liked")
             });
         })
     })
-console.log(window.location.hash)
+
+let editButton = document.querySelector(".edit")
+let deleteButton = document.querySelector(".delete-wishlist")
+editButton.addEventListener("click", ()=>{
+    deleteButton.classList.toggle("hidden-button")
+     wishlistLikedButton.forEach((button)=>{
+         button.classList.toggle("hidden-button")
+     })
+  
+})
