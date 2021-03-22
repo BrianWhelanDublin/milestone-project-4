@@ -41,19 +41,3 @@ window.addEventListener("scroll", () => {
         topNavigation.classList.remove("top-nav-colored")
     }
 })
-
-window.onbeforeunload = (event) => {
-    localStorage.setItem("sliderPosition", newItemSlider.scrollLeft)
-}
-// document.addEventListener("DOMContentLoaded", (event) => {
-//     let sliderPosition = localStorage.getItem("sliderPosition")
-//     if (sliderPosition) {
-//         newItemSlider.scrollLeft = sliderPosition
-//     }
-// })
-
-window.onload=()=>{
-    let sliderPosition = localStorage.getItem("sliderPosition")
-    if (sliderPosition) {
-        newItemSlider.scrollLeft = sliderPosition
-}}

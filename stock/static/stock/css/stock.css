@@ -50,7 +50,6 @@
 @media (min-width: 768px) {
     .item-container {
         min-height: 55rem;
-        height: calc(100vh - 20rem);
     }
 
     .item-img-col img {

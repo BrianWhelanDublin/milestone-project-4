@@ -911,11 +911,16 @@ input:-webkit-autofill {
     position: relative;
 }
 
-.category-image img {
+.category-image a img {
     height: 100%;
     width: 100%;
+    filter: brightness(80%);
+    transition: all .5s ease-in-out;
 }
-
+.category-image a img:hover{
+     filter: brightness(50%);
+}
+/* 
 .category-image:after {
     content: "";
     height: 100%;
@@ -929,9 +934,9 @@ input:-webkit-autofill {
 
 .category-image:hover:after {
     background-color: rgba(112, 112, 112, 0.103);
-}
+} */
 
-.category-image a {
+.category-image a span {
     font-size: 4rem;
     font-weight: 600;
     position: absolute;
@@ -940,6 +945,7 @@ input:-webkit-autofill {
     text-decoration: none;
     color: #EDEDE9;
     z-index: 10;
+    cursor: pointer;
 }
 
 /*---------------------------------- reviews section */

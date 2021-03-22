@@ -38,7 +38,7 @@
 </div>
 <!-- New in section -->
 <div class="container-fluid">
-    <div class="row">
+    <div class="row animation-element">
         <div class="col new-item-title-col flex-row-between ">
             <h3>New In</h3>
             <div class="arrows flex-row-between">
@@ -87,20 +87,18 @@
     <div class="row animation-element">
         <div class="category-col col-12 col-lg-4">
             <div class="category-image">
-                <img src="/media/furniture-category-img.jpg" alt="Image for furniture category">
-                <a class="text-shadow" href="{% url 'all_items' %}?category=new_in">New In</a>
+                <a class="text-shadow" href="{% url 'all_items' %}?category=new_in"><img src="/media/furniture-category-img.jpg" alt="Image for furniture category"><span>New In</span></a>
+               
             </div>
         </div>
         <div class="category-col col-12 col-lg-4 ">
             <div class="category-image">
-                <img src="/media/lighting-category-img.jpg" alt="Image for lighting category">
-                <a class="text-shadow" href="{% url 'all_items' %}?category=lighting">Lighting</a>
+                <a class="text-shadow" href="{% url 'all_items' %}?category=lighting"><img src="/media/lighting-category-img.jpg" alt="Image for lighting category"><span>Lighting</span></a>
             </div>
         </div>
         <div class="category-col col-12 col-lg-4">
             <div class="category-image">
-                <img src="/media/accessories-category-img.jpg" alt="Image for accessories category">
-                <a class="text-shadow" href="{% url 'all_items' %}?category=accessories">Accessories</a>
+                <a class="text-shadow" href="{% url 'all_items' %}?category=accessories"><img src="/media/accessories-category-img.jpg" alt="Image for accessories category"><span>Accessories</span></a>
             </div>
         </div>
     </div>
@@ -161,7 +159,7 @@
     <div class="row">
         <div class="col">
             <a href="{% url 'our_reviews' %}"
-                class="flex-center link-button link-button-dark animation-element mt-5 mb-4 mx-auto">See all Reviews</a>
+                class="flex-center link-button link-button-dark  mt-5 mb-4 mx-auto">See all Reviews</a>
         </div>
     </div>
 </div>
@@ -184,8 +182,4 @@
 {% block other_end_js %}
 {{ block.super }}
 <script src="{% static 'homepage/js/homepage.js' %}"></script>
-<script>
-    let csrfToken = "{{ csrf_token }}"
-</script>
-  <script src="{% static 'js/wishlist.js' %}"></script>
 {% endblock %}
