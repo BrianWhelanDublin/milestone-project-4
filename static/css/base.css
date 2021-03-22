@@ -374,12 +374,17 @@ input:-webkit-autofill {
 .message-container {
     position: fixed;
     top: 6rem;
-    right: 0;
+    right: 1rem;
     z-index: 500;
 }
 
 .toast {
     border-radius: 0;
+}
+.btn-close{
+    font-size: 1.5rem;
+    padding:.5rem;
+    margin-right:2rem;
 }
 
 
@@ -1259,8 +1264,10 @@ td p {
 }
 
 /* Toats */
+
+
 .cart-items-wrapper {
-    max-height: 45rem;
+    max-height: 30rem;
     overflow-x: hidden;
     overflow-y: auto;
 }

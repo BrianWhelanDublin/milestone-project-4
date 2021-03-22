@@ -1,8 +1,6 @@
-<div class="toast successful-toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false"
-    data-bs-animation="true">
+<div class="toast successful-toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true" data-delay="500" >
     <div>
-
-        <button type="button" class="btn-close float-end " data-bs-dismiss="toast" aria-label="Close"></button>
+        <button type="button" class="btn-close float-end" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
     <div class="toast-body">
         <div class="row">
@@ -23,12 +21,10 @@
         </p>
         <div class="cart-items-wrapper">
             {% for item in cart_items %}
-        
          {% include 'includes/cart-items.html' %}
             {% endfor %}
         </div>
         <div class="cart-links d-flex justify-content-end">
-    
             <a href="{% url 'view_cart' %}" class="item-link-light item-link-button  flex-center">View
                 Cart</a>
             <a href="{% url 'checkout' %}"

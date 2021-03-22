@@ -16,7 +16,7 @@ Reviews
     </div>
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4">
-            <h2 class="text-center">Add A Review</h2>
+            <h2 class="text-center mb-5">Add A Review</h2>
             {% if request.user.is_authenticated %}
             <form id="review-form" class="mb-5" method="POST" action="{% url 'our_reviews' %}">
                 {% csrf_token %}
@@ -35,7 +35,10 @@ Reviews
                 <button class="item-link-dark item-link-button  flex-center m-auto " type="submit">Add Review</button>
             </form>
             {% else %}
-            <p>Please Login or signup to leave a review</p>
+                <p class="fs-2 mb-5">Please
+                    <a class="fs-2 mx-2" href="{% url 'account_login' %}"> Login </a> or
+                    <a class="fs-2 mx-2" href="{% url 'account_signup' %}">Signup</a>
+                    To create a wishlist.</p>
             {% endif %}
         </div>
         <div class="col-12 col-md-6 col-lg-8 ">
@@ -76,12 +79,13 @@ Reviews
                             data-bs-target="#review-deleteModal">
                             Delete
                         </button>
-                        <div class="modal fade" id="review-deleteModal" tabindex="-1" aria-labelledby="review-deleteModalLabel"
-                            aria-hidden="true">
+                        <div class="modal fade" id="review-deleteModal" tabindex="-1"
+                            aria-labelledby="review-deleteModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title fs-1 m-auto" id="review-deleteModalLabel">Delete Item!</h5>
+                                        <h5 class="modal-title fs-1 m-auto" id="review-deleteModalLabel">Delete Item!
+                                        </h5>
                                     </div>
                                     <div class="modal-body">
                                         <p class="text-center text-danger fs-3">
@@ -93,7 +97,8 @@ Reviews
                                 cancel-btn flex-center" data-bs-dismiss="modal">Cancel</button>
                                         <form method="POST" action="{% url 'delete_review' review.id %}">
                                             {% csrf_token %}
-                                            <button class=" modal-button fs-3 flex-center delete-btn" type="submit">Delete</button>
+                                            <button class=" modal-button fs-3 flex-center delete-btn"
+                                                type="submit">Delete</button>
                                         </form>
                                     </div>
                                 </div>
