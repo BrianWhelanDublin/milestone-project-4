@@ -1,7 +1,6 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 from stock.models import Item
-from django.contrib.auth.models import User
 from django.contrib.messages import get_messages
 
 
@@ -15,6 +14,8 @@ class TestCartViews(TestCase):
                                    kwargs={"item_id": self.item.id})
         self.update_cart = reverse("update_cart",
                                    kwargs={"item_id": self.item.id})
+        self.remove_from_cart = reverse("remove_from_cart",
+                                        kwargs={"item_id": self.item.id})
 
     def test_view_cart_view_GET(self):
         ''' test the view cart page  '''
@@ -98,6 +99,48 @@ class TestCartViews(TestCase):
         self.assertEqual(len(messages), 1)
         self.assertEqual(str(messages[0]),
                          "test item has been removed from your cart.")
+        response = self.client.post(self.view_cart)
+        context = response.context
+        self.assertEqual(context["cart_items"], [])
+    
+    def test_remove_from_cart_GET(self):
+        ''' test that when the url is typed into the browser
+        the user is redirected and an error message is shown '''
+
+        response = self.client.get(self.remove_from_cart)
+        self.assertRedirects(response, self.home_page)
+        self.assertEqual(response.status_code, 302)
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "Error you do not have permission to do this.")
+    
+    def test_remove_from_cart_POST(self):
+        ''' test that the itemms are removed from the cart '''
+
+        # adding items to cart first
+        self.client.post(self.update_cart,
+                         data={"item_quantity": 1})
+        response = self.client.post(self.remove_from_cart)
+        messages = list(get_messages(response.wsgi_request))
+
+        # second message as adding to th cart also adds a message
+        self.assertEqual(len(messages), 2)
+        self.assertEqual(str(messages[1]),
+                         "test item has been removed from your cart.")
+        response = self.client.post(self.view_cart)
+        context = response.context
+        self.assertEqual(context["cart_items"], [])
+
+    def test_remove_from_cart_POST_exception(self):
+        ''' test the exception by trying to remove
+        from an empty cart '''
+
+        response = self.client.post(self.remove_from_cart)
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "Error removing item '1'")
         response = self.client.post(self.view_cart)
         context = response.context
         self.assertEqual(context["cart_items"], [])
