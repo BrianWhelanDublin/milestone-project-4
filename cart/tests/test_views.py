@@ -102,7 +102,7 @@ class TestCartViews(TestCase):
         response = self.client.post(self.view_cart)
         context = response.context
         self.assertEqual(context["cart_items"], [])
-    
+
     def test_remove_from_cart_GET(self):
         ''' test that when the url is typed into the browser
         the user is redirected and an error message is shown '''
@@ -114,7 +114,7 @@ class TestCartViews(TestCase):
         self.assertEqual(len(messages), 1)
         self.assertEqual(str(messages[0]),
                          "Error you do not have permission to do this.")
-    
+
     def test_remove_from_cart_POST(self):
         ''' test that the itemms are removed from the cart '''
 
@@ -144,3 +144,32 @@ class TestCartViews(TestCase):
         response = self.client.post(self.view_cart)
         context = response.context
         self.assertEqual(context["cart_items"], [])
+
+
+class TestCartContext(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.item = Item.objects.create(name="test item", price="5000")
+        self.item_2 = Item.objects.create(name="test item", price="300")
+        self.view_cart = reverse("view_cart")
+        self.add_to_cart = reverse("add_to_cart",
+                                   kwargs={"item_id": self.item.id})
+        self.add_to_cart_2 = reverse("add_to_cart",
+                                     kwargs={"item_id": self.item_2.id})
+
+    def test_max_delivery(self):
+        response = self.client.post(self.add_to_cart,
+                                    data={"quantity": "1",
+                                          "redirect_url": "/"})
+        response = self.client.post(self.view_cart)
+        context = response.context
+        self.assertEqual(context["home_delivery"], 25)
+
+    def test_normal_delivery(self):
+        response = self.client.post(self.add_to_cart_2,
+                                    data={"quantity": "1",
+                                          "redirect_url": "/"})
+        response = self.client.post(self.view_cart)
+        context = response.context
+        self.assertNotEqual(context["home_delivery"], 10)
+        self.assertNotEqual(context["home_delivery"], 25)
