@@ -175,4 +175,59 @@
     
     -The Postgres database is now ready for use.
 
+- Gunicorn
+    - For our app to work we need to install Greenunicorn.
+    - To install 
+    - 
+        ```
+        pip3 install Gunicorn
+        ```
+    - We then need to create a Procfile to let Heroku know how to run the app.
+    -
+        ``` 
+            touch Procfile
+        ```
+    - Then in our Procfile place the following code.
+    -
+        ```
+            web: gunicorn <app name>.wsgi:application
+        ```
+  -Heroku in the command line.
+    - I then logged into Heroku using the terminal.
+    -
+        ```
+            heroku login -i
+        ```
+    - Then I temporarily disabled the static files until they have been set up on Amazon Aws.
+    -
+        ```
+            heroku config:set DISABLE_COLLECTSTATIC=1 --app <app name>
+        ```
+        - Use the --app command if you have more than one Heroku app.
+    - Then in settings I added Heroku into allowed hosts, and localhost so my project can still be run locally.
+    -
+        ``` python
+            ALLOWED_HOSTS = ["<heroku app name>.herokuapp.com", "localhost"]
+        ```
+    - My changes were then committed to Github.
+    - Then I set up pushing to Heroku
+    -
+        ```
+            heroku git:remote -a <heroku app name>
+        ```
+    - Then we push the project to Heroku
+    -
+        ```
+            git push heroku master
+        ```
+    
+    - Heroku will now build your app.
+  
+  -Heroku Website
+    - I then connected my app to GitHub by opening the Deploy section.
+    - I then searched for my repository.
+    - Once found I connected and then enabled Automatic Deploys
+    - This now means that any changes pushed to GitHub will be automatically pushed to Heroku as well.
+
+
     
