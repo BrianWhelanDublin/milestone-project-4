@@ -59,11 +59,11 @@
                     <div class="item-container">
                         {% if item.image %}
                         <a href="{% url 'single_item' item.id%}">
-                            <img src="/media/{{ item.image }}" alt="image for {{ item.name }}">
+                            <img src="{{MEDIA_URL}}{{ item.image }}" alt="image for {{ item.name }}">
                         </a>
                         {% else %}
                         <a href="{% url 'single_item' item.id%}">
-                            <img src="/media/no_image.png" alt="No image found for {{ item.name }}">
+                            <img src="{{MEDIA_URL}}no_image.png" alt="No image found for {{ item.name }}">
                         </a>
                         {% endif %}
                         <div class="item-details flex-row-between">
@@ -87,18 +87,19 @@
     <div class="row animation-element">
         <div class="category-col col-12 col-lg-4">
             <div class="category-image">
-                <a class="text-shadow" href="{% url 'all_items' %}?category=new_in"><img src="/media/furniture-category-img.jpg" alt="Image for furniture category"><span>New In</span></a>
+                <a class="text-shadow" href="{% url 'all_items' %}?category=new_in"><img src="{{MEDIA_URL}}furniture-category-img.jpg" alt="Image for furniture category"><span>New In</span></a>
                
             </div>
         </div>
         <div class="category-col col-12 col-lg-4 ">
             <div class="category-image">
-                <a class="text-shadow" href="{% url 'all_items' %}?category=lighting"><img src="/media/lighting-category-img.jpg" alt="Image for lighting category"><span>Lighting</span></a>
+                <a class="text-shadow" href="{% url 'all_items' %}?category=lighting"><img src="{{MEDIA_URL}}lighting-category-img.jpg" alt="Image for lighting category"><span>Lighting</span></a>
             </div>
         </div>
         <div class="category-col col-12 col-lg-4">
             <div class="category-image">
-                <a class="text-shadow" href="{% url 'all_items' %}?category=accessories"><img src="/media/accessories-category-img.jpg" alt="Image for accessories category"><span>Accessories</span></a>
+                <a class="text-shadow" href="{% url 'all_items' %}?category=accessories"><img src="{{MEDIA_URL}}accessories-category-img.jpg" alt="Image for accessories category"><span>Accessories</span></a>
+            
             </div>
         </div>
     </div>
