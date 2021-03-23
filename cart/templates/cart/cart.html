@@ -36,10 +36,10 @@ Your Cart
                     <tr>
                         <td>
                             {% if item.item.image %}
-                            <img src="/media/{{ item.item.image }}" alt="image of {{ item.item.name }}"
+                            <img src="{{ MEDIA_URL }}{{ item.item.image }}" alt="image of {{ item.item.name }}"
                                 class="table-image">
                             {% else %}
-                            <img src="/media/no_image.png" alt="No image found for {{ item.item.name }}"
+                            <img src="{{ MEDIA_URL }}no_image.png" alt="No image found for {{ item.item.name }}"
                                 class="table-image">
                             {% endif %}
                             <p class="mt-2 d-md-none">{{ item.item.name }}</p>

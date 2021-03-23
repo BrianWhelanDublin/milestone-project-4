@@ -1,9 +1,9 @@
 <div class="row mt-2">
     <div class="offset-1 col-3">
         {% if item.item.image %}
-        <img src="/media/{{ item.item.image }}" alt="image of {{ item.item.name" class="table-image">
+        <img src="{{ MEDIA_URL }}{{ item.item.image }}" alt="image of {{ item.item.name" class="table-image">
         {% else %}
-          <img src="/media/no_image.png" 
+          <img src="{{ MEDIA_URL }}no_image.png" 
           alt="No image found for {{ item.item.name }}" class="table-image">
         {% endif %}
     </div>

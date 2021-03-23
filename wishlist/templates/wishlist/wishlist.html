@@ -62,11 +62,13 @@ Wishlist
                         <span class="sr-only">Remove from wishlist button</span>
                     </button>
                     {% if item.image %}
-                    <a href="{% url 'single_item' item.id %}"><img src="/media/{{ item.image }}"
-                            alt="image for {{ item.name }}"></a>
+                    <a href="{% url 'single_item' item.id %}">
+                        <img src="{{ MEDIA_URL }}{{ item.image }}" alt="image for {{ item.name }}">
+                    </a>
                     {% else %}
-                    <a href="{% url 'single_item' item.id %}"><img src="/media/no_image.png"
-                            alt="No image found for {{ item.name }}"></a>
+                    <a href="{% url 'single_item' item.id %}">
+                        <img src="{{ MEDIA_URL }}no_image.png" alt="No image found for {{ item.name }}">
+                    </a>
                     {% endif %}
                 </div>
             </div>

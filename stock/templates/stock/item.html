@@ -17,17 +17,17 @@
         <div class="col-12 col-md-6 item-img-col flex-center">
             <!-- displays the like unlike buttons for the wishlist -->
             <div class="item-img-container">
-{% if request.user.is_authenticated %}
+                {% if request.user.is_authenticated %}
                 {% if item.id|ifinlist:wishlist_items == True %}
                 {% include 'includes/wishlist_remove.html' %}
                 {% else %}
                 {% include 'includes/wishlist_add.html' %}
                 {% endif %}
-{% endif %}
+                {% endif %}
                 {% if item.image %}
-                <img src="/media/{{ item.image }}" alt="image for {{ item.name }}">
+                <img src="{{ MEDIA_URL }}{{ item.image }}" alt="image for {{ item.name }}">
                 {% else %}
-                <img src="/media/no_image.png" alt="No image found for {{ item.name }}">
+                <img src="{{ MEDIA_URL }}no_image.png" alt="No image found for {{ item.name }}">
                 {% endif %}
             </div>
         </div>
@@ -96,13 +96,13 @@
                 <a href="{% url 'all_items' %}" class="item-link-light item-link-button  flex-center">Keep
                     Shopping</a>
                 {% if request.user.is_anonymous %}
-                  <p class="mt-5 fs-4">Please 
-               <a class="fs-4 mx-1" href="{% url 'account_login' %}"> Login </a> or
-                <a class="fs-4 mx-1" href="{% url 'account_signup' %}">Signup</a>
-            To create a wishlist.</p>
-            {% endif %}
+                <p class="mt-5 fs-4">Please
+                    <a class="fs-4 mx-1" href="{% url 'account_login' %}"> Login </a> or
+                    <a class="fs-4 mx-1" href="{% url 'account_signup' %}">Signup</a>
+                    To create a wishlist.</p>
+                {% endif %}
             </div>
-           
+
         </div>
     </div>
 </div>
