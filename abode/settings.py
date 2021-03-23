@@ -117,7 +117,7 @@ WSGI_APPLICATION = 'abode.wsgi.application'
 # use postgress on deployment otherwise the default database
 if "DATABSE_URL" in os.environ:
     DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+        "default": dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
     DATABASES = {
