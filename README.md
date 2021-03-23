@@ -68,12 +68,12 @@
 #### Github, Gitpod, Git, Heroku, and Amazon AWS.
 
 - #### Project setup.
-  - The project was set up on github using the Code Institue Gitpod Template.
-  - I located the template on the Code Institute github page and clicked the use template button.
+ - The project was set up on GitHub using the Code Institue Gitpod Template.
+  - I located the template on the Code Institute GitHub page and clicked the use template button.
   - I then named my repository and created it.
-  - Once the repository was created I was able to open it with gitpod.
-  - I coulfd then use the terminal to create files and folders and start coding the project.
-  - Throughout the project I used git to add my changes to version control in github.
+  - Once the repository was created I was able to open it with Gitpod.
+  - I could then use the terminal to create files and folders and start coding the project.
+  - Throughout the project, I used git to add my changes to version control in GitHub.
   - To commit I added the file to the staging area with the 
     ```
         git add <filename>
@@ -87,19 +87,19 @@
  
  ### Deployment to Heroku
 
-  Once the app was ready I deployed to heroku by following these steps.
+  Once the app was ready I deployed it to Heroku by following these steps.
 
 - Create an app on the Heroku website.
     - Firstly I clicked on the new button.
-    - Then I clicked on the create new app.
-    - I then gave muy app a name and chosse my current region.
+    - Then I clicked on the create a new app.
+    - I then gave muy app a name and chose my current region.
     - I then selected create app.
 
 - Set up Postgres Database
   - Heroku
-    - In the app resources section i searched for Postgres
-    - I then chose add to project chossing the free plan.
-    - To use postgress we need two install 2 dependencies.
+    - In the app resources section I searched for Postgres
+    - I then chose to add to the project and, choosing the free plan.
+    - To use Postgres we need to install 2 dependencies.
         - dj_database_url
         - psycopg2
 
@@ -115,7 +115,7 @@
             pip3 install psycopg2_binary
         ```
 
-    - I then made sure to add then to the requirements.txt file
+    - I then made sure to add them to the requirements.txt file
     -
         ```
         pip3 freeze > requirements.txt
@@ -128,28 +128,51 @@
     - I then commented out the current database settings.
     - I then replaced it with the settings for the Postgres database.
     -
-    ``` python
-        DATABASES = {
-            'default': dj_database_url.parse('DATABASE_URL')
-        }
-    ```
-    - Get your database url from your app convig settings. (I haven't shown it above as its and eviornmental variable and shouldn't be shown in version control)
+        ``` python
+            DATABASES = {
+                'default': dj_database_url.parse('DATABASE_URL')
+            }
+        ```
+    - Get your database URL from your app config settings. (I haven't shown it above as its and environmental variable and shouldn't be shown in version control)
 
     - Once this is set up we need to migrate our models to the new database.
     - 
-    ``` 
-        python3 manage.py migrate
-    ```
+        ``` 
+            python3 manage.py migrate
+        ```
 
-    - I then used the fixtures I had create earlier to add the stock into the new database. 
-    - ```
-        python3 manage.py loaddata categories
-        python3 manage.py loaddata stock
-    ```
+    - I then used the fixtures I had to create earlier to add the stock into the new database. 
+    - 
+        ```
+            python3 manage.py loaddata categories
+            python3 manage.py loaddata stock
+        ```
+
     - Once this was done I then created a superuser.
-    -```
-        python3 manage.py createsuperuser
-    ```
+    - 
+        ```
+            python3 manage.py createsuperuser
+        ```
+    
+    - I then committed my changes making sure to remove my database URL beforehand so it isn't saved in version control.
 
+    - I then created an if-else statement in the settings.py to use Postgres if the DATABASE_URL variable is available and if not use the default database
+
+    - 
+        ``` python
+            if "DATABASE_URL" in os.environ:
+                DATABASES = {
+                    "default": dj_database_url.parse(os.environ.get('DATABASE_URL'))
+                }
+            else:
+                DATABASES = {
+                    'default': {
+                        'ENGINE': 'django.db.backends.sqlite3',
+                        'NAME': BASE_DIR / 'db.sqlite3',
+                    }
+                }
+        ```
+    
+    -The Postgres database is now ready for use.
 
     
