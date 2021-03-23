@@ -192,7 +192,7 @@
         ```
             web: gunicorn <app name>.wsgi:application
         ```
-  -Heroku in the command line.
+- Heroku in the command line.
     - I then logged into Heroku using the terminal.
     -
         ```
@@ -220,10 +220,11 @@
         ```
             git push heroku master
         ```
-    
+
     - Heroku will now build your app.
-  
-  -Heroku Website
+
+- Heroku Website
+
     - I then connected my app to GitHub by opening the Deploy section.
     - I then searched for my repository.
     - Once found I connected and then enabled Automatic Deploys
