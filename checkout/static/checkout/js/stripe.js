@@ -59,8 +59,11 @@ form.addEventListener('submit', (event) => {
 
     document.querySelector("#checkout_submit").setAttribute("disabled", true);
     document.querySelector(".loading").classList.add("loading-show");
-
-    let saveInfo = Boolean(document.querySelector("#save-info").hasAttribute("checked"))
+    let saveButton = document.querySelector("#save-info")
+    let saveInfo = false
+    if (saveButton){
+       saveInfo = Boolean(saveButton.hasAttribute("checked"))
+    }
 
     let csrfToken = document.querySelector('[name="csrfmiddlewaretoken"]').value
 
