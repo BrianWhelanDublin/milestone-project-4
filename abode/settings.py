@@ -115,7 +115,7 @@ WSGI_APPLICATION = 'abode.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 # use postgress on deployment otherwise the default database
-if "DATABSE_URL" in os.environ:
+if "DATABASE_URL" in os.environ:
     DATABASES = {
         "default": dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
