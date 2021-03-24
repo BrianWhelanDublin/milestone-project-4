@@ -85,7 +85,7 @@
         git push
     ```
  
- ### Deployment to Heroku
+- #### Deployment to Heroku
 
   Once the app was ready I deployed it to Heroku by following these steps.
 
@@ -229,6 +229,61 @@
     - I then searched for my repository.
     - Once found I connected and then enabled Automatic Deploys
     - This now means that any changes pushed to GitHub will be automatically pushed to Heroku as well.
+
+- #### Amazon AWS
+
+  - Amazon AWS was used to store both static files and media files.
+  - Firstly I created an AWS account and worked through the sign-up process. Once my account was set up I was able to set my project up on AWS.
+
+  - Create a bucket.
+    - Create the bucket
+        - First thing was to create a new bucket on the AWS S£ service.
+        - From the main dashboard search for S£ and then click to get started.
+        - Click on the Create bucket button.
+        - Give the bucket a name and select your region.
+        - Then uncheck the block public access and acknowledge that the bucket will now be public.
+        - Then click create bucket.
+    
+    - Bucket settings.
+        - Properties
+            - Navigate to the bucket properties settings.
+            - Turn on static website hosting.
+            - In the index and error add index.html and error.html.
+            - Click save.
+        - Permissions
+            - Click on the buckets Permissions tabs.
+            - Firstly paste in the following cors config.
+            - 
+                ```
+                [
+                    {
+                        "AllowedHeaders": [
+                            "Authorization"
+                        ],
+                        "AllowedMethods": [
+                            "GET"
+                        ],
+                        "AllowedOrigins": [
+                            "*"
+                        ],
+                        "ExposeHeaders": []
+                    }
+                    ]
+                ```
+            - Then in the bucket policy tap, click on generate policy.
+            - Policy
+              - Select S3 bucket policy
+              - Add * to the principal field to select all principals
+              - Set the action to get object.
+              - Paste in your ARN which is available on the previous page.
+              - Click, add statement
+              - Then click, generate policy.
+            - Now copy and paste your new policy into the bucket policy.
+            - Add /* onto the end of the resources key
+            - Click save.
+        - Access control list
+          - In the access control list tab set the list objects permission to everyone.
+            
 
 
     
