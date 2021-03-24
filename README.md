@@ -285,7 +285,95 @@
             - Click save.
         - Access control list
         - In the access control list tab set the list objects permission to everyone.
-            
+    
+   - **Create a User.**
+
+     - To create a user for the bucket we need to use another Amazon service.
+     - Back in the main dashboard search for IAM and select it.
+     
+     - Create a Group.
+       - Firstly we need to create a group to put our user in.
+       - Click create a new group and name it.
+       - Click through to the end and save the group.
+       - Create a policy.
+         - In our group click, policy and then, create policy.
+         - Select the JSON tab and then import managed policies.
+         - Search S3 and select AmazonS3FullAccess and import.
+         - In the resources section paste in our arn from before.
+         - click through to review the policy.
+         - Fill in name and description and then click generate policy.
+       - Back in your group click permission and then attach the policy.
+       - Find the policy you've just created and attach it.
+    
+     - Create the User.
+       - Select Users from the sidebar and then click, add user.
+       - Create a user name and select programmatic access then click next.
+       - Then select your group to add your user to.
+       - Click through to the end and then click create user.
+       - ** Make sure to now download the CSV file as it contains the users keys needed to access from our app.**
+
+  - **Connecting to Django**
+    
+    - Once our AWS has been set up we now need to connect it to Django.
+    - Firstly two packages are needed.
+      - boto 3
+      - Django storages
+    - Firstly install these packages.
+    -
+        ```
+            pip3 install boto3
+            pip3 install django-storages
+        ```
+    - Then add to our requirements.
+    -
+        ```
+            pip3 freeze > requirements.txt
+        ```
+    - We then add storages into our installed apps in settings.py
+    - We then add the following settings to our settings.py
+    - We create an environmental variable to only run this code when on Heroku. "USE_AWS"
+    -
+        ``` python
+            if "USE_AWS" in os.environ:
+
+                # Bucket Config
+                AWS_STORAGE_BUCKET_NAME = '<bucket name>'
+                AWS_S3_REGION_NAME = '<your region>'
+                AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+                AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+                AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+                # static and media file storage
+                STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+                STATICFILES_LOCATION = 'static'
+                DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+                MEDIAFILES_LOCATION = 'media'
+
+                # Override static and media URLs in production
+                STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+                MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+        ```
+    - Then back in Heroku we click the settings and reveal config vars.
+    - Then set up the environmental variables needed.
+    - We then create a custom_storages.py to tell Django that in production we want to use s3 to store our static and media files.
+    - We Firstly need to import S3Boto3Storage.
+    - then we set up our new classes to tell Django where to store the files.
+    -
+        ``` python
+            class StaticStorage(S3Boto3Storage):
+                location = settings.STATICFILES_LOCATION
 
 
+            class MediaStorage(S3Boto3Storage):
+                location = settings.MEDIAFILES_LOCATION
+        ```
+    - Once all the settings are done we can now push to GitHub and Heroku.
+
+  - **Add our media to AWS.**
+  
+    - The final step is to add our media to AWS.
+    - In your bucket create a new folder called media.
+    - Select upload and add your image files.
+    - Then select to grant public access.
+    - And then upload the files.
     
