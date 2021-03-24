@@ -1,6 +1,7 @@
 {% extends "account/base.html" %}
 
 {% load i18n %}
+{% load account socialaccount %}
 
 
 
@@ -9,16 +10,26 @@
     <div class="col-12 col-md-6 allauthform-col flex-center">
         <h3 class="fs-1">Sign Up</h3>
         <form class="signup allauth-form" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form|crispy }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button class="primaryAction  item-link-button flex-center item-link-dark" type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
+            {% csrf_token %}
+            {{ form|crispy }}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <button class="primaryAction  item-link-button flex-center item-link-dark"
+                type="submit">{% trans "Sign Up" %} &raquo;</button>
+        </form>
     </div>
-     <div class="col-12 col-md-6 allauth-col">
+    <div class="col-12 col-md-6 allauth-col flex-center">
         <h3 class="text-center fs-1">Already Signed Up?</h3>
+        {% get_providers as socialaccount_providers %}
+        <div class="social-login">
+            <a href="{% provider_login_url 'facebook' method='oauth2' %}"
+                class="item-link-button flex-row-between item-link-facebook">
+                <i class="lab la-facebook-f" aria-hidden="true"></i>
+                Login via Facebook
+            </a>
+        </div>
+        <p class="my-2 fs-3 text-center">Or</p>
         <a href="{{ login_url }}" class="item-link-button flex-center item-link-light primaryAction">Login Here</a>
     </div>
 </div>

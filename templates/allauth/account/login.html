@@ -9,6 +9,16 @@
 <div class="row allauth-row">
     <div class="col-12 col-md-6 allauthform-col flex-center">
         <h3 class="fs-1">Sign In</h3> 
+{% get_providers as socialaccount_providers %}
+<div class="social-login">
+    <a href="{% provider_login_url 'facebook' method='oauth2' %}"
+    class="item-link-button flex-row-between item-link-facebook">
+    <i class="lab la-facebook-f" aria-hidden="true"></i>
+    Login via Facebook
+</a>
+</div>
+<p class="my-2 fs-3 text-center">Or</p>
+<hr>
 <form class="login allauth-form " method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
   {{ form|crispy }}
@@ -19,19 +29,20 @@
   <button class="primaryAction  item-link-button flex-center item-link-dark" type="submit">{% trans "Sign In" %}</button>
 </form>
     </div>
-    <div class="col-12 col-md-6 allauth-col">
+    <div class="col-12 col-md-6 allauth-col flex-center">
         <h3 class="text-center fs-1">New To Abode.com</h3>
         <a href="{{ signup_url }}" class="item-link-button flex-center item-link-light primaryAction">Signup Here</a>
     </div>
- {% get_providers as socialaccount_providers %}
+ <!-- {% get_providers as socialaccount_providers %} -->
 
-{% if socialaccount_providers %}
+
+
+<!-- {% if socialaccount_providers %}
 <p>{% blocktrans with site.name as site_name %}Please sign in with one
 of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up can you see this</a>
 for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
 <div class="socialaccount_ballot">
-
   <ul class="socialaccount_providers">
     {% include "socialaccount/snippets/provider_list.html" with process="login" %}
   </ul>
@@ -45,6 +56,8 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 {% else %}
 <p>{% blocktrans %}If you have not created an account yet, then please
 <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-{% endif %}
+{% endif %} -->
+
+
 </div>
 {% endblock %}

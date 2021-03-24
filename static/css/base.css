@@ -48,6 +48,11 @@ body {
     background: #153243;
     border: .1rem solid #153243;
 }
+.item-link-facebook{
+color: #EDEDE9;
+    background: #3b5998;
+    border: .1rem solid #3b5998;
+}
 
 .link-button,
 .item-link-button {
@@ -80,6 +85,7 @@ body {
     background: #EDEDE9;
     color: #153243;
 }
+
 
 .link-button-dark,
 .item-link-light {
@@ -128,7 +134,10 @@ input[type="text"]:focus,
 .wishlist-button-liked i{
     font-size: 2rem;
 }
-
+.social-login a i{
+    color:#D1D1C7;
+    font-size: 2rem;
+}
 .flex-center {
     display: flex;
     align-items: center;
@@ -1289,6 +1298,9 @@ td p {
 .allauth-form {
     width: 90%;
     max-width: 50rem;
+}
+.allauth-col{
+    flex-direction: column;
 }
 
 .form-check-label {
