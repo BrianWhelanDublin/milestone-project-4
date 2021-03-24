@@ -5,7 +5,15 @@
 {% block head_title %}{% trans "Social Network Login Failure" %}{% endblock %}
 
 {% block allauth_block %}
-<h1>{% trans "Social Network Login Failure" %}</h1>
 
-<p>{% trans "An error occurred while attempting to login via your social network account." %}</p>
+<div class="container">
+    <div class="row allauth-row">
+        <div class="col allauth-col">
+            <h2 class="text-center mb-5">{% trans "Social Network Login Failure" %}</h2>
+
+            <p class="text-center fs-4 mb-5">{% trans "An error occurred while attempting to login via your social network account." %}</p>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

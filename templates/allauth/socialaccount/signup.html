@@ -5,18 +5,26 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block allauth_block %}
-    <h1>{% trans "Sign Up" %}</h1>
 
-<p>{% blocktrans with provider_name=account.get_provider.name site_name=site.name %}You are about to use your {{provider_name}} account to login to
-{{site_name}}. As a final step, please complete the following form:{% endblocktrans %}</p>
+<div class="container">
+    <div class="row allauth-row">
+        <div class="col-12 allauthform-col flex-center">
+            <h3 class="fs-1 text-center">{% trans "Sign Up" %}</h3>
 
-<form class="signup" id="signup_form" method="post" action="{% url 'socialaccount_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
+            <p class="text-center">{% blocktrans with provider_name=account.get_provider.name site_name=site.name %}You
+                are about to use your {{provider_name}} account to login to
+                {{site_name}}. As a final step, please complete the following form:{% endblocktrans %}</p>
+
+            <form class="signup allauth-form" id="signup_form" method="post" action="{% url 'socialaccount_signup' %}">
+                {% csrf_token %}
+                {{ form|crispy }}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
