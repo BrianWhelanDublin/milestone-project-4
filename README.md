@@ -89,13 +89,13 @@
 
   Once the app was ready I deployed it to Heroku by following these steps.
 
-- Create an app on the Heroku website.
+- **Create an app on the Heroku website.**
     - Firstly I clicked on the new button.
     - Then I clicked on the create a new app.
     - I then gave muy app a name and chose my current region.
     - I then selected create app.
 
-- Set up Postgres Database
+- **Set up Postgres Database**
   - Heroku
     - In the app resources section I searched for Postgres
     - I then chose to add to the project and, choosing the free plan.
@@ -103,7 +103,7 @@
         - dj_database_url
         - psycopg2
 
-  - In Project.
+  - **In Project.**
     - I first installed the two packages needed 
 
     - 
@@ -175,7 +175,7 @@
     
     -The Postgres database is now ready for use.
 
-- Gunicorn
+  - **Gunicorn**
     - For our app to work we need to install Greenunicorn.
     - To install 
     - 
@@ -192,7 +192,8 @@
         ```
             web: gunicorn <app name>.wsgi:application
         ```
-- Heroku in the command line.
+
+  - **Heroku in the command line.**
     - I then logged into Heroku using the terminal.
     -
         ```
@@ -223,7 +224,7 @@
 
     - Heroku will now build your app.
 
-- Heroku Website
+  - **Heroku Website**
 
     - I then connected my app to GitHub by opening the Deploy section.
     - I then searched for my repository.
@@ -235,7 +236,8 @@
   - Amazon AWS was used to store both static files and media files.
   - Firstly I created an AWS account and worked through the sign-up process. Once my account was set up I was able to set my project up on AWS.
 
-  - Create a bucket.
+  - **Create a bucket.**
+
     - Create the bucket
         - First thing was to create a new bucket on the AWS S£ service.
         - From the main dashboard search for S£ and then click to get started.
@@ -272,17 +274,17 @@
                 ```
             - Then in the bucket policy tap, click on generate policy.
             - Policy
-              - Select S3 bucket policy
-              - Add * to the principal field to select all principals
-              - Set the action to get object.
-              - Paste in your ARN which is available on the previous page.
-              - Click, add statement
-              - Then click, generate policy.
+            - Select S3 bucket policy
+            - Add * to the principal field to select all principals
+            - Set the action to get object.
+            - Paste in your ARN which is available on the previous page.
+            - Click, add statement
+            - Then click, generate policy.
             - Now copy and paste your new policy into the bucket policy.
             - Add /* onto the end of the resources key
             - Click save.
         - Access control list
-          - In the access control list tab set the list objects permission to everyone.
+        - In the access control list tab set the list objects permission to everyone.
             
 
 
