@@ -10,7 +10,7 @@ class TestUserProfileModel(TestCase):
         self.user = User.objects.create_user(
             username='testuser',
             email='test@email.com',
-            password='testPassword'
+            password='testpassword'
         )
 
     def test_userprofile_model(self):
