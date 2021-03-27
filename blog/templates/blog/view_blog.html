@@ -8,5 +8,17 @@ Blog
 {% include 'includes/nav-background.html' %}
 {% endblock %}
 {% block main_content %}
+<div class="container checkout-container">
+      <div class="row">
+        <div class="col flex-center checkout-heading">
+            <h1>Our Reviews</h1>
+        </div>
+    </div>
+    {% for post in posts %}
+<h1>{{post.title}}</h1>
+<h3>{{post.author}}</h3>
+<img src="{{ MEDIA_URL }}{{post.image}}" alt="">
+{% endfor %}
 
+</div>
 {% endblock %}
