@@ -68,7 +68,7 @@
 
 @media (min-width: 992px) {
     .item-container {
-        min-height: 65rem;
+        min-height: 75rem;
     }
 
     .item-img-col img {

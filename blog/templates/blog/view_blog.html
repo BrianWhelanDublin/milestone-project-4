@@ -11,14 +11,33 @@ Blog
 <div class="container checkout-container">
       <div class="row">
         <div class="col flex-center checkout-heading">
-            <h1>Our Reviews</h1>
+            <h1>Abode Blog</h1>
         </div>
     </div>
-    {% for post in posts %}
-<h1>{{post.title}}</h1>
-<h3>{{post.author}}</h3>
-<img src="{{ MEDIA_URL }}{{post.image}}" alt="">
+    <div class="row items-row">
+{% for post in posts %}
+<div class="col-12 col-md-6 col-lg-4 item-col">
+    <div class="item-container flex-center">
+        <div class="item-container">
+            {% if post.image %}
+                 <a href="#">
+                        <img src="{{ MEDIA_URL }}{{ post.image }}"
+                            alt="image for {{ item.title }}"></a>
+                    {% else %}
+                    <a href="#">
+                        <img src="{{ MEDIA_URL }}no_image.png"
+                            alt="No image found for {{ post.title }}"></a>
+                    {% endif %}
+   
+         <div class="item-details flex-row-between">
+                <h3>{{post.title}}</h3>
+            </div>
+    </div>
+</div>
+</div>
 {% endfor %}
+
+    </div>
 
 </div>
 {% endblock %}
