@@ -1399,7 +1399,36 @@ td p {
 .review-delete {
     text-decoration: underline;
 }
-
+/* Blog */
+.blog-image-container{
+    height:40rem;
+    width:28rem;
+    position: relative;
+    margin-bottom: 10rem;
+}
+.blog-image-container img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.blog-item-details{
+    width:25rem;
+    height:fit-content;
+    background: #EDEDE9;
+    /* background: #153243; */
+    position:absolute;
+    bottom:-7.5rem;
+    left:-4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.blog-item-details h3{
+    font-size: 2.5rem;
+    font-weight: 500;
+    /* color: #EDEDE9; */
+}
 /* Media Querys */
 
 /* medium 768px */
