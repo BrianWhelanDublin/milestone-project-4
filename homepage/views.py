@@ -6,6 +6,7 @@ from django.contrib import messages
 
 from stock.models import Item
 from users.models import UserProfile
+from blog.models import Post
 
 from .forms import NewsletterForm, MessageForm
 
@@ -15,6 +16,7 @@ def home_page(request):
         then render the homepage'''
 
     new_items = Item.objects.filter(category=7)
+    posts = Post.objects.all().order_by("-id")[:3]
 
     if request.method == "POST":
         subscribers_email = request.POST["email"]
@@ -48,6 +50,7 @@ def home_page(request):
     context = {
         "new_items": new_items,
         "form": form,
+        "posts": posts,
     }
 
     return render(request,

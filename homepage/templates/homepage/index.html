@@ -87,25 +87,31 @@
     <div class="row animation-element">
         <div class="category-col col-12 col-lg-4">
             <div class="category-image">
-                <a class="text-shadow" href="{% url 'all_items' %}?category=new_in"><img src="{{ MEDIA_URL }}furniture-category-img.jpg" alt="Image for furniture category"><span>New In</span></a>
-               
+                <a class="text-shadow" href="{% url 'all_items' %}?category=new_in"><img
+                        src="{{ MEDIA_URL }}furniture-category-img.jpg" alt="Image for furniture category"><span>New
+                        In</span></a>
+
             </div>
         </div>
         <div class="category-col col-12 col-lg-4 ">
             <div class="category-image">
-                <a class="text-shadow" href="{% url 'all_items' %}?category=lighting"><img src="{{ MEDIA_URL }}lighting-category-img.jpg" alt="Image for lighting category"><span>Lighting</span></a>
+                <a class="text-shadow" href="{% url 'all_items' %}?category=lighting"><img
+                        src="{{ MEDIA_URL }}lighting-category-img.jpg"
+                        alt="Image for lighting category"><span>Lighting</span></a>
             </div>
         </div>
         <div class="category-col col-12 col-lg-4">
             <div class="category-image">
-                <a class="text-shadow" href="{% url 'all_items' %}?category=accessories"><img src="{{ MEDIA_URL }}accessories-category-img.jpg" alt="Image for accessories category"><span>Accessories</span></a>
-            
+                <a class="text-shadow" href="{% url 'all_items' %}?category=accessories"><img
+                        src="{{ MEDIA_URL }}accessories-category-img.jpg"
+                        alt="Image for accessories category"><span>Accessories</span></a>
+
             </div>
         </div>
     </div>
 </div>
 <!-- Customer review section -->
-<div class="container animation-element">
+<div class="container review-container animation-element">
     <div class="row">
         <div class="col flex-center">
             <div class="col review-title">
@@ -159,9 +165,39 @@
     </div>
     <div class="row">
         <div class="col">
-            <a href="{% url 'our_reviews' %}"
-                class="flex-center link-button link-button-dark  mt-5 mb-4 mx-auto">See all Reviews</a>
+            <a href="{% url 'our_reviews' %}" class="flex-center link-button link-button-dark  mt-5 mb-4 mx-auto">See
+                all Reviews</a>
         </div>
+    </div>
+</div>
+
+<!-- Blog section -->
+<div class="container-fluid blog-homepage-container animation-element">
+    <div class="row">
+         <div class="category-title-col col-12 ">
+            <h3 >Get Inspired by our latest blog posts.</h3>
+        </div>
+    </div>
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-12 col-md-6 col-lg-4 item-col">
+            <div class="blog-item-container flex-center">
+                <div class="blog-image-container">
+                    {% if post.image %}
+                    <a href="#">
+                        <img src="{{ MEDIA_URL }}{{ post.image }}" alt="image for {{ item.title }}"></a>
+                    {% else %}
+                    <a href="#">
+                        <img src="{{ MEDIA_URL }}no_image.png" alt="No image found for {{ post.title }}"></a>
+                    {% endif %}
+                    <div class="blog-item-details blog-homepage-details">
+                        <h3 class="text-center">{{post.title}}</h3>
+                        <a href="" class="item-link-light item-link-button  flex-center">Read More ...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </div>
 <!-- Newsletter Section -->

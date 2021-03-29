@@ -15,7 +15,9 @@ Blog
         </div>
     </div>
     <div class="row items-row">
+
 {% for post in posts %}
+
 <div class="col-12 col-md-6 col-lg-4 item-col">
     <div class="blog-item-container flex-center">
         <div class="blog-image-container">
@@ -29,14 +31,16 @@ Blog
                             alt="No image found for {{ post.title }}"></a>
                     {% endif %}
    
-         <div class="blog-item-details">
+         <div class="blog-item-details blog-page-details">
                 <h3 class="text-center">{{post.title}}</h3>
                 <a href="" class="item-link-light item-link-button  flex-center">Read More ...</a>
             </div>
     </div>
 </div>
 </div>
+
 {% endfor %}
+
 
     </div>
 

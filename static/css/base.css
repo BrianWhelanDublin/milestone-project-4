@@ -908,7 +908,7 @@ input:-webkit-autofill {
 
 .category-title-col h3 {
     font-size: 3rem;
-    margin-left: 10%;
+    margin: 0 10%;
 }
 
 .category-col {
@@ -962,8 +962,11 @@ input:-webkit-autofill {
 }
 
 /*---------------------------------- reviews section */
+.review-container{
+    margin-bottom: 7.5rem;
+}
 .review-title h3 {
-    margin: 10% 0;
+    margin: 4rem 0;
     font-size: 3rem;
     text-align: center;
 }
@@ -994,8 +997,7 @@ input:-webkit-autofill {
 
 /* -------------------------------Newsletter Section */
 .newsletter-container {
-    background-color: #D1D1C7;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 .newsletter-col h3 {
@@ -1012,7 +1014,7 @@ input:-webkit-autofill {
 .newsletter-form-input {
     width: 60%;
     height: 4rem;
-    background-color: #D1D1C7;
+    background-color: #EDEDE9;
     border: .1rem solid #153243;
     text-align: center;
     font-size: 1.25rem;
@@ -1400,6 +1402,10 @@ td p {
     text-decoration: underline;
 }
 /* Blog */
+.blog-homepage-container,
+.blog-homepage-details{
+    background-color: #D1D1C7;
+}
 .blog-image-container{
     height:40rem;
     width:28rem;
@@ -1414,20 +1420,21 @@ td p {
 .blog-item-details{
     width:25rem;
     height:fit-content;
-    background: #EDEDE9;
-    /* background: #153243; */
     position:absolute;
     bottom:-7.5rem;
-    left:-4rem;
+    left:-2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
+.blog-page-details{
+ background: #EDEDE9;
+}
+
 .blog-item-details h3{
     font-size: 2.5rem;
     font-weight: 500;
-    /* color: #EDEDE9; */
 }
 /* Media Querys */
 
@@ -1605,6 +1612,7 @@ td p {
         height: 46rem;
     }
 
+
     .wishlist-button,
     .wishlist-button-liked {
         right: 2.5rem;
@@ -1687,6 +1695,21 @@ td p {
     td p {
         font-size: 1.5rem;
     }
+    .blog-image-container{
+    height:46rem;
+    width:35rem;
+  
+}
+
+.blog-item-details{
+    width:30rem;  
+}
+.blog-page-details{
+ background: #EDEDE9;
+}
+
+.blog-item-details h3{
+    font-size: 3rem;
 }
 
 /* xx-large 1400px */
