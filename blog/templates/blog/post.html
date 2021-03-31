@@ -2,11 +2,33 @@
 {% load static %}
 
 {% block title %}
-Blog
+{{ post.title }}
+{% endblock %}
+{% block other_css %}
+<link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
 {% endblock %}
 {% block header %}
 {% include 'includes/nav-background.html' %}
 {% endblock %}
 {% block main_content %}
-
+<div class="container checkout-container">
+    <div class="row item-row">
+ <div class="col-12 col-md-6 post-img-col  flex-center">
+            <div class="post-image-container">
+                   <img src="{{ MEDIA_URL }}{{post.image}}" alt="Image belonging to {{post.title}}">
+            </div>
+        </div>
+        <div class="col-12 col-md-6 post-title-col">
+          <div class="post-title-container flex-center">
+              <h1>{{post.title}}</h1>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col post-content">
+       <p>{{post.content}}</p>
+   
+        </div>
+    </div>
+</div>
 {% endblock %}
