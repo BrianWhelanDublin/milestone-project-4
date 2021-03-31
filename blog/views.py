@@ -12,3 +12,19 @@ def view_blog(request):
     return render(request,
                   template,
                   context)
+
+
+def view_post(request, post_id):
+    ''' Show the single post page '''
+
+    post = get_object_or_404(Post, pk=post_id)
+
+    template = "blog/post.html"
+
+    context = {
+        "post": post,
+    }
+
+    return render(request,
+                  template,
+                  context)
