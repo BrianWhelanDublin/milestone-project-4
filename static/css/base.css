@@ -73,6 +73,7 @@ color: #EDEDE9;
     border: .1rem solid #EDEDE9;
     background: rgba(29, 29, 29, 0.433);
     backdrop-filter: blur(.3rem);
+    z-index: 20;
 }
 
 .link-button-light:hover {
