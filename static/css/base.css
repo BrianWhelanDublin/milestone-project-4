@@ -1410,7 +1410,8 @@ td p {
     margin-top: 10rem;
 }
 
-.review-delete {
+.review-delete,
+.comment-delete {
     text-decoration: underline;
 }
 
