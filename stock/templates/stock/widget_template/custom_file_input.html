@@ -22,4 +22,9 @@
         <input id="new-image-input" type="{{ widget.type }}" name="{{ widget.name }}" {% include "django/forms/widgets/attrs.html" %}>
     </span>
     <strong><p id="image-name"></p></strong>
+    {% if in_blog %}
+      <a href="{{ widget.value.url }}">
+        <img width="96" height="96" class="rounded shadow-sm" src="{{ widget.value.url }}">
+    </a>
+    {% endif %}
 </div>

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ post.title }}
+{% endblock %}
+{% block other_css %}
+<link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock %}
+{% block header %}
+{% include 'includes/nav-background.html' %}
+{% endblock %}
+{% block main_content %}
+<div class="container checkout-container">
+       <div class="row">
+        <div class="col flex-center checkout-heading">
+            <h1>Add Post</h1>
+        </div>
+    </div>
+    <div class="row item-row">
+        <div class="offset-1 col-10 mt-5 col-md-6 offset-md-3 ">
+            <form id="post-form" name="post-form" method="POST" action="{% url 'add_post' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+               {{ form.title | as_crispy_field }}
+               {{ form.content | as_crispy_field }}
+               {{ form.image }}
+               <button type="submit" class=" mt-5 mb-5 item-link-button flex-center item-link-dark"
+                        id="item-submit">Add Post</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block other_end_js %}
+{{ block.super }}
+<script src="{% static 'stock/js/widget.js' %}"></script>
+{% endblock %}

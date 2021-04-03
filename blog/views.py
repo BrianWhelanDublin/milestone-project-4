@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
+from django.contrib.auth.decorators import login_required
 
 
 def view_blog(request):
@@ -43,6 +44,7 @@ def view_post(request, post_id):
                   context)
 
 
+@login_required
 def delete_comment(request, post_id):
     if request.method == "POST":
         # comment_id = request.POST["comment_id"]
@@ -60,3 +62,34 @@ def delete_comment(request, post_id):
         messages.error(request, "Error you do not have \
 permission to do this.")
         return redirect(reverse("view_post", args=[post_id]))
+
+
+@login_required
+def add_post(request):
+    if request.user.is_superuser:
+        if request.method == "POST":
+            form = PostForm(request.POST, request.FILES)
+            if form.is_valid():
+                post = form.save(commit=False)
+                post.author = request.user
+                post.save()
+                messages.success(request, "Post has been added successfully.")
+                return redirect(reverse("view_post", args=[post.id]))
+            else:
+                messages.error(request,
+                               "Failed to add the post. \
+Please check the form details are correct and try again.")
+        else:
+            form = PostForm()
+    else:
+        messages.error(request, "You do not have permission to do this.")
+        return redirect(reverse("view_blog"))
+    template = "blog/add_post.html"
+    context = {
+        "form": form,
+        "in_blog": True,
+    }
+
+    return render(request,
+                  template,
+                  context)

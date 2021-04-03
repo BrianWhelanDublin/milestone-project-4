@@ -296,7 +296,8 @@ label[for="quantity"] {
 #contact-form textarea,
 #item-form textarea,
 #review-form textarea,
-#comment-form textarea {
+#comment-form textarea,
+#post-form textarea {
     height: 15rem;
 }
 
