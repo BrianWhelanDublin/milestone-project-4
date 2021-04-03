@@ -25,9 +25,17 @@
         </div>
     </div>
     <div class="row">
-        <div class="col post-content">
+        <div class="col-12 post-content">
        <p>{{post.content}}</p>
-   
+        </div>
+        <div class="col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 ">
+             <div class="commentform">
+               <form id="comment-form" method="POST" action="" >
+                   {% csrf_token %}
+                  {{ form|crispy }}
+                  <button class="item-link-button flex-center item-link-dark" type="submit">Add comment</button>
+               </form>
+            </div>
         </div>
     </div>
 </div>
