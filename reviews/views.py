@@ -13,7 +13,7 @@ def our_reviews(request):
         if form.is_valid():
             review = form.save(commit=False)
             review.reviewer = request.user
-            form.save()
+            review.save()
 
     reviews = Review.objects.all().order_by("-id")
     paginator = Paginator(reviews, 6)
