@@ -9,37 +9,41 @@ Blog
 {% endblock %}
 {% block main_content %}
 <div class="container checkout-container">
-      <div class="row">
+    <div class="row">
         <div class="col flex-center checkout-heading">
             <h1>Inspiration</h1>
         </div>
     </div>
+    {% if request.user.is_superuser %}
+     <div class="row">
+            <div class="col">
+                <a href="{% url 'view_blog' %}" class="flex-center link-button link-button-dark  mt-5 mb-4 mx-auto">Add Blog Post</a>
+            </div>
+        </div>
+{% endif %}
     <div class="row items-row">
-
-{% for post in posts %}
-
-<div class="col-12 col-md-6 col-lg-4 item-col">
-    <div class="blog-item-container flex-center">
-        <div class="blog-image-container">
-            {% if post.image %}
-                 <a href="{% url 'view_post' post.id %}">
-                        <img src="{{ MEDIA_URL }}{{ post.image }}"
-                            alt="image for {{ item.title }}"></a>
+        {% for post in posts %}
+        <div class="col-12 col-md-6 col-lg-4 item-col">
+            <div class="blog-item-container flex-center">
+                <div class="blog-image-container">
+                    {% if post.image %}
+                    <a href="{% url 'view_post' post.id %}">
+                        <img src="{{ MEDIA_URL }}{{ post.image }}" alt="image for {{ item.title }}"></a>
                     {% else %}
                     <a href="{% url 'view_post' post.id %}"></a>">
-                        <img src="{{ MEDIA_URL }}no_image.png"
-                            alt="No image found for {{ post.title }}"></a>
+                    <img src="{{ MEDIA_URL }}no_image.png" alt="No image found for {{ post.title }}"></a>
                     {% endif %}
-   
-         <div class="blog-item-details blog-page-details">
-                <h3 class="text-center">{{post.title}}</h3>
-                <a href="{% url 'view_post' post.id %}" class="item-link-light item-link-button  flex-center">Read More ...</a>
-            </div>
-    </div>
-</div>
-</div>
 
-{% endfor %}
+                    <div class="blog-item-details blog-page-details">
+                        <h3 class="text-center">{{post.title}}</h3>
+                        <a href="{% url 'view_post' post.id %}"
+                            class="item-link-light item-link-button  flex-center">Read More ...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
 
 
     </div>

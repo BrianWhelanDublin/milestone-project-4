@@ -88,6 +88,7 @@
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                 <li class="account-item"><a href="{% url 'add_item' %}">Stock Control</a></li>
+                                 <li class="account-item"><a href="{% url 'add_post' %}">Add Blog Post</a></li>
                                 {% endif %}
                                 <li class="account-item"><a href="{% url 'user_profile' %}">My Account</a></li>
                                 <li class="account-item"><a href="{% url 'account_logout' %}">Logout</a></li>
