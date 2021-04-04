@@ -1182,16 +1182,12 @@ input:-webkit-autofill {
 }
 
 /* --------- ---------- all items page */
-.items-heading,
-.cart-heading,
-.checkout-heading {
+.page-heading {
     margin-top: 12rem;
     margin-bottom: 5rem;
 }
 
-.items-heading h1,
-.cart-heading h1,
-.checkout-heading h1 {
+.page-heading h1 {
     font-size: 4rem;
 }
 
@@ -1247,8 +1243,7 @@ input:-webkit-autofill {
 }
 
 /* --------------- cart */
-.cart-container,
-.checkout-container {
+.page-container {
     min-height: 80vh;
 }
 
@@ -1568,9 +1563,7 @@ td p {
         margin: 2rem 0;
     }
 
-    .items-heading h1,
-    .cart-heading h1,
-    .checkout-heading h1 {
+    .page-heading h1 {
         font-size: 5rem;
     }
 
@@ -1702,9 +1695,7 @@ td p {
         width: 44rem;
     }
 
-    .items-heading h1,
-    .cart-heading h1,
-    .checkout-heading h1 {
+    .page-heading h1 {
         font-size: 6rem;
     }
 
