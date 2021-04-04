@@ -164,10 +164,14 @@ def edit_item(request, item_id):
 def delete_item(request, item_id):
     ''' A view to delete items '''
     if request.user.is_superuser:
-        item = get_object_or_404(Item, pk=item_id)
-        item.delete()
-        messages.success(request, "Product has been deleted")
-        return redirect(reverse("all_items"))
+        if request.method == "POST":
+            item = get_object_or_404(Item, pk=item_id)
+            item.delete()
+            messages.success(request, "Product has been deleted")
+            return redirect(reverse("all_items"))
+        else:
+            messages.error(request, "You do not have permission to do this.")
+            return redirect(reverse("home_page"))
     else:
         messages.error(request, "You do not have permission to do this.")
         return redirect(reverse("home_page"))

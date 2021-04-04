@@ -64,9 +64,12 @@
                             <div class="modal-footer m-auto">
                                 <button type="button" class="fs-3 modal-button
                                 cancel-btn flex-center" data-bs-dismiss="modal">Cancel</button>
-                                <a class=" modal-button fs-3 flex-center delete-btn"
-                                    href="{% url 'delete_item' item.id %}">Delete</a>
+                                   <form method="POST" action="{% url 'delete_item' item.id %}">
+                                       {% csrf_token %}
+                                    <button type="submit" class="modal-button fs-3 flex-center delete-btn">Delete</button >
+                                </form>
                             </div>
+
                         </div>
                     </div>
                 </div>
