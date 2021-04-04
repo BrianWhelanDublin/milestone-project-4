@@ -87,7 +87,39 @@ Please check the form details are correct and try again.")
     template = "blog/add_post.html"
     context = {
         "form": form,
-        "in_blog": True,
+    }
+
+    return render(request,
+                  template,
+                  context)
+
+
+@login_required
+def edit_post(request, post_id):
+    if request.user.is_superuser:
+        post = get_object_or_404(Post, pk=post_id)
+        if request.method == "POST":
+            form = PostForm(request.POST, request.FILES, instance=post)
+            if form.is_valid():
+                form.save()
+                messages.success(request,
+                                 "Post updated successfully")
+                return redirect(reverse("view_post", args=[post.id]))
+            else:
+                messages.error(request,
+                               "Failed to edit the post. \
+Please check the form details are correct and try again.")
+        else:
+            form = PostForm(instance=post)
+    else:
+        messages.error(request, "You do not have permission to do this.")
+        return redirect(reverse("view_blog"))
+
+    template = "blog/add_post.html"
+    context = {
+        "form": form,
+        "post": post,
+        "edit_post": True,
     }
 
     return render(request,
