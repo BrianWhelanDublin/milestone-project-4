@@ -25,9 +25,50 @@
         </div>
     </div>
     <div class="row">
+        {% if request.user.is_superuser %}
+           <div class="col-12 mt-5" >
+                <div class="flex-row-between post-btns m-auto">
+                    <a class="fs-3 modal-button
+                                cancel-btn flex-center" href="{% url 'edit_post' post.id %}">Edit</a>
+                    <!-- Button trigger modal to double check before deleting the item -->
+                    <button type="button" class="modal-button fs-3 flex-center delete-btn" data-bs-toggle="modal"
+                        data-bs-target="#deleteModal">
+                        Delete
+                    </button>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fs-1 m-auto" id="deleteModalLabel">Delete Item!</h5>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-center text-danger fs-3">
+                                    Are you sure you want to delete this item?
+                                </p>
+                            </div>
+                            <div class="modal-footer m-auto">
+                                <button type="button" class="fs-3 modal-button
+                                cancel-btn flex-center" data-bs-dismiss="modal">Cancel</button>
+                                <a class=" modal-button fs-3 flex-center delete-btn"
+                                    href="">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                {% endif %}
+
         <div class="col-12 post-content">
        <p>{{post.content}}</p>
         </div>
+
+           
+
+
+
         <div class="col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 ">
             <h3 class="fs-3">Comments</h3>
             {% for comment in comments %}
@@ -71,6 +112,12 @@
             {% endif %}
             <hr>
             {% endfor %}
+               {% if request.user.is_anonymous %}
+                <p class="mt-5 fs-4 mb-5">Please
+                    <a class="fs-4 mx-1" href="{% url 'account_login' %}"> Login </a> or
+                    <a class="fs-4 mx-1" href="{% url 'account_signup' %}">Signup</a>
+                    To add a comment.</p>
+                {% else %}
              <div class="commentform">
                <form id="comment-form" method="POST" action="{% url 'view_post' post_id=post.id %}" >
                    {% csrf_token %}
@@ -78,6 +125,7 @@
                   <button class="item-link-button flex-center item-link-dark" type="submit">Add comment</button>
                </form>
             </div>
+            {% endif %}
         </div>
     </div>
 </div>

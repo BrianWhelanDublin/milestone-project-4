@@ -25,6 +25,14 @@
 .post-content p{
     font-size: 1.25rem;
 }
+.post-current-image img{
+    height:18rem;
+    width:12rem;
+  
+}
+.post-btns{
+    width:40rem;
+}
 @media (min-width: 768px){
     .post-image-container img{
     height: 50rem;

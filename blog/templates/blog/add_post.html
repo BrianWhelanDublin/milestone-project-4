@@ -12,20 +12,40 @@
 {% endblock %}
 {% block main_content %}
 <div class="container checkout-container">
-       <div class="row">
+    <div class="row">
         <div class="col flex-center checkout-heading">
+            {% if edit_post %}
+            <h1>Edit Post</h1>
+            {% else %}
             <h1>Add Post</h1>
+            {% endif %}
         </div>
     </div>
     <div class="row item-row">
         <div class="offset-1 col-10 mt-5 col-md-6 offset-md-3 ">
-            <form id="post-form" name="post-form" method="POST" action="{% url 'add_post' %}" enctype="multipart/form-data">
+            <form id="post-form" name="post-form" method="POST" 
+            {% if edit_post %} action="{% url 'edit_post' post.id %}" 
+            {% else %} action="{% url 'add_post' %}" 
+            {% endif %} enctype="multipart/form-data">
                 {% csrf_token %}
-               {{ form.title | as_crispy_field }}
-               {{ form.content | as_crispy_field }}
-               {{ form.image }}
-               <button type="submit" class=" mt-5 mb-5 item-link-button flex-center item-link-dark"
-                        id="item-submit">Add Post</button>
+                {{ form.title | as_crispy_field }}
+                {{ form.content | as_crispy_field }}
+                <div class="row">
+                    {% if edit_post %}
+                    <div class="col-12 col-md-4">
+                        <h3 class=" mt-2">Current Image</h3>
+                        <div class="post-current-image mt-4">
+                            <img src="{{ MEDIA_URL }}{{post.image}}" alt="Image belonging to {{post.title}}">
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="col-12 col-md-8">
+                        {{ form.image }}
+                    </div>
+                </div>
+                <button type="submit" class=" mt-5 mb-5 item-link-button flex-center item-link-dark" id="item-submit">
+                    {% if edit_post %}Edit Post{% else %}Add Post{% endif %}
+                </button>
             </form>
         </div>
     </div>
