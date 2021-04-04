@@ -125,3 +125,19 @@ Please check the form details are correct and try again.")
     return render(request,
                   template,
                   context)
+
+
+@login_required
+def delete_post(request, post_id):
+    if request.user.is_superuser:
+        if request.method == "POST":
+            post = get_object_or_404(Post, pk=post_id)
+            post.delete()
+            messages.success(request, "Post has been deleted")
+            return redirect(reverse("view_blog"))
+        else:
+            messages.error(request, "You do not have permission to do this.")
+            return redirect(reverse("view_blog"))
+    else:
+        messages.error(request, "You do not have permission to do this.")
+        return redirect(reverse("view_blog"))
