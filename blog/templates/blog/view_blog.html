@@ -22,18 +22,18 @@ Blog
     <div class="blog-item-container flex-center">
         <div class="blog-image-container">
             {% if post.image %}
-                 <a href="#">
+                 <a href="{% url 'view_post' post.id %}">
                         <img src="{{ MEDIA_URL }}{{ post.image }}"
                             alt="image for {{ item.title }}"></a>
                     {% else %}
-                    <a href="#">
+                    <a href="{% url 'view_post' post.id %}"></a>">
                         <img src="{{ MEDIA_URL }}no_image.png"
                             alt="No image found for {{ post.title }}"></a>
                     {% endif %}
    
          <div class="blog-item-details blog-page-details">
                 <h3 class="text-center">{{post.title}}</h3>
-                <a href="" class="item-link-light item-link-button  flex-center">Read More ...</a>
+                <a href="{% url 'view_post' post.id %}" class="item-link-light item-link-button  flex-center">Read More ...</a>
             </div>
     </div>
 </div>

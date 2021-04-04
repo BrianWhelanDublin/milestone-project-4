@@ -669,7 +669,12 @@ input:-webkit-autofill {
 .side-menu-open li:nth-child(7) {
     animation-delay: 350ms;
 }
-
+.side-menu-open li:nth-child(8) {
+    animation-delay: 400ms;
+}
+.side-menu-close li:nth-child(8) {
+    animation-delay: 0;
+}
 .side-menu-close li:nth-child(7) {
     animation-delay: 50ms;
 }
