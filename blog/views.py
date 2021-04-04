@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 
 
 def view_blog(request):
+    ''' A view to show the blog page '''
+
     posts = Post.objects.all()
     template = "blog/view_blog.html"
     context = {
@@ -18,7 +20,10 @@ def view_blog(request):
 
 
 def view_post(request, post_id):
-    ''' Show the single post page '''
+    ''' Show the single post page and
+        the comments and comments form to logged in users
+    '''
+
     post = get_object_or_404(Post, pk=post_id)
     if request.method == "POST":
         form = CommentForm(request.POST)
@@ -46,6 +51,11 @@ def view_post(request, post_id):
 
 @login_required
 def delete_comment(request, post_id):
+    '''  A view to delete a users comment
+         Will also show an error msg if a user tries type
+         the url into the browser.
+    '''
+
     if request.method == "POST":
         # comment_id = request.POST["comment_id"]
         # print(comment_id)
@@ -66,6 +76,11 @@ permission to do this.")
 
 @login_required
 def add_post(request):
+    ''' A view to allow superusers to add a new blog post
+        from the front end of the website. If a user types the
+        url into the browser they will get an error message.
+    '''
+
     if request.user.is_superuser:
         if request.method == "POST":
             form = PostForm(request.POST, request.FILES)
@@ -96,6 +111,12 @@ Please check the form details are correct and try again.")
 
 @login_required
 def edit_post(request, post_id):
+    ''' A view to allow the super user to edit a post
+        from the front end of the website. It will also
+        give an error msg if the user tries to type the url
+        into the browser.
+    '''
+
     if request.user.is_superuser:
         post = get_object_or_404(Post, pk=post_id)
         if request.method == "POST":
@@ -129,6 +150,11 @@ Please check the form details are correct and try again.")
 
 @login_required
 def delete_post(request, post_id):
+    ''' view to delete a post from the front end of
+        the website also gives an error message if the
+        user types the url into the browser
+        '''
+
     if request.user.is_superuser:
         if request.method == "POST":
             post = get_object_or_404(Post, pk=post_id)
