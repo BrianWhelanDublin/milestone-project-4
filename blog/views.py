@@ -33,6 +33,11 @@ def view_post(request, post_id):
             comment.author = request.user
             form.save()
             messages.success(request, "Your comment has been added.")
+            return redirect(reverse("view_post", args=[post_id]))
+        else:
+            messages.error(request,
+                           "Error adding your comment please try again")
+            return redirect(reverse("view_post", args=[post_id]))
     comments = Comment.objects.all().order_by("-id")
 
     form = CommentForm()
