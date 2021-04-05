@@ -2,15 +2,37 @@
 
 ## Milestone Project 4
 
+  - This project aims to build a full-stack web application using Django full-stack web framework, HTML, Css3 and javascript.
+
+  - I have built an e-commerce web application for a fictional furniture company.
+  
+  - My application features e-commerce functionality, payments using stripe, a blog section, user login using Facebook, a wishlist section for registered users, confirmation emails, CRUD functionality for admin to add blog posts and stock items, and an admin section, for the admin user to access database records.
+
+  - For the assessor, I have included the admin login details in the comments section when submitting the project.
+
+  - This website is for educational purposes and the stripe functionality is set up to accept the test card details please don't enter your personal card details. 
+  
+     - To use the stripe function use the following details.
+
+        - card number : 4242 4242 4242 4242
+        - Any date
+        - Any CVV number.
 
 
 ## Live project
 
 
+- [View the live project here.](https://abode-milestone-4.herokuapp.com/)
 
 ## Screenshots
 
+  - ### Landing page Hero Section.
 
+<div align="center"><img src="readme-images/page_images/homepage_hero.png" alt="image of the homepage hero section"></div>
+
+  - ### Landing page Shop Our Collections.
+
+<div align="center"><img src="readme-images/page_images/shop-collections.png" alt="image of the homepage shop by collection section"></div>
 
 ## Table of Contents.
 
