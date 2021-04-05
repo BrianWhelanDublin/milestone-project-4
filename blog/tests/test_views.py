@@ -178,6 +178,8 @@ class TestPostSuperuserViews(TestCase):
         )
         self.add_post = reverse("add_post")
         self.edit_post = reverse("edit_post", kwargs={"post_id": self.post.id})
+        self.delete_post = reverse("delete_post",
+                                   kwargs={"post_id": self.post.id})
         self.view_blog = reverse("view_blog")
         self.view_post = reverse("view_post", kwargs={"post_id": self.post.id})
 
@@ -193,7 +195,7 @@ class TestPostSuperuserViews(TestCase):
                          "You do not have permission to do this.")
 
     def test_add_post_GET_if_superuser(self):
-        ''' test the addpost view get if the user is a superuser '''
+        ''' test the add post view get if the user is a superuser '''
 
         self.client.login(
             username="testadmin", password="testadminpassword")
@@ -205,7 +207,7 @@ class TestPostSuperuserViews(TestCase):
         self.assertTemplateUsed(response, "includes/nav-background.html")
 
     def test_add_post_POST_invalidform(self):
-        ''' test the addpost view get if the user is a superuser '''
+        ''' test the add post view get if the user is a superuser '''
 
         self.client.login(
             username="testadmin", password="testadminpassword")
@@ -221,7 +223,7 @@ class TestPostSuperuserViews(TestCase):
 Please check the form details are correct and try again.")
 
     def test_add_post_POST_validform(self):
-        ''' test the addpost view get if the user is a superuser '''
+        ''' test the add post view get if the user is a superuser '''
 
         self.client.login(
             username="testadmin", password="testadminpassword")
@@ -278,7 +280,7 @@ Please check the form details are correct and try again.")
         self.assertTemplateUsed(response, "includes/nav-background.html")
 
     def test_edit_post_POST_invalidform(self):
-        ''' test the addpost view get if the user is a superuser '''
+        ''' test the edit post view get if the user is a superuser '''
 
         self.client.login(
             username="testadmin", password="testadminpassword")
@@ -293,7 +295,7 @@ Please check the form details are correct and try again.")
 Please check the form details are correct and try again.")
 
     def test_edit_post_POST_validform(self):
-        ''' test the addpost view get if the user is a superuser '''
+        ''' test the edit post view get if the user is a superuser '''
 
         self.client.login(
             username="testadmin", password="testadminpassword")
@@ -319,6 +321,45 @@ Please check the form details are correct and try again.")
         self.assertEqual(len(messages), 1)
         self.assertEqual(str(messages[0]),
                          "Post updated successfully")
+    
+    def test_delete_post_if_not_superuser(self):
+        ''' test the delete post view if a user isnt a superuser '''
+
+        self.client.login(
+            username="testuser", password="testpassword")
+        response = self.client.get(self.delete_post)
+        self.assertRedirects(response, self.view_blog)
+        self.assertEqual(response.status_code, 302)
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "You do not have permission to do this.")
+
+    def test_delete_post_GET_if_superuser(self):
+        ''' test the delete post view get if the user is a superuser '''
+
+        self.client.login(
+            username="testadmin", password="testadminpassword")
+        response = self.client.get(self.delete_post)
+        self.assertRedirects(response, self.view_blog)
+        self.assertEqual(response.status_code, 302)
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "You do not have permission to do this.")
+
+    def test_delete_post_POST(self):
+        ''' Test the delete post post POST function '''
+
+        self.client.login(
+            username="testadmin", password="testadminpassword")
+        response = self.client.post(self.delete_post)
+        post = Post.objects.filter(id=self.post.id)
+        self.assertFalse(post)
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "Post has been deleted")
 
 
 TEST_IMAGE = '''
