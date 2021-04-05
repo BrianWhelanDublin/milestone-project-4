@@ -250,6 +250,8 @@ Please check the form details are correct and try again.")
                          "Post has been added successfully.")
 
     def test_edit_post_if_not_superuser(self):
+        ''' test the edit post view if a user isnt a superuser '''
+
         self.client.login(
             username="testuser", password="testpassword")
         response = self.client.get(self.edit_post)
@@ -259,6 +261,64 @@ Please check the form details are correct and try again.")
         self.assertEqual(len(messages), 1)
         self.assertEqual(str(messages[0]),
                          "You do not have permission to do this.")
+    
+    def test_edit_post_GET_if_superuser(self):
+        ''' test the edit post view get if the user is a superuser '''
+
+        self.client.login(
+            username="testadmin", password="testadminpassword")
+        response = self.client.get(self.edit_post)
+        self.assertEqual(response.context['form'].initial['title'],
+                         self.post.title)
+        self.assertEqual(response.context['form'].initial['content'],
+                         self.post.content)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "blog/add_post.html")
+        self.assertTemplateUsed(response, "base.html")
+        self.assertTemplateUsed(response, "includes/nav-background.html")
+
+    def test_edit_post_POST_invalidform(self):
+        ''' test the addpost view get if the user is a superuser '''
+
+        self.client.login(
+            username="testadmin", password="testadminpassword")
+
+        response = self.client.post(self.edit_post, {
+
+        })
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "Failed to edit the post. \
+Please check the form details are correct and try again.")
+
+    def test_edit_post_POST_validform(self):
+        ''' test the addpost view get if the user is a superuser '''
+
+        self.client.login(
+            username="testadmin", password="testadminpassword")
+
+        image = InMemoryUploadedFile(
+            BytesIO(base64.b64decode(TEST_IMAGE)),
+            field_name='tempfile',
+            name='tempfile.png',
+            content_type='image/png',
+            size=len(TEST_IMAGE),
+            charset='utf-8',
+        )
+
+        response = self.client.post(self.edit_post, {
+            "title": "Test Post",
+            "content": "Test editing content",
+            "image": image,
+            }
+        )
+        post = Post.objects.get(id=self.post.id)
+        self.assertEqual(post.content, 'Test editing content')
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "Post updated successfully")
 
 
 TEST_IMAGE = '''
