@@ -84,6 +84,12 @@
   - Desktop
     - [Wireframes for desktops.](readme-images/wireframes/milestone4-desktop-wireframes.pdf)
 
+### Database models
+
+- Database Diagram
+
+    <div align="center"><img src="readme-images/page_images/database-diagram.png" alt="image of the database diagram"></div>
+
 
 ### Deployment.
 
