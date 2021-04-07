@@ -38,7 +38,7 @@ def view_post(request, post_id):
             messages.error(request,
                            "Error adding your comment please try again")
             return redirect(reverse("view_post", args=[post_id]))
-    comments = Comment.objects.all().order_by("-id")
+    comments = Comment.objects.filter(post=post)
 
     form = CommentForm()
     template = "blog/post.html"
