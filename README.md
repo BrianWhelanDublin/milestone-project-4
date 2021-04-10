@@ -84,9 +84,46 @@
   - Desktop
     - [Wireframes for desktops.](readme-images/wireframes/milestone4-desktop-wireframes.pdf)
 
-### Database models
+### Database models and schema
+
+- #### Models
+
+- Users
+  - User
+    - From Django Allauth containing the username, email and password.
+  - Userprofile
+    - Model containing the users details for future orders.
+  - Wishlist
+    - Contains a list of items that the user has liked.
+
+- Stock 
+  - Items
+    - Contains the stock information for each stock item.
+  - Categories
+    - The categoriesfor the stock items.
+
+- Customer details.
+  - Newsletter Subscribers
+    - Contains the email of users who have signed up to the newsletter.
+  - Messages.
+    - Contains the details of the messages from the contact form.
+
+- Shop
+  - Order
+    - Contains details of the customers orders, their details and the items they've ordered.
+  - Orderline item
+    - Items for the customer order the quantity and total.
+
+- Blog
+  - Post
+    - Contains the blog post and details of its author and title.
+  - Comments
+    - Contains the comments for each post.
+
 
 - Database Diagram
+
+  - The database diagram shows a list items in each object and relationships between each object.
 
     <div align="center"><img src="readme-images/page_images/database-diagram.png" alt="image of the database diagram"></div>
 
