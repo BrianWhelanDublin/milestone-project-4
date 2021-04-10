@@ -219,6 +219,11 @@
 
   - Amazon AWS was used to store the static files and the images for the site.
 
+- [Facebook](https://developers.facebook.com/)
+
+  - Facebook ws used for allauth social sign-up and login.
+
+
 - [Gunicorn](https://gunicorn.org/)
 
   - Gunicorn was used for deploying the project to heroku.
@@ -582,26 +587,26 @@
 
   - To set the project up locally you can follow these steps.
     
-    - Download a copy of the repository from github using the Download Zip option in the code dropdown.
+    - Download a copy of the repository from Github using the Download Zip option in the code dropdown.
 
       - <p align="center"><img src="readme-images/deployment/download-zip.png" alt="Image of colour scheme" height="200px" width="350px"/></p>
     
-    - Then extract the zip file to your own repository.
+    - Then extract the zip file to your repository.
 
-    - Alternativley you can clone it into your oun repository using the following command.
+    - Alternatively, you can clone it into your repository using the following command.
 
       - ```
             git clone https://github.com/BrianWhelanDublin/milestone-project-4.git
         ```
     
-    - Once you have created the repository you can now doenload the requirements by running the following command.
+    - Once you have created the repository you can now download the requirements by running the following command.
 
       - 
       ```
             pip3 install -r requirements.txt
       ```
     
-    - You must then set up the following environmental variables to use the full functionality of the site.
+    - You must then set up the following environment variables to use the full functionality of the site.
 
       - DANGO_SECRET_KEY = your secret key.
       - STRIPE_PUBLIC_KEY = your stripe public key.
@@ -618,20 +623,20 @@
         ```
             python3 manage.py makemigrations --dry-run
         ```
-       -  Then make migrtions.
+       -  Then make migrations.
             ```
                 python3 manage.py makemigrations
             ```
        - Check the migration plan
             ```
-                python3 manage.py migrat --plan
+                python3 manage.py migrate --plan
             ```
        - Then finally migrate
             ```
                 python3 manage.py migrate
             ```
 
-     - Then create your superuser to accsess the admin section.
+     - Then create your superuser to access the admin section.
       -
         ```
             python3 manage.py createsuperuser
@@ -646,5 +651,48 @@
                 python3 manage.py runserver
             ```
 
+## Credits.
 
-      
+### Code.
+
+- #### Kevin Powell Youtube video.
+  - This youtube walkthrough help me to design and animate my navigation menu. I've adapted the code to suit my site.
+  - [Fade + slide in nav list items one at a time](https://www.youtube.com/watch?v=xkKjrH3pRfg&list=WL&index=3&t=1028s)
+
+- #### Stack Overflow 
+
+  - [Sending POST data with fetch](https://stackoverflow.com/questions/6396101/pure-javascript-send-post-data-without-a-form)
+  - I used code from the above StackOverflow article to help with sending post data using fetch in javascript.
+
+  - [Django CSRF](https://stackoverflow.com/questions/43606056/proper-django-csrf-validation-using-fetch-post-request)
+    - I used code from this stack overflow article to help with the Django CSRF validation when using fetch and post. 
+
+ - [Removing Blue Background in forms](https://stackoverflow.com/questions/55131944/how-to-remove-blue-background-on-chrome-autocomplete)
+   - I used code from the above article to remove the light blue background that chrome was putting on my forms. 
+
+ - [Error with the decimal fields](https://stackoverflow.com/questions/56458774/django-error-class-decimal-invalidoperation)
+   - I used code from the above article to help with a bug during development with my decimal fields.
+
+ - [Messages extra tags](https://stackoverflow.com/questions/15017706/how-to-display-multiple-django-messages-in-one-page)
+
+ - [Test image input in Django forms](https://gist.github.com/drillbits/5432699)
+   - I used this code to help with my Django testing of the forms image input.
+
+- [Django allauth Facebook](https://dev.to/gajesh/the-complete-django-allauth-guide-la3)
+  - I used this article to help set up the allauth Facebook signup.
+  
+
+### Content
+
+- All Text for the website was written by myself.
+
+### Media
+
+- [Unsplash](https://unsplash.com/)
+  - All images for the website were obtained from Unsplash.
+
+### Acknowledgements
+
+- Code Institute for getting me to this point
+
+- My Mentor Spencer for his help with this project.
