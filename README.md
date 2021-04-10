@@ -152,7 +152,117 @@
 
 - Icons 
   - I've used icons in this project for the navigation on mobile sites and the social media links in the footer.
-  - All icons have been optained from Line Awsome
+  - All icons have been optained from Line Awsome.
+
+
+
+## Technologies used.
+
+- The application was built on the Django full stack framework.
+- For each section of the site a Django app was created.
+- Each app then has a views.py, urls.py file to create the pages it needs.
+- Then to create the database models a models.py file is used.
+- If there are any forms needed they are then created in the forms.py file.
+- Stripe has been used for the payment function of the e-commerce shop.
+- Heroku was used to deploy the application.
+- Amazon AWS was used to store. the static files and the image files.
+
+### Languages Used.
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+
+  - HTML5 was used to create the content and base of each page.
+
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+
+  - CSS3 was used to then style the page and make it responsive through media queries, and interactive through using CSS transitions.
+
+- [javaScript](https://en.wikipedia.org/wiki/JavaScript)
+  - javaScript was used throughout the website to make the site interactive.
+
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+  - Python was used to build the backend functionality of the web app.
+
+### Django, and Django extensions used
+
+- [Django](https://www.djangoproject.com/)
+  - Django was used to create the project.
+
+- [Django Allauth](https://django-allauth.readthedocs.io/en/latest/)
+  - Django allauth was used to create the user sign-in function for the site.
+
+- [Django Allauth Social Login](https://django-allauth.readthedocs.io/en/latest/providers.html/)
+  - Django allauth Social login function was used to allow the user to sign up, or login with Facebook.
+
+- [Django Countries](https://pypi.org/project/django-countries/)
+  - Django Countries was used for the countries select field in the order form.
+
+- [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
+  - Django Crispy Forms were used to utilise the bootstrap form classes.
+
+- [Django Coverage](https://pypi.org/project/django-coverage/)
+
+  - Django Coverage was used when testing to form a testing report.
+
+
+### Frameworks Libraries and Programs.
+
+- [Stripe](https://stripe.com/ie)
+
+  - CStripe has been used for the payment section of the site.
+
+- [Heroku](https://signup.heroku.com/)
+
+  - Heroku was used to deploy the wesite.
+
+- [Amazon AWS](https://aws.amazon.com/)
+
+  - Amazon AWS was used to store the static files and the images for the site.
+
+- [Gunicorn](https://gunicorn.org/)
+
+  - Gunicorn was used for deploying the project to heroku.
+
+- [Google Fonts](https://fonts.google.com/)
+
+  - I imported the Mulish font from google fonts and used it consistently across the site.
+
+- [Line awesome](https://icons8.com/line-awesome)
+
+  - I used different icons from Line awesome for icons in the application.
+
+- [Bootstrap 5](https://getbootstrap.com/)
+
+  - Bootstrap 5 was used for its grid system and it's form inputs and it's helper classes.
+
+- [Quick Database Diagrams](https://www.quickdatabasediagrams.com/)
+
+  - I used quick database diagrams to make a digram of my database schema.
+
+- [Git](https://git-scm.com/)
+
+  - Git was used as a version control in the terminal.
+
+- [Github](https://github.com/)
+
+  - Github was used to create and store the project repository.
+
+- [Gitpod](https://gitpod.io/)
+
+  - Gitpod was used to create my files and code the project.
+
+- [Balsamiq](https://balsamiq.com/)
+
+  - Balsamiq was used to create Wireframes for the project during the initial planning stage.
+
+- [Am I responsive](http://ami.responsivedesign.is/)
+
+  - Am I responsive was used to taking screenshots of the page at different screen sizes.
+
+- [Markdown toc](http://ecotrust-canada.github.io/markdown-toc/)
+
+  - Markdown toc was used to create my table of contents.
+
 
 ### Deployment.
 
