@@ -577,4 +577,74 @@
     - Select upload and add your image files.
     - Then select to grant public access.
     - And then upload the files.
+
+#### Setting up locally
+
+  - To set the project up locally you can follow these steps.
     
+    - Download a copy of the repository from github using the Download Zip option in the code dropdown.
+
+      - <p align="center"><img src="readme-images/deployment/download-zip.png" alt="Image of colour scheme" height="200px" width="350px"/></p>
+    
+    - Then extract the zip file to your own repository.
+
+    - Alternativley you can clone it into your oun repository using the following command.
+
+      - ```
+            git clone https://github.com/BrianWhelanDublin/milestone-project-4.git
+        ```
+    
+    - Once you have created the repository you can now doenload the requirements by running the following command.
+
+      - 
+      ```
+            pip3 install -r requirements.txt
+      ```
+    
+    - You must then set up the following environmental variables to use the full functionality of the site.
+
+      - DANGO_SECRET_KEY = your secret key.
+      - STRIPE_PUBLIC_KEY = your stripe public key.
+      - STRIPE_SECRET_KEY = your stripe secret key.
+      - STRIPE_WEBHOOK_SECRET = your stripe webhook secret.
+      - IN_DEVELOPMENT = True
+
+      - Your stripe variables can be found on your stripe dashboard.
+      - You can generate a Django secret key here. [Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/)
+    
+    - You will then need to migrate the database models to set up your database.
+    - 
+      - Check first
+        ```
+            python3 manage.py makemigrations --dry-run
+        ```
+       -  Then make migrtions.
+            ```
+                python3 manage.py makemigrations
+            ```
+       - Check the migration plan
+            ```
+                python3 manage.py migrat --plan
+            ```
+       - Then finally migrate
+            ```
+                python3 manage.py migrate
+            ```
+
+     - Then create your superuser to accsess the admin section.
+      -
+        ```
+            python3 manage.py createsuperuser
+        ```
+
+        - Following the prompts.
+
+    - Once these steps have been followed you can then run the project by using the following command.
+
+        - 
+            ```
+                python3 manage.py runserver
+            ```
+
+
+      
