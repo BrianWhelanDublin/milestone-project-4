@@ -87,12 +87,11 @@
 ### Database models and schema
 
 - #### Models
-
 - Users
   - User
-    - From Django Allauth containing the username, email and password.
+    - From Django Allauth containing the username, email, and password.
   - Userprofile
-    - Model containing the users details for future orders.
+    - Model containing the user's details for future orders.
   - Wishlist
     - Contains a list of items that the user has liked.
 
@@ -104,13 +103,13 @@
 
 - Customer details.
   - Newsletter Subscribers
-    - Contains the email of users who have signed up to the newsletter.
+    - Contains the email of users who have signed up for the newsletter.
   - Messages.
     - Contains the details of the messages from the contact form.
 
 - Shop
   - Order
-    - Contains details of the customers orders, their details and the items they've ordered.
+    - Contains details of the customer's orders, their details, and the items they've ordered.
   - Orderline item
     - Items for the customer order the quantity and total.
 
@@ -123,10 +122,37 @@
 
 - Database Diagram
 
-  - The database diagram shows a list items in each object and relationships between each object.
+  - The database diagram shows a list of items in each object and relationships between each object.
 
     <div align="center"><img src="readme-images/page_images/database-diagram.png" alt="image of the database diagram"></div>
 
+### Design
+
+- #### Colour scheme
+
+  - My Colour scheme was inspired by my main hero image matching the navy background within the image to be used for the navigation and text colour.
+  - I then pick two complimentary grey colours for the main background throughout the site, alternating between them in places to clearly define sections.
+  - Throughout the site I used different opacities of these colours to create a softer pallet.
+
+    - <p align="center"><img src="readme-images/design/colors.png" alt="Image of colour scheme" height="200px" width="350px"/></p>
+
+- #### Typography
+
+  - I've chosen the Roboto font from google fonts for my site.
+  - I've used the one font throughout the website to keep the design consistent.
+  - I then used different font weights to add more emphasis to some text, such as headings. 
+    - <p align="center"><img src="readme-images/design/fonts.png" alt="Image of google font" height="200px" width="300px"/></p>
+
+- #### Images 
+
+  - Images are a key part of this site. 
+  - All the images I have used were obtained from Unsplash.
+  - I've used two main hero images on the landing page to give the site a dramatic appearance upon opening.
+  - I then found images of furniture items and lighting items which I used to create my stock items for the e-commerce part of the site.
+
+- Icons 
+  - I've used icons in this project for the navigation on mobile sites and the social media links in the footer.
+  - All icons have been optained from Line Awsome
 
 ### Deployment.
 
