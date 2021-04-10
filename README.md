@@ -156,43 +156,49 @@
 
 ## Features
   
-   - Homepage App.
+- Homepage App.
+
     - Hero Section.
-      - Upon opening the site the user is greeted with the main hero section the clearly defines the site as a furniture store. 
-      - There are also links to shop the collection or to visit the Our Story page.
-        - <p align="center"><img src="readme-images/features/hero-section.png" alt="Image of hero section" height="180px" width="320px"/></p>
-    
-   - Interactive Nav
-      - The site then contains the navigation section accessed by clicking on the hamburger icon.
-      - The navigation is then animated to slide in from the left with a slight delay on each nav item so they slide in one after the other.
-      - The navigation also has an opaque background and a slight background blur to give it a modern glass feel.
-        - <p align="center"><img src="readme-images/features/navigation.png" alt="Image of navigation menu" height="200px" width="200px"/></p>
-    
+        - Upon opening the site the user is greeted with the main hero section the clearly defines the site as a furniture store. 
+        - There are also links to shop the collection or to visit the Our Story page.
+            - <p align="center"><img src="readme-images/features/hero-section.png" alt="Image of hero section" height="180px" width="320px"/></p>
+        
+    - Interactive Nav
+
+        - The site then contains the navigation section accessed by clicking on the hamburger icon.
+        - The navigation is then animated to slide in from the left with a slight delay on each nav item so they slide in one after the other.
+        - The navigation also has an opaque background and a slight background blur to give it a modern glass feel.
+            - <p align="center"><img src="readme-images/features/navigation.png" alt="Image of navigation menu" height="250px" width="300px"/></p>
+        
     - New Items.
-      - The new items section contains a slider controlled by left and right arrows containing the stock in the new items category.
-      - The user can click on the arrows to navigate through the slider.
-        - <p align="center"><img src="readme-images/features/new-in.png" alt="Image of new items slider" height="200px" width="400px"/></p>
-    
+
+        - The new items section contains a slider controlled by left and right arrows containing the stock in the new items category.
+        - The user can click on the arrows to navigate through the slider.
+            - <p align="center"><img src="readme-images/features/new-in.png" alt="Image of new items slider" height="200px" width="400px"/></p>
+        
     - Newsletter
-      - The homepage contains a section where the user can sign up for a newsletter.
-      - Their email address will then be stored in the database and they will be sent a confirmation email.
-        - <p align="center"><img src="readme-images/features/newsletter.png" alt="Image of blog on landing page" height="80px" width="450px"/></p>
-    
+
+        - The homepage contains a section where the user can sign up for a newsletter.
+        - Their email address will then be stored in the database and they will be sent a confirmation email.
+            - <p align="center"><img src="readme-images/features/newsletter.png" alt="Image of blog on landing page" height="80px" width="450px"/></p>
+        
     - Blog
-      - The blog section shows the last three post that were added to the blog.
-      - The user can then click on the items and be led to the blog post.
-      - There is also a button to lead to the main blog page also.
-        - <p align="center"><img src="readme-images/features/blog-landing.png" alt="Image of newsletter section" height="200px" width="450px"/></p>
-    
+
+        - The blog section shows the last three post that were added to the blog.
+        - The user can then click on the items and be led to the blog post.
+        - There is also a button to lead to the main blog page also.
+            - <p align="center"><img src="readme-images/features/blog-landing.png" alt="Image of newsletter section" height="200px" width="450px"/></p>
+        
     - Contact
-      - The footer section contains the contact details for the company and the social media links.
-      - There is also a link to a contact us form.
-      - Once submitted the message will be saved in the database where the admin can see it and the user is redirected back to the home page and a message is shown to alert them their message has been sent.
-        - <p align="center"><img src="readme-images/features/contact-message.png" alt="Image contact message" height="100px" width="350px"/></p>
-    
+
+        - The footer section contains the contact details for the company and the social media links.
+        - There is also a link to a contact us form.
+        - Once submitted the message will be saved in the database where the admin can see it and the user is redirected back to the home page and a message is shown to alert them their message has been sent.
+            - <p align="center"><img src="readme-images/features/contact-message.png" alt="Image contact message" height="100px" width="350px"/></p>
+        
     - Our Story Page.
-      - The Our Story page has a few short bullet points and images telling the user about the company and its values.
-        - <p align="center"><img src="readme-images/features/our-story.png" alt="Image contact message" height="200px" width=400px"/></p>
+        - The Our Story page has a few short bullet points and images telling the user about the company and its values.
+            - <p align="center"><img src="readme-images/features/our-story.png" alt="Image contact message" height="200px" width=400px"/></p>
 
 
 
