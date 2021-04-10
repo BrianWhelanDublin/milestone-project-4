@@ -599,6 +599,7 @@ input:-webkit-autofill {
 .sub-list {
     visibility: hidden;
 }
+/* Code from Kevin powell on youtube to animate the navigation details in readme file */
 
 @keyframes fadeOut {
     0% {

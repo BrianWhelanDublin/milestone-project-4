@@ -61,6 +61,8 @@ def update_cart(request, item_id):
 
         if quantity > 0:
             cart[item_id] = quantity
+            # code from stack overflow to add
+            # extra tags to messages details in readme
             messages.success(request,
                              f"{item.name}'s \
  quantity has been updated to {cart[item_id]}", extra_tags="show_items")

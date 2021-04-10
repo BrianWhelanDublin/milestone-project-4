@@ -72,7 +72,7 @@ form.addEventListener('submit', (event) => {
     postData.set("client_secret", clientSecret)
     postData.set("save_info", saveInfo)
     let url = "/checkout/cache_checkout_data/";
-
+// stack overflow  code to help with the fetch and CSRF tokens
     fetch(url, {
         method: "POST",
         headers: {
