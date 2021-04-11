@@ -251,9 +251,15 @@
 
 - Checkout app.
     - Checkout page.
-        - Once the user is happy with their cart then can go to the checkout page.
-        - Here they are shown the checkout form and a list of their cart items withe the total amount.
-            -  <p align="center"><img src="readme-images/features/checkout.png" alt="Image of cart page" height="220px" width="500px"/></p>
+        - Once the user is happy with their cart they can go to the checkout page.
+        - Here they are shown the checkout form and a list of their cart items with thee the total amount.
+            -  <p align="center"><img src="readme-images/features/checkout.png" alt="Image of checkout page" height="220px" width="500px"/></p>
+    
+    - Order confirmation page.
+        - Once the order has been confirmed the user is then directed to the order confirmation page.
+        - The user is then shown the order details and order number.
+        - A confirmation email will also be sent to the user.
+            -  <p align="center"><img src="readme-images/features/order-confirmation.png" alt="Image of order confirmation" height="220px" width="500px"/></p>
         
             
 
