@@ -704,32 +704,33 @@
 ### Code.
 
 - #### Kevin Powell Youtube video.
-  - This youtube walkthrough help me to design and animate my navigation menu. I've adapted the code to suit my site.
-  - [Fade + slide in nav list items one at a time](https://www.youtube.com/watch?v=xkKjrH3pRfg&list=WL&index=3&t=1028s)
+    - [Fade + slide in nav list items one at a time](https://www.youtube.com/watch?v=xkKjrH3pRfg&list=WL&index=3&t=1028s)
+        - This youtube walkthrough help me to design and animate my navigation menu. I've adapted the code to suit my site.
+    
 
 - #### Stack Overflow 
 
-  - [Sending POST data with fetch](https://stackoverflow.com/questions/6396101/pure-javascript-send-post-data-without-a-form)
-  - I used code from the above StackOverflow article to help with sending post data using fetch in javascript.
+    - [Sending POST data with fetch](https://stackoverflow.com/questions/6396101/pure-javascript-send-post-data-without-a-form)
+        - I used code from the above StackOverflow article to help with sending post data using fetch in javascript.
 
-  - [Django CSRF](https://stackoverflow.com/questions/43606056/proper-django-csrf-validation-using-fetch-post-request)
-    - I used code from this stack overflow article to help with the Django CSRF validation when using fetch and post. 
+    - [Django CSRF](https://stackoverflow.com/questions/43606056/proper-django-csrf-validation-using-fetch-post-request)
+        - I used code from this stack overflow article to help with the Django CSRF validation when using fetch and post. 
 
- - [Removing Blue Background in forms](https://stackoverflow.com/questions/55131944/how-to-remove-blue-background-on-chrome-autocomplete)
-   - I used code from the above article to remove the light blue background that chrome was putting on my forms. 
+    - [Removing Blue Background in forms](https://stackoverflow.com/questions/55131944/how-to-remove-blue-background-on-chrome-autocomplete)
+        - I used code from the above article to remove the light blue background that chrome was putting on my forms. 
 
- - [Error with the decimal fields](https://stackoverflow.com/questions/56458774/django-error-class-decimal-invalidoperation)
-   - I used code from the above article to help with a bug during development with my decimal fields.
+    - [Error with the decimal fields](https://stackoverflow.com/questions/56458774/django-error-class-decimal-invalidoperation)
+        - I used code from the above article to help with a bug during development with my decimal fields.
 
- - [Messages extra tags](https://stackoverflow.com/questions/15017706/how-to-display-multiple-django-messages-in-one-page)
-   - I used the above article to help with only showing the cart items with some succesful messages.
+    - [Messages extra tags](https://stackoverflow.com/questions/15017706/how-to-display-multiple-django-messages-in-one-page)
+        - I used the above article to help with only showing the cart items with some succesful messages.
 
- - [Test image input in Django forms](https://gist.github.com/drillbits/5432699)
-   - I used this code to help with my Django testing of the forms image input.
+    - [Test image input in Django forms](https://gist.github.com/drillbits/5432699)
+        - I used this code to help with my Django testing of the forms image input.
 
-- [Django allauth Facebook](https://dev.to/gajesh/the-complete-django-allauth-guide-la3)
-  - I used this article to help set up the allauth Facebook signup.
-  
+    - [Django allauth Facebook](https://dev.to/gajesh/the-complete-django-allauth-guide-la3)
+        - I used this article to help set up the allauth Facebook signup.
+
 
 ### Content
 
@@ -738,7 +739,7 @@
 ### Media
 
 - [Unsplash](https://unsplash.com/)
-  - All images for the website were obtained from Unsplash.
+    - All images for the website were obtained from Unsplash.
 
 ### Acknowledgements
 
