@@ -150,13 +150,13 @@
   - I've used two main hero images on the landing page to give the site a dramatic appearance upon opening.
   - I then found images of furniture items and lighting items which I used to create my stock items for the e-commerce part of the site.
 
-- Icons 
+- #### Icons 
   - I've used icons in this project for the navigation on mobile sites and the social media links in the footer.
   - All icons have been optained from Line Awsome.
 
 ## Features
   
-- Homepage App.
+- #### Homepage App.
 
     - Hero Section.
         - Upon opening the site the user is greeted with the main hero section the clearly defines the site as a furniture store. 
@@ -200,7 +200,7 @@
         - The Our Story page has a few short bullet points and images telling the user about the company and its values.
             - <p align="center"><img src="readme-images/features/our-story.png" alt="Image contact message" height="200px" width="400px"/></p>
 
- - Stock App
+- #### Stock App
 
     - All Items 
         - The all items view shows all the items available in the store.
@@ -231,7 +231,7 @@
         - The superuser will also have access to the stock control page to add items from the account navigation.
             -  <p align="center"><img src="readme-images/features/stock-control.png" alt="Image of stock control page" height="300px" width="350px"/></p>
 
- - Cart App.
+- #### Cart App.
     - Add to Cart.
         - The user has the option to add items to the cart from the item page.
         - When the user clicks this button the item will be placed into the cart. 
@@ -249,7 +249,7 @@
             -  <p align="center"><img src="readme-images/features/cart.png" alt="Image of cart page" height="220px" width="500px"/></p>
         
 
-- Checkout app.
+- #### Checkout app.
     - Checkout page.
         - Once the user is happy with their cart they can go to the checkout page.
         - Here they are shown the checkout form and a list of their cart items with thee the total amount.
@@ -260,8 +260,19 @@
         - The user is then shown the order details and order number.
         - A confirmation email will also be sent to the user.
             -  <p align="center"><img src="readme-images/features/order-confirmation.png" alt="Image of order confirmation" height="220px" width="500px"/></p>
+
+- #### Reviews app.
+    - Reviews page.
+        - From the reviews section in the user can navigate to the review page.
+        - Here they can see a list of reviews users have left.
+        - If they arent logged in they will see a notification to log in or sign up to leave a review, with links to the login and signup pages.
+            - <p align="center"><img src="readme-images/features/reviews-page.png" alt="Image of reviews page" height="220px" width="500px"/></p>
         
-            
+        - If the user is logged in they will see a form section to leave a review.
+        - Once the form is submitted it will appear in the reviews section.
+        - If the current user is the author of a review they will be given the option to edit or delete the review.
+        - The admin can also delete a review from the backend in the case someone has entered inappropriate content.
+            -  <p align="center"><img src="readme-images/features/review-form.png" alt="Image of review form" height="300pxpx" width="300px"/></p>
 
 
 
