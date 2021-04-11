@@ -322,6 +322,12 @@
             - <p align="center"><img src="readme-images/features/edit-wishlist.png" alt="Image ofitem before the wishlist click"  height="320px" width="550px"/></p>
 
 
+## Testing
+
+- #### Testing.
+  - The testing section for this site is located at the following link.
+    - [Testing file](TESTING.md)
+
 ## Technologies used.
 
 - The application was built on the Django full stack framework.
