@@ -22,23 +22,23 @@ Reviews
                 {% csrf_token %}
                 {{ form.review | as_crispy_field }}
                 <div class="div stars-input flex-row-between">
-                    <div class="plus-btn  flex-center">
-                        <i class="las la-plus flex-center" aria-hidden="true"></i>
-                        <span class="sr-only">increment button</span>
-                    </div>
-                    {{ form.stars | as_crispy_field}}
                     <div class="minus-btn flex-center">
                         <i class="las la-minus"></i>
                         <span class="sr-only">decrement button</span>
+                    </div>
+                    {{ form.stars | as_crispy_field}}
+                    <div class="plus-btn  flex-center">
+                        <i class="las la-plus flex-center" aria-hidden="true"></i>
+                        <span class="sr-only">increment button</span>
                     </div>
                 </div>
                 <button class="item-link-dark item-link-button  flex-center m-auto " type="submit">Add Review</button>
             </form>
             {% else %}
-                <p class="fs-2 mb-5">Please
-                    <a class="fs-2 mx-2" href="{% url 'account_login' %}"> Login </a> or
-                    <a class="fs-2 mx-2" href="{% url 'account_signup' %}">Signup</a>
-                    To create a wishlist.</p>
+            <p class="fs-2 mb-5">Please
+                <a class="fs-2 mx-2" href="{% url 'account_login' %}"> Login </a> or
+                <a class="fs-2 mx-2" href="{% url 'account_signup' %}">Signup</a>
+                To create a wishlist.</p>
             {% endif %}
         </div>
         <div class="col-12 col-md-6 col-lg-8 ">
