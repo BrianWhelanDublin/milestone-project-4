@@ -54,11 +54,10 @@ Your Cart
                             <form class="cart-quantity-form" method="POST"
                                 action="{% url 'update_cart' item.item_id %}">
                                 {% csrf_token %}
-
                                 <div class="checkout-no-input flex-row-between">
-                                    <div class="plus-btn  flex-center">
-                                        <i class="las la-plus flex-center" aria-hidden="true"></i>
-                                        <span class="sr-only">increment button</span>
+                                    <div class="minus-btn flex-center">
+                                        <i class="las la-minus"></i>
+                                        <span class="sr-only">decrement button</span>
                                     </div>
                                     <div class="mb-3">
                                         <label for="item_quantity_{{item.item_id}}">
@@ -70,9 +69,9 @@ Your Cart
                                                 id="item_quantity_{{item.item_id}}">
                                         </div>
                                     </div>
-                                    <div class="minus-btn flex-center">
-                                        <i class="las la-minus"></i>
-                                        <span class="sr-only">decrement button</span>
+                                    <div class="plus-btn  flex-center">
+                                        <i class="las la-plus flex-center" aria-hidden="true"></i>
+                                        <span class="sr-only">increment button</span>
                                     </div>
                                 </div>
                             </form>
