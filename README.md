@@ -247,8 +247,15 @@
         - If the user is happy with the cart there is a link to the checkout  page
         - If the user wishes to continue shopping there is a link to the items page.
             -  <p align="center"><img src="readme-images/features/cart.png" alt="Image of cart page" height="220px" width="500px"/></p>
-        - The superuser will also have access to the stock control page to add items from the account navigation.
-            -  <p align="center"><img src="readme-images/features/stock-control.png" alt="Image item page" height="300px" width=350px"/></p>
+        
+
+- Checkout app.
+    - Checkout page.
+        - Once the user is happy with their cart then can go to the checkout page.
+        - Here they are shown the checkout form and a list of their cart items withe the total amount.
+            -  <p align="center"><img src="readme-images/features/checkout.png" alt="Image of cart page" height="220px" width="500px"/></p>
+        
+            
 
 
 
