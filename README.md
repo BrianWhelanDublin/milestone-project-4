@@ -200,6 +200,37 @@
         - The Our Story page has a few short bullet points and images telling the user about the company and its values.
             - <p align="center"><img src="readme-images/features/our-story.png" alt="Image contact message" height="200px" width=400px"/></p>
 
+ - Stock App
+
+    - All Items 
+        - The all items view shows all the items available in the store.
+        - Then navigation has links to each category of items such as chairs, lighting and sofas etc.
+            - <p align="center"><img src="readme-images/features/all-items.png" alt="Image of all items view" height="220px" width=400px"/></p>
+    
+    - Items sort.
+        - The user can then sort through the items by using the select input at the top of this section.
+            - <p align="center"><img src="readme-images/features/sort-items.png" alt="Image of items selector" height="200px" width=400px"/></p>
+
+    - Items Pagination
+        - This section also has a pagination function it will show up to 6 items at a time and then let the user know how many pages there are.
+            -  <p align="center"><img src="readme-images/features/items-pagination.png" alt="Image items pagination" height="200px" width=300px"/></p>
+
+    - Item page.
+        - The item page then consists of the items details with a quantity selector and an add to cart button.
+        - It also has a link back to the items page so the user can continue shopping.
+        - If the user isn't signed up or logged in a notification at the bottom of this section is shown that lets the user know if they sign in they can create a wish list, with links to the signup or login page.
+            -  <p align="center"><img src="readme-images/features/item-page.png" alt="Image item page" height="200px" width=350px"/></p>
+
+    - Superuser.
+        - If the user is a superuser the item page will contain links to the edit page or to delete the item.
+            -  <p align="center"><img src="readme-images/features/superuser-item-links.png" alt="Image item page superuser links" height="220px" width=350px"/></p>
+
+        - If the user selects to delete the item a modal will show to confirm this action to prevent accidental deletion.
+            -  <p align="center"><img src="readme-images/features/item-delete.png" alt="Image item page" height="180px" width=350px"/></p>
+
+        - The superuser will also have access to the stock control page to add items from the account navigation.
+            -  <p align="center"><img src="readme-images/features/stock-control.png" alt="Image item page" height="300px" width=350px"/></p>
+
 
 
 
