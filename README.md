@@ -299,6 +299,28 @@
         - When the user clicks on the order number, they are then brought to that previous order page which shows the details of this previous order.
             -  <p align="center"><img src="readme-images/features/previous-order.png" alt="Image of review form" height="280px" width="550px"/></p>
 
+- #### Wishlist app.
+    - Add items.
+        - The wishlist feature is for logged in users only. On the item page, the users are asked to log in or sign up to create a wishlist, also the wishlist page will prompt them to login or signup if they aren't.
+        - To add an item to the wishlist the user can click on the like button on the item image from the all items page or the items page.
+        - Once they click on this button they will receive a message to say the item has been added to their wishlist.
+        - The button will then change colour to show the item is on the user's wishlist.
+            - Item before the click.
+            - <p align="center"><img src="readme-images/features/unlisted-item.png" alt="Image ofitem before the wishlist click" height="280px" width="250px"/></p>
+            - Item after the click.
+            - <p align="center"><img src="readme-images/features/listed-item.png" alt="Image ofitem before the wishlist click" height="280px" width="250px"/></p>
+    
+    - Wishlist page.
+        - The user can then navigate to the wishlist page where the list of the like items will be shown.
+        - Each item will have an add to cart button so the user can add it to their cart directly from the wishlist.
+            - <p align="center"><img src="readme-images/features/wishlist.png" alt="Image ofitem before the wishlist click" height="320px" width="550px"/></p>
+    
+    - Edit wishlist.
+        - To edit the wishlist the user can click the edit button which then shows the edit buttons to the user.
+        - The user can also click the delete button to delete the whole wishlist.
+        - If they click delete they will be asked to confirm this with a modal popup.
+            - <p align="center"><img src="readme-images/features/edit-wishlist.png" alt="Image ofitem before the wishlist click"  height="320px" width="550px"/></p>
+
 
 ## Technologies used.
 
