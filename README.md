@@ -272,8 +272,32 @@
         - Once the form is submitted it will appear in the reviews section.
         - If the current user is the author of a review they will be given the option to edit or delete the review.
         - The admin can also delete a review from the backend in the case someone has entered inappropriate content.
-            -  <p align="center"><img src="readme-images/features/review-form.png" alt="Image of review form" height="300pxpx" width="300px"/></p>
+            -  <p align="center"><img src="readme-images/features/review-form.png" alt="Image of review form" height="300px" width="300px"/></p>
 
+- #### Users app.
+    - Account 
+        - The navigation has a link to the user's account which will change depending on the users status.
+            -  <p align="center"><img src="readme-images/features/users-nav.png" alt="Image of account navigation" height="300px" width="300px"/></p>
+    
+    - Signup 
+        - If the user isn't signed up they can click the signup link and be brought to the signup page.
+        - Here they can fill in the signup form to signup.
+        - The page also has a link to the login in case a user has navigated here who has already been signed up.
+            -  <p align="center"><img src="readme-images/features/signup.png" alt="Image of signup form" height="300px" width="500px"/></p>
+    
+    - Login
+        - Once the user has been signed up they can now use the login feature.
+        - They can fill out their login details or use the login with the Facebook link.
+        - There is also a link to the signup form in case a user has navigated here who hasn't signed up yet.
+            -  <p align="center"><img src="readme-images/features/login.png" alt="Image of login form" height="300px" width="500px"/></p>
+    
+    - Profile page.
+        - The user's profile page will hold the users shipping details for ease of shopping in future.
+        - It also has a reference to the users past orders.
+            -  <p align="center"><img src="readme-images/features/previous-ref.png" alt="Image of previous order numbers" height="150px" width="500px"/></p>
+
+        - When the user clicks on the order number, they are then brought to that previous order page which shows the details of this previous order.
+            -  <p align="center"><img src="readme-images/features/previous-order.png" alt="Image of review form" height="280px" width="550px"/></p>
 
 
 ## Technologies used.
