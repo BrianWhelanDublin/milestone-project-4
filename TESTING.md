@@ -118,12 +118,36 @@
 
 ## Test and Bugs During Development
 
-
-- Post Data
+- #### Posting Data in the Cart App.
     - During Development I had an issue sending the post data while using stripe as I had decided to use vanilla javascript instead of jQuery.
     - When I was sending the data the CSRF token wasn't working.
-    - I researched and found a solution on stack overflow.
-    - I also had to use the FormData() constructor to hold the data before posting it.
+    - I reaserached the issue and on stack overflow found the following solution which fixed the issue by placing 
+    - By using the Headers key with X-CSRFTToken 
+    -
+        ``` javascript
+            fetch(url, {
+                method: "POST",
+                headers: {
+                    "X-CSRFToken": csrfToken
+                },
+        ```
+
+- #### Moving Fetch function into its own file.
+    - I had an issue when I moved my javascript into its own file when it was using the fetch function with the csrfToken.
+    - I then found that declaring the csrfToken variable in a script tag on the html page before importing the javascript file fixed the issue
+    - 
+        ``` html
+            <script>
+                let csrfToken = "{{ csrf_token }}";
+            </script>
+            <script src="{% static 'cart/js/cart.js' %}"></script>
+        ```
+
+
+- #### Post Data in the Strip js
+    - During developing the javascript for skype I had an issue with posting the data.
+    - When I declared my data into a dictionary and tried to post it, it would work properly.
+    - Through reasearching the issue I fount that using the FormData constructor fixed the issue.
     - Once this was done the code then sent the data to the cache_checkout_data view.
     - 
         ``` javascript
@@ -143,9 +167,40 @@
                 }).then(() => {
                     // rest of code 
         ```
+    
+- #### Blue background in forms on google chrome.
+    - When I was testing my forms I noticed on google chrome they had a blue background colour that didn't sit well with the website design.
+    - To fix this issue I reasearched and found it was styling that google chrome was applying to the forms.
+    - I found code on stackoverflow to fix this.
+    - By placing the following into my base css.
+    - 
+        ``` css
+            /* code from stack overflow to stop my inputs 
+            turning a light blue when filled in */
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus textarea:-webkit-autofill,
+            textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+            select:-webkit-autofill,
+            select:-webkit-autofill:hover,
+            select:-webkit-autofill:focus {
+                -webkit-box-shadow: 0 0 0px 1000px #EDEDE9 inset !important;
+                box-shadow: 0 0 0px 1000px #EDEDE9 inset !important;
+            }
+                input:-webkit-autofill {
+                    -webkit-text-fill-color: #153243 !important;
+                }
+        ```
+
+- #### Error With Decimal Fields.
+    - During the Development I notced an issue with some of my items during the checkout.
+    - I reasearched the issue and then figured out I had set my decial fields too low in the models and as It was a furniture store and prices where higher they was causing an error.
+    - I used the following page from stack overflow to fix this issue.
+        - [Django Error class decimal](https://stackoverflow.com/questions/56458774/django-error-class-decimal-invalidoperation)
 
 
 ## Defensive Programming and Security
+
 
 ## Manual Testing
 
