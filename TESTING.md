@@ -99,15 +99,15 @@
 - ### Django Unit Testing   
 
     - Each app was tested using Django unit testing.
-    - Tests where written to test the Urls, Models, Forms, and the Views.
+    - Tests were written to test the URLs, Models, Forms, and the Views.
     - To run the tests in the terminal you can type the following command
     -
         ```
             python3 manage.py test
         ```
     - To show how much of the app has been covered by the testing I used coverage.
-    - Coverage generates a report to show how much of the code that has been tested and how much is yet to be tested.
-    - You can then run coverage html to show the report on the screen.
+    - Coverage generates a report to show how much of the code has been tested and how much is yet to be tested.
+    - You can then run coverage HTML to show the report on the screen.
     - To open the report you can run 
         - 
         ```
@@ -121,7 +121,7 @@
 - #### Posting Data in the Cart App.
     - During Development I had an issue sending the post data while using stripe as I had decided to use vanilla javascript instead of jQuery.
     - When I was sending the data the CSRF token wasn't working.
-    - I reaserached the issue and on stack overflow found the following solution which fixed the issue by placing 
+    - I researched the issue and on stack overflow found the following solution which fixed the issue by placing 
     - By using the Headers key with X-CSRFTToken 
     -
         ``` javascript
@@ -134,7 +134,7 @@
 
 - #### Moving Fetch function into its own file.
     - I had an issue when I moved my javascript into its own file when it was using the fetch function with the csrfToken.
-    - I then found that declaring the csrfToken variable in a script tag on the html page before importing the javascript file fixed the issue
+    - I then found that declaring the csrfToken variable in a script tag on the HTML page before importing the javascript file fixed the issue
     - 
         ``` html
             <script>
@@ -147,7 +147,7 @@
 - #### Post Data in the Strip js
     - During developing the javascript for skype I had an issue with posting the data.
     - When I declared my data into a dictionary and tried to post it, it would work properly.
-    - Through reasearching the issue I fount that using the FormData constructor fixed the issue.
+    - Through researching the issue I found that using the FormData constructor fixed the issue.
     - Once this was done the code then sent the data to the cache_checkout_data view.
     - 
         ``` javascript
@@ -170,9 +170,9 @@
     
 - #### Blue background in forms on google chrome.
     - When I was testing my forms I noticed on google chrome they had a blue background colour that didn't sit well with the website design.
-    - To fix this issue I reasearched and found it was styling that google chrome was applying to the forms.
-    - I found code on stackoverflow to fix this.
-    - By placing the following into my base css.
+    - To fix this issue I researched and found it was styling that google chrome was applying to the forms.
+    - I found code on StackOverflow to fix this.
+    - By placing the following into my base CSS.
     - 
         ``` css
             /* code from stack overflow to stop my inputs 
@@ -193,14 +193,37 @@
         ```
 
 - #### Error With Decimal Fields.
-    - During the Development I notced an issue with some of my items during the checkout.
-    - I reasearched the issue and then figured out I had set my decial fields too low in the models and as It was a furniture store and prices where higher they was causing an error.
+    - During the Development I noticed an issue with some of my items during the checkout.
+    - I researched the issue and then figured out I had set my decimal fields too low in the models and as It was a furniture store and prices were higher they were causing an error.
     - I used the following page from stack overflow to fix this issue.
         - [Django Error class decimal](https://stackoverflow.com/questions/56458774/django-error-class-decimal-invalidoperation)
 
 
 ## Defensive Programming and Security
 
+- Security
+    - Environmental variables
+        - For security reasons I have followed standard practices and used os to declare the environmental variables for any sensitive information.
+        - For Development, these variables are declared in the settings section of gitpod.
+        - In doing this it means that sensitive information such as passwords and secret keys aren't put in a public place.
+        - To deploy on Heroku these environmental variables are also placed into the settings, config variables section.
+
+    - Users passwords.
+        - I have used Django all auth to handle the user's login and signup.
+        - This stores the users pass as a hashed key for security.
+        - It also makes the users confirm their emails as an extra security step.
+    
+    - ### Defensive Programming.
+        
+        - I have used code in my project to make sure actions cannot occur by placing URLs into the browser. 
+
+        - If for instance the user types in the URL to delete a post the application has been programmed to redirect the user elsewhere and show an error message. 
+
+        - I have tested this by typing the URLs into the browser it has worked as expected
+
+        - I have also placed a confirmation modal to check if a user is sure they want to delete anything on the site such as, deleting the entire wishlist, or deleting a stock item for the superusers.
+        
+        - This will minimize the user deleting things by mistake.
 
 ## Manual Testing
 
