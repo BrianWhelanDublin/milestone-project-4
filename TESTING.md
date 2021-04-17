@@ -8,8 +8,6 @@
         - The homepage also has a new items slider to show the user what's new.
         - The user can also select different categories from the navigation.
 
-
-
     - As a customer, I would like to be able to navigate the website easily.
         - The main navigation has items for, the cart, account and wishlist on show at all times.
         - The main navigation is then accessed by clicking the burger menu.
@@ -95,3 +93,39 @@
 
   - As the business owner, I would like my customers to be able to shop on the site easily.
     - The site has been built with the user in mind to allow ease of flow for shopping and navigating the site.
+
+## Unit Testing
+
+- ### Django Unit Testing   
+
+    - Each app was tested using Django unit testing.
+    - Tests where written to test the Urls, Models, Forms, and the Views.
+    - To run the tests in the terminal you can type the following command
+    -
+        ```
+            python3 manage.py test
+        ```
+    - To show how much of the app has been covered by the testing I used coverage.
+    - Coverage generates a report to show how much of the code that has been tested and how much is yet to be tested.
+    - You can then run coverage html to show the report on the screen.
+    - To open the report you can run 
+        - 
+        ```
+            python3 -m http.server
+        ```
+    - I've included the reports for each app below.
+    
+
+## Test and Bugs During Development
+
+## Defensive Programming and Security
+
+## Manual Testing
+
+## Validators
+
+## Responsiveness and Browsers
+
+## Accessibility
+
+## Known Bugs
