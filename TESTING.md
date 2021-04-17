@@ -114,9 +114,36 @@
             python3 -m http.server
         ```
     - I've included the reports for each app below.
-    
+
 
 ## Test and Bugs During Development
+
+
+- Post Data
+    - During Development I had an issue sending the post data while using stripe as I had decided to use vanilla javascript instead of jQuery.
+    - When I was sending the data the CSRF token wasn't working.
+    - I researched and found a solution on stack overflow.
+    - I also had to use the FormData() constructor to hold the data before posting it.
+    - Once this was done the code then sent the data to the cache_checkout_data view.
+    - 
+        ``` javascript
+                let csrfToken = document.querySelector('[name="csrfmiddlewaretoken"]').value
+                let postData = new FormData()
+                postData.set("csrfmiddlewaretoken", csrfToken)
+                postData.set("client_secret", clientSecret)
+                postData.set("save_info", saveInfo)
+                let url = "/checkout/cache_checkout_data/";
+            // stack overflow  code to help with the fetch and CSRF tokens
+                fetch(url, {
+                    method: "POST",
+                    headers: {
+                        "X-CSRFToken": csrfToken,
+                    },
+                    body: postData
+                }).then(() => {
+                    // rest of code 
+        ```
+
 
 ## Defensive Programming and Security
 
