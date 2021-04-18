@@ -42,6 +42,7 @@ quantity has been updated to {cart[item_id]}", extra_tags="show_items")
 has been added to your cart.", extra_tags="show_items")
 
         request.session["cart"] = cart
+       
         return redirect(redirect_url)
     else:
         messages.error(request, "Error you do not have permission to do this.")
