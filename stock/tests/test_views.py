@@ -2,11 +2,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.messages import get_messages
-from stock.forms import ItemForm
 from stock.models import Item, Category
-from django.core.files.uploadedfile import InMemoryUploadedFile
-from io import BytesIO
-import base64
 
 
 class TestStockViews(TestCase):
@@ -27,7 +23,7 @@ class TestStockViews(TestCase):
             code="1",
             name="test item",
             description="test description",
-            price="2.99",
+            price=2.99,
             image="testimage.jpg",
             category=self.category,
         )
@@ -79,9 +75,188 @@ class TestStockViews(TestCase):
         context = response.context
         self.assertTrue(context['direction'])
         self.assertEqual(context['direction'], "desc")
-    
+
     def test_view_single_item_view(self):
         response = self.client.get(self.single_item)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "stock/item.html")
         self.assertTemplateUsed(response, "base.html")
+
+
+class TestStockControl(TestCase):
+
+    def setUp(self):
+        self.client = Client()
+        self.user = User.objects.create_user(
+            username='testuser',
+            email='test@email.com',
+            password='testpassword'
+        )
+        self.super_user = User.objects.create_superuser(
+            username='testadmin',
+            email='testadmin@email.com',
+            password='testadminpassword'
+        )
+        self.category = Category.objects.create(
+            name="test_category",
+            display_name="Test Category"
+        )
+        self.item = Item.objects.create(
+            code="1",
+            name="test item",
+            description="test description",
+            price=2.99,
+            image="testimage.jpg",
+            category=self.category,
+        )
+        self.all_items = reverse("all_items")
+        self.single_item = reverse("single_item",
+                                   kwargs={"item_id": self.item.id})
+        self.add_item = reverse("add_item")
+        self.home_page = reverse("home_page")
+        self.edit_item = reverse("edit_item", kwargs={"item_id": self.item.id})
+        self.delete_item = reverse("delete_item",
+                                   kwargs={"item_id": self.item.id})
+
+    def test_add_item_not_supperuser(self):
+        self.client.login(
+            username="testuser", password="testpassword")
+        response = self.client.get(self.add_item)
+        self.assertRedirects(response, self.home_page)
+        self.assertEqual(response.status_code, 302)
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "You do not have permission to do this.")
+
+    def test_add_item_GET_supperuser(self):
+        self.client.login(
+            username="testadmin", password="testadminpassword")
+        response = self.client.get(self.add_item)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "stock/add_item.html")
+        self.assertTemplateUsed(response, "base.html")
+        self.assertTemplateUsed(response, "includes/nav-background.html")
+
+    def test_add_post_POST_invalidform(self):
+        self.client.login(
+            username="testadmin", password="testadminpassword")
+        response = self.client.post(self.add_item, {
+            "code": "",
+            "name": "",
+            "description": "",
+            "price": "",
+            "category": self.category,
+        })
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "Failed to add the item. \
+    Please check the form details are correct and try again.")
+
+    def test_add_item_POST_validform(self):
+        self.client.login(
+            username="testadmin", password="testadminpassword")
+        response = self.client.post(self.add_item, {
+            "name": "Test",
+            "description": "test description",
+            "price": 2.99,
+         })
+        item = Item.objects.get(name="Test")
+        self.assertTrue(item)
+        self.assertEqual(item.description, 'test description')
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "Item has been added successfully.")
+
+    def test_edit_post_if_not_superuser(self):
+        self.client.login(
+            username="testuser", password="testpassword")
+        response = self.client.get(self.edit_item)
+        self.assertRedirects(response, self.home_page)
+        self.assertEqual(response.status_code, 302)
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "You do not have permission to do this.")
+
+    def test_edit_item_GET_if_superuser(self):
+        self.client.login(
+            username="testadmin", password="testadminpassword")
+        response = self.client.get(self.edit_item)
+        self.assertEqual(response.context['form'].initial['name'],
+                         self.item.name)
+        self.assertEqual(response.context['form'].initial['description'],
+                         self.item.description)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "stock/edit_item.html")
+        self.assertTemplateUsed(response, "base.html")
+        self.assertTemplateUsed(response, "includes/nav-background.html")
+
+    def test_edit_item_POST_invalidform(self):
+        ''' test the edit post view get if the user is a superuser '''
+
+        self.client.login(
+            username="testadmin", password="testadminpassword")
+
+        response = self.client.post(self.edit_item, {
+
+        })
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "Failed to update item. \
+    Please check the form details are correct and try again.")
+
+    def test_edit_item_POST_validform(self):
+        self.client.login(
+            username="testadmin", password="testadminpassword")
+        response = self.client.post(self.edit_item, {
+            "name": "Test editing",
+            "description": "test description edited",
+            "price": 100.00,
+            }
+        )
+        item = Item.objects.get(id=self.item.id)
+        self.assertEqual(item.description, 'test description edited')
+        self.assertEqual(item.price, 100.00)
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "Item update successfully")
+
+    def test_delete_item_if_not_superuser(self):
+        self.client.login(
+            username="testuser", password="testpassword")
+        response = self.client.get(self.delete_item)
+        self.assertRedirects(response, self.home_page)
+        self.assertEqual(response.status_code, 302)
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "You do not have permission to do this.")
+
+    def test_delete_post_GET_if_superuser(self):
+        self.client.login(
+            username="testadmin", password="testadminpassword")
+        response = self.client.get(self.delete_item)
+        self.assertRedirects(response, self.home_page)
+        self.assertEqual(response.status_code, 302)
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "You do not have permission to do this.")
+
+    def test_delete_item_POST(self):
+        ''' Test the delete post post POST function '''
+
+        self.client.login(
+            username="testadmin", password="testadminpassword")
+        response = self.client.post(self.delete_item)
+        item = Item.objects.filter(id=self.item.id)
+        self.assertFalse(item)
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "Product has been deleted")
