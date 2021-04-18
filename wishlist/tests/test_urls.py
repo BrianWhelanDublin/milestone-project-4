@@ -21,5 +21,3 @@ class TestUrls(SimpleTestCase):
     def test_delete_wishlist_url(self):
         url = reverse("delete_wishlist")
         self.assertEquals(resolve(url).func, delete_wishlist)
-
-
