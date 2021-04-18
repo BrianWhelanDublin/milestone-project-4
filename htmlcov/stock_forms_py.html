@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
-    <title>Coverage for stock/forms.py: 53%</title>
+    <title>Coverage for stock/forms.py: 100%</title>
     <link rel="icon" sizes="32x32" href="favicon_32.png">
     <link rel="stylesheet" href="style.css" type="text/css">
     <script type="text/javascript" src="jquery.min.js"></script>
@@ -18,13 +18,13 @@
 <div id="header">
     <div class="content">
         <h1>Coverage for <b>stock/forms.py</b> :
-            <span class="pc_cov">53%</span>
+            <span class="pc_cov">100%</span>
         </h1>
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
         <h2 class="stats">
             17 statements &nbsp;
-            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">9 run</button>
-            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">8 missing</button>
+            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">17 run</button>
+            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">0 missing</button>
             <button type="button" class="exc show_exc shortkey_x button_toggle_exc" title="Toggle lines excluded">0 excluded</button>
         </h2>
     </div>
@@ -70,22 +70,22 @@
     <p id="t16" class="pln"><span class="n"><a href="#t16">16</a></span><span class="t">    <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t17" class="pln"><span class="n"><a href="#t17">17</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t18" class="run"><span class="n"><a href="#t18">18</a></span><span class="t">    <span class="key">def</span> <span class="nam">__init__</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="op">*</span><span class="nam">args</span><span class="op">,</span> <span class="op">**</span><span class="nam">kwargs</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t19" class="mis show_mis"><span class="n"><a href="#t19">19</a></span><span class="t">        <span class="nam">super</span><span class="op">(</span><span class="op">)</span><span class="op">.</span><span class="nam">__init__</span><span class="op">(</span><span class="op">*</span><span class="nam">args</span><span class="op">,</span> <span class="op">**</span><span class="nam">kwargs</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t19" class="run"><span class="n"><a href="#t19">19</a></span><span class="t">        <span class="nam">super</span><span class="op">(</span><span class="op">)</span><span class="op">.</span><span class="nam">__init__</span><span class="op">(</span><span class="op">*</span><span class="nam">args</span><span class="op">,</span> <span class="op">**</span><span class="nam">kwargs</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t20" class="pln"><span class="n"><a href="#t20">20</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p id="t21" class="mis show_mis"><span class="n"><a href="#t21">21</a></span><span class="t">        <span class="nam">categories</span> <span class="op">=</span> <span class="nam">Category</span><span class="op">.</span><span class="nam">objects</span><span class="op">.</span><span class="nam">all</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t22" class="mis show_mis"><span class="n"><a href="#t22">22</a></span><span class="t">        <span class="nam">display_names</span> <span class="op">=</span> <span class="op">[</span><span class="op">(</span><span class="nam">c</span><span class="op">.</span><span class="nam">id</span><span class="op">,</span> <span class="nam">c</span><span class="op">.</span><span class="nam">get_display_name</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="key">for</span> <span class="nam">c</span> <span class="key">in</span> <span class="nam">categories</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t21" class="run"><span class="n"><a href="#t21">21</a></span><span class="t">        <span class="nam">categories</span> <span class="op">=</span> <span class="nam">Category</span><span class="op">.</span><span class="nam">objects</span><span class="op">.</span><span class="nam">all</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t22" class="run"><span class="n"><a href="#t22">22</a></span><span class="t">        <span class="nam">display_names</span> <span class="op">=</span> <span class="op">[</span><span class="op">(</span><span class="nam">c</span><span class="op">.</span><span class="nam">id</span><span class="op">,</span> <span class="nam">c</span><span class="op">.</span><span class="nam">get_display_name</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="key">for</span> <span class="nam">c</span> <span class="key">in</span> <span class="nam">categories</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
     <p id="t23" class="pln"><span class="n"><a href="#t23">23</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p id="t24" class="mis show_mis"><span class="n"><a href="#t24">24</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">fields</span><span class="op">[</span><span class="str">"category"</span><span class="op">]</span><span class="op">.</span><span class="nam">choices</span> <span class="op">=</span> <span class="nam">display_names</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t25" class="mis show_mis"><span class="n"><a href="#t25">25</a></span><span class="t">        <span class="key">for</span> <span class="nam">field_name</span><span class="op">,</span> <span class="nam">field</span> <span class="key">in</span> <span class="nam">self</span><span class="op">.</span><span class="nam">fields</span><span class="op">.</span><span class="nam">items</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t26" class="mis show_mis"><span class="n"><a href="#t26">26</a></span><span class="t">            <span class="nam">field</span><span class="op">.</span><span class="nam">widget</span><span class="op">.</span><span class="nam">attrs</span><span class="op">[</span><span class="str">"class"</span><span class="op">]</span> <span class="op">=</span> <span class="str">"product-form-item"</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t27" class="mis show_mis"><span class="n"><a href="#t27">27</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">fields</span><span class="op">[</span><span class="str">"price"</span><span class="op">]</span><span class="op">.</span><span class="nam">widget</span><span class="op">.</span><span class="nam">attrs</span><span class="op">[</span><span class="str">"min"</span><span class="op">]</span> <span class="op">=</span> <span class="num">0</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t28" class="mis show_mis"><span class="n"><a href="#t28">28</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">fields</span><span class="op">[</span><span class="str">"price"</span><span class="op">]</span><span class="op">.</span><span class="nam">widget</span><span class="op">.</span><span class="nam">attrs</span><span class="op">[</span><span class="str">"step"</span><span class="op">]</span> <span class="op">=</span> <span class="num">1</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t24" class="run"><span class="n"><a href="#t24">24</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">fields</span><span class="op">[</span><span class="str">"category"</span><span class="op">]</span><span class="op">.</span><span class="nam">choices</span> <span class="op">=</span> <span class="nam">display_names</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t25" class="run"><span class="n"><a href="#t25">25</a></span><span class="t">        <span class="key">for</span> <span class="nam">field_name</span><span class="op">,</span> <span class="nam">field</span> <span class="key">in</span> <span class="nam">self</span><span class="op">.</span><span class="nam">fields</span><span class="op">.</span><span class="nam">items</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t26" class="run"><span class="n"><a href="#t26">26</a></span><span class="t">            <span class="nam">field</span><span class="op">.</span><span class="nam">widget</span><span class="op">.</span><span class="nam">attrs</span><span class="op">[</span><span class="str">"class"</span><span class="op">]</span> <span class="op">=</span> <span class="str">"product-form-item"</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t27" class="run"><span class="n"><a href="#t27">27</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">fields</span><span class="op">[</span><span class="str">"price"</span><span class="op">]</span><span class="op">.</span><span class="nam">widget</span><span class="op">.</span><span class="nam">attrs</span><span class="op">[</span><span class="str">"min"</span><span class="op">]</span> <span class="op">=</span> <span class="num">0</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t28" class="run"><span class="n"><a href="#t28">28</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">fields</span><span class="op">[</span><span class="str">"price"</span><span class="op">]</span><span class="op">.</span><span class="nam">widget</span><span class="op">.</span><span class="nam">attrs</span><span class="op">[</span><span class="str">"step"</span><span class="op">]</span> <span class="op">=</span> <span class="num">1</span>&nbsp;</span><span class="r"></span></p>
 </div>
 <div id="footer">
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v5.5</a>,
-            created at 2021-04-18 10:57 +0000
+            created at 2021-04-18 12:06 +0000
         </p>
     </div>
 </div>
