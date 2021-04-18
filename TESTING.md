@@ -115,6 +115,11 @@
         ```
     - I've included the reports for each app below.
 
+        - 
+            <div align="center"><img src="readme-images/testing/coverage-1.png" alt="image of the homepage hero section"  height="550px" width="450px"/></div>
+            <div align="center"><img src="readme-images/testing/coverage-2.png" alt="image of the homepage hero section"  height="500px" width="430px"/></div>
+            <div align="center"><img src="readme-images/testing/coverage-3.png" alt="image of the homepage hero section"  height="400px" width="460px"/></div>
+
 
 ## Test and Bugs During Development
 
