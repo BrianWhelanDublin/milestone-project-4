@@ -109,16 +109,16 @@
     - Coverage generates a report to show how much of the code has been tested and how much is yet to be tested.
     - You can then run coverage HTML to show the report on the screen.
     - To open the report you can run 
-        - 
-        ```
+        - ```
             python3 -m http.server
-        ```
+          ```
+
     - I've included the reports for each app below.
 
         - 
-            <div align="center"><img src="readme-images/testing/coverage-1.png" alt="image of the homepage hero section"  height="550px" width="450px"/></div>
-            <div align="center"><img src="readme-images/testing/coverage-2.png" alt="image of the homepage hero section"  height="500px" width="430px"/></div>
-            <div align="center"><img src="readme-images/testing/coverage-3.png" alt="image of the homepage hero section"  height="400px" width="460px"/></div>
+            <div align="center"><img src="readme-images/testing/coverage-1.png" alt="image of the homepage hero section"  height="500px" width="400px"/></div>
+            <div align="center"><img src="readme-images/testing/coverage-2.png" alt="image of the homepage hero section"  height="400px" width="400px"/></div>
+            <div align="center"><img src="readme-images/testing/coverage-3.png" alt="image of the homepage hero section"  height="400px" width="400px"/></div>
 
 
 ## Test and Bugs During Development
