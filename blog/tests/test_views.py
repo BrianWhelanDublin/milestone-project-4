@@ -1,4 +1,4 @@
-from django.test import TestCase, Client
+from django.test import TestCase, Client, override_settings
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.messages import get_messages
@@ -8,6 +8,7 @@ from blog.models import Post, Comment
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from io import BytesIO
 import base64
+import tempfile
 
 
 class TestBlogPostViews(TestCase):
@@ -222,34 +223,35 @@ class TestPostSuperuserViews(TestCase):
                          "Failed to add the post. \
 Please check the form details are correct and try again.")
 
-    # def test_add_post_POST_validform(self):
-    #     ''' test the add post view get if the user is a superuser '''
+    @override_settings(MEDIA_ROOT=tempfile.gettempdir())
+    def test_add_post_POST_validform(self):
+        ''' test the add post view get if the user is a superuser '''
 
-    #     self.client.login(
-    #         username="testadmin", password="testadminpassword")
+        self.client.login(
+            username="testadmin", password="testadminpassword")
 
-    #     image = InMemoryUploadedFile(
-    #         BytesIO(base64.b64decode(TEST_IMAGE)),
-    #         field_name='tempfile',
-    #         name='tempfile.png',
-    #         content_type='image/png',
-    #         size=len(TEST_IMAGE),
-    #         charset='utf-8',
-    #     )
+        image = InMemoryUploadedFile(
+            BytesIO(base64.b64decode(TEST_IMAGE)),
+            field_name='tempfile',
+            name='tempfile.png',
+            content_type='image/png',
+            size=len(TEST_IMAGE),
+            charset='utf-8',
+        )
 
-    #     response = self.client.post(self.add_post, {
-    #         "title": "Test Adding Post",
-    #         "content": "Test adding content",
-    #         "image": image,
-    #         }
-    #     )
-    #     post = Post.objects.get(title="Test Adding Post")
-    #     self.assertTrue(post)
-    #     self.assertEqual(post.content, 'Test adding content')
-    #     messages = list(get_messages(response.wsgi_request))
-    #     self.assertEqual(len(messages), 1)
-    #     self.assertEqual(str(messages[0]),
-    #                      "Post has been added successfully.")
+        response = self.client.post(self.add_post, {
+            "title": "Test Adding Post",
+            "content": "Test adding content",
+            "image": image,
+            }
+        )
+        post = Post.objects.get(title="Test Adding Post")
+        self.assertTrue(post)
+        self.assertEqual(post.content, 'Test adding content')
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "Post has been added successfully.")
 
     def test_edit_post_if_not_superuser(self):
         ''' test the edit post view if a user isnt a superuser '''
@@ -294,33 +296,34 @@ Please check the form details are correct and try again.")
                          "Failed to edit the post. \
 Please check the form details are correct and try again.")
 
-    # def test_edit_post_POST_validform(self):
-    #     ''' test the edit post view get if the user is a superuser '''
+    @override_settings(MEDIA_ROOT=tempfile.gettempdir())
+    def test_edit_post_POST_validform(self):
+        ''' test the edit post view get if the user is a superuser '''
 
-    #     self.client.login(
-    #         username="testadmin", password="testadminpassword")
+        self.client.login(
+            username="testadmin", password="testadminpassword")
 
-    #     image = InMemoryUploadedFile(
-    #         BytesIO(base64.b64decode(TEST_IMAGE)),
-    #         field_name='tempfile',
-    #         name='tempfile.png',
-    #         content_type='image/png',
-    #         size=len(TEST_IMAGE),
-    #         charset='utf-8',
-    #     )
+        image = InMemoryUploadedFile(
+            BytesIO(base64.b64decode(TEST_IMAGE)),
+            field_name='tempfile',
+            name='tempfile.png',
+            content_type='image/png',
+            size=len(TEST_IMAGE),
+            charset='utf-8',
+        )
 
-    #     response = self.client.post(self.edit_post, {
-    #         "title": "Test Post",
-    #         "content": "Test editing content",
-    #         "image": image,
-    #         }
-    #     )
-    #     post = Post.objects.get(id=self.post.id)
-    #     self.assertEqual(post.content, 'Test editing content')
-    #     messages = list(get_messages(response.wsgi_request))
-    #     self.assertEqual(len(messages), 1)
-    #     self.assertEqual(str(messages[0]),
-    #                      "Post updated successfully")
+        response = self.client.post(self.edit_post, {
+            "title": "Test Post",
+            "content": "Test editing content",
+            "image": image,
+            }
+        )
+        post = Post.objects.get(id=self.post.id)
+        self.assertEqual(post.content, 'Test editing content')
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]),
+                         "Post updated successfully")
     
     def test_delete_post_if_not_superuser(self):
         ''' test the delete post view if a user isnt a superuser '''
