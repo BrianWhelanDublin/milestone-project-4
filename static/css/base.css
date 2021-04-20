@@ -875,10 +875,11 @@ input:-webkit-autofill {
     scroll-behavior: smooth;
     margin: 0 5%;
     margin-bottom: 5%;
+    list-style: none;
 }
 
 .item-container {
-    margin: 1rem .5rem;
+    padding: 1rem .5rem;
     position: relative;
 }
 
@@ -1623,7 +1624,7 @@ td p {
     }
 
     .item-container {
-        margin: 2rem 3rem;
+       padding: 2rem 3rem;
     }
 
     .item-container a img {

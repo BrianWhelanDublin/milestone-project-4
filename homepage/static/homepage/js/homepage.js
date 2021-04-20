@@ -2,35 +2,27 @@
 let rightArrow = document.querySelector("#arrow-right");
 let leftArrow = document.querySelector("#arrow-left");
 let newItemSlider = document.querySelector(".new-item-slider")
-
-let mediaQuery = window.matchMedia('(max-width: 1200px)')
+let slide = document.querySelector(".item-container")
+let slidesAmount = newItemSlider.getElementsByTagName("li").length
+let slideWidth = slide.offsetWidth
+let sliderWidth = newItemSlider.clientWidth
+let sliderMaxLength = slidesAmount * slideWidth
+let lastSlide = sliderMaxLength - sliderWidth - slideWidth
 
 rightArrow.addEventListener("click", () => {
-    if (mediaQuery.matches) {
-        newItemSlider.scrollLeft += 290;
-    } else {
-        newItemSlider.scrollLeft += 440;
-    }
+    newItemSlider.scrollLeft += slideWidth;
     leftArrow.classList.add("arrow-active");
-    if (newItemSlider.scrollLeft >= 2500) {
+    if (newItemSlider.scrollLeft >= lastSlide) {
         rightArrow.classList.remove("arrow-active")
     }
 })
 leftArrow.addEventListener("click", () => {
-    if (mediaQuery.matches) {
-        newItemSlider.scrollLeft -= 290;
-        if (newItemSlider.scrollLeft <= 290) {
-            leftArrow.classList.remove("arrow-active")
-        }
-    } else {
-        newItemSlider.scrollLeft -= 440;
-        if (newItemSlider.scrollLeft <= 440) {
-            leftArrow.classList.remove("arrow-active")
-        }
+    newItemSlider.scrollLeft -= slideWidth;
+    if (newItemSlider.scrollLeft <= slideWidth) {
+        leftArrow.classList.remove("arrow-active")
     }
     rightArrow.classList.add("arrow-active");
 })
-
 
 // change top navigation colour on scroll
 window.addEventListener("scroll", () => {
