@@ -38,4 +38,3 @@ class PostForm(forms.ModelForm):
 
         self.fields["title"].widget.attrs["placeholder"] = "Post Title"
         self.fields["content"].widget.attrs["placeholder"] = "Post Content"
-

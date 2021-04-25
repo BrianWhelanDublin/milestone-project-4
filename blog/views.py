@@ -62,8 +62,6 @@ def delete_comment(request, post_id):
     '''
 
     if request.method == "POST":
-        # comment_id = request.POST["comment_id"]
-        # print(comment_id)
         try:
             comment = get_object_or_404(
                 Comment, pk=request.POST["comment_id"])

@@ -2,7 +2,6 @@ from django.test import TestCase, Client, override_settings
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.messages import get_messages
-from blog.forms import PostForm, CommentForm
 from blog.models import Post, Comment
 
 from django.core.files.uploadedfile import InMemoryUploadedFile
@@ -36,7 +35,7 @@ class TestBlogPostViews(TestCase):
         self.view_post = reverse("view_post",
                                  kwargs={"post_id": self.post.id})
         self.delete_comment = reverse("delete_comment",
-                                 kwargs={"post_id": self.post.id})
+                                      kwargs={"post_id": self.post.id})
 
     def test_view_blog_view_GET(self):
         ''' Test the view blog view '''
@@ -48,16 +47,16 @@ class TestBlogPostViews(TestCase):
         self.assertTemplateUsed(response, "includes/nav-background.html")
 
     def test_view_post_GET(self):
-        ''' test the view post view with a get request '''
+        ''' test the view post view with a GET request '''
 
         response = self.client.get(self.view_post)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "blog/post.html")
         self.assertTemplateUsed(response, "base.html")
         self.assertTemplateUsed(response, "includes/nav-background.html")
-    
+
     def test_view_post_POST_form_valid(self):
-        ''' test the view post view with a get request
+        ''' test the view post view with a POST request
             and a valid form '''
 
         self.client.login(
@@ -71,7 +70,7 @@ class TestBlogPostViews(TestCase):
                          "Your comment has been added.")
 
     def test_view_post_POST_form_invalid(self):
-        ''' test te view post view with a get request
+        ''' test the view post view with a POST request
             and an invalid form '''
 
         response = self.client.post(self.view_post,
@@ -123,7 +122,7 @@ class TestBlogCommentsViews(TestCase):
                          "Your comment has been deleted.")
 
     def test_delete_comment_view_POST_exception(self):
-        ''' test the delete comment view '''
+        ''' test the delete comment view exception'''
 
         self.client.login(
             username="testuser", password="testpassword")
@@ -136,8 +135,8 @@ class TestBlogCommentsViews(TestCase):
                          "Error deleteing your comment")
 
     def test_delete_comment_view_GET(self):
-        ''' test the get response if the user tries to
-        type the url into the browser '''
+        ''' test the GET response if the user tries to
+        type the URL into the browser '''
 
         self.client.login(
             username="testuser", password="testpassword")
@@ -196,7 +195,7 @@ class TestPostSuperuserViews(TestCase):
                          "You do not have permission to do this.")
 
     def test_add_post_GET_if_superuser(self):
-        ''' test the add post view get if the user is a superuser '''
+        ''' test the add post view GET if the user is a superuser '''
 
         self.client.login(
             username="testadmin", password="testadminpassword")
@@ -208,7 +207,7 @@ class TestPostSuperuserViews(TestCase):
         self.assertTemplateUsed(response, "includes/nav-background.html")
 
     def test_add_post_POST_invalidform(self):
-        ''' test the add post view get if the user is a superuser '''
+        ''' test the add post view GET if the user is a superuser '''
 
         self.client.login(
             username="testadmin", password="testadminpassword")
@@ -225,7 +224,7 @@ Please check the form details are correct and try again.")
 
     @override_settings(MEDIA_ROOT=tempfile.gettempdir())
     def test_add_post_POST_validform(self):
-        ''' test the add post view get if the user is a superuser '''
+        ''' test the add post view GET if the user is a superuser '''
 
         self.client.login(
             username="testadmin", password="testadminpassword")
@@ -265,7 +264,7 @@ Please check the form details are correct and try again.")
         self.assertEqual(len(messages), 1)
         self.assertEqual(str(messages[0]),
                          "You do not have permission to do this.")
-    
+
     def test_edit_post_GET_if_superuser(self):
         ''' test the edit post view get if the user is a superuser '''
 
@@ -282,7 +281,7 @@ Please check the form details are correct and try again.")
         self.assertTemplateUsed(response, "includes/nav-background.html")
 
     def test_edit_post_POST_invalidform(self):
-        ''' test the edit post view get if the user is a superuser '''
+        ''' test the edit post view GET if the user is a superuser '''
 
         self.client.login(
             username="testadmin", password="testadminpassword")
@@ -298,7 +297,7 @@ Please check the form details are correct and try again.")
 
     @override_settings(MEDIA_ROOT=tempfile.gettempdir())
     def test_edit_post_POST_validform(self):
-        ''' test the edit post view get if the user is a superuser '''
+        ''' test the edit post view GET if the user is a superuser '''
 
         self.client.login(
             username="testadmin", password="testadminpassword")
@@ -324,7 +323,7 @@ Please check the form details are correct and try again.")
         self.assertEqual(len(messages), 1)
         self.assertEqual(str(messages[0]),
                          "Post updated successfully")
-    
+
     def test_delete_post_if_not_superuser(self):
         ''' test the delete post view if a user isnt a superuser '''
 
@@ -339,7 +338,7 @@ Please check the form details are correct and try again.")
                          "You do not have permission to do this.")
 
     def test_delete_post_GET_if_superuser(self):
-        ''' test the delete post view get if the user is a superuser '''
+        ''' test the delete post view GET if the user is a superuser '''
 
         self.client.login(
             username="testadmin", password="testadminpassword")
@@ -352,7 +351,7 @@ Please check the form details are correct and try again.")
                          "You do not have permission to do this.")
 
     def test_delete_post_POST(self):
-        ''' Test the delete post post POST function '''
+        ''' Test the delete post POST function '''
 
         self.client.login(
             username="testadmin", password="testadminpassword")
@@ -405,4 +404,4 @@ P/LWGsLJydMs3VvCWkP3gzxK7OKu7Bl81/tEhKmpKVhYWNCJiQkNglDDMKdhLpf1/0AQhDo+Pq5z
 c3NKmqa6uLios7MXtFgsahRFGhUKHUS7KBQ0iiIdGhrS8+dndH5+XpMk0X8AMTVx/inpU4cAAAAl
 dEVYdGNyZWF0ZS1kYXRlADIwMTAtMTItMjZUMTQ6NDk6MjErMDk6MDAHHBB1AAAAJXRFWHRtb2Rp
 ZnktZGF0ZQAyMDEwLTEyLTI2VDE0OjQ5OjIxKzA5OjAwWK1mQQAAAABJRU5ErkJggg==
-'''.strip()  
+'''.strip()
