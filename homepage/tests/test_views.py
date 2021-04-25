@@ -60,7 +60,7 @@ class TestHomepageViews(TestCase):
 
     def test_contact_email_is_prefilled_for_loggedin_user(self):
         ''' test that when a user is logged in the
-         email form is prefilled with their email from thier userprofile '''
+         email form is prefilled with their email from their userprofile '''
 
         self.client.login(username="testuser", password="testPassword")
         user_profle = UserProfile.objects.get(user=self.user)
@@ -70,8 +70,7 @@ class TestHomepageViews(TestCase):
                          user_profle.user.email)
 
     def test_contact_email_is_prefilled_error(self):
-        '''  Test the exception if the Userprofile isnt found.
-        I can't seem to test for this i've mentioned more in the readme '''
+        '''  Test the exception if the Userprofile isnt found.'''
 
         self.client.login(username="testuser",
                           password="testPassword")
@@ -110,6 +109,8 @@ class TestHomepageViews(TestCase):
  Please try again soon")
 
     def test_our_story_view_GET(self):
+        ''' Test the our story view '''
+
         response = self.client.get(self.our_story)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "homepage/our_story.html")

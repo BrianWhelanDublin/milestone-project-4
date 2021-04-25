@@ -27,7 +27,7 @@ class TestMessageForm(TestCase):
         self.assertFalse(form.is_valid())
         self.assertIn("subject", form.errors.keys())
         self.assertEqual(form.errors["subject"][0], "This field is required.")
-    
+
     def test_user_email_is_required(self):
         form = self.form
         self.assertFalse(form.is_valid())
