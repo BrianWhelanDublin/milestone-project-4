@@ -3,7 +3,6 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.messages import get_messages
 from wishlist.models import UsersWishlist
-from django.contrib.auth.models import User
 from stock.models import Item
 
 
@@ -21,11 +20,11 @@ class TestWishlistModels(TestCase):
         self.add_to_wishlist = reverse("add_to_wishlist",
                                        kwargs={"item_id": self.item.id})
         self.remove_from_wishlist = reverse("remove_from_wishlist",
-                                       kwargs={"item_id": self.item.id})
+                                            kwargs={"item_id": self.item.id})
         self.delete_wishlist = reverse("delete_wishlist")
         self.all_items = reverse("all_items")
         self.home_page = reverse("home_page")
- 
+
     def test_view_wishlist_GET(self):
         ''' Test the view wishlist view '''
 
@@ -61,7 +60,7 @@ class TestWishlistModels(TestCase):
                          f"{self.item.name} has been added to your wishlist.")
 
     def test_remove_from_wishlist_GET(self):
-        ''' Test the add to wishlist view GET request '''
+        ''' Test the remove from wishlist view GET request '''
 
         response = self.client.get(self.remove_from_wishlist)
         self.assertRedirects(response, self.home_page)
@@ -73,7 +72,7 @@ class TestWishlistModels(TestCase):
 permission to do this.")
 
     def test_remove_from_wishlist_POST(self):
-        ''' Test the add to wishlist view POST request '''
+        ''' Test the remove from wishlist view POST request '''
 
         self.client.login(
             username="testuser", password="testpassword")
@@ -89,7 +88,7 @@ permission to do this.")
  from your wishlist.")
 
     def test_delete_wishlist_GET(self):
-        ''' Test the add to wishlist view GET request '''
+        ''' Test the delete wishlist view GET request '''
 
         response = self.client.get(self.delete_wishlist)
         self.assertRedirects(response, self.home_page)
@@ -101,7 +100,7 @@ permission to do this.")
 permission to do this.")
 
     def test_delete_wishlist_POST(self):
-        ''' Test the add to wishlist view POST request '''
+        ''' Test the delete wishlist view POST request '''
 
         self.client.login(
             username="testuser", password="testpassword")

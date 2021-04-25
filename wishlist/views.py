@@ -15,6 +15,8 @@ def view_wishlist(request):
 
 
 def add_to_wishlist(request, item_id):
+    ''' A view to add an item to the wishlist '''
+
     if request.method == "POST":
         item = get_object_or_404(Item, pk=item_id)
         wishlist = get_object_or_404(UsersWishlist, user=request.user)
@@ -41,7 +43,7 @@ def remove_from_wishlist(request, item_id):
             if item in wishlist.items.all():
                 wishlist.items.remove(item)
             messages.success(request,
-                            f"{item.name} has been removed \
+                             f"{item.name} has been removed \
  from your wishlist.")
             return HttpResponse(status=200)
         except Exception as error:
@@ -54,6 +56,8 @@ permission to do this.")
 
 
 def delete_wishlist(request):
+    ''' A view to delete the wishlist '''
+
     if request.method == "POST":
         wishlist = get_object_or_404(UsersWishlist, user=request.user)
         wishlist.items.clear()
