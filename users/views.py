@@ -10,6 +10,8 @@ from checkout.models import Order
 
 @login_required
 def user_profile(request):
+    ''' View to show the user profile '''
+
     profile = get_object_or_404(UserProfile, user=request.user)
 
     template = "users/user_profile.html"
@@ -42,6 +44,8 @@ def user_profile(request):
 
 @login_required
 def previous_order(request, order_number):
+    ''' View to show the users previous order '''
+
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, "This is a previous order")

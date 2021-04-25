@@ -20,10 +20,14 @@ class TestUserViews(TestCase):
         self.form = UserProfileForm
 
     def test_user_profile_login_required(self):
+        ''' Test the user needs to be logged in to see the userprofile page '''
+
         response = self.client.get(self.user_profile)
         self.assertNotEqual(response.status_code, 200)
 
     def test_user_profile_page_logged_in(self):
+        ''' Test the user profile page when logged in '''
+
         self.client.login(username="testuser", password="testpassword")
         response = self.client.get(self.user_profile)
         self.assertEqual(response.status_code, 200)
@@ -32,6 +36,8 @@ class TestUserViews(TestCase):
         self.assertTemplateUsed(response, "includes/nav-background.html")
 
     def test_user_profile_post_error(self):
+        ''' Test if form filled out incorrectly '''
+
         self.client.login(username="testuser", password="testpassword")
         response = self.client.post(self.user_profile, {
             "user_eircode": "0808876567889998765543345677"}
@@ -43,6 +49,8 @@ class TestUserViews(TestCase):
  Please check your form is filled out correctly.")
 
     def test_user_profile_post_valid_form(self):
+        ''' Test if from is valid '''
+
         self.client.login(username="testuser", password="testpassword")
         response = self.client.post(self.user_profile, {
             "user_contact_number": "087222222",
@@ -60,6 +68,8 @@ class TestUserViews(TestCase):
                          "Your profile has been updated successfully.")
 
     def test_previous_orders_view_unloggedin(self):
+        ''' Test view of previous orders not logged in '''
+
         user_profile = UserProfile.objects.get(user=self.user)
         order = Order.objects.create(user_profile=user_profile)
         response = self.client.get(
@@ -68,6 +78,8 @@ class TestUserViews(TestCase):
         self.assertEqual(response.status_code, 302)
 
     def test_previous_orders_view(self):
+        ''' Test previous orders view with logged in user '''
+
         self.client.login(username="testuser", password="testpassword")
         user_profile = UserProfile.objects.get(user=self.user)
 
@@ -84,4 +96,3 @@ class TestUserViews(TestCase):
         self.assertEqual(len(messages), 1)
         self.assertEqual(str(messages[0]),
                          "This is a previous order")
-

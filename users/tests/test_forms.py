@@ -29,4 +29,3 @@ class TestUserProfileForm(TestCase):
     def test_fields_are_not_required(self):
         form = self.form({})
         self.assertTrue(form.is_valid())
-
