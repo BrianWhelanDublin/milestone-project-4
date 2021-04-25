@@ -69,12 +69,14 @@ def edit_review(request, review_id):
 
 
 def delete_review(request, review_id):
+    ''' View to delete a review '''
+
     review = get_object_or_404(Review, pk=review_id)
     if review.reviewer != request.user:
         messages.error(request,
                        "You do not have permission to do this.")
         return redirect(reverse("our_reviews"))
-        
+
     if request.method == "POST":
         review.delete()
         messages.success(request,

@@ -1,6 +1,5 @@
 from django.test import TestCase, Client
 from django.urls import reverse
-from reviews.forms import ReviewForm
 from reviews.models import Review
 from django.contrib.auth.models import User
 from django.contrib.messages import get_messages
@@ -32,7 +31,7 @@ class TestReviewViews(TestCase):
                                      kwargs={"review_id": self.review2.id})
 
     def test_our_reviews_GET(self):
-        ''' test the our reviews page get '''
+        ''' test the our reviews page GET '''
 
         response = self.client.get(self.our_reviews)
         self.assertEqual(response.status_code, 200)
@@ -41,7 +40,7 @@ class TestReviewViews(TestCase):
         self.assertTemplateUsed(response, "includes/nav-background.html")
 
     def test_view_reviews_POST_form_valid(self):
-        ''' test the view reviews view with a get request
+        ''' test the view reviews view with a GET request
         '''
 
         self.client.login(
@@ -55,7 +54,7 @@ class TestReviewViews(TestCase):
         self.assertEqual(review.stars, 5)
 
     def test_edit_review_GET_if_not_reviewer(self):
-        ''' test the edit review view if the user didnt
+        ''' test the edit review view if the user didn't
             write the review '''
 
         self.client.login(
@@ -84,7 +83,7 @@ class TestReviewViews(TestCase):
         self.assertTemplateUsed(response, "includes/nav-background.html")
 
     def test_edit_review_POST_invalidform(self):
-        ''' test the edit review post with an invalid form'''
+        ''' test the edit review POST with an invalid form'''
 
         self.client.login(
             username="testuser2", password="test2Password")
@@ -98,7 +97,7 @@ class TestReviewViews(TestCase):
                          "Failed to update review. Please try again later.")
 
     def test_edit_review_POST_validform(self):
-        ''' test the edit review post with a valid form '''
+        ''' test the edit review POST with a valid form '''
 
         self.client.login(
             username="testuser2", password="test2Password")
@@ -128,9 +127,9 @@ class TestReviewViews(TestCase):
         self.assertEqual(len(messages), 1)
         self.assertEqual(str(messages[0]),
                          "You do not have permission to do this.")
-    
+
     def test_delete_post_GET_if_reviewer(self):
-        ''' test the delete post view get '''
+        ''' test the delete post view GET '''
 
         self.client.login(
             username="testuser2", password="test2Password")
@@ -141,7 +140,7 @@ class TestReviewViews(TestCase):
         self.assertEqual(len(messages), 1)
         self.assertEqual(str(messages[0]),
                          "You do not have permission to do this.")
-    
+
     def test_delete_review_POST(self):
         ''' Test the delete review POST function '''
 
