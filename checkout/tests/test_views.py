@@ -1,8 +1,6 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 from stock.models import Item
-from checkout.forms import OrderForm
-from users.models import UserProfile
 from django.contrib.auth.models import User
 from django.contrib.messages import get_messages
 
@@ -23,6 +21,8 @@ class TestCheckoutViews(TestCase):
                                    kwargs={"item_id": self.item.id})
 
     def test_checkout_view_with_empty_cart(self):
+        ''' Test the checkout view with an empty cart. '''
+
         response = self.client.get(self.checkout)
         self.assertEqual(response.status_code, 302)
         messages = list(get_messages(response.wsgi_request))
@@ -31,6 +31,8 @@ class TestCheckoutViews(TestCase):
                          "Your cart is currently empty.")
 
     def test_checkout_view_with_cart(self):
+        ''' Test the checkout view with a =n item in the cart '''
+
         self.client.post(self.add_to_cart,
                          data={"quantity": "1",
                                "redirect_url": "/"})
@@ -40,6 +42,8 @@ class TestCheckoutViews(TestCase):
         self.assertTemplateUsed(response, "base.html")
 
     def test_checkout_success(self):
+        ''' Test the checkout success view. '''
+
         self.client.post(self.add_to_cart,
                          data={"quantity": "1",
                                "redirect_url": "/"})
@@ -60,6 +64,9 @@ class TestCheckoutViews(TestCase):
         self.assertTemplateUsed(response, 'checkout/checkout_success.html')
 
     def test_checkout_view_with_form_prefilled(self):
+        ''' Test the checkout view form is prefilled
+            With the user data'''
+
         self.client.post(self.add_to_cart,
                          data={"quantity": "1",
                                "redirect_url": "/"})
@@ -68,4 +75,3 @@ class TestCheckoutViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.context['form'].initial['email'],
                          self.user.email)
-

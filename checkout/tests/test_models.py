@@ -1,5 +1,5 @@
 from django.test import TestCase
-from checkout.models import  Order, OrderLineItem
+from checkout.models import Order, OrderLineItem
 from stock.models import Item
 
 
