@@ -32,20 +32,25 @@ class TestStockViews(TestCase):
                                    kwargs={"item_id": self.item.id})
 
     def test_all_items_view(self):
+        ''' Test the all items view '''
+
         response = self.client.get(self.all_items)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "stock/all_items.html")
         self.assertTemplateUsed(response, "base.html")
 
     def test_all_items_views_with_query(self):
+        ''' Test the all items view with a query parameter '''
+
         response = self.client.get(self.all_items,
                                    {"query": "test"})
-
         context = response.context
         self.assertTrue(context['search'])
         self.assertEqual(context['search'], 'test')
 
     def test_all_items_views_with_empty_query(self):
+        '''  Test the all items view with an empty query '''
+
         response = self.client.get(self.all_items,
                                    {"query": ""})
         messages = list(get_messages(response.wsgi_request))
@@ -54,6 +59,8 @@ class TestStockViews(TestCase):
                          "No search query entered.")
 
     def test_all_items_views_with_category(self):
+        ''' Test the all items view with a category parameter '''
+
         response = self.client.get(self.all_items,
                                    {"category": "test_category"})
         category = Category.objects.get(name="test_category")
@@ -62,6 +69,8 @@ class TestStockViews(TestCase):
         self.assertEqual(context['current_category'], category)
 
     def test_all_items_views_with_sort(self):
+        '''  Test the all items view with a sort paramater '''
+
         response = self.client.get(self.all_items,
                                    {"sort": "name"})
         context = response.context
@@ -69,6 +78,8 @@ class TestStockViews(TestCase):
         self.assertEqual(context['sort'], "name")
 
     def test_all_items_views_with_direction(self):
+        ''' Test the all items view with a direction parameter '''
+
         response = self.client.get(self.all_items,
                                    {"sort": "name",
                                     "direction": "desc"})
@@ -77,6 +88,7 @@ class TestStockViews(TestCase):
         self.assertEqual(context['direction'], "desc")
 
     def test_view_single_item_view(self):
+        ''' Test the single item view '''
         response = self.client.get(self.single_item)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "stock/item.html")
@@ -119,6 +131,8 @@ class TestStockControl(TestCase):
                                    kwargs={"item_id": self.item.id})
 
     def test_add_item_not_supperuser(self):
+        ''' Test the add item view if the user is not a superuser '''
+
         self.client.login(
             username="testuser", password="testpassword")
         response = self.client.get(self.add_item)
@@ -130,6 +144,8 @@ class TestStockControl(TestCase):
                          "You do not have permission to do this.")
 
     def test_add_item_GET_supperuser(self):
+        ''' Test the add item get if not a superuser '''
+
         self.client.login(
             username="testadmin", password="testadminpassword")
         response = self.client.get(self.add_item)
@@ -138,7 +154,9 @@ class TestStockControl(TestCase):
         self.assertTemplateUsed(response, "base.html")
         self.assertTemplateUsed(response, "includes/nav-background.html")
 
-    def test_add_post_POST_invalidform(self):
+    def test_add_item_POST_invalidform(self):
+        ''' Test the add item with an invalid form '''
+
         self.client.login(
             username="testadmin", password="testadminpassword")
         response = self.client.post(self.add_item, {
@@ -155,6 +173,8 @@ class TestStockControl(TestCase):
     Please check the form details are correct and try again.")
 
     def test_add_item_POST_validform(self):
+        ''' test the add item with a valid form '''
+
         self.client.login(
             username="testadmin", password="testadminpassword")
         response = self.client.post(self.add_item, {
@@ -171,6 +191,8 @@ class TestStockControl(TestCase):
                          "Item has been added successfully.")
 
     def test_edit_post_if_not_superuser(self):
+        ''' Test the edit post view if not a superuser '''
+
         self.client.login(
             username="testuser", password="testpassword")
         response = self.client.get(self.edit_item)
@@ -182,6 +204,8 @@ class TestStockControl(TestCase):
                          "You do not have permission to do this.")
 
     def test_edit_item_GET_if_superuser(self):
+        ''' Test the edit item get if superuser '''
+
         self.client.login(
             username="testadmin", password="testadminpassword")
         response = self.client.get(self.edit_item)
@@ -195,7 +219,7 @@ class TestStockControl(TestCase):
         self.assertTemplateUsed(response, "includes/nav-background.html")
 
     def test_edit_item_POST_invalidform(self):
-        ''' test the edit post view get if the user is a superuser '''
+        ''' test the edit item view post with invalid form'''
 
         self.client.login(
             username="testadmin", password="testadminpassword")
@@ -210,6 +234,8 @@ class TestStockControl(TestCase):
     Please check the form details are correct and try again.")
 
     def test_edit_item_POST_validform(self):
+        ''' Test edit item view with a valid form '''
+
         self.client.login(
             username="testadmin", password="testadminpassword")
         response = self.client.post(self.edit_item, {
@@ -227,6 +253,8 @@ class TestStockControl(TestCase):
                          "Item update successfully")
 
     def test_delete_item_if_not_superuser(self):
+        ''' Test delete item view if not a superuser '''
+
         self.client.login(
             username="testuser", password="testpassword")
         response = self.client.get(self.delete_item)
@@ -238,6 +266,8 @@ class TestStockControl(TestCase):
                          "You do not have permission to do this.")
 
     def test_delete_post_GET_if_superuser(self):
+        ''' Test delete item view if a superuser '''
+
         self.client.login(
             username="testadmin", password="testadminpassword")
         response = self.client.get(self.delete_item)

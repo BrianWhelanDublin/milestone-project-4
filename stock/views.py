@@ -93,6 +93,7 @@ def single_item(request, item_id):
 @login_required
 def add_item(request):
     ''' view to add an item '''
+
     if request.user.is_superuser:
         if request.method == "POST":
             form = ItemForm(request.POST, request.FILES)
@@ -102,7 +103,7 @@ def add_item(request):
                 return redirect(reverse("single_item", args=[item.id]))
             else:
                 messages.error(request,
-                            "Failed to add the item. \
+                               "Failed to add the item. \
     Please check the form details are correct and try again.")
         else:
             form = ItemForm
@@ -126,6 +127,7 @@ def add_item(request):
 @login_required
 def edit_item(request, item_id):
     ''' A view to edit an item '''
+
     if request.user.is_superuser:
         item = get_object_or_404(Item, pk=item_id)
 
@@ -134,12 +136,12 @@ def edit_item(request, item_id):
             if form.is_valid():
                 form.save()
                 messages.success(request,
-                                "Item update successfully")
+                                 "Item update successfully")
                 return redirect(reverse("single_item", args=[item.id]))
             else:
                 messages.error(request,
-                            "Failed to update item. \
-    Please check the form details are correct and try again.")
+                               "Failed to update item. \
+ Please check the form details are correct and try again.")
         else:
             form = ItemForm(instance=item)
     else:
@@ -163,6 +165,7 @@ def edit_item(request, item_id):
 @login_required
 def delete_item(request, item_id):
     ''' A view to delete items '''
+
     if request.user.is_superuser:
         if request.method == "POST":
             item = get_object_or_404(Item, pk=item_id)
