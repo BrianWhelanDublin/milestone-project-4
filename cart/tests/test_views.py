@@ -27,7 +27,7 @@ class TestCartViews(TestCase):
         self.assertTemplateUsed(response, "includes/nav-background.html")
 
     def test_add_to_cart_GET(self):
-        ''' test that id the url is typed
+        ''' test that if the url is typed
         into the browser the user is redirected
         and an error message is shown  '''
 
