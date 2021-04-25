@@ -73,13 +73,11 @@ body {
     color: #EDEDE9;
     border: .1rem solid #EDEDE9;
     background: rgba(29, 29, 29, 0.433);
-    backdrop-filter: blur(.3rem);
     z-index: 20;
 }
 
 .link-button-light:hover {
     background-color: rgba(237, 237, 233, 0.555);
-    backdrop-filter: blur(.5rem);
     color: #153243;
 }
 
@@ -241,11 +239,6 @@ label[for="quantity"] {
     border-color: #153243;
 }
 
-/* #checkout-form input::placeholder,
-.allauth-form input::placeholder,
-#userprofile-form input::placeholder,
-#contact-form input::placeholder,
-#item-form input::placeholder  */
 .form-control {
     font-size: 1.1rem;
     color: rgba(21, 50, 67, .7);
@@ -262,15 +255,6 @@ label[for="quantity"] {
     border-color: #153243;
 }
 
-/* .StripeElement,
-#checkout-form input,
-#checkout-form select,
-.allauth-form input,
-.allauth-form select,
-#userprofile-form input,
-#userprofile-form select,
-#contact-form input,
-#contact-form textarea */
 .StripeElement,
 .form-control,
 .form-select {
@@ -283,11 +267,6 @@ label[for="quantity"] {
     color: #153243;
 }
 
-/* #checkout-form input,
-.allauth-form input,
-#userprofile-form input,
-#contact-form input,
-#contact-form textarea */
 .form-control {
     font-size: 1.25rem;
 
@@ -403,8 +382,6 @@ input:-webkit-autofill {
     margin-right: 2rem;
 }
 
-
-
 /* Navigation */
 
 .top-navigation {
@@ -417,7 +394,6 @@ input:-webkit-autofill {
 
 .top-nav-colored {
     background-color: #153344d8;
-    backdrop-filter: blur(1rem);
 }
 
 .hamburger {
@@ -495,7 +471,6 @@ input:-webkit-autofill {
     top: 0;
     right: 0;
     background-color: #153344d8;
-    backdrop-filter: blur(1rem);
     transform: translateY(-50vh);
     transition: all .85s ease-in-out;
     z-index: 100;
@@ -511,9 +486,7 @@ input:-webkit-autofill {
     position: fixed;
     top: 0;
     left: 0;
-    /* background-color: #153243; */
     background-color: rgba(21, 51, 68, 0.847);
-    backdrop-filter: blur(1rem);
     z-index: 100;
     transform: translateX(-37.5rem);
     transition: all .85s ease-in-out;
@@ -599,6 +572,7 @@ input:-webkit-autofill {
 .sub-list {
     visibility: hidden;
 }
+
 /* Code from Kevin powell on youtube to animate the navigation details in readme file */
 
 @keyframes fadeOut {
@@ -670,12 +644,11 @@ input:-webkit-autofill {
 .side-menu-open li:nth-child(7) {
     animation-delay: 350ms;
 }
+
 .side-menu-open li:nth-child(8) {
     animation-delay: 400ms;
 }
-.side-menu-close li:nth-child(8) {
-    animation-delay: 0;
-}
+
 .side-menu-close li:nth-child(7) {
     animation-delay: 50ms;
 }
@@ -949,22 +922,6 @@ input:-webkit-autofill {
     filter: brightness(50%);
 }
 
-/* 
-.category-image:after {
-    content: "";
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: rgba(31, 31, 27, 0.329);
-    transition: all .5s ease-in-out;
-}
-
-.category-image:hover:after {
-    background-color: rgba(112, 112, 112, 0.103);
-} */
-
 .category-image a span {
     font-size: 4rem;
     font-weight: 600;
@@ -1059,9 +1016,6 @@ input:-webkit-autofill {
 /* ----------------------------------------footer section  */
 .footer-container {
     background-color: #153344d8;
-    backdrop-filter: blur(1rem);
-    /* background-color: #153243; */
-    /* color: #EDEDE9; */
 }
 
 .contact-col {
@@ -1127,7 +1081,6 @@ input:-webkit-autofill {
 .nav-background {
     height: 6rem;
     background-color: #153344d8;
-    backdrop-filter: blur(1rem);
     position: fixed;
     z-index: 50;
 }
@@ -1338,9 +1291,6 @@ td p {
     width: 60%;
 }
 
-/* #review-form label{
-    margin-top: 2rem;
-} */
 .stars-input {
     width: 15rem;
     margin: 1rem auto 2.5rem auto;
@@ -1474,8 +1424,6 @@ td p {
         margin-left: 20rem;
     }
 
-
-
     .hero-col-right h1 {
         margin-bottom: 5%;
         font-size: 6.5rem;
@@ -1534,7 +1482,7 @@ td p {
     .newsletter-form button[type="submit"] {
         height: 5rem;
         padding: 0 1.5rem;
-        font-size: 1..75rem;
+        font-size: 1.75rem;
     }
 
     .our-story-hero-col h1 {
@@ -1587,13 +1535,6 @@ td p {
         font-size: 1.25rem;
     }
 
-    /* 
-    table input[type="number"] {
-        width: 5.5rem;
-        font-size: 1.5rem;
-        height: 3rem;
-    } */
-
     .successful-toast {
         width: 50rem;
     }
@@ -1607,7 +1548,6 @@ td p {
         width: 25rem;
         height: 7rem;
     }
-
 
     .hero-col-left,
     .hero-col-right {
@@ -1624,7 +1564,7 @@ td p {
     }
 
     .item-container {
-       padding: 2rem 3rem;
+        padding: 2rem 3rem;
     }
 
     .item-container a img {
@@ -1732,20 +1672,21 @@ td p {
         font-size: 3rem;
     }
 }
-    /* xx-large 1400px */
-    @media (min-width: 1400px) {
-        .category-image {
-            height: 42.5rem;
-            width: 42.5em;
-        }
 
-
-        .our-story-col p {
-            margin: 2rem 20rem;
-        }
-
-        .our-story-col img {
-            height: 47.5rem;
-            width: 47.5rem;
-        }
+/* xx-large 1400px */
+@media (min-width: 1400px) {
+    .category-image {
+        height: 42.5rem;
+        width: 42.5em;
     }
+
+
+    .our-story-col p {
+        margin: 2rem 20rem;
+    }
+
+    .our-story-col img {
+        height: 47.5rem;
+        width: 47.5rem;
+    }
+}
