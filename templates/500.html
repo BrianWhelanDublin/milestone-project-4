@@ -1,0 +1,19 @@
+{% endblock %}
+{% block header %}
+{% include 'includes/nav-background.html' %}
+{% endblock %}
+{% block main_content %}
+<div class="container page-container">
+    <div class="row">
+        <div class="col page-heading text-center">
+            <h1>Opps something has gone wrong (500 Error)</h1>
+        </div>
+    </div>
+    <div class="row">
+       <div class="col-12">
+            <p class="fs-4 text-center mb-4">We are experiencing some trouble on our end. Please try again ion the near future.</p>
+            <a href="{% url 'home_page' %}" class="item-link-light item-link-button  flex-center m-auto">Return Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

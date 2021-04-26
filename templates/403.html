@@ -1,0 +1,19 @@
+{% endblock %}
+{% block header %}
+{% include 'includes/nav-background.html' %}
+{% endblock %}
+{% block main_content %}
+<div class="container page-container">
+    <div class="row">
+        <div class="col page-heading text-center">
+            <h1>You Don't have permision to do this (403 error)</h1>
+        </div>
+    </div>
+    <div class="row">
+       <div class="col-12">
+            <p class="fs-4 text-center mb-4">Please check your account details.</p>
+            <a href="{% url 'home_page' %}" class="item-link-light item-link-button  flex-center m-auto">Return Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
