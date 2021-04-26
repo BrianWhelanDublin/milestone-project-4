@@ -217,7 +217,7 @@
         <div class="col-12 col-md-6">
             <form class="newsletter-form flex-center" method="POST" action="{% url 'home_page'%}">
                 {% csrf_token %}
-                {{ form }}
+                {{ form.email }}
                 <button type="submit">Sign Up</button>
             </form>
         </div>

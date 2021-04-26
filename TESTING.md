@@ -234,7 +234,40 @@
 
 ## Validators
 
+- #### CSS
+    - I passed my CSS through the CSS code validator and it has passesd.
+
+        - <div float="left">
+            <img src="readme-images/testing/css-validation.png" alt="Image of css report" width="500px" height="280px" />
+        </div>
+
+- #### Javascript
+
+     - My javascript was passed thorough jshint.
+
+     - <div float="left">
+        <img src="readme-images/testing/jshint.png" alt="Image of jshint" width="500px" height="180px" />
+        </div>
+
+  - #### Python
+
+     - My python was passed through a pep8 validating tool to validate it and it all passed.
+
+     - <div float="left">
+        <img src="readme-images/testing/pep8.png" alt="Image of pep8 results" width="500px" height="280px" />
+        </div>
+
 ## Responsiveness and Browsers
+
+- I have tested the site Responsivenessacross Google chrome dev tools. 
+- I have also used the application across different screen sizes.
+
+- The app has also been used on different browsers to check its compatibility
+    - Google chrome.
+    - Safari
+    - Opera
+    - Microsoft edge
+    - Firefox.
 
 ## Accessibility
 

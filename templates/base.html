@@ -45,7 +45,9 @@
                             </button>
                             <a class="logo text-shadow" href="{% url 'home_page' %}">Abode.com</a>
                             <ul>
-                                <a class="top-nav-item d-none d-md-block" href="{% url 'view_wishlist' %}">Wishlist</a>
+                                <li class="d-none d-md-block">
+                                    <a class="top-nav-item " href="{% url 'view_wishlist' %}">Wishlist</a>
+                                </li>
                                 <li class="top-nav-item  d-md-none">
                                     <a href="{% url 'view_wishlist' %}">
                                         <i class="lar la-heart " aria-hidden="true"></i>
