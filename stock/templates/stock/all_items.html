@@ -52,7 +52,6 @@ All Items
         {% for item in page_obj %}
         <div class="col-12 col-md-6 col-lg-4 item-col">
             <div class="item-container flex-center">
-
                 <div class="img-container">
                     <!-- displays the like unlike buttons for the wishlist -->
                     {% if request.user.is_authenticated %}
@@ -90,16 +89,13 @@ All Items
         <div class="step-links">
             {% if page_obj.has_previous %}
             <a href="?page=1&query={{ search }}&sort={{ sort }}&direction={{ direction }}">&laquo; First</a>
-            <a
-                href="?page={{ page_obj.previous_page_number }}&query={{ search }}&sort={{ sort }}&direction={{ direction }}">&laquo;
+            <a href="?page={{ page_obj.previous_page_number }}&query={{ search }}&sort={{ sort }}&direction={{ direction }}">&laquo;
                 Previous</a>
             {% endif %}
             {% if page_obj.has_next %}
-            <a
-                href="?page={{ page_obj.next_page_number }}&query={{ search }}&sort={{ sort }}&direction={{ direction }}">Next
+            <a href="?page={{ page_obj.next_page_number }}&query={{ search }}&sort={{ sort }}&direction={{ direction }}">Next
                 &raquo;</a>
-            <a
-                href="?page={{ page_obj.paginator.num_pages }}&query={{ search }}&sort={{ sort }}&direction={{ direction }}">Last
+            <a href="?page={{ page_obj.paginator.num_pages }}&query={{ search }}&sort={{ sort }}&direction={{ direction }}">Last
                 &raquo;</a>
         </div>
         {% endif %}

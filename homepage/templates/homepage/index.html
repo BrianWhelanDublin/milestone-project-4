@@ -53,8 +53,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col ">
-                
+            <div class="col ">  
                 <ul class="new-item-slider">
                     {% for item in new_items %}
                     <li class="item-container">
@@ -74,8 +73,6 @@
                     </li>
                     {% endfor %}
                 </ul>
-
-
             </div>
         </div>
     </div>
@@ -195,7 +192,7 @@
                     {% endif %}
                     <div class="blog-item-details blog-homepage-details">
                         <h3 class="text-center">{{post.title}}</h3>
-                        <a href="" class="item-link-light item-link-button  flex-center">Read More ...</a>
+                        <a href="{% url 'view_post' post.id %}" class="item-link-light item-link-button  flex-center">Read More ...</a>
                     </div>
                 </div>
             </div>
