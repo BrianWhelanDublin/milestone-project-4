@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load humanize %}
 {% load static %}
 {% load wishlist_tools %}
 {% block title %}
@@ -69,7 +69,7 @@
                         {% endif %}
                         <div class="item-details flex-row-between">
                             <h3>{{ item.name }}</h3>
-                            <p>€ {{ item.price }}</p>
+                            <p>€ {{ item.price|intcomma }}</p>
                         </div>
                     </li>
                     {% endfor %}

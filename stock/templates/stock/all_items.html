@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load humanize %}
 {% load static %}
 {% load wishlist_tools %}
 {% block title %}
@@ -75,7 +75,7 @@ All Items
             </div>
             <div class="item-details all-item-details flex-row-between">
                 <h3>{{ item.name }}</h3>
-                <p>€ {{ item.price }}</p>
+                <p>€ {{ item.price|intcomma }}</p>
             </div>
         </div>
         {% endfor %}

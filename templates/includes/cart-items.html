@@ -1,3 +1,4 @@
+{% load humanize %}
 <div class="row mt-2">
     <div class="offset-1 col-3">
         {% if item.item.image %}
@@ -10,6 +11,6 @@
     <div class=" offset-2 col-6 ">
         <p class="fs-4">{{ item.item.name }}</p>
         <p class=" fs-5 text-muted">Quantity: {{ item.quantity }}</p>
-        <p class=" fs-5 text-muted">Price: €{{ item.item.price }}</p>
+        <p class=" fs-5 text-muted">Price: €{{ item.item.price|intcomma }}</p>
     </div>
 </div>

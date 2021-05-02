@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
 {% block title %}
 Checkout
 {% endblock %}
@@ -67,9 +68,9 @@ Checkout
                 <div class="row mt-4">
                     <div class="col-6 offset-6">
                         <hr class="mx-2">
-                        <p>Total: € {{ order.order_total }}</p>
+                        <p>Total: € {{ order.order_total|intcomma }}</p>
                         <p>Delivery: € {{ order.home_delivery_cost }}</p>
-                        <h4>Total Price : € {{ order.grand_total }}</h4>
+                        <h4>Total Price : € {{ order.grand_total|intcomma }}</h4>
                     </div>
                 </div>
 

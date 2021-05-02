@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load humanize %}
 {% load static %}
 {% load wishlist_tools %}
 {% block other_css %}
@@ -34,7 +34,7 @@
         <div class="col-12 col-md-6 item-details-col flex-center">
             <div class="item-details">
                 <h3>{{ item.name }}</h3>
-                <p>€ {{ item.price}}</p>
+                <p>€ {{ item.price|intcomma }}</p>
                 <a class="item-cat-link"
                     href="{% url 'all_items' %}?category={{ item.category.name }}">{{ item.category.display_name }}</a>
                 <p>{{ item.description }}</p>

@@ -1,16 +1,13 @@
 {% extends "base.html" %}
-
 {% load static %}
 {% load cart_tools %}
-
+{% load humanize %}
 {% block title %}
 Your Cart
 {% endblock %}
-
 {% block header %}
 {% include 'includes/nav-background.html' %}
 {% endblock %}
-
 {% block main_content %}
 <div class="container page-container">
     <div class="row">
@@ -48,7 +45,7 @@ Your Cart
                             <p class="d-none d-md-block">{{ item.item.name }}</p>
                         </td>
                         <td>
-                            <p>€ {{ item.item.price }}</p>
+                            <p>€ {{ item.item.price|intcomma }}</p>
                         </td>
                         <td>
                             <form class="cart-quantity-form" method="POST"
@@ -80,15 +77,15 @@ Your Cart
                             <a class="remove-cart-item text-danger " id="remove_{{ item.item_id }}">Remove</a>
                         </td>
                         <td>
-                            <p>€ {{ item.item.price | calculate_total:item.quantity }}</p>
+                            <p>€ {{ item.item.price|calculate_total:item.quantity|intcomma }}</p>
                         </td>
                     </tr>
                     {% endfor %}
                     <tr>
                         <td colspan="5" class="pt-4  text-end">
-                            <p>Total: € {{ total|floatformat:2 }}</p>
+                            <p>Total: € {{ total|floatformat:2|intcomma }}</p>
                             <p>Delivery: € {{ home_delivery|floatformat:2 }}</p>
-                            <h4>Total Price : € {{ grand_total|floatformat:2 }}</h4>
+                            <h4>Total Price : € {{ grand_total|floatformat:2|intcomma }}</h4>
                         </td>
                     </tr>
                 </table>
