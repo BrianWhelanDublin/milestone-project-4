@@ -1,6 +1,6 @@
 // javascript to add items and remove items from the wishlist.
 
-let wishlistButton = document.querySelectorAll(".wishlist-button");
+let wishlistButton = document.querySelectorAll(".wishlist-btn-add");
     wishlistButton.forEach((button) => {
         button.addEventListener("click", (event) => {
             event.preventDefault();
@@ -21,7 +21,7 @@ let wishlistButton = document.querySelectorAll(".wishlist-button");
         });
     });
 
-let wishlistLikedButton = document.querySelectorAll(".wishlist-button-liked");
+let wishlistLikedButton = document.querySelectorAll(".wishlist-btn-liked");
     wishlistLikedButton.forEach((button) => {
         button.addEventListener("click", (event) => {
             event.preventDefault();

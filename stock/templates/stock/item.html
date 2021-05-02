@@ -105,7 +105,19 @@
                 </form>
                 <a href="{% url 'all_items' %}" class="item-link-light item-link-button  flex-center">Keep
                     Shopping</a>
-                {% if request.user.is_anonymous %}
+                {% if request.user.is_authenticated %}
+                {% if item.id|ifinlist:wishlist_items == True %}
+                <button id="liked_{{item.id}}" type="submit"
+                    class="item-link-button flex-center item-link-dark wishlist-btn-add wishlist-btn-liked">Remove from
+                    Wishlist
+                </button>
+                {% else %}
+                <button id="wish_{{item.id}}" type="submit"
+                    class="item-link-button flex-center item-link-dark wishlist-btn-add">
+                    Add to Wishlist
+                </button>
+                {% endif %}
+                {% else %}
                 <p class="mt-5 fs-4">Please
                     <a class="fs-4 mx-1" href="{% url 'account_login' %}"> Login </a> or
                     <a class="fs-4 mx-1" href="{% url 'account_signup' %}">Signup</a>
