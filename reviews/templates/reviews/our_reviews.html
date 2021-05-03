@@ -24,12 +24,9 @@ Reviews
             {% endif %}
 
             {% if request.user.is_authenticated %}
-            <form id="review-form" class="mb-5" method="POST" 
-            {% if edit_review %}
-                action="{% url 'edit_review' review_to_edit.id %}"
-             {% else %}
-                action="{% url 'our_reviews' %}"
-            {% endif %}>
+            <form id="review-form" class="mb-5" method="POST" {% if edit_review %}
+                action="{% url 'edit_review' review_to_edit.id %}" {% else %} action="{% url 'our_reviews' %}"
+                {% endif %}>
                 {% csrf_token %}
                 {{ form.review | as_crispy_field }}
                 <div class="div stars-input flex-row-between">
@@ -37,12 +34,28 @@ Reviews
                         <i class="las la-minus"></i>
                         <span class="sr-only">decrement button</span>
                     </div>
-                    {{ form.stars | as_crispy_field}}
+
+
+                    <div class="mb-3">
+                        <label for="stars" class="form-label">Stars</label>
+                        <div>
+                            {% if edit_review %}
+                            <input class="form-control" type="number" name="stars" value="{{ review_to_edit.stars }}" min="1" max="5" id="stars">
+                            {% else %}
+                            <input class="form-control" type="number" name="stars" value="1" min="1" max="5" id="stars">
+                            {% endif %}
+
+
+                        </div>
+                    </div>
+
                     <div class="plus-btn  flex-center">
                         <i class="las la-plus flex-center" aria-hidden="true"></i>
                         <span class="sr-only">increment button</span>
                     </div>
                 </div>
+
+
                 <button class="item-link-dark item-link-button  flex-center m-auto " type="submit">
                     {% if edit_review %}
                     Edit Review
@@ -93,15 +106,16 @@ Reviews
                         {% if user == review.reviewer %}
                         <a href="{% url 'edit_review' review.id %}">Edit</a>
                         <button type="button" class="text-danger fs-5 review-delete" data-bs-toggle="modal"
-                            data-bs-target="#review-deleteModal">
+                            data-bs-target="#review-deleteModal-{{review.id}}">
                             Delete
                         </button>
-                        <div class="modal fade" id="review-deleteModal" tabindex="-1"
-                            aria-labelledby="review-deleteModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="review-deleteModal-{{review.id}}" tabindex="-1"
+                            aria-labelledby="review-deleteModalLabel-{{review.id}}" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title fs-1 m-auto" id="review-deleteModalLabel">Delete Item!
+                                        <h5 class="modal-title fs-1 m-auto" id="review-deleteModalLabel-{{review.id}}">
+                                            Delete Item!
                                         </h5>
                                     </div>
                                     <div class="modal-body">

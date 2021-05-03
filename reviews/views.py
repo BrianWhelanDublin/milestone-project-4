@@ -13,6 +13,7 @@ def our_reviews(request):
         if form.is_valid():
             review = form.save(commit=False)
             review.reviewer = request.user
+            review.stars = int(request.POST.get("stars"))
             review.save()
 
     reviews = Review.objects.all().order_by("-id")
@@ -43,7 +44,9 @@ def edit_review(request, review_id):
     if request.method == "POST":
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
-            form.save()
+            review = form.save(commit=False)
+            review.stars = int(request.POST.get("stars"))
+            review.save()
             messages.success(request,
                              "Review has been updated.")
             return redirect(reverse("our_reviews"))
