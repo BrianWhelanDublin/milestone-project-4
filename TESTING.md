@@ -6,41 +6,41 @@
         - The website has numerous reference to being a furniture store.
         - The home page has a link in its main hero section to shop the companies collection.
 
-            - <p align="center"><img src="readme-images/testing/our-collections-link.png" alt="Image of hero buttons" height="200px" width="400px"/></p>
+            - <p float="left"><img src="readme-images/testing/our-collections-link.png" alt="Image of hero buttons" height="200px" width="400px"/></p>
             
             
         - The homepage also has a new items slider to show the user what's new.
 
-            - <p align="center"><img src="readme-images/features/new-in.png" alt="Image of new items slider" height="200px" width="400px"/></p>
+            - <p float="left"><img src="readme-images/features/new-in.png" alt="Image of new items slider" height="200px" width="400px"/></p>
             
         - The user can also select different categories from the navigation.
 
-            - <p align="center"><img src="readme-images/testing/categories-nav.png" alt="Image of main navigation" width="280px" height="400px"/></p>
+            - <p float="left"><img src="readme-images/testing/categories-nav.png" alt="Image of main navigation" width="280px" height="400px"/></p>
 
     - As a customer, I would like to be able to navigate the website easily.
         - The main navigation has items for, the cart, account and wishlist on show at all times.
 
-            - <p align="center"><img src="readme-images/testing/sub-nav.png" alt="Image of sub navigation" width="400px" height="150px"/></p>
+            - <p float="left"><img src="readme-images/testing/sub-nav.png" alt="Image of sub navigation" width="400px" height="150px"/></p>
 
         - The main navigation is then accessed by clicking the burger menu.
         - This shows the main navigation items.
         - At different points on the site, there are buttons that link back to shopping or the checkout, etc for the user's convenience.
 
-            - <p align="center"><img src="readme-images/testing/keep-shopping.png" alt="Image of keep shopping buttons" width="450px" height="150px"/></p>
+            - <p float="left"><img src="readme-images/testing/keep-shopping.png" alt="Image of keep shopping buttons" width="450px" height="150px"/></p>
 
 
     - As a customer, I would like to see some information about the company.
         - The homepage contains a small snippet of information about the company.
         - The hero image contains a link to our story page which then contains more detailed information about the company.
 
-            - <p align="center"><img src="readme-images/testing/our-story.png" alt="Image of our story page" width="450px" height="250px"/></p>
+            - <p float="left"><img src="readme-images/testing/our-story.png" alt="Image of our story page" width="450px" height="250px"/></p>
 
 
     - As a customer, I would like to be able to contact the company.
         - In the footer that is throughout the site there are the main contact details.
         - The user can also click on the contact us here link to be brought to the contact form.
 
-            - <p align="center"><img src="readme-images/testing/contact-details.png" alt="Image of keep shopping buttons" width="450px" height="150px"/></p>
+            - <p float="left"><img src="readme-images/testing/contact-details.png" alt="Image of keep shopping buttons" width="450px" height="150px"/></p>
 
   
   - Searching for items.
@@ -49,23 +49,23 @@
         - On the homepage, there are shop collection buttons linking to the all items page.
         - There is also a shop collection navigation link.
 
-            - <p align="center"><img src="readme-images/testing/our-collections-link.png" alt="Image of hero buttons" height="200px" width="400px"/></p>
+            - <p float="left"><img src="readme-images/testing/our-collections-link.png" alt="Image of hero buttons" height="200px" width="400px"/></p>
 
     - As a customer, I would like to be able to search by category.
         - The navigation menu contains a link for each category, and for the subcategories in the furniture section.
         - The user can click on these to shop for items in a particular category.
 
-            - <p align="center"><img src="readme-images/testing/categories-nav.png" alt="Image of main navigation" width="280px" height="400px"/></p>
+            - <p float="left"><img src="readme-images/testing/categories-nav.png" alt="Image of main navigation" width="280px" height="400px"/></p>
 
     - As a customer, I would like to be able to search through the items.
         - The navigation menu has a search form that the user can use to search through the sites stock.
 
-            - <p align="center"><img src="readme-images/testing/search.png" alt="Image of search in navigation" height="220px" width="400px"/></p>
+            - <p float="left"><img src="readme-images/testing/search.png" alt="Image of search in navigation" height="220px" width="400px"/></p>
 
     - As a customer, I would like to sort the items by price.
         - The all items page has a select input to allow the items to be sorted by price.
 
-             - <p align="center"><img src="readme-images/testing/sort.png" alt="Image of item sorting" height="220px" width="400px"/></p>
+             - <p float="left"><img src="readme-images/testing/sort.png" alt="Image of item sorting" height="220px" width="400px"/></p>
 
 
   - Shopping.
@@ -73,37 +73,37 @@
     - As a customer, I would like to see the product price and description.
         - Upon clicking on an item image the user is brought to the item page where the items price and description are shown.
 
-             - <p align="center"><img src="readme-images/testing/item-details.png" alt="Image of item description" height="400px" width="400px"/></p>
+             - <p float="left"><img src="readme-images/testing/item-details.png" alt="Image of item description" height="400px" width="400px"/></p>
 
     - As a customer, I would like to be able to add products to my shopping cart.
         - From the item page the user can click the add to cart button which will then add the item to the user's cart.
 
-            - <p align="center"><img src="readme-images/testing/add-to-cartbtn.png" alt="Image of admin menu" height="200px" width="490px"/></p>
+            - <p float="left"><img src="readme-images/testing/add-to-cartbtn.png" alt="Image of admin menu" height="200px" width="490px"/></p>
 
     - As a customer, I would like to be notified when I complete interactions with the site.
         - The user is notified with a popup message whenever they act on the site. 
         - The messages confirm actions as well as warnings and alerts.
 
             - eg Add to cart message.
-            - <p align="center"><img src="readme-images/testing/add-to-cart.png" alt="Image of add to cart message" height="250px" width="350px"/></p>
+            - <p float="left"><img src="readme-images/testing/add-to-cart.png" alt="Image of add to cart message" height="250px" width="350px"/></p>
 
     - As a customer, I would like to be able to edit my shopping cart.
         - From the cart page the user can alter the quantity or a particular item in their cart.
         - They can also delete an item if they wish to.
 
-            - <p align="center"><img src="readme-images/testing/cart-update.png" alt="Image of cart update features" height="200px" width="350px"/></p>
+            - <p float="left"><img src="readme-images/testing/cart-update.png" alt="Image of cart update features" height="200px" width="350px"/></p>
 
     - As a customer, I would like to be able to checkout easily.
         - Once the customer has an item in their cart they can then click on the checkout button to be taken to the checkout screen.
         - Once in the checkout the user then fills out a simple form and enters their card details.
         - Once this form is valid the checkout process will then be complete.
 
-            - <p align="center"><img src="readme-images/testing/checkout.png" alt="Image of checkout page" height="300px" width="450px"/></p>
+            - <p float="left"><img src="readme-images/testing/checkout.png" alt="Image of checkout page" height="300px" width="450px"/></p>
 
     - As a customer, I would like to receive confirmation of my order.
         - Once the user submits an order and it has been confirmed they will then be sent a confirmation email containing the order details.
 
-         - <p align="center"><img src="readme-images/testing/order-confirm.png" alt="Image of add to cart button" height="275px" width="490px"/></p>
+         - <p float="left"><img src="readme-images/testing/order-confirm.png" alt="Image of add to cart button" height="275px" width="490px"/></p>
 
   - Account.
 
@@ -113,17 +113,17 @@
 
             
             - Unlogged in user
-            <p align="center"><img src="readme-images/testing/save-unlogged.png" alt="Image of save to account for logged out user" height="175px" width="490px"/></p>
+            <p float="left"><img src="readme-images/testing/save-unlogged.png" alt="Image of save to account for logged out user" height="175px" width="490px"/></p>
 
             - Logged in user.
-             <p align="center"><img src="readme-images/testing/save-logged.png" alt="Image of save to account for logged in user" height="175px" width="490px"/></p>
+             <p float="left"><img src="readme-images/testing/save-logged.png" alt="Image of save to account for logged in user" height="175px" width="490px"/></p>
 
 
     - As a customer, I would like to see my previous order details.
         - On the user's profile page there is a list of the user's previous orders.
         - When the user clicks on an order number they will be brought to the previous order page with its details.
 
-            - <p align="center"><img src="readme-images/testing/previous-orders.png" alt="Image of previous orders" height="205px" width="490px"/></p>
+            - <p float="left"><img src="readme-images/testing/previous-orders.png" alt="Image of previous orders" height="205px" width="490px"/></p>
 
 
     - As a customer, I would like to leave a review of the company.
@@ -131,7 +131,7 @@
         - Here they can see all the user reviews and if they are logged in a review form.
         - Once they submit the review form and it's valid their review will appear in the list.
 
-            - <p align="center"><img src="readme-images/testing/reviews.png" alt="Image of reviews page" height="275px" width="490px"/></p>
+            - <p float="left"><img src="readme-images/testing/reviews.png" alt="Image of reviews page" height="275px" width="490px"/></p>
 
 - Website owner.
 
@@ -139,11 +139,11 @@
     - The superuser can add products from the admin section of the site.
     - They also have access to the stock control page on the front end of the site.
 
-        - <p align="center"><img src="readme-images/testing/admin-menu.png" alt="Image of admin menu" height="400px" width="490px"/></p>
+        - <p float="left"><img src="readme-images/testing/admin-menu.png" alt="Image of admin menu" height="400px" width="490px"/></p>
 
     - The items page will also show buttons for them to edit or delete an item.
 
-        - <p align="center"><img src="readme-images/testing/edit-buttons.png" alt="Image of items edit buttons" height="500px" width="490px"/></p>
+        - <p float="left"><img src="readme-images/testing/edit-buttons.png" alt="Image of items edit buttons" height="500px" width="490px"/></p>
 
 
   - As the business owner, I would like to be able to delete products.
@@ -151,13 +151,13 @@
     - The items section will show buttons for the superuser to delete products.
     - A modal will ask them to confirm the deletion to prevent accidental deletion.
 
-        - <p align="center"><img src="readme-images/testing/delete-modal.png" alt="Image of delete confirmation modal" height="350px" width="550px"/></p>
+        - <p float="left"><img src="readme-images/testing/delete-modal.png" alt="Image of delete confirmation modal" height="350px" width="550px"/></p>
 
   - As the business owner, I would like to have access to an admin section. 
      - The admin superuser has access to the admin section where they can edit and add details to the database.
      - They also will receive customer messages here.
 
-        - <p align="center"><img src="readme-images/testing/admin.png" alt="Image of admin " height="400px" width="490px"/></p>
+        - <p float="left"><img src="readme-images/testing/admin.png" alt="Image of admin " height="400px" width="490px"/></p>
 
   - As the business owner, I would like my customers to be able to shop on the site easily.
     - The site has been built with the user in mind to allow ease of flow for shopping and navigating the site.
@@ -185,9 +185,9 @@
     - I've included the reports for each app below.
 
         - 
-            <div align="center"><img src="readme-images/testing/coverage-1.png" alt="image of the homepage hero section"  height="500px" width="400px"/></div>
-            <div align="center"><img src="readme-images/testing/coverage-2.png" alt="image of the homepage hero section"  height="400px" width="400px"/></div>
-            <div align="center"><img src="readme-images/testing/coverage-3.png" alt="image of the homepage hero section"  height="400px" width="400px"/></div>
+            <div float="left"><img src="readme-images/testing/coverage-1.png" alt="image of the homepage hero section"  height="500px" width="400px"/></div>
+            <div float="left"><img src="readme-images/testing/coverage-2.png" alt="image of the homepage hero section"  height="400px" width="400px"/></div>
+            <div float="left"><img src="readme-images/testing/coverage-3.png" alt="image of the homepage hero section"  height="400px" width="400px"/></div>
 
 
 ## Test and Bugs During Development
@@ -306,98 +306,98 @@
     - #### Cart Functionality.
 
         - To test the cart functionality I first added an item to the cart.
-            - <p align="center"><img src="readme-images/testing/test-add-to-cart.png" alt="Image of add to cart test" height="280px" width="400px"/></p>
+            - <p float="left"><img src="readme-images/testing/test-add-to-cart.png" alt="Image of add to cart test" height="280px" width="400px"/></p>
         
         - I then navigated to the cart page and updated the item amount to test 
         this function.
-            - <p align="center"><img src="readme-images/testing/test-update.png" alt="Image of update cart test" height="250px" width="400px"/></p>
+            - <p float="left"><img src="readme-images/testing/test-update.png" alt="Image of update cart test" height="250px" width="400px"/></p>
 
         - I then removed the item to test this functionality out.
-            - <p align="center"><img src="readme-images/testing/test-remove-from-cart.png" alt="Image of remove from cart test" height="180px" width="490px"/></p>
+            - <p float="left"><img src="readme-images/testing/test-remove-from-cart.png" alt="Image of remove from cart test" height="180px" width="490px"/></p>
 
     - #### Checkout Functionality
 
         - To test the checkout functionality I first placed an item into my cart and then navigated to the checkout page. 
         - I then filled in the checkout form using the stripe test credit card number.
         - I then received an order confirmation.
-            - <p align="center"><img src="readme-images/testing/order-confirm-test.png" alt="Image of order confirmation test" height="350px" width="390px"/></p>
+            - <p float="left"><img src="readme-images/testing/order-confirm-test.png" alt="Image of order confirmation test" height="350px" width="390px"/></p>
 
         - I then checked my email for the order confirmation email.
-            - <p align="center"><img src="readme-images/testing/email-confirmation.png" alt="Image of confirmation email" height="400px" width="390px"/></p>
+            - <p float="left"><img src="readme-images/testing/email-confirmation.png" alt="Image of confirmation email" height="400px" width="390px"/></p>
 
         - Then I checked stripe to insure all payment intents had succeeded.
-            - <p align="center"><img src="readme-images/testing/stripe-test.png" alt="Image of stripe test" height="180px" width="490px"/></p>
+            - <p float="left"><img src="readme-images/testing/stripe-test.png" alt="Image of stripe test" height="180px" width="490px"/></p>
 
         - Finally, I checked the admin to ensure the order had been placed.
-            - <p align="center"><img src="readme-images/testing/order-admin.png" alt="Image of order in admin" height="220px" width="490px"/></p>
+            - <p float="left"><img src="readme-images/testing/order-admin.png" alt="Image of order in admin" height="220px" width="490px"/></p>
 
     - #### Stock control
 
         - To test the stock control functionality I first logged in as the admin user.
         - I then navigated to the stock control page and created a new item. 
-            - <p align="center"><img src="readme-images/testing/test-add-item.png" alt="Image of add item test" height="320px" width="490px"/></p>
+            - <p float="left"><img src="readme-images/testing/test-add-item.png" alt="Image of add item test" height="320px" width="490px"/></p>
 
         - I then tested editing the item.
-            - <p align="center"><img src="readme-images/testing/test-edit-item.png" alt="Image of edit item test" height="320px" width="490px"/></p>
+            - <p float="left"><img src="readme-images/testing/test-edit-item.png" alt="Image of edit item test" height="320px" width="490px"/></p>
 
         - Then finally I tested deleting the item.
-            - <p align="center"><img src="readme-images/testing/test-delete-item.png" alt="Image of delete item test" height="220px" width="490px"/></p>
-            - <p align="center"><img src="readme-images/testing/item-deleted-msg.png" alt="Image of delete item message" height="220px" width="490px"/></p>
+            - <p float="left"><img src="readme-images/testing/test-delete-item.png" alt="Image of delete item test" height="220px" width="490px"/></p>
+            - <p float="left"><img src="readme-images/testing/item-deleted-msg.png" alt="Image of delete item message" height="220px" width="490px"/></p>
     
     - #### Reviews Functionality.
         - To test the review functionality I first logged in to my account.
         - I then navigated to the review page where I submited a review.
-            - <p align="center"><img src="readme-images/testing/add-review.png" alt="Image of add review" height="240px" width="400px"/></p>
+            - <p float="left"><img src="readme-images/testing/add-review.png" alt="Image of add review" height="240px" width="400px"/></p>
 
         - Once the review was there I then edited the review.
-            - <p align="center"><img src="readme-images/testing/edit-review.png" alt="Image of edit review" height="220px" width="290px"/></p>
+            - <p float="left"><img src="readme-images/testing/edit-review.png" alt="Image of edit review" height="220px" width="290px"/></p>
 
         - I then deleted the review to test the delete functionality.
-            - <p align="center"><img src="readme-images/testing/delete-review.png" alt="Image of delete review" height="220px" width="490px"/></p>
+            - <p float="left"><img src="readme-images/testing/delete-review.png" alt="Image of delete review" height="220px" width="490px"/></p>
     
     - #### Blog Functionality
         - To test the blog functionality I first logged in as the admin user.
         - I then created a new blog post.
-            - <p align="center"><img src="readme-images/testing/add-post.png" alt="Image of create new post" height="420px" width="390px"/></p>
+            - <p float="left"><img src="readme-images/testing/add-post.png" alt="Image of create new post" height="420px" width="390px"/></p>
 
         - I then tested editing the blog post.
-            - <p align="center"><img src="readme-images/testing/edit-post.png" alt="Image of editpost" height="380px" width="450px"/></p>
+            - <p float="left"><img src="readme-images/testing/edit-post.png" alt="Image of editpost" height="380px" width="450px"/></p>
         - I also tested commenting on the blog post.
-            - <p align="center"><img src="readme-images/testing/test-comment.png" alt="Image of create new comment" height="300px" width="350px"/></p>
+            - <p float="left"><img src="readme-images/testing/test-comment.png" alt="Image of create new comment" height="300px" width="350px"/></p>
 
         - Then I tested deleting the blog post and comments.
-            - <p align="center"><img src="readme-images/testing/delete-post.png" alt="Image of create new post" height="320px" width="490px"/></p>
+            - <p float="left"><img src="readme-images/testing/delete-post.png" alt="Image of create new post" height="320px" width="490px"/></p>
     
     - #### Wishlist Functionality
         - To test the wishlist functionality I first logged into my account.
         - I then tested the add to wishlist button on the image. 
-            - <p align="center"><img src="readme-images/testing/add-to-wishlist.png" alt="Image of add to wishlist" height="320px" width="390px"/></p>
+            - <p float="left"><img src="readme-images/testing/add-to-wishlist.png" alt="Image of add to wishlist" height="320px" width="390px"/></p>
 
         - I also tested the add to wishlist button on the item page.
-            - <p align="center"><img src="readme-images/testing/add-to-wishlist-btn.png" alt="Image of add to wishlist button" height="300px" width="390px"/></p>
+            - <p float="left"><img src="readme-images/testing/add-to-wishlist-btn.png" alt="Image of add to wishlist button" height="300px" width="390px"/></p>
 
         - I then tested the item has been placed in the wishlist. 
         - I then tested the edit wishlist button.
         - Finally, I tested the delete wishlist button.
-            - <p align="center"><img src="readme-images/testing/wishlist-delete-modal.png" alt="Image of delete wishlist modal" height="250px" width="390px"/></p>
-            - <p align="center"><img src="readme-images/testing/wishlist-delete-message.png" alt="Image of delete wishlist" height="200px" width="500px"/></p>
+            - <p float="left"><img src="readme-images/testing/wishlist-delete-modal.png" alt="Image of delete wishlist modal" height="250px" width="390px"/></p>
+            - <p float="left"><img src="readme-images/testing/wishlist-delete-message.png" alt="Image of delete wishlist" height="200px" width="500px"/></p>
     
     - #### Newsletter Sign up
         - To test the newsletter signup I entered my email and submitted the form.
-            - <p align="center"><img src="readme-images/testing/newsletter-msg.png" alt="Image of newsletter message height="180px" width="450px"/></p>
-            - <p align="center"><img src="readme-images/testing/newsletter-email.png" alt="Image of newsletter email" height="300px" width="450px"/></p>
+            - <p float="left"><img src="readme-images/testing/newsletter-msg.png" alt="Image of newsletter message height="180px" width="450px"/></p>
+            - <p float="left"><img src="readme-images/testing/newsletter-email.png" alt="Image of newsletter email" height="300px" width="450px"/></p>
     
     - #### Contact Form
         - To test the contact form I navigated to the contact page from the footer.
         - I then filled in and submitted the form. 
         - I then logged into the admin to check to see if my contact message had been sent
-            - <p align="center"><img src="readme-images/testing/contact-msg.png" alt="Image of contact message" height="220px" width="450px"/></p>
-            - <p align="center"><img src="readme-images/testing/contact-admin.png" alt="Image of edit wishlist" height="220px" width="450px"/></p>
+            - <p float="left"><img src="readme-images/testing/contact-msg.png" alt="Image of contact message" height="220px" width="450px"/></p>
+            - <p float="left"><img src="readme-images/testing/contact-admin.png" alt="Image of edit wishlist" height="220px" width="450px"/></p>
     
     - #### Forms 
         - All forms have been check to see if the throw and error if they are left empty when the field is required.
         - They have also been check by putting in incorrect inputs to check if they show an error to the user. 
-            - <p align="center"><img src="readme-images/testing/form-test.png" alt="Image of edit wishlist" height="150px" width="600px"/></p>
+            - <p float="left"><img src="readme-images/testing/form-test.png" alt="Image of edit wishlist" height="150px" width="600px"/></p>
     
     - #### Facebook Login.
         - I have tested the facebook login by login into the website using my own facebook account.
