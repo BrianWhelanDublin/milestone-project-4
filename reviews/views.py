@@ -61,6 +61,8 @@ def edit_review(request, review_id):
     context = {
         "form": form,
         "page_obj": page_obj,
+        "edit_review": True,
+        "review_to_edit": review,
     }
 
     return render(request,

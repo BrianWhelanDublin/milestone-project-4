@@ -16,9 +16,20 @@ Reviews
     </div>
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4">
+
+            {% if edit_review %}
+            <h2 class="text-center mb-5">Edit Review</h2>
+            {% else %}
             <h2 class="text-center mb-5">Add A Review</h2>
+            {% endif %}
+
             {% if request.user.is_authenticated %}
-            <form id="review-form" class="mb-5" method="POST" action="{% url 'our_reviews' %}">
+            <form id="review-form" class="mb-5" method="POST" 
+            {% if edit_review %}
+                action="{% url 'edit_review' review_to_edit.id %}"
+             {% else %}
+                action="{% url 'our_reviews' %}"
+            {% endif %}>
                 {% csrf_token %}
                 {{ form.review | as_crispy_field }}
                 <div class="div stars-input flex-row-between">
@@ -32,7 +43,13 @@ Reviews
                         <span class="sr-only">increment button</span>
                     </div>
                 </div>
-                <button class="item-link-dark item-link-button  flex-center m-auto " type="submit">Add Review</button>
+                <button class="item-link-dark item-link-button  flex-center m-auto " type="submit">
+                    {% if edit_review %}
+                    Edit Review
+                    {% else %}
+                    Add Review
+                    {% endif %}
+                </button>
             </form>
             {% else %}
             <p class="fs-2 mb-5">Please
