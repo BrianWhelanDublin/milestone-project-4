@@ -78,6 +78,8 @@
     - As a customer, I would like to be able to add products to my shopping cart.
         - From the item page the user can click the add to cart button which will then add the item to the user's cart.
 
+            - <p align="center"><img src="readme-images/testing/add-to-cartbtn.png" alt="Image of admin menu" height="200px" width="490px"/></p>
+
     - As a customer, I would like to be notified when I complete interactions with the site.
         - The user is notified with a popup message whenever they act on the site. 
         - The messages confirm actions as well as warnings and alerts.
@@ -101,7 +103,7 @@
     - As a customer, I would like to receive confirmation of my order.
         - Once the user submits an order and it has been confirmed they will then be sent a confirmation email containing the order details.
 
-         - <p align="center"><img src="readme-images/testing/order-confirm.png" alt="Image order confirmation" height="275px" width="490px"/></p>
+         - <p align="center"><img src="readme-images/testing/order-confirm.png" alt="Image of add to cart button" height="275px" width="490px"/></p>
 
   - Account.
 
@@ -216,8 +218,8 @@
         ```
 
 
-- #### Post Data in the Strip js
-    - During developing the javascript for skype I had an issue with posting the data.
+- #### Post Data in the Stripe js
+    - During developing the javascript for stripe I had an issue with posting the data.
     - When I declared my data into a dictionary and tried to post it, it would work properly.
     - Through researching the issue I found that using the FormData constructor fixed the issue.
     - Once this was done the code then sent the data to the cache_checkout_data view.
@@ -298,6 +300,40 @@
         - This will minimize the user deleting things by mistake.
 
 ## Manual Testing
+
+- All functionality of the website was also tested manually to ensure it all worked correctly
+
+    - Cart Functionality.
+
+        - To test the cart functionality I first added an item to the cart.
+            - <p align="center"><img src="readme-images/testing/test-add-to-cart.png" alt="Image of add to cart test" height="280px" width="400px"/></p>
+        
+        - I then navigated to the cart page and updated the item amount to test 
+        this function.
+            - <p align="center"><img src="readme-images/testing/test-update.png" alt="Image of update cart test" height="250px" width="400px"/></p>
+
+        - I then removed the item to test this functionality out.
+            - <p align="center"><img src="readme-images/testing/test-remove-from-cart.png" alt="Image of remove from cart test" height="180px" width="490px"/></p>
+
+    - Checkout Functionality
+
+        - To test the checkout functionality I first placed an item into my cart and then navigated to the checkout page. 
+        - I then filled in the checkout form using the stripe test credit card number.
+        - I then received an order confirmation.
+            - <p align="center"><img src="readme-images/testing/order-confirm-test.png" alt="Image of order confirmation test" height="350px" width="390px"/></p>
+
+        - I then checked my email for the order confirmation email.
+            - <p align="center"><img src="readme-images/testing/email-confirmation.png" alt="Image of confirmation email" height="400px" width="390px"/></p>
+
+        - Then I checked stripe to insure all payment intents had succeeded.
+            - <p align="center"><img src="readme-images/testing/stripe-test.png" alt="Image of stripe test" height="180px" width="490px"/></p>
+
+        - Finally, I checked the admin to ensure the order had been placed.
+            - <p align="center"><img src="readme-images/testing/order-admin.png" alt="Image of order in admin" height="220px" width="490px"/></p>
+
+
+
+
 
 ## Validators
 
