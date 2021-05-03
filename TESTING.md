@@ -303,7 +303,7 @@
 
 - All functionality of the website was also tested manually to ensure it all worked correctly
 
-    - Cart Functionality.
+    - #### Cart Functionality.
 
         - To test the cart functionality I first added an item to the cart.
             - <p align="center"><img src="readme-images/testing/test-add-to-cart.png" alt="Image of add to cart test" height="280px" width="400px"/></p>
@@ -315,7 +315,7 @@
         - I then removed the item to test this functionality out.
             - <p align="center"><img src="readme-images/testing/test-remove-from-cart.png" alt="Image of remove from cart test" height="180px" width="490px"/></p>
 
-    - Checkout Functionality
+    - #### Checkout Functionality
 
         - To test the checkout functionality I first placed an item into my cart and then navigated to the checkout page. 
         - I then filled in the checkout form using the stripe test credit card number.
@@ -331,6 +331,22 @@
         - Finally, I checked the admin to ensure the order had been placed.
             - <p align="center"><img src="readme-images/testing/order-admin.png" alt="Image of order in admin" height="220px" width="490px"/></p>
 
+    - #### Stock control
+
+        - To test the stock control functionality I first logged in as the admin user.
+        - I then navigated to the stock control page and created a new item. 
+            - <p align="center"><img src="readme-images/testing/test-add-item.png" alt="Image of add item test" height="320px" width="490px"/></p>
+
+        - I then tested editing the item.
+            - <p align="center"><img src="readme-images/testing/test-edit-item.png" alt="Image of edit item test" height="320px" width="490px"/></p>
+
+        - Then finally I tested deleting the item.
+            - <p align="center"><img src="readme-images/testing/test-delete-item.png" alt="Image of delete item test" height="220px" width="490px"/></p>
+            - <p align="center"><img src="readme-images/testing/item-deleted-msg.png" alt="Image of order in admin" height="220px" width="490px"/></p>
+    
+    - #### Reviews Functionality.
+        - To test the review functionality I first logged in to my account.
+        - I
 
 
 
