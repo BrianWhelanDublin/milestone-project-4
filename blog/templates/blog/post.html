@@ -73,16 +73,16 @@
             <p class="fs-4 my-2">{{ comment.comment }}</p>
             {% if user == comment.author %}
             <button type="button" class="text-danger fs-5 comment-delete" data-bs-toggle="modal"
-                data-bs-target="#comment-deleteModal">
+                data-bs-target="#comment-deleteModal-{{comment.id}}">
                 Delete
             </button>
             <!-- delete comments modal -->
-            <div class="modal fade" id="comment-deleteModal" tabindex="-1" aria-labelledby="comment-deleteModalLabel"
+            <div class="modal fade" id="comment-deleteModal-{{comment.id}}" tabindex="-1" aria-labelledby="comment-deleteModalLabel-{{comment.id}}"
                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title fs-1 m-auto" id="comment-deleteModalLabel">Delete Comment!
+                            <h5 class="modal-title fs-1 m-auto" id="comment-deleteModalLabel-{{comment.id}}">Delete Comment!
                             </h5>
                         </div>
                         <div class="modal-body">

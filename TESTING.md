@@ -342,11 +342,33 @@
 
         - Then finally I tested deleting the item.
             - <p align="center"><img src="readme-images/testing/test-delete-item.png" alt="Image of delete item test" height="220px" width="490px"/></p>
-            - <p align="center"><img src="readme-images/testing/item-deleted-msg.png" alt="Image of order in admin" height="220px" width="490px"/></p>
+            - <p align="center"><img src="readme-images/testing/item-deleted-msg.png" alt="Image of delete item message" height="220px" width="490px"/></p>
     
     - #### Reviews Functionality.
         - To test the review functionality I first logged in to my account.
-        - I
+        - I then navigated to the review page where I submited a review.
+            - <p align="center"><img src="readme-images/testing/add-review.png" alt="Image of add review" height="240px" width="400px"/></p>
+
+        - Once the review was there I then edited the review.
+            - <p align="center"><img src="readme-images/testing/edit-review.png" alt="Image of edit review" height="220px" width="290px"/></p>
+
+        - I then deleted the review to test the delete functionality.
+            - <p align="center"><img src="readme-images/testing/delete-review.png" alt="Image of delete review" height="220px" width="490px"/></p>
+    
+    - #### Blog Functionality
+        - To test the blog functionality I first logged in as the admin user.
+        - I then created a new blog post.
+            - <p align="center"><img src="readme-images/testing/add-post.png" alt="Image of create new post" height="420px" width="390px"/></p>
+
+        - I then tested editing the blog post.
+            - <p align="center"><img src="readme-images/testing/edit-post.png" alt="Image of editpost" height="380px" width="450px"/></p>
+        - I also tested commenting on the blog post.
+            - <p align="center"><img src="readme-images/testing/test-comment.png" alt="Image of create new comment" height="300px" width="350px"/></p>
+
+        - Then I tested deleting the blog post and comments.
+            - <p align="center"><img src="readme-images/testing/delete-post.png" alt="Image of create new post" height="320px" width="490px"/></p>
+    
+        
 
 
 
@@ -357,7 +379,7 @@
     - I passed my CSS through the CSS code validator and it has passesd.
 
         - <div float="left">
-            <img src="readme-images/testing/css-validation.png" alt="Image of css report" width="500px" height="280px" />
+            <img src="readme-images/testing/css-validation.png" alt="Image of css report" width="500px" height="380px" />
         </div>
 
 - #### Javascript
