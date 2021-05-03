@@ -19,9 +19,9 @@
     {% endif %}
     <p class="fs-5">Add new Image</p>
     <span class="item-link-light item-link-button file-button  flex-center">Select New Image
-        <input id="new-image-input" type="{{ widget.type }}" name="{{ widget.name }}" {% include "django/forms/widgets/attrs.html" %}>
+        <input class="new-image-input" type="{{ widget.type }}" name="{{ widget.name }}" {% include "django/forms/widgets/attrs.html" %}>
     </span>
-    <strong><p id="image-name"></p></strong>
+  <p id="image-name"></p>
     {% if in_blog %}
       <a href="{{ widget.value.url }}">
         <img width="96" height="96" class="rounded shadow-sm" src="{{ widget.value.url }}">
