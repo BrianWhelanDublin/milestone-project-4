@@ -368,7 +368,41 @@
         - Then I tested deleting the blog post and comments.
             - <p align="center"><img src="readme-images/testing/delete-post.png" alt="Image of create new post" height="320px" width="490px"/></p>
     
-        
+    - #### Wishlist Functionality
+        - To test the wishlist functionality I first logged into my account.
+        - I then tested the add to wishlist button on the image. 
+            - <p align="center"><img src="readme-images/testing/add-to-wishlist.png" alt="Image of add to wishlist" height="320px" width="390px"/></p>
+
+        - I also tested the add to wishlist button on the item page.
+            - <p align="center"><img src="readme-images/testing/add-to-wishlist-btn.png" alt="Image of add to wishlist button" height="300px" width="390px"/></p>
+
+        - I then tested the item has been placed in the wishlist. 
+        - I then tested the edit wishlist button.
+        - Finally, I tested the delete wishlist button.
+            - <p align="center"><img src="readme-images/testing/wishlist-delete-modal.png" alt="Image of delete wishlist modal" height="250px" width="390px"/></p>
+            - <p align="center"><img src="readme-images/testing/wishlist-delete-message.png" alt="Image of delete wishlist" height="200px" width="500px"/></p>
+    
+    - #### Newsletter Sign up
+        - To test the newsletter signup I entered my email and submitted the form.
+            - <p align="center"><img src="readme-images/testing/newsletter-msg.png" alt="Image of newsletter message height="180px" width="450px"/></p>
+            - <p align="center"><img src="readme-images/testing/newsletter-email.png" alt="Image of newsletter email" height="300px" width="450px"/></p>
+    
+    - #### Contact Form
+        - To test the contact form I navigated to the contact page from the footer.
+        - I then filled in and submitted the form. 
+        - I then logged into the admin to check to see if my contact message had been sent
+            - <p align="center"><img src="readme-images/testing/contact-msg.png" alt="Image of contact message" height="220px" width="450px"/></p>
+            - <p align="center"><img src="readme-images/testing/contact-admin.png" alt="Image of edit wishlist" height="220px" width="450px"/></p>
+    
+    - #### Forms 
+        - All forms have been check to see if the throw and error if they are left empty when the field is required.
+        - They have also been check by putting in incorrect inputs to check if they show an error to the user. 
+            - <p align="center"><img src="readme-images/testing/form-test.png" alt="Image of edit wishlist" height="150px" width="600px"/></p>
+    
+    - #### Facebook Login.
+        - I have tested the facebook login by login into the website using my own facebook account.
+        - The functionality has worked as expected.
+           
 
 
 
