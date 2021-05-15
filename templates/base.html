@@ -6,7 +6,9 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+   
     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -52,7 +54,7 @@
                                 <li class="top-nav-item  d-md-none">
                                     <a href="{% url 'view_wishlist' %}">
                                         <i class="lar la-heart " aria-hidden="true"></i>
-                                    <span class="visually-hidden">link to wishlist</span>
+                                        <span class="visually-hidden">link to wishlist</span>
                                     </a>
                                 </li>
                                 <li class="top-nav-item d-none d-md-block dropdown-link">Account
@@ -91,7 +93,7 @@
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                 <li class="account-item"><a href="{% url 'add_item' %}">Stock Control</a></li>
-                                 <li class="account-item"><a href="{% url 'add_post' %}">Add Blog Post</a></li>
+                                <li class="account-item"><a href="{% url 'add_post' %}">Add Blog Post</a></li>
                                 {% endif %}
                                 <li class="account-item"><a href="{% url 'user_profile' %}">My Account</a></li>
                                 <li class="account-item"><a href="{% url 'account_logout' %}">Logout</a></li>
@@ -186,7 +188,8 @@
                             abode@email.com
                         </a></p>
                     <p>Call us at +353 (0)15555555</p>
-                    <a href="{% url 'contact' %}">Or you can contact us here <i class="las la-angle-right" aria-hidden="true"></i></a>
+                    <a href="{% url 'contact' %}">Or you can contact us here <i class="las la-angle-right"
+                            aria-hidden="true"></i></a>
                 </div>
                 <div class="col-12 social-col col-md-6 ">
                     <h3>Follow us on social</h3>

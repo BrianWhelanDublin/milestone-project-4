@@ -321,6 +321,19 @@
         - If they click delete they will be asked to confirm this with a modal popup.
             - <p align="center"><img src="readme-images/features/edit-wishlist.png" alt="Image ofitem before the wishlist click"  height="320px" width="550px"/></p>
 
+- #### Blog app.
+    - View blog.
+        - The main blog page shows all the recent blog post.
+            - <p align="center"><img src="readme-images/features/all-posts.png" alt="Image of all blog posts"  height="320px" width="550px"/></p>
+
+        - When a user selects the post they are brought to the main blog post page.
+            - <p align="center"><img src="readme-images/features/blog-post.png" alt="Image of  blog post"  height="320px" width="550px"/></p>
+
+        - There is also a comment section for logged in users on each blog post.
+    
+    - Blog add post and edit
+        - The front end consist of a add blog post page and an edit page that is made available to superusers only.
+            - <p align="center"><img src="readme-images/features/add-post.png" alt="Image of add post page"  height="320px" width="550px"/></p>
 
 ## Testing
 
