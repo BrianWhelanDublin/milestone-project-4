@@ -14,7 +14,12 @@
                 <form id="item-form" class="m-auto" {% if add_item %} action="{% url 'add_item' %}" {% else %}
                     action="{% url 'edit_item' item.id %}" {% endif %} method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{ form|crispy }}
+                    {{ form.code | as_crispy_field }}
+                {{ form.name | as_crispy_field }}
+                {{ form.description | as_crispy_field }}
+                {{ form.price | as_crispy_field }}
+                {{ form.image }}
+                    {{ form.category | as_crispy_field }}
                     <button type="submit" class="m-auto mt-5 mb-5 item-link-button flex-center item-link-dark"
                         id="item-submit">{{ submit_text }}</button>
                 </form>
