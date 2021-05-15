@@ -45,8 +45,7 @@ Wishlist
                                 cancel-btn flex-center" data-bs-dismiss="modal">Cancel</button>
                             <form method="POST" action="{% url 'delete_wishlist' %}">
                                 {% csrf_token %}
-                                <button type="submit" class=" modal-button fs-3 flex-center delete-btn"
-                                    href="">Delete</button></form>
+                                <button type="submit" class=" modal-button fs-3 flex-center delete-btn">Delete</button></form>
                         </div>
                     </div>
                 </div>
@@ -78,7 +77,7 @@ Wishlist
             </div>
             <form class="mt-5" action="{% url 'add_to_cart' item.id %}" method="POST">
                 {% csrf_token %}
-                <input class="form-control" type="hidden" name="quantity" value="1" min="1" max="9">
+                <input class="form-control" type="hidden" name="quantity">
                 <button type="submit" class=" item-link-button flex-center item-link-dark m-auto">Add To Cart</button>
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </form>
