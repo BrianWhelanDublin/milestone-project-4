@@ -26,7 +26,7 @@
     <div class="row">
         {% if request.user.is_superuser %}
         <div class="col-12 mt-5">
-            <div class="flex-row-between post-btns m-auto">
+            <div class="flex-row-between post-btns">
                 <a class="fs-3 modal-button
                                 cancel-btn flex-center" href="{% url 'edit_post' post.id %}">Edit</a>
                 <!-- Button trigger modal to double check before deleting the post -->
