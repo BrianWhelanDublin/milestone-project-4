@@ -1,7 +1,8 @@
 // javascript to add items and remove items from the wishlist.
 
 let wishlistButton = document.querySelectorAll(".wishlist-btn-add");
-    wishlistButton.forEach((button) => {
+if (wishlistButton){
+wishlistButton.forEach((button) => {
         button.addEventListener("click", (event) => {
             event.preventDefault();
             let itemId = button.getAttribute("id").split("wish_")[1];
@@ -20,9 +21,12 @@ let wishlistButton = document.querySelectorAll(".wishlist-btn-add");
             });
         });
     });
+}
+    
 
 let wishlistLikedButton = document.querySelectorAll(".wishlist-btn-liked");
-    wishlistLikedButton.forEach((button) => {
+if (wishlistLikedButton){
+ wishlistLikedButton.forEach((button) => {
         button.addEventListener("click", (event) => {
             event.preventDefault();
             let itemId = button.getAttribute("id").split("liked_")[1];
@@ -40,12 +44,16 @@ let wishlistLikedButton = document.querySelectorAll(".wishlist-btn-liked");
             });
         });
     });
+}
+
 
 let editButton = document.querySelector(".edit");
 let deleteButton = document.querySelector(".delete-wishlist");
+if (editButton){
 editButton.addEventListener("click", ()=>{
     deleteButton.classList.toggle("hidden-button");
      wishlistLikedButton.forEach((button)=>{
          button.classList.toggle("hidden-button");
      });
 });
+}
