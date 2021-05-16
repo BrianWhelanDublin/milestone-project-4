@@ -1,4 +1,5 @@
 // New-in stock slider
+
 let rightArrow = document.querySelector("#arrow-right");
 let leftArrow = document.querySelector("#arrow-left");
 let newItemSlider = document.querySelector(".new-item-slider");
@@ -12,6 +13,8 @@ let lastSlide = sliderMaxLength - sliderWidth - (slideWidth/2);
 rightArrow.addEventListener("click", () => {
     newItemSlider.scrollLeft += slideWidth;
     leftArrow.classList.add("arrow-active");
+    console.log(newItemSlider.scrollLeft)
+    console.log(lastSlide)
     if (newItemSlider.scrollLeft >= lastSlide) {
         rightArrow.classList.remove("arrow-active");
     }
@@ -19,7 +22,9 @@ rightArrow.addEventListener("click", () => {
 
 leftArrow.addEventListener("click", () => {
     newItemSlider.scrollLeft -= slideWidth;
-    if (newItemSlider.scrollLeft <= slideWidth) {
+    console.log(newItemSlider.scrollLeft)
+    console.log(slideWidth)
+    if (newItemSlider.scrollLeft < slideWidth) {
         leftArrow.classList.remove("arrow-active");
     }
     rightArrow.classList.add("arrow-active");
