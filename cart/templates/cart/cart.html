@@ -85,7 +85,7 @@ Your Cart
                         <td colspan="5" class="pt-4  text-end">
                             <p>Total: € {{ total|floatformat:2|intcomma }}</p>
                             <p>Delivery: € {{ home_delivery|floatformat:2 }}</p>
-                            <h4>Total Price : € {{ grand_total|floatformat:2|intcomma }}</h4>
+                            <p class="cart-total-price">Total Price : € {{ grand_total|floatformat:2|intcomma }}</p>
                         </td>
                     </tr>
                 </table>

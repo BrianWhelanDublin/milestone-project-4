@@ -8,7 +8,7 @@
 {% block allauth_block %}
 <div class="row allauth-row">
     <div class="col-12 col-md-6 allauthform-col flex-center">
-        <h3 class="fs-1">Sign Up</h3>
+        <h2 class="fs-1">Sign Up</h2>
         <form class="signup allauth-form" id="signup_form" method="post" action="{% url 'account_signup' %}">
             {% csrf_token %}
             {{ form|crispy }}

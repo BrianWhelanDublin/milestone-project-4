@@ -21,7 +21,7 @@ Checkout
                 <div>
                     <div class="row">
                         <div class="col-12">
-                            <h3 class="flex-center">Your Cart</h3>
+                            <h2 class="flex-center">Your Cart</h2>
                             <hr class="mx-4">
                         </div>
                         <div class="col-9 offset-1">
@@ -45,7 +45,7 @@ Checkout
                         <hr class="mx-2">
                         <p class="fs-5">Total: € {{ total|floatformat:2|intcomma }}</p>
                         <p class="fs-5">Delivery: € {{ home_delivery|floatformat:2 }}</p>
-                        <h4>Total Price : € {{ grand_total|floatformat:2|intcomma }}</h4>
+                        <p class="cart-total-price">Total Price : € {{ grand_total|floatformat:2|intcomma }}</p>
                     </div>
                 </div>
 

@@ -10,7 +10,7 @@
             {% else %}
             <div class="col-12">
                 {% endif %}
-                <h3 class="fs-2 text-center mb-3">{{ title }}</h3>
+                <h2 class="fs-2 text-center mb-3">{{ title }}</h2>
                 <form id="item-form" class="m-auto" {% if add_item %} action="{% url 'add_item' %}" {% else %}
                     action="{% url 'edit_item' item.id %}" {% endif %} method="POST" enctype="multipart/form-data">
                     {% csrf_token %}

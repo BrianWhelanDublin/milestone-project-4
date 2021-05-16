@@ -32,14 +32,14 @@
                 {{ form.content | as_crispy_field }}
                 <div class="row">
                     {% if edit_post %}
-                    <div class="col-12 col-md-4">
-                        <h3 class=" mt-2">Current Image</h3>
+                    <div class="col-12 col-lg-4">
+                        <h2 class=" mt-2">Current Image</h2>
                         <div class="post-current-image mt-4">
                             <img src="{{ MEDIA_URL }}{{post.image}}" alt="Image belonging to {{post.title}}">
                         </div>
                     </div>
                     {% endif %}
-                    <div class="col-12 col-md-8">
+                    <div class="col-12 col-lg-8">
                         {{ form.image }}
                     </div>
                 </div>

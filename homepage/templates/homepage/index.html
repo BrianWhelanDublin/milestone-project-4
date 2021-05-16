@@ -40,7 +40,7 @@
 <div class="container-fluid">
     <div class="row animation-element">
         <div class="col new-item-title-col flex-row-between ">
-            <h3>New In</h3>
+            <h2>New In</h2>
             <div class="arrows flex-row-between">
                 <div id="arrow-left" class="arrow flex-center">
                     <i class="las la-angle-left" aria-hidden="true"></i>
@@ -67,7 +67,7 @@
                         </a>
                         {% endif %}
                         <div class="item-details flex-row-between">
-                            <h3>{{ item.name }}</h3>
+                            <h2>{{ item.name }}</h2>
                             <p>€ {{ item.price|intcomma }}</p>
                         </div>
                     </li>
@@ -81,7 +81,7 @@
 <div class="container-fluid category-container">
     <div class="row animation-element">
         <div class="category-title-col ">
-            <h3>Shop Our Collections</h3>
+            <h2>Shop Our Collections</h2>
         </div>
     </div>
     <div class="row animation-element">
@@ -115,7 +115,7 @@
     <div class="row">
         <div class="col flex-center">
             <div class="col review-title">
-                <h3>Rated Excellent by you</h3>
+                <h2>Rated Excellent by you</h2>
             </div>
         </div>
     </div>
@@ -175,7 +175,7 @@
 <div class="container-fluid blog-homepage-container animation-element">
     <div class="row">
          <div class="category-title-col col-12 ">
-            <h3 >Get Inspired by our latest blog posts.</h3>
+            <h2 >Get Inspired by our latest blog posts.</h2>
         </div>
     </div>
     <div class="row">
@@ -191,7 +191,7 @@
                         <img src="{{ MEDIA_URL }}no_image.png" alt="No image found for {{ post.title }}"></a>
                     {% endif %}
                     <div class="blog-item-details blog-homepage-details">
-                        <h3 class="text-center">{{post.title}}</h3>
+                        <h2 class="text-center">{{post.title}}</h2>
                         <a href="{% url 'view_post' post.id %}" class="item-link-light item-link-button  flex-center">Read More ...</a>
                     </div>
                 </div>
@@ -209,7 +209,7 @@
 <div class="container-fluid newsletter-container">
     <div class="row">
         <div class="col-12 col-md-6 newsletter-col">
-            <h3>Sign Up for Our Newsletter</h3>
+            <h2>Sign Up for Our Newsletter</h2>
         </div>
         <div class="col-12 col-md-6">
             <form class="newsletter-form flex-center" method="POST" action="{% url 'home_page'%}">

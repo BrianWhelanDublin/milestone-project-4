@@ -804,7 +804,7 @@ input:-webkit-autofill {
     margin: 0 10%;
 }
 
-.new-item-title-col h3 {
+.new-item-title-col h2 {
     font-size: 3rem;
 }
 
@@ -864,7 +864,7 @@ input:-webkit-autofill {
     margin: 0 4rem;
 }
 
-.item-details h3 {
+.item-details h2 {
     font-weight: 400;
 }
 
@@ -893,7 +893,7 @@ input:-webkit-autofill {
     margin-top: 2rem;
 }
 
-.category-title-col h3 {
+.category-title-col h2 {
     font-size: 3rem;
     margin: 0 10%;
 }
@@ -939,7 +939,7 @@ input:-webkit-autofill {
     margin-bottom: 7.5rem;
 }
 
-.review-title h3 {
+.review-title h2 {
     margin: 4rem 0;
     font-size: 3rem;
     text-align: center;
@@ -974,7 +974,7 @@ input:-webkit-autofill {
     margin-top: 2%;
 }
 
-.newsletter-col h3 {
+.newsletter-col h2 {
     text-align: center;
     font-size: 2.5rem;
     margin: 7.5% 0;
@@ -1116,7 +1116,7 @@ input:-webkit-autofill {
     border: .1rem solid #D1D1C7;
 }
 
-.our-story-col h3 {
+.our-story-col h2 {
     margin-top: 2rem;
     font-size: 3rem;
 }
@@ -1228,6 +1228,11 @@ th {
 td p {
     font-size: 1.1rem;
     margin-top: 3rem;
+}
+
+.cart-total-price {
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
 .update-quantity-link,
@@ -1403,7 +1408,7 @@ td p {
     background: #EDEDE9;
 }
 
-.blog-item-details h3 {
+.blog-item-details h2 {
     font-size: 2.5rem;
     font-weight: 500;
 }
@@ -1535,6 +1540,11 @@ td p {
         font-size: 1.25rem;
     }
 
+    .cart-total-price {
+        font-size: 1.45rem;
+
+    }
+
     .successful-toast {
         width: 50rem;
     }
@@ -1654,6 +1664,11 @@ td p {
         font-size: 1.5rem;
     }
 
+    .cart-total-price {
+        font-size: 1.65rem;
+
+    }
+
     .blog-image-container {
         height: 46rem;
         width: 35rem;
@@ -1668,7 +1683,7 @@ td p {
         background: #EDEDE9;
     }
 
-    .blog-item-details h3 {
+    .blog-item-details h2 {
         font-size: 3rem;
     }
 }
