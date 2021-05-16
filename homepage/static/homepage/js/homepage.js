@@ -1,5 +1,4 @@
 // New-in stock slider
-window.onload = () =>{
 let rightArrow = document.querySelector("#arrow-right");
 let leftArrow = document.querySelector("#arrow-left");
 let newItemSlider = document.querySelector(".new-item-slider");
@@ -8,7 +7,7 @@ let slidesAmount = newItemSlider.getElementsByTagName("li").length;
 let slideWidth = slide.offsetWidth;
 let sliderWidth = newItemSlider.clientWidth;
 let sliderMaxLength = slidesAmount * slideWidth;
-let lastSlide = sliderMaxLength - sliderWidth - slideWidth;
+let lastSlide = sliderMaxLength - sliderWidth - (slideWidth/2);
 
 rightArrow.addEventListener("click", () => {
     newItemSlider.scrollLeft += slideWidth;
@@ -25,8 +24,6 @@ leftArrow.addEventListener("click", () => {
     }
     rightArrow.classList.add("arrow-active");
 });
-}
-
 
 // change top navigation colour on scroll
 window.addEventListener("scroll", () => {
