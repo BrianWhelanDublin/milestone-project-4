@@ -405,8 +405,6 @@
            
 
 
-
-
 ## Validators
 
 - #### CSS
@@ -424,7 +422,7 @@
         <img src="readme-images/testing/jshint.png" alt="Image of jshint" width="500px" height="180px" />
         </div>
 
-  - #### Python
+- #### Python
 
      - My python was passed through a pep8 validating tool to validate it and it all passed.
 
@@ -432,11 +430,18 @@
         <img src="readme-images/testing/pep8.png" alt="Image of pep8 results" width="500px" height="280px" />
         </div>
 
+- #### Html
+
+     - My Html code was passed through the W3C Markup Validation Service and there are no erros showing.
+
+     - <div float="left">
+        <img src="readme-images/testing/html-validation.png" alt="Image of pep8 results" width="500px" height="280px" />
+        </div>
+
 ## Responsiveness and Browsers
 
 - I have tested the site Responsivenessacross Google chrome dev tools. 
 - I have also used the application across different screen sizes.
-
 - The app has also been used on different browsers to check its compatibility
     - Google chrome.
     - Safari
@@ -446,4 +451,9 @@
 
 ## Accessibility
 
-## Known Bugs
+- The site has been tested for Accessibility using google lighthouse and the Accessibility insights chrome extension.
+- When testing I made several changes to heading elements to improve the Accessibility.
+- I have also ensured that all images have alt text attributes.
+- All icons have been aria-labelled and include text descriptions for screenreaders only.
+- Upon testing in lighthouse, I have received scores of 98% to 100% across the site.
+
