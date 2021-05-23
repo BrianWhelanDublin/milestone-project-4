@@ -18,6 +18,7 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #EDEDE9;
+
 }
 
 /* css for animation on scroll */
@@ -827,33 +828,44 @@ input:-webkit-autofill {
     border-radius: 50%;
 }
 
+
 .arrow i {
     font-size: 2rem;
 }
 
-.arrow-active {
+.clickable {
     background-color: #153243;
+    transition: all .25s ease-out;
 }
 
-.arrow-active i {
+.clickable:hover {
+    transform: scale(1.15);
+}
+
+.clickable i {
     color: #EDEDE9;
 }
 
-
-.new-item-slider {
-    width: 90%;
-    display: flex;
-    flex-wrap: nowrap;
+.new-item-slider-container {
+    display: block;
+    margin: auto;
     overflow: hidden;
-    scroll-behavior: smooth;
-    margin: 0 5%;
-    margin-bottom: 5%;
-    list-style: none;
+    width: 30rem
 }
 
-.item-container {
-    padding: 1rem .5rem;
-    position: relative;
+.slider-wrapper {
+    max-width: 95%;
+    overflow: hidden;
+    display: block;
+    margin: auto;
+}
+
+.new-item-slider {
+    list-style: none;
+    width: 100%;
+    transition: all .5s ease;
+    display: flex;
+    flex-direction: row;
 }
 
 .item-details {
@@ -882,6 +894,35 @@ input:-webkit-autofill {
 
 .item-container a img:hover {
     filter: brightness(50%);
+}
+
+.controls {
+    width: 100%;
+    padding: 15px;
+}
+
+.controls ul {
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.controls ul li {
+    height: 10px;
+    width: 10px;
+    border: 1px solid #1532439d;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.controls ul li.active {
+    background-color: #153243c9;
+
+
 }
 
 /* shop by categories */
@@ -1434,6 +1475,10 @@ td p {
         font-size: 6.5rem;
     }
 
+    .new-item-slider-container {
+        width: 60rem
+    }
+
 }
 
 /* large 992px*/
@@ -1453,6 +1498,10 @@ td p {
 
     .hero-col-right h1 {
         font-size: 8rem;
+    }
+
+    .new-item-slider-container {
+        width: 90rem
     }
 
     .category-title-col h3,
@@ -1573,13 +1622,16 @@ td p {
         transform: translateX(-51%);
     }
 
-    .item-container {
+    /* .item-container {
         padding: 2rem 3rem;
+    } */
+    .new-item-slider-container {
+        width: 102rem
     }
 
     .item-container a img {
-        width: 36rem;
-        height: 46rem;
+        width: 32rem;
+        height: 44rem;
     }
 
 
@@ -1695,6 +1747,9 @@ td p {
         width: 42.5em;
     }
 
+    .new-item-slider-container {
+        width: 136rem
+    }
 
     .our-story-col p {
         margin: 2rem 20rem;

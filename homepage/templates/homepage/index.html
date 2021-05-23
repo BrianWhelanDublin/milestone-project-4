@@ -46,33 +46,37 @@
                     <i class="las la-angle-left" aria-hidden="true"></i>
                     <span class="visually-hidden">left arrow for slider</span>
                 </div>
-                <div id="arrow-right" class="arrow arrow-active flex-center">
+                <div id="arrow-right" class="arrow clickable flex-center">
                     <i class="las la-angle-right" aria-hidden="true"></i>
                     <span class="visually-hidden">Right arrow for slider</span>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col ">  
-                <ul class="new-item-slider">
-                    {% for item in new_items %}
-                    <li class="item-container">
-                        {% if item.image %}
-                        <a href="{% url 'single_item' item.id%}">
-                            <img src="{{ MEDIA_URL }}{{ item.image }}" alt="image for {{ item.name }}">
-                        </a>
-                        {% else %}
-                        <a href="{% url 'single_item' item.id%}">
-                            <img src="{{MEDIA_URL}}no_image.png" alt="No image found for {{ item.name }}">
-                        </a>
-                        {% endif %}
-                        <div class="item-details flex-row-between">
-                            <h2>{{ item.name }}</h2>
-                            <p>€ {{ item.price|intcomma }}</p>
+            <div class="col ">
+                <div class="slider-wrapper">
+                    <div class="new-item-slider-container">
+                        <div class="new-item-slider">
+                            {% for item in new_items %}
+                            <div class="item-container">
+                                {% if item.image %}
+                                <a href="{% url 'single_item' item.id%}">
+                                    <img src="{{ MEDIA_URL }}{{ item.image }}" alt="image for {{ item.name }}">
+                                </a>
+                                {% else %}
+                                <a href="{% url 'single_item' item.id%}">
+                                    <img src="{{MEDIA_URL}}no_image.png" alt="No image found for {{ item.name }}">
+                                </a>
+                                {% endif %}
+                                <div class="item-details flex-row-between">
+                                    <h2>{{ item.name }}</h2>
+                                    <p>€ {{ item.price|intcomma }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
                         </div>
-                    </li>
-                    {% endfor %}
-                </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -88,23 +92,24 @@
         <div class="category-col col-12 col-lg-4">
             <div class="category-image">
                 <a class="text-shadow" href="{% url 'all_items' %}?category=new_in"><img
-                        src="{{ MEDIA_URL }}furniture-category-img.jpg" alt="Image for furniture category"><span>New
-                        In</span></a>
-
+                        src="{{ MEDIA_URL }}furniture-category-img.jpg" alt="Image for furniture category">
+                        <span>New In</span></a>
             </div>
         </div>
         <div class="category-col col-12 col-lg-4 ">
             <div class="category-image">
                 <a class="text-shadow" href="{% url 'all_items' %}?category=lighting"><img
                         src="{{ MEDIA_URL }}lighting-category-img.jpg"
-                        alt="Image for lighting category"><span>Lighting</span></a>
+                        alt="Image for lighting category">
+                        <span>Lighting</span></a>
             </div>
         </div>
         <div class="category-col col-12 col-lg-4">
             <div class="category-image">
                 <a class="text-shadow" href="{% url 'all_items' %}?category=accessories"><img
                         src="{{ MEDIA_URL }}accessories-category-img.jpg"
-                        alt="Image for accessories category"><span>Accessories</span></a>
+                        alt="Image for accessories category">
+                        <span>Accessories</span></a>
 
             </div>
         </div>
@@ -174,8 +179,8 @@
 <!-- Blog section -->
 <div class="container-fluid blog-homepage-container animation-element">
     <div class="row">
-         <div class="category-title-col col-12 ">
-            <h2 >Get Inspired by our latest blog posts.</h2>
+        <div class="category-title-col col-12 ">
+            <h2>Get Inspired by our latest blog posts.</h2>
         </div>
     </div>
     <div class="row">
@@ -192,17 +197,19 @@
                     {% endif %}
                     <div class="blog-item-details blog-homepage-details">
                         <h2 class="text-center">{{post.title}}</h2>
-                        <a href="{% url 'view_post' post.id %}" class="item-link-light item-link-button  flex-center">Read More ...</a>
+                        <a href="{% url 'view_post' post.id %}"
+                            class="item-link-light item-link-button  flex-center">Read More ...</a>
                     </div>
                 </div>
             </div>
         </div>
         {% endfor %}
-         <div class="row">
-        <div class="col">
-            <a href="{% url 'view_blog' %}" class="flex-center link-button link-button-dark  mt-5 mb-4 mx-auto">All Blog Posts</a>
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'view_blog' %}" class="flex-center link-button link-button-dark  mt-5 mb-4 mx-auto">All
+                    Blog Posts</a>
+            </div>
         </div>
-    </div>
     </div>
 </div>
 <!-- Newsletter Section -->
