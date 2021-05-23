@@ -843,7 +843,10 @@
 - #### Kevin Powell Youtube video.
     - [Fade + slide in nav list items one at a time](https://www.youtube.com/watch?v=xkKjrH3pRfg&list=WL&index=3&t=1028s)
         - This youtube walkthrough help me to design and animate my navigation menu. I've adapted the code to suit my site.
-    
+
+- #### The WebShala Thumbnail slider
+    - [Responsive Thumbnail Slider using by Html Css Javascript](https://www.youtube.com/watch?v=Gi4CTYOs7J4&t=842s)
+        - This youtube walkthrough help me with my new items slider on the homepage.
 
 - #### Stack Overflow 
 
