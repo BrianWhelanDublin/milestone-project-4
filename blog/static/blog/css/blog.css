@@ -1,81 +1,96 @@
-
-.post-image-container img{
+.post-image-container img {
     height: 45rem;
-    width:35rem;
+    width: 35rem;
     margin-top: 10rem;
 }
-.post-title-col{
+
+.post-title-col {
     position: relative;
 }
-.post-title-container{
+
+.post-title-container {
     background: #EDEDE9;
     height: 10rem;
     width: 30rem;
     position: absolute;
-    left:0;
-    top:-5rem;
+    left: 0;
+    top: -5rem;
     margin-bottom: 2rem;
 }
-.post-title-container h1{
+
+.post-title-container h1 {
     font-size: 4rem;
     font-weight: 500;
     margin-left: 2rem;
 }
-.post-content{
- padding: 4rem 2rem ;
+
+.post-content {
+    padding: 4rem 2rem;
+    margin-top: 5rem;
 }
-.post-content p{
+
+.post-content p {
     font-size: 1.25rem;
 
 }
-.post-current-image img{
-    height:18rem;
-    width:12rem;
-  
-}
-.post-btns{
-   margin-top: 5rem;
+
+.post-current-image img {
+    height: 18rem;
+    width: 12rem;
+
 }
 
-@media (min-width: 768px){
-    .post-image-container img{
-    height: 50rem;
-    width:37rem;
-    margin-top: 10rem;
+.post-btns {
+    margin-top: 5rem;
 }
-.post-title-container{
-   height:100%;
-   width:90%;
-   background: transparent;
-   left:5%;
-   top:0;
- 
+.comments-wrapper{
+    padding: 0 2rem;
 }
-.post-title-container h1{
-    font-size: 5rem;
-    margin-left: 4rem;
+@media (min-width: 768px) {
+    .post-image-container img {
+        height: 50rem;
+        width: 37rem;
+        margin-top: 10rem;
+    }
+
+    .post-title-container {
+        height: 100%;
+        width: 90%;
+        background: transparent;
+        left: 5%;
+        top: 0;
+
+    }
+
+    .post-title-container h1 {
+        font-size: 5rem;
+        margin-left: 4rem;
+    }
+
+    .post-content p {
+        font-size: 1.5rem;
+        margin: 0 2rem;
+    }
+
+    .post-btns {
+        width: 40rem;
+        margin: auto;
+    }
 }
-.post-content p{
-    font-size: 1.5rem;
-    margin: 0 2rem;
-}
-.post-btns{
-    width:40rem;
-    margin: auto;
-}
-}
+
 @media (min-width: 1200px) {
-    .post-image-container img{
-    height: 65rem;
-    width:50rem;
-}
+    .post-image-container img {
+        height: 65rem;
+        width: 50rem;
+    }
 
-.post-title-container h1{
-    font-size: 8rem;
-    margin-left: 4rem;
-}
-.post-content p{
-    margin: 0 5rem;
-    font-size: 2rem;
-}
+    .post-title-container h1 {
+        font-size: 8rem;
+        margin-left: 4rem;
+    }
+
+    .post-content p {
+        margin: 0 5rem;
+        font-size: 2rem;
+    }
 }
