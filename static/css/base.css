@@ -869,15 +869,14 @@ input:-webkit-autofill {
 }
 
 .item-details {
-    margin-top: 1rem;
+    margin: 1rem ;
+
 }
 
-.all-item-details {
-    margin: 0 4rem;
-}
 
 .item-details h2 {
     font-weight: 400;
+    font-size: 1.75rem;
 }
 
 .item-details p {
@@ -921,8 +920,6 @@ input:-webkit-autofill {
 
 .controls ul li.active {
     background-color: #153243c9;
-
-
 }
 
 /* shop by categories */
@@ -1199,6 +1196,13 @@ input:-webkit-autofill {
 
 .item-col {
     margin: 4rem 0;
+}
+
+.all-item-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .img-container {

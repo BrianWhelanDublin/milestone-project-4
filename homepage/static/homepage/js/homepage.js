@@ -12,8 +12,8 @@ window.addEventListener("scroll", () => {
 
 // new items slider code inspired by The WebShala on youtube details in readme.
 const container = document.querySelector(".new-item-slider");
-const allItems = document.querySelectorAll(".item-container");
-const firstItem = document.querySelector(".item-container");
+const allItems = document.querySelectorAll(".new-item-slide");
+const firstItem = document.querySelector(".new-item-slide");
 const rightArrow = document.querySelector("#arrow-right");
 const leftArrow = document.querySelector("#arrow-left");
 const itemWidth = firstItem.clientWidth;

@@ -58,7 +58,7 @@
                     <div class="new-item-slider-container">
                         <div class="new-item-slider">
                             {% for item in new_items %}
-                            <div class="item-container">
+                            <div class="item-container new-item-slide">
                                 {% if item.image %}
                                 <a href="{% url 'single_item' item.id%}">
                                     <img src="{{ MEDIA_URL }}{{ item.image }}" alt="image for {{ item.name }}">
