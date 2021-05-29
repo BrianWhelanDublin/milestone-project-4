@@ -1,3 +1,40 @@
+# Testing 
+
+## Table of contents.
+
+- [User Stories.](#user-stories)
+- [Unit Testing](#unit-testing)
+  * [Django Unit Testing](#django-unit-testing)
+- [Test and Bugs During Development](#test-and-bugs-during-development)
+    + [Posting Data in the Cart App.](#posting-data-in-the-cart-app)
+    + [Moving Fetch function into its own file.](#moving-fetch-function-into-its-own-file)
+    + [Post Data in the Stripe js](#post-data-in-the-stripe-js)
+    + [Blue background in forms on google chrome.](#blue-background-in-forms-on-google-chrome)
+    + [Error With Decimal Fields.](#error-with-decimal-fields)
+- [Defensive Programming and Security](#defensive-programming-and-security)
+  * [Defensive Programming.](#defensive-programming)
+- [Manual Testing](#manual-testing)
+    + [Cart Functionality.](#cart-functionality)
+    + [Checkout Functionality](#checkout-functionality)
+    + [Stock control](#stock-control)
+    + [Reviews Functionality.](#reviews-functionality)
+    + [Blog Functionality](#blog-functionality)
+    + [Wishlist Functionality](#wishlist-functionality)
+    + [Newsletter Sign up](#newsletter-sign-up)
+    + [Contact Form](#contact-form)
+    + [Forms](#forms)
+    + [Facebook Login.](#facebook-login)
+- [Validators](#validators)
+    + [CSS](#css)
+    + [Javascript](#javascript)
+    + [Python](#python)
+    + [Html](#html)
+- [Responsiveness and Browsers](#responsiveness-and-browsers)
+- [Accessibility](#accessibility)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 ## User Stories.
 
 - Customers
