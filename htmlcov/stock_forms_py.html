@@ -22,8 +22,8 @@
         </h1>
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
         <h2 class="stats">
-            17 statements &nbsp;
-            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">17 run</button>
+            18 statements &nbsp;
+            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">18 run</button>
             <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">0 missing</button>
             <button type="button" class="exc show_exc shortkey_x button_toggle_exc" title="Toggle lines excluded">0 excluded</button>
         </h2>
@@ -77,15 +77,16 @@
     <p id="t23" class="pln"><span class="n"><a href="#t23">23</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t24" class="run"><span class="n"><a href="#t24">24</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">fields</span><span class="op">[</span><span class="str">"category"</span><span class="op">]</span><span class="op">.</span><span class="nam">choices</span> <span class="op">=</span> <span class="nam">display_names</span>&nbsp;</span><span class="r"></span></p>
     <p id="t25" class="run"><span class="n"><a href="#t25">25</a></span><span class="t">        <span class="key">for</span> <span class="nam">field_name</span><span class="op">,</span> <span class="nam">field</span> <span class="key">in</span> <span class="nam">self</span><span class="op">.</span><span class="nam">fields</span><span class="op">.</span><span class="nam">items</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t26" class="run"><span class="n"><a href="#t26">26</a></span><span class="t">            <span class="nam">field</span><span class="op">.</span><span class="nam">widget</span><span class="op">.</span><span class="nam">attrs</span><span class="op">[</span><span class="str">"class"</span><span class="op">]</span> <span class="op">=</span> <span class="str">"product-form-item"</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t27" class="run"><span class="n"><a href="#t27">27</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">fields</span><span class="op">[</span><span class="str">"price"</span><span class="op">]</span><span class="op">.</span><span class="nam">widget</span><span class="op">.</span><span class="nam">attrs</span><span class="op">[</span><span class="str">"min"</span><span class="op">]</span> <span class="op">=</span> <span class="num">0</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t28" class="run"><span class="n"><a href="#t28">28</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">fields</span><span class="op">[</span><span class="str">"price"</span><span class="op">]</span><span class="op">.</span><span class="nam">widget</span><span class="op">.</span><span class="nam">attrs</span><span class="op">[</span><span class="str">"step"</span><span class="op">]</span> <span class="op">=</span> <span class="num">1</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t26" class="run"><span class="n"><a href="#t26">26</a></span><span class="t">            <span class="key">if</span> <span class="nam">field_name</span> <span class="op">!=</span> <span class="str">"image"</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t27" class="run"><span class="n"><a href="#t27">27</a></span><span class="t">                <span class="nam">field</span><span class="op">.</span><span class="nam">widget</span><span class="op">.</span><span class="nam">attrs</span><span class="op">[</span><span class="str">"class"</span><span class="op">]</span> <span class="op">=</span> <span class="str">"product-form-item"</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t28" class="run"><span class="n"><a href="#t28">28</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">fields</span><span class="op">[</span><span class="str">"price"</span><span class="op">]</span><span class="op">.</span><span class="nam">widget</span><span class="op">.</span><span class="nam">attrs</span><span class="op">[</span><span class="str">"min"</span><span class="op">]</span> <span class="op">=</span> <span class="num">0</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t29" class="run"><span class="n"><a href="#t29">29</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">fields</span><span class="op">[</span><span class="str">"price"</span><span class="op">]</span><span class="op">.</span><span class="nam">widget</span><span class="op">.</span><span class="nam">attrs</span><span class="op">[</span><span class="str">"step"</span><span class="op">]</span> <span class="op">=</span> <span class="num">1</span>&nbsp;</span><span class="r"></span></p>
 </div>
 <div id="footer">
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v5.5</a>,
-            created at 2021-04-18 12:06 +0000
+            created at 2021-05-29 14:20 +0000
         </p>
     </div>
 </div>

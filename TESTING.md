@@ -212,13 +212,30 @@
             python3 manage.py test
         ```
     - To show how much of the app has been covered by the testing I used coverage.
+    - To use coverage first run
+    - ```
+        pip insatll coverage
+      ```
+    - The run to test the whole app.
+    - ```
+        coverage run --source=. manage.py test
+      ```
+    - Or to test individual apps.
+    - ```
+        coverage run --source=abode manage.py test <app name>
+      ```
     - Coverage generates a report to show how much of the code has been tested and how much is yet to be tested.
+    - ```
+        coverage report
+      ```
     - You can then run coverage HTML to show the report on the screen.
+    - ```
+        coverage html
+      ```    
     - To open the report you can run 
-        - ```
+    - ```
             python3 -m http.server
-          ```
-
+      ```
     - I've included the reports for each app below.
 
         - 

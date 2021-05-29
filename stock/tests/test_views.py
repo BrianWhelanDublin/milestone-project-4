@@ -230,8 +230,8 @@ class TestStockControl(TestCase):
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(len(messages), 1)
         self.assertEqual(str(messages[0]),
-                         "Failed to update item. \
-    Please check the form details are correct and try again.")
+                         "Failed to update item.\
+  Please check the form details are correct and try again.")
 
     def test_edit_item_POST_validform(self):
         ''' Test edit item view with a valid form '''
