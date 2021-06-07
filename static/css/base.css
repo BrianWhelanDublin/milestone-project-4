@@ -167,7 +167,7 @@ a:hover,
 .side-nav-item:hover,
 .dropdown-link:hover,
 .account-item a:hover {
-    color: rgb(136, 136, 135);
+    color: rgb(151, 151, 149);
 }
 
 /* override bootstrap classes  */
@@ -399,7 +399,7 @@ input:-webkit-autofill {
 }
 
 .top-nav-colored {
-    background-color: #153344d8;
+    background-color: #153344f6;
 }
 
 .hamburger {
@@ -462,6 +462,7 @@ input:-webkit-autofill {
     font-weight: 300;
     font-size: 1.5rem;
     letter-spacing: .2rem;
+    cursor: pointer;
 
 }
 
@@ -567,6 +568,7 @@ input:-webkit-autofill {
     text-decoration: none;
     font-weight: 300;
     letter-spacing: .3rem;
+    cursor: pointer;
 }
 
 .nav-icon {
@@ -703,7 +705,6 @@ input:-webkit-autofill {
 
 .search-sublist input {
     background-color: transparent;
-
     width: 20rem;
     border-bottom: 1px solid #EDEDE9;
     color: #EDEDE9;
@@ -1037,6 +1038,7 @@ input:-webkit-autofill {
     font-size: 1.25rem;
     margin-right: 1rem;
     -webkit-appearance: none;
+    border-radius: 0;
 }
 
 .newsletter-form-input:focus {
