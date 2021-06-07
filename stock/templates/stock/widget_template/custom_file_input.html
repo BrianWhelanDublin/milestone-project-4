@@ -19,7 +19,7 @@
     {% endif %}
     <p class="fs-5">Add new Image</p>
     <span class="item-link-light item-link-button file-button  flex-center">Select New Image
-        <label class="sr-only"for="id_{{widget.name}}">{{widget.name}}</label>
+        <label class="sr-only" for="id_{{widget.name}}">{{widget.name}}</label>
         <input class="new-image-input" type="{{ widget.type }}" name="{{ widget.name }}" {% include "django/forms/widgets/attrs.html" %}>
     </span>
   <p id="image-name"></p>
