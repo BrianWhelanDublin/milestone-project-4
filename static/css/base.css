@@ -1036,6 +1036,7 @@ input:-webkit-autofill {
     text-align: center;
     font-size: 1.25rem;
     margin-right: 1rem;
+    -webkit-appearance: none;
 }
 
 .newsletter-form-input:focus {
