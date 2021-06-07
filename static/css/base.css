@@ -196,12 +196,17 @@ table input[type="number"] {
     border: .1rem solid #153243;
     border-radius: 0;
     font-size: 1.25rem;
+    max-width: 40px;
 }
 
+/* code from css tricks to remove the up and down arrows from quantity inputs */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+input[type=number] {
+    -moz-appearance:textfield;
 }
 
 input[type="number"]:focus,
