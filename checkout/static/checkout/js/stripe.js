@@ -36,7 +36,7 @@ card.mount("#card-element");
 card.addEventListener("change", (event) => {
     let errorDisplay = document.querySelector("#card-errors");
     if (event.error) {
-        markup = `
+        let markup = `
    <p class="fs-5 mt-1">
    <i class="las la-exclamation-circle fs-5" aria-hidden="true"></i>
    ${event.error.message}</p>`;
