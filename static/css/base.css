@@ -482,7 +482,7 @@ input:-webkit-autofill {
 
 .side-nav {
     height: 100vh;
-    width: 100vw;
+    width: 37.5rem;
     position: fixed;
     top: 0;
     left: 0;
@@ -506,7 +506,7 @@ input:-webkit-autofill {
     width: 4rem;
     position: fixed;
     top: 2.5rem;
-    right: 2.5rem;
+    right:5rem;
     flex-direction: column;
 }
 
@@ -548,13 +548,13 @@ input:-webkit-autofill {
     align-items: flex-start;
     justify-content: center;
     list-style: none;
-    margin-left: 20%;
+    margin-left: 10%;
 }
 
 .side-nav-menu li a,
 .side-nav-menu li,
 .account-item a {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin: 1rem 0;
     font-weight: 400;
     color: #EDEDE9;
@@ -1604,7 +1604,6 @@ td p {
 
     .cart-total-price {
         font-size: 1.45rem;
-
     }
 
     .successful-toast {
@@ -1728,13 +1727,11 @@ td p {
 
     .cart-total-price {
         font-size: 1.65rem;
-
     }
 
     .blog-image-container {
         height: 46rem;
         width: 35rem;
-
     }
 
     .blog-item-details {
