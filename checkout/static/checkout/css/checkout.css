@@ -1,4 +1,5 @@
-/* css to override the previous for the chck box label */
+/* css to override the previous form the check box label */
+
 #checkout-form label[for="save-info"] {
     clip: auto;
     height: 3rem;

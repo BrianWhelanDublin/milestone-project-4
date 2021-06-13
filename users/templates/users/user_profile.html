@@ -39,7 +39,9 @@ User Profile
                    {% for order in orders %}
                    <tr>
                        <td>
-                           <a href="{% url 'previous_order' order.order_number %}" title="{{ order.order_number }}">{{ order.order_number|truncatechars:6 }}</a>
+                           <a 
+                           href="{% url 'previous_order' order.order_number %}" title="{{ order.order_number }}">
+                               {{ order.order_number|truncatechars:6 }}</a>
                        </td>
                        <td>
                            {{ order.date }}

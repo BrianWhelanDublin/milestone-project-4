@@ -91,26 +91,28 @@
     <div class="row animation-element">
         <div class="category-col col-12 col-lg-4">
             <div class="category-image">
-                <a class="text-shadow" href="{% url 'all_items' %}?category=new_in"><img
-                        src="{{ MEDIA_URL }}furniture-category-img.jpg" alt="Image for furniture category">
-                        <span>New In</span></a>
+                <a class="text-shadow" href="{% url 'all_items' %}?category=new_in">
+                    <img src="{{ MEDIA_URL }}furniture-category-img.jpg" alt="Image for furniture category">
+                        <span>New In</span>
+                </a>
             </div>
         </div>
         <div class="category-col col-12 col-lg-4 ">
             <div class="category-image">
-                <a class="text-shadow" href="{% url 'all_items' %}?category=lighting"><img
-                        src="{{ MEDIA_URL }}lighting-category-img.jpg"
+                <a class="text-shadow" href="{% url 'all_items' %}?category=lighting">
+                    <img src="{{ MEDIA_URL }}lighting-category-img.jpg"
                         alt="Image for lighting category">
-                        <span>Lighting</span></a>
+                        <span>Lighting</span>
+                </a>
             </div>
         </div>
         <div class="category-col col-12 col-lg-4">
             <div class="category-image">
-                <a class="text-shadow" href="{% url 'all_items' %}?category=accessories"><img
-                        src="{{ MEDIA_URL }}accessories-category-img.jpg"
+                <a class="text-shadow" href="{% url 'all_items' %}?category=accessories">
+                    <img src="{{ MEDIA_URL }}accessories-category-img.jpg"
                         alt="Image for accessories category">
-                        <span>Accessories</span></a>
-
+                        <span>Accessories</span>
+                </a>
             </div>
         </div>
     </div>
@@ -135,7 +137,8 @@
                     <i class="las la-star" aria-hidden="true"></i>
                 </div>
                 <p>I love Abode.com my armchair arrived on time and looks amazing in my living area. Would highly
-                    recomend them.</p>
+                    recomend them.
+                </p>
                 <p><strong>Louise Carter</strong> Wicklow</p>
             </div>
         </div>
@@ -149,7 +152,8 @@
                     <i class="las la-star" aria-hidden="true"></i>
                 </div>
                 <p>I purchased a sofa from Abode and it is excellent The quality and design are amazing and it is very
-                    comfortable. I would 100% buy from here again.</p>
+                    comfortable. I would 100% buy from here again.
+                </p>
                 <p><strong>Stephen Moran</strong> Dublin</p>
             </div>
         </div>
@@ -163,19 +167,19 @@
                     <i class="las la-star" aria-hidden="true"></i>
                 </div>
                 <p>I recently renovated my home and have bought several items from Abode. I really cannot fault them,
-                    everting from delivery, quality and design is excellent</p>
+                    everting from delivery, quality and design is excellent
+                </p>
                 <p><strong>Lyndsay Forde</strong> Waterford</p>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <a href="{% url 'our_reviews' %}" class="flex-center link-button link-button-dark  mt-5 mb-4 mx-auto">See
-                all Reviews</a>
+            <a href="{% url 'our_reviews' %}" class="flex-center link-button link-button-dark  mt-5 mb-4 mx-auto">
+                See all Reviews</a>
         </div>
     </div>
 </div>
-
 <!-- Blog section -->
 <div class="container-fluid blog-homepage-container animation-element">
     <div class="row">
@@ -189,16 +193,19 @@
             <div class="blog-item-container flex-center">
                 <div class="blog-image-container">
                     {% if post.image %}
-                    <a href="{% url 'view_post' post.id %}">
-                        <img src="{{ MEDIA_URL }}{{ post.image }}" alt="image for {{ item.title }}"></a>
+                        <a href="{% url 'view_post' post.id %}">
+                            <img src="{{ MEDIA_URL }}{{ post.image }}" alt="image for {{ item.title }}">
+                        </a>
                     {% else %}
-                    <a href="{% url 'view_post' post.id %}">
-                        <img src="{{ MEDIA_URL }}no_image.png" alt="No image found for {{ post.title }}"></a>
+                        <a href="{% url 'view_post' post.id %}">
+                            <img src="{{ MEDIA_URL }}no_image.png" alt="No image found for {{ post.title }}">
+                        </a>
                     {% endif %}
                     <div class="blog-item-details blog-homepage-details">
                         <h2 class="text-center">{{post.title}}</h2>
                         <a href="{% url 'view_post' post.id %}"
-                            class="item-link-light item-link-button  flex-center">Read More ...</a>
+                            class="item-link-light item-link-button  flex-center">Read More ...
+                        </a>
                     </div>
                 </div>
             </div>
@@ -206,8 +213,9 @@
         {% endfor %}
         <div class="row">
             <div class="col">
-                <a href="{% url 'view_blog' %}" class="flex-center link-button link-button-dark  mt-5 mb-4 mx-auto">All
-                    Blog Posts</a>
+                <a href="{% url 'view_blog' %}" class="flex-center link-button link-button-dark  mt-5 mb-4 mx-auto">
+                    All Blog Posts
+                </a>
             </div>
         </div>
     </div>

@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block title %}
 Blog
 {% endblock %}
@@ -20,33 +19,31 @@ Blog
                 <a href="{% url 'add_post' %}" class="flex-center link-button link-button-dark  mt-5 mb-4 mx-auto">Add Blog Post</a>
             </div>
         </div>
-{% endif %}
+    {% endif %}
     <div class="row items-row">
         {% for post in posts %}
         <div class="col-12 col-md-6 col-lg-4 item-col">
             <div class="blog-item-container flex-center">
                 <div class="blog-image-container">
                     {% if post.image %}
-                    <a href="{% url 'view_post' post.id %}">
-                        <img src="{{ MEDIA_URL }}{{ post.image }}" alt="image for {{ item.title }}"></a>
+                        <a href="{% url 'view_post' post.id %}">
+                            <img src="{{ MEDIA_URL }}{{ post.image }}" alt="image for {{ item.title }}">
+                        </a>
                     {% else %}
-                    <a href="{% url 'view_post' post.id %}"></a>">
-                    <img src="{{ MEDIA_URL }}no_image.png" alt="No image found for {{ post.title }}"></a>
+                        <a href="{% url 'view_post' post.id %}"></a>">
+                            <img src="{{ MEDIA_URL }}no_image.png" alt="No image found for {{ post.title }}">
+                        </a>
                     {% endif %}
-
-                    <div class="blog-item-details blog-page-details">
-                        <h2 class="text-center">{{post.title}}</h2>
-                        <a href="{% url 'view_post' post.id %}"
-                            class="item-link-light item-link-button  flex-center">Read More ...</a>
-                    </div>
+                        <div class="blog-item-details blog-page-details">
+                            <h2 class="text-center">{{post.title}}</h2>
+                                <a href="{% url 'view_post' post.id %}"
+                                    class="item-link-light item-link-button  flex-center">Read More ...
+                                </a>
+                        </div>
                 </div>
             </div>
         </div>
-
         {% endfor %}
-
-
     </div>
-
 </div>
 {% endblock %}

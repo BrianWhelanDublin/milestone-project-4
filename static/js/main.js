@@ -1,4 +1,4 @@
-// show dropdown when accont is clicked
+// show dropdown when account is clicked
 let dropdownLinks = document.querySelectorAll(".dropdown-link");
 let dropdown = document.querySelector(".account-dropdown");
 
@@ -67,6 +67,7 @@ const animationOnScroll = () => {
         }
     });
 };
+
 // call function when window is scrolled
 window.addEventListener("scroll", animationOnScroll);
 

@@ -1,6 +1,5 @@
-/*jshint esversion: 6 */ 
-
 // change top navigation colour on scroll
+
 window.addEventListener("scroll", () => {
     let topNavigation = document.querySelector(".top-navigation");
     if (window.scrollY >= 100) {
@@ -11,6 +10,7 @@ window.addEventListener("scroll", () => {
 });
 
 // new items slider code inspired by The WebShala on youtube details in readme.
+
 const container = document.querySelector(".new-item-slider");
 const allItems = document.querySelectorAll(".new-item-slide");
 const firstItem = document.querySelector(".new-item-slide");
@@ -40,10 +40,8 @@ const load = () => {
 };
 
 const setItemsMargins = () => {
-    let totalItemsWidth = 0;
     allItems.forEach(el => {
        el.style.margin = (margin / 2) + "px";
-        totalItemsWidth += (margin + itemWidth);
     });
 };
 

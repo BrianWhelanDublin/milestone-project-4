@@ -12,46 +12,63 @@ Checkout
     <div class="row">
         <div class="col flex-center page-heading">
             {% if previous_order %}
-            <h1>Previous Order</h1>
+                <h1>Previous Order</h1>
             {% else %}
-            <h1>Thank You</h1>
+                <h1>Thank You</h1>
             {% endif %}
         </div>
         <div class="row p-4">
             <div class="col-12 col-md-6 px-2 mb-5 ">
                 {% if previous_order %}
-                <h3 class="fs-3 mb-4">You Order was confirmed on {{ order.date }}!</h3>
+                    <h3 class="fs-3 mb-4">You Order was confirmed on {{ order.date }}!</h3>
                 {% else %}
-                <h3 class="fs-3 mb-4">You Order is confirmed !</h3>
+                    <h3 class="fs-3 mb-4">You Order is confirmed !</h3>
                 {% endif %}
-                <p class="mt-3 fs-3 mb-5">A confirmation email
+                    <p class="mt-3 fs-3 mb-5">A confirmation email
                     {% if previous_order %}
-                     was sent to 
+                        was sent to 
                      {% else %}
                           has been sent to 
-                          {% endif %}
-                     <strong
-                        class="fs-3">{{ order.email }}</strong></p>
+                    {% endif %}
+                     <strong class="fs-3">{{ order.email }}</strong></p>
                 <h4>Details</h4>
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <p class="mt-4 fs-4"><strong>Order Details:</strong></p>
-                        <p class="fs-5">Order date <br> <span class="text-muted fs-5">{{ order.date }}</span></p>
-                        <p class="fs-5">Order Number <br> <span class="text-muted fs-5">{{ order.order_number }}</span>
+                        <p class="fs-5">Order date <br> 
+                            <span class="text-muted fs-5">
+                                {{ order.date }}
+                            </span></p>
+                        <p class="fs-5">Order Number <br> 
+                            <span class="text-muted fs-5">
+                                {{ order.order_number }}
+                            </span>
                         </p>
                     </div>
                     <div class="col-6">
                         <p class="fs-4 mt-4">Delivery Address <br>
-                            <span class="text-muted fs-5">{{ order.street_address_1 }}</span><br>
+                            <span class="text-muted fs-5">
+                                {{ order.street_address_1 }}
+                            </span><br>
                             {% if order.street_address_2 %}
-                            <span class="text-muted fs-5">{{ order.street_address_2 }}</span><br>
+                                <span class="text-muted fs-5">
+                                    {{ order.street_address_2 }}
+                                </span><br>
                             {% endif %}
-                            <span class="text-muted fs-5">{{ order.town_or_city }}</span><br>
-                            <span class="text-muted fs-5">{{ order.county }}</span><br>
+                            <span class="text-muted fs-5">
+                                {{ order.town_or_city }}
+                            </span><br>
+                            <span class="text-muted fs-5">
+                                {{ order.county }}
+                            </span><br>
                             {% if order.eircode %}
-                            <span class="text-muted fs-5">{{ order.eircode }}</span><br>
+                                <span class="text-muted fs-5">
+                                    {{ order.eircode }}
+                                </span><br>
                             {% endif %}
-                            <span class="text-muted fs-5">{{ order.country }}</span><br>
+                            <span class="text-muted fs-5">
+                                {{ order.country }}
+                            </span><br>
                         </p>
                     </div>
                 </div>
@@ -62,7 +79,7 @@ Checkout
                     <h3 class="fs-2">Your Items</h3>
                     <hr>
                     {% for item in order.lineitems.all %}
-                    {% include 'includes/cart-items.html' %}
+                        {% include 'includes/cart-items.html' %}
                     {% endfor %}
                 </div>
                 <div class="row mt-4">
@@ -70,23 +87,21 @@ Checkout
                         <hr class="mx-2">
                         <p>Total: € {{ order.order_total|intcomma }}</p>
                         <p>Delivery: € {{ order.home_delivery_cost }}</p>
-                        <h4>Total Price : € {{ order.grand_total|intcomma }}</h4>
+                        <h4>Total Price : € {{ order.grand_total|intcomma }}
+                        </h4>
                     </div>
                 </div>
-
             </div>
         </div>
         <div class="row">
             <div class="col">
               <div class="flex-center mt-5">
-                   <a  href="{% url 'all_items' %}"
-                        class="item-link-light item-link-button  flex-center">Back to 
-                        Shop</a>
+                    <a  href="{% url 'all_items' %}"
+                        class="item-link-light item-link-button  flex-center">Back to Shop
+                    </a>
               </div>
             </div>
         </div>
     </div>
 </div>
-
-
 {% endblock %}

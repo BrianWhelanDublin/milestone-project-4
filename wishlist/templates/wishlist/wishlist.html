@@ -79,7 +79,8 @@ Wishlist
                 {% csrf_token %}
                 <input class="form-control" type="hidden" name="quantity" value="1">
                 <button type="submit" class=" item-link-button flex-center item-link-dark m-auto">Add To Cart</button>
-                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                <input type="hidden" name="redirect_url" 
+                value="{{ request.path }}">
             </form>
         </div>
         {% endfor %}
@@ -91,7 +92,6 @@ Wishlist
                 Collection</a>
         </div>
         {% endif %}
-
         {% else %}
         <div class="col">
             <p class="flex-center fs-2">Please
@@ -100,8 +100,6 @@ Wishlist
                 To create a wishlist.</p>
         </div>
         {% endif %}
-
-
     </div>
 </div>
 

@@ -33,16 +33,20 @@ Your Cart
                     <tr>
                         <td>
                             {% if item.item.image %}
-                            <img src="{{ MEDIA_URL }}{{ item.item.image }}" alt="image of {{ item.item.name }}"
+                                <img src="{{ MEDIA_URL }}{{ item.item.image }}" alt="image of {{ item.item.name }}"
                                 class="table-image">
                             {% else %}
-                            <img src="{{ MEDIA_URL }}no_image.png" alt="No image found for {{ item.item.name }}"
+                                <img src="{{ MEDIA_URL }}no_image.png" alt="No image found for {{ item.item.name }}"
                                 class="table-image">
                             {% endif %}
-                            <p class="mt-2 d-md-none">{{ item.item.name }}</p>
+                                <p class="mt-2 d-md-none">
+                                    {{ item.item.name }}
+                                </p>
                         </td>
                         <td>
-                            <p class="d-none d-md-block">{{ item.item.name }}</p>
+                            <p class="d-none d-md-block">
+                                {{ item.item.name }}
+                            </p>
                         </td>
                         <td>
                             <p>€ {{ item.item.price|intcomma }}</p>
@@ -54,11 +58,13 @@ Your Cart
                                 <div class="checkout-no-input flex-row-between">
                                     <div class="minus-btn flex-center">
                                         <i class="las la-minus"></i>
-                                        <span class="sr-only">decrement button</span>
+                                        <span class="sr-only">
+                                            decrement button</span>
                                     </div>
                                     <div class="mb-3">
                                         <label for="item_quantity_{{item.item_id}}">
-                                            <span class="visually-hidden">Item Quantity</span>
+                                            <span class="visually-hidden">
+                                                Item Quantity</span>
                                         </label>
                                         <div>
                                             <input class="mt-2" type="number" value="{{ item.quantity }}"
@@ -96,11 +102,11 @@ Your Cart
                 </div>
             </div>
             {% else %}
-            <div class="cart-no-items text-center">
-                <p>No items in shopping bag</p>
-                <a href="{% url 'all_items' %}" class="item-link-light item-link-button m-auto flex-center">Keep
-                    Shopping</a>
-            </div>
+                <div class="cart-no-items text-center">
+                    <p>No items in shopping bag</p>
+                    <a href="{% url 'all_items' %}" class="item-link-light item-link-button m-auto flex-center">Keep
+                        Shopping</a>
+                </div>
             {% endif %}
         </div>
     </div>
@@ -108,7 +114,6 @@ Your Cart
 {% endblock %}
 {% block other_end_js %}
 {{ block.super }}
-
 <script>
      let csrfToken = "{{ csrf_token }}";
 </script>
