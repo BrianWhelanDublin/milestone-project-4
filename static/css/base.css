@@ -17,9 +17,6 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #EDEDE9;
-}
-
-.web-page-container{
     position: relative;
     min-height: 100vh;
 }
