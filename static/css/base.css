@@ -19,6 +19,15 @@ body {
     background-color: #EDEDE9;
 }
 
+.web-page-container{
+    position: relative;
+    min-height: 100vh;
+}
+
+main{
+    padding-bottom: 40rem;
+}
+
 /* ------------------------------ Css for animation on scroll */
 
 .animation-element {
@@ -1064,6 +1073,9 @@ input:-webkit-autofill {
 
 .footer-container {
     background-color: #153344d8;
+    position: absolute;
+    bottom: 0;
+    height: 40rem;
 }
 
 .contact-col {
@@ -1477,6 +1489,10 @@ td p {
 
 /* medium 768px */
 @media (min-width: 768px) {
+    main{
+        padding-bottom: 24rem;
+    }   
+
     .link-button {
         font-size: 2rem;
         padding: 3rem;
@@ -1505,6 +1521,10 @@ td p {
 
     .new-item-slider-container {
         width: 60rem
+    }
+
+    .footer-container {
+        height: 24rem;
     }
 }
 
