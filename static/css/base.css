@@ -19,7 +19,8 @@ body {
     background-color: #EDEDE9;
 }
 
-/* css for animation on scroll */
+/* ------------------------------ Css for animation on scroll */
+
 .animation-element {
     opacity: 0;
     transform: translateY(7.5rem);
@@ -31,7 +32,8 @@ body {
     transform: translateY(0px);
 }
 
-/* common elements */
+/* ----------------------------------- Common elements */
+
 .blue {
     color: #0d6efd;
 }
@@ -169,6 +171,7 @@ a:hover,
 }
 
 /* override bootstrap classes  */
+
 .container-fluid {
     padding: 0;
 }
@@ -181,7 +184,8 @@ a:hover,
     background-color: #EDEDE9;
 }
 
-/* --------------------------------Form elements */
+/* ---------------------------------------- Form elements */
+
 table input[type="number"] {
     width: 3rem;
     height: 3.5rem;
@@ -198,6 +202,7 @@ table input[type="number"] {
 }
 
 /* code from css tricks to remove the up and down arrows from quantity inputs */
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -338,6 +343,7 @@ select option[value=""] {
 
 /* code from stack overflow to stop my inputs 
 turning a light blue when filled in */
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus textarea:-webkit-autofill,
@@ -354,6 +360,7 @@ input:-webkit-autofill {
 }
 
 /* css from bootstrap to hide the label and show only for screenreaders for accsesibility */
+
 #checkout-form label,
 .newsletter-form label,
 #contact-form label {
@@ -367,7 +374,8 @@ input:-webkit-autofill {
     width: 1px;
 }
 
-/*  toasts*/
+/* --------------------------------------- Toasts*/
+
 .message-container {
     position: fixed;
     top: 6rem;
@@ -385,7 +393,7 @@ input:-webkit-autofill {
     margin-right: 2rem;
 }
 
-/* Navigation */
+/* ------------------------------------ Navigation */
 
 .top-navigation {
     height: 6rem;
@@ -693,7 +701,6 @@ input:-webkit-autofill {
 
 .search-sublist {
     margin-top: 5rem;
-
 }
 
 .search-sublist input {
@@ -739,7 +746,8 @@ input:-webkit-autofill {
     background-color: rgb(136, 136, 135);
 }
 
-/* Hero section in index.html */
+/* ---------------------------------  Hero section in index.html */
+
 .hero-container {
     min-height: 50rem;
     height: 90vh;
@@ -765,7 +773,6 @@ input:-webkit-autofill {
     top: 0;
     right: 0;
     background: rgba(53, 52, 52, 0.15);
-
 }
 
 .hero-col-right h1 {
@@ -785,7 +792,8 @@ input:-webkit-autofill {
     justify-content: space-evenly;
 }
 
-/* ---------------About Section */
+/* ----------------------------------- About Section */
+
 .about-col {
     flex-direction: column;
     margin: 4rem 0;
@@ -798,7 +806,8 @@ input:-webkit-autofill {
     text-align: center;
 }
 
-/* --------------- New-in Section */
+/* --------------------------------- New-in Section */
+
 .new-item-title-col {
     height: 10rem;
     margin: 0 10%;
@@ -826,7 +835,6 @@ input:-webkit-autofill {
     height: 3.5rem;
     border-radius: 50%;
 }
-
 
 .arrow i {
     font-size: 2rem;
@@ -868,10 +876,8 @@ input:-webkit-autofill {
 }
 
 .item-details {
-    margin: 1rem ;
-
+    margin: 1rem;
 }
-
 
 .item-details h2 {
     font-weight: 400;
@@ -921,7 +927,8 @@ input:-webkit-autofill {
     background-color: #153243c9;
 }
 
-/* shop by categories */
+/* ----------------------------------- Shop by categories */
+
 .category-container {
     background-color: #D1D1C7;
 }
@@ -938,7 +945,6 @@ input:-webkit-autofill {
 .category-col {
     margin: 2rem 0 5rem 0;
 }
-
 
 .category-image {
     height: 32rem;
@@ -971,7 +977,8 @@ input:-webkit-autofill {
     cursor: pointer;
 }
 
-/*---------------------------------- reviews section */
+/*--------------------------------------  Reviews section */
+
 .review-container {
     margin-bottom: 7.5rem;
 }
@@ -1006,7 +1013,8 @@ input:-webkit-autofill {
     text-align: center;
 }
 
-/* -------------------------------Newsletter Section */
+/* ---------------------------------- Newsletter Section */
+
 .newsletter-container {
     margin-top: 2%;
 }
@@ -1053,6 +1061,7 @@ input:-webkit-autofill {
 }
 
 /* ----------------------------------------footer section  */
+
 .footer-container {
     background-color: #153344d8;
 }
@@ -1105,8 +1114,6 @@ input:-webkit-autofill {
 
 .social-media a i {
     font-size: 3rem;
-    /* margin: 0 2rem;
-    padding: .5rem; */
     transition: all .5s ease-in-out;
     color: #EDEDE9;
 }
@@ -1117,7 +1124,8 @@ input:-webkit-autofill {
     border-radius: .5rem;
 }
 
-/* -------------------------------- our story page */
+/* ---------------------------------------- Our story page */
+
 .nav-background {
     height: 6rem;
     background-color: #153344d8;
@@ -1152,7 +1160,6 @@ input:-webkit-autofill {
 
 .our-story-col {
     flex-direction: column;
-    /* margin: 5rem 0; */
     border: .1rem solid #D1D1C7;
 }
 
@@ -1176,7 +1183,7 @@ input:-webkit-autofill {
     margin: 5rem 0;
 }
 
-/* --------- ---------- all items page */
+/* --------- -------------------- All items page */
 .page-heading {
     margin-top: 12rem;
     margin-bottom: 5rem;
@@ -1220,7 +1227,8 @@ input:-webkit-autofill {
 }
 
 
-/* Pagination */
+/* ---------------------------  Pagination */
+
 .paginate-items {
     margin-left: 2rem;
     margin-bottom: 2rem;
@@ -1244,7 +1252,8 @@ input:-webkit-autofill {
     text-decoration: underline;
 }
 
-/* --------------- cart */
+/* -------------------------------- Cart */
+
 .page-container {
     min-height: 80vh;
 }
@@ -1294,7 +1303,6 @@ td p {
 }
 
 /* Toats */
-
 
 .cart-items-wrapper {
     max-height: 30rem;
