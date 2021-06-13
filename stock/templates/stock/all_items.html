@@ -49,6 +49,9 @@ All Items
     </div>
     <!-- items section -->
     <div class="row items-row">
+        {% if page_obj.paginator.count == 0 %}
+            <p class="fs-1 flex-center">No Items found. Please search again.</p>
+        {% endif %}
         {% for item in page_obj %}
         <div class="col-12 col-md-6 col-lg-4 item-col">
             <div class="item-container flex-center">

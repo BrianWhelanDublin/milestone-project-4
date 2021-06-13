@@ -1203,6 +1203,10 @@ input:-webkit-autofill {
     font-size: 1.4rem;
 }
 
+.items-row{
+    min-height: 45vh;
+}
+
 .item-col {
     margin: 4rem 0;
 }
