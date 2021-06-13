@@ -6,9 +6,7 @@ wishlistButton.forEach((button) => {
         button.addEventListener("click", (event) => {
             event.preventDefault();
             let itemId = button.getAttribute("id").split("wish_")[1];
-            console.log(itemId);
             let url = `/wishlist/add/${itemId}/`;
-            console.log(url);
             fetch(url, {
                 method: "POST",
                 headers: {
@@ -22,7 +20,6 @@ wishlistButton.forEach((button) => {
         });
     });
 }
-    
 
 let wishlistLikedButton = document.querySelectorAll(".wishlist-btn-liked");
 if (wishlistLikedButton){
@@ -30,7 +27,6 @@ if (wishlistLikedButton){
         button.addEventListener("click", (event) => {
             event.preventDefault();
             let itemId = button.getAttribute("id").split("liked_")[1];
-            console.log(itemId);
             let url = `/wishlist/remove/${itemId}/`;
             fetch(url, {
                 method: "POST",
