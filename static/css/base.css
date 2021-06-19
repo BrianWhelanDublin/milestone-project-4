@@ -1059,6 +1059,7 @@ input:-webkit-autofill {
     padding: 0 1rem;
     font-size: 1.5rem;
     transition: all .5s ease;
+    border: 1px solid #153243;
 }
 
 .newsletter-form button[type="submit"]:hover {
