@@ -2,7 +2,7 @@
 
 ## Milestone Project 4
 
-  - This project aims to build a full-stack web application using Django full-stack web framework, HTML, Css3 and javascript.
+- This project aims to build a full-stack web application using Django full-stack web framework, HTML, Css3 and javascript.
 
   - I have built an e-commerce web application for a fictional furniture company.
   
@@ -107,7 +107,7 @@
   - Account.
     - As a customer, I would like to save my details to an account.
     - As a customer, I would like to see my previous order details.
-    - As a customer, I would like leave a review of the company.
+    - As a customer, I would like to leave a review of the company.
 
 - Website owner.
   - As the business owner, I would like to be able to edit and add products easily.
@@ -174,8 +174,8 @@
 - #### Colour scheme
 
   - My Colour scheme was inspired by my main hero image matching the navy background within the image to be used for the navigation and text colour.
-  - I then pick two complimentary grey colours for the main background throughout the site, alternating between them in places to clearly define sections.
-  - Throughout the site I used different opacities of these colours to create a softer pallet.
+  - I then pick two complementary grey colours for the main background throughout the site, alternating between them in places to clearly define sections.
+  - Throughout the site, I used different opacities of these colours to create a softer pallet.
 
     - <p align="center"><img src="readme-images/design/colors.png" alt="Image of colour scheme" height="200px" width="350px"/></p>
 
@@ -195,7 +195,7 @@
 
 - #### Icons 
   - I've used icons in this project for the navigation on mobile sites and the social media links in the footer.
-  - All icons have been optained from Line Awsome.
+  - All icons have been obtained from Line Awsome.
 
 ## Features
   
@@ -308,7 +308,7 @@
     - Reviews page.
         - From the reviews section in the user can navigate to the review page.
         - Here they can see a list of reviews users have left.
-        - If they arent logged in they will see a notification to log in or sign up to leave a review, with links to the login and signup pages.
+        - If they aren't logged in they will see a notification to log in or sign up to leave a review, with links to the login and signup pages.
             - <p align="center"><img src="readme-images/features/reviews-page.png" alt="Image of reviews page" height="220px" width="500px"/></p>
         
         - If the user is logged in they will see a form section to leave a review.
@@ -375,7 +375,7 @@
         - There is also a comment section for logged in users on each blog post.
     
     - Blog add post and edit
-        - The front end consist of a add blog post page and an edit page that is made available to superusers only.
+        - The front end consists of an add blog post page and an edit page that is made available to superusers only.
             - <p align="center"><img src="readme-images/features/add-post.png" alt="Image of add post page"  height="320px" width="550px"/></p>
 
 ## Testing
@@ -386,7 +386,7 @@
 
 ## Technologies used.
 
-- The application was built on the Django full stack framework.
+- The application was built on the Django full-stack framework.
 - For each section of the site a Django app was created.
 - Each app then has a views.py, urls.py file to create the pages it needs.
 - Then to create the database models a models.py file is used.
@@ -411,7 +411,7 @@
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
   - Python was used to build the backend functionality of the web app.
 
-### Django, and Django extensions used
+### Django and Django extensions used
 
 - [Django](https://www.djangoproject.com/)
   - Django was used to create the project.
@@ -420,7 +420,7 @@
   - Django allauth was used to create the user sign-in function for the site.
 
 - [Django Allauth Social Login](https://django-allauth.readthedocs.io/en/latest/providers.html/)
-  - Django allauth Social login function was used to allow the user to sign up, or login with Facebook.
+  - Django allauth Social login function was used to allow the user to sign up, or log in with Facebook.
 
 - [Django Countries](https://pypi.org/project/django-countries/)
   - Django Countries was used for the countries select field in the order form.
@@ -441,7 +441,7 @@
 
 - [Heroku](https://signup.heroku.com/)
 
-  - Heroku was used to deploy the wesite.
+  - Heroku was used to deploy the website.
 
 - [Amazon AWS](https://aws.amazon.com/)
 
@@ -449,12 +449,12 @@
 
 - [Facebook](https://developers.facebook.com/)
 
-  - Facebook ws used for allauth social sign-up and login.
+  - Facebook was used for allauth social sign-up and login.
 
 
 - [Gunicorn](https://gunicorn.org/)
 
-  - Gunicorn was used for deploying the project to heroku.
+  - Gunicorn was used for deploying the project to Heroku.
 
 - [Google Fonts](https://fonts.google.com/)
 
@@ -466,11 +466,11 @@
 
 - [Bootstrap 5](https://getbootstrap.com/)
 
-  - Bootstrap 5 was used for its grid system and it's form inputs and it's helper classes.
+  - Bootstrap 5 was used for its grid system and its form inputs and its helper classes.
 
 - [Quick Database Diagrams](https://www.quickdatabasediagrams.com/)
 
-  - I used quick database diagrams to make a digram of my database schema.
+  - I used quick database diagrams to make a diagram of my database schema.
 
 - [Git](https://git-scm.com/)
 
@@ -526,7 +526,7 @@
 - **Create an app on the Heroku website.**
     - Firstly I clicked on the new button.
     - Then I clicked on the create a new app.
-    - I then gave muy app a name and chose my current region.
+    - I then gave my app a name and chose my current region.
     - I then selected create app.
 
 - **Set up Postgres Database**
@@ -685,7 +685,7 @@
             - Navigate to the bucket properties settings.
             - Turn on static website hosting.
             - In the index and error add index.html and error.html.
-            - Click save.
+            - Click Save.
         - Permissions
             - Click on the buckets Permissions tabs.
             - Firstly paste in the following cors config.
@@ -716,7 +716,7 @@
             - Then click, generate policy.
             - Now copy and paste your new policy into the bucket policy.
             - Add /* onto the end of the resources key
-            - Click save.
+            - Click Save.
         - Access control list
         - In the access control list tab set the list objects permission to everyone.
     
@@ -906,7 +906,7 @@
         - I used code from the above article to help with a bug during development with my decimal fields.
 
     - [Messages extra tags](https://stackoverflow.com/questions/15017706/how-to-display-multiple-django-messages-in-one-page)
-        - I used the above article to help with only showing the cart items with some succesful messages.
+        - I used the above article to help with only showing the cart items with some successful messages.
 
     - [Test image input in Django forms](https://gist.github.com/drillbits/5432699)
         - I used this code to help with my Django testing of the forms image input.

@@ -61,7 +61,7 @@
 
         - The main navigation is then accessed by clicking the burger menu.
         - This shows the main navigation items.
-        - At different points on the site, there are buttons that link back to shopping or the checkout, etc for the user's convenience.
+        - At different points on the site, some buttons link back to shopping or the checkout, etc for the user's convenience.
 
             - <p float="left"><img src="readme-images/testing/keep-shopping.png" alt="Image of keep shopping buttons" width="450px" height="150px"/></p>
 
@@ -83,7 +83,7 @@
   - Searching for items.
 
     - As a customer, I would like to see all the products the company sells.
-        - On the homepage, there are shop collection buttons linking to the all items page.
+        - On the homepage, shop collection buttons are linking to the all items page.
         - There is also a shop collection navigation link.
 
             - <p float="left"><img src="readme-images/testing/our-collections-link.png" alt="Image of hero buttons" height="200px" width="400px"/></p>
@@ -214,7 +214,7 @@
     - To show how much of the app has been covered by the testing I used coverage.
     - To use coverage first run
     - ```
-        pip insatll coverage
+        pip install coverage
       ```
     - The run to test the whole app.
     - ```
@@ -400,7 +400,7 @@
     
     - #### Reviews Functionality.
         - To test the review functionality I first logged in to my account.
-        - I then navigated to the review page where I submited a review.
+        - I then navigated to the review page where I submitted a review.
             - <p float="left"><img src="readme-images/testing/add-review.png" alt="Image of add review" height="240px" width="400px"/></p>
 
         - Once the review was there I then edited the review.
@@ -430,7 +430,7 @@
         - I also tested the add to wishlist button on the item page.
             - <p float="left"><img src="readme-images/testing/add-to-wishlist-btn.png" alt="Image of add to wishlist button" height="300px" width="390px"/></p>
 
-        - I then tested the item has been placed in the wishlist. 
+        - I then tested the item that has been placed on the wishlist. 
         - I then tested the edit wishlist button.
         - Finally, I tested the delete wishlist button.
             - <p float="left"><img src="readme-images/testing/wishlist-delete-modal.png" alt="Image of delete wishlist modal" height="250px" width="390px"/></p>
@@ -454,7 +454,7 @@
             - <p float="left"><img src="readme-images/testing/form-test.png" alt="Image of edit wishlist" height="150px" width="600px"/></p>
     
     - #### Facebook Login.
-        - I have tested the facebook login by login into the website using my own facebook account.
+        - I have tested the Facebook login by login into the website using my own Facebook account.
         - The functionality has worked as expected.
            
 
@@ -486,7 +486,7 @@
 
 - #### Html
 
-     - My Html code was passed through the W3C Markup Validation Service and there are no erros showing.
+     - My Html code was passed through the W3C Markup Validation Service and there are no errors showing.
 
      - <div float="left">
         <img src="readme-images/testing/html-validation.png" alt="Image of pep8 results" width="500px" height="280px" />
@@ -510,4 +510,3 @@
 - I have also ensured that all images have alt text attributes.
 - All icons have been aria-labelled and include text descriptions for screenreaders only.
 - Upon testing in lighthouse, I have received scores of 98% to 100% across the site.
-
